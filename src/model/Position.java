@@ -117,4 +117,32 @@ public class Position {
     public String toString() {
         return "(" + row + ", " + col + ")";
     }
+    /**
+ * Retourne une nouvelle position déplacée dans la direction donnée.
+ * @param direction direction du déplacement
+ * @return nouvelle position
+ */
+public Position move(Direction direction) {
+
+    int newRow = row;
+    int newCol = col;
+
+    switch (direction) {
+        case HAUT:
+            newRow--;
+            break;
+        case BAS:
+            newRow++;
+            break;
+        case GAUCHE:
+            newCol--;
+            break;
+        case DROITE:
+            newCol++;
+            break;
+    }
+
+    return new Position(newRow, newCol);
+}
+
 }

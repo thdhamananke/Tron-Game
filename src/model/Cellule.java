@@ -48,4 +48,7 @@ public class Cellule {
     public int hashCode() {
         return position.hashCode();
     }
+    public void setOwner(Player owner) {
+        this.owner = owner;
+    }
 }
