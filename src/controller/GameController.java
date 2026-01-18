@@ -1,5 +1,8 @@
 package controller;
 
+import model.ModeleJeu;
+import view.VueJeu;
+
 import java.awt.*;
 
 public class GameController{

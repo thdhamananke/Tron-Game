@@ -38,7 +38,7 @@ public class Plateau
             for (int colonne = 0; colonne < nbColonnes; colonne++) 
             {
                 grille[ligne][colonne] =
-                        new Cellule(new Position(ligne, colonne));
+                                 new Cellule(new Position(ligne, colonne));
             }
         }
     }

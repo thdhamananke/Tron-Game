@@ -2,7 +2,7 @@ package view;
 
 public class Console implements VueJeu{
 
-    @override
+    // @override
     public void mettreAjourAffichage(){
 
     }

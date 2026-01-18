@@ -7,5 +7,5 @@ public interface Heuristic {
      * @param player Le joueur pour lequel on calcule l'utilité
      * @return Une valeur numérique (score) représentant la qualité de la position
     */
-    double evaluate(GameState state, Player player);
+    double evaluate(ModeleJeu state, Player player);
 }
