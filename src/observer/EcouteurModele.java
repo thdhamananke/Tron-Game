@@ -1,16 +1,18 @@
 package observer;
 
-// L'interface ModeleEcoutable pour implementer les methodes pour ajouter et retirer un ecouteurs
-public interface ModeleEcoutable {
-    /**
-     * Ajoute un écouteur au modèle.
-     * @param ecouteur L'écouteur à ajouter. 
-    */
-    public void ajoutEcouteur(EcouteurModele ecouteur);
+/**
+ * Interface représentant un écouteur du modèle.
+ *
+ * Elle fait partie de l'implémentation du patron Observer.
+ * Toute classe souhaitant être informée des changements
+ * du modèle (vue graphique, vue console, contrôleur, etc.)
+ * doit implémenter cette interface.
+ */
 
+public interface EcouteurModele {
     /**
-     * Retire un écouteur du modèle.
-     * @param ecouteur L'écouteur à retirer.
+     * Methode qui met a jour l'objet.
+     * @param source La source de l'obejt.
     */
-    public void retraitEcouteur(EcouteurModele ecouteur);
+    public void modeleMisAJour(Object source);
 }
