@@ -26,6 +26,7 @@ public class GUI extends JFrame implements VueJeu {
         add(gameBoard, BorderLayout.CENTER);
         add(rightPanel, BorderLayout.EAST);
         add(bottomPanel, BorderLayout.SOUTH);
+       // rightPanel.setMinimumSize(new Dimension(40,100));
 
         setLocationRelativeTo(null);
         setVisible(true);
@@ -58,13 +59,14 @@ public class GUI extends JFrame implements VueJeu {
                 new BevelBorder(BevelBorder.LOWERED),
                 new EmptyBorder(10, 10, 10, 10)
         ));
-        gameBoard.setBackground(Color.GREEN);
+        gameBoard.setBackground(Color.BLACK);
     }
 
 
     /* ===================== RIGHT PANEL ===================== */
     private void createRightPanel() {
         rightPanel = new JPanel();
+
         rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
         rightPanel.setBorder(new CompoundBorder(
                 new BevelBorder(BevelBorder.RAISED),
@@ -98,16 +100,39 @@ public class GUI extends JFrame implements VueJeu {
 
         rightPanel.add(Box.createVerticalStrut(15));
 
-        JLabel speedLabel = new JLabel("Vitesse");
-        speedLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        speedLabel.setFont(new Font("Arial", Font.BOLD, 12));
-        rightPanel.add(speedLabel);
+        JSpinner rowsSpinner = createSpinner(30,15,100 );
+        JSpinner colsSpinner = createSpinner(30,15,100 );
+        JButton applyboardSizeButton = createButton("Applique",null);
 
-        JSlider slider = new JSlider(100, 1600, 600);
-        slider.setMajorTickSpacing(500);
-        slider.setPaintTicks(true);
-        slider.setPaintLabels(true);
-        rightPanel.add(slider);
+        JLabel sizeLabel = new JLabel("board size");
+        sizeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        sizeLabel.setFont(new Font("Arial", Font.BOLD, 12));
+        rightPanel.add(sizeLabel);
+
+        JPanel spinnerPanel = new JPanel();
+        spinnerPanel.setLayout(new BoxLayout(spinnerPanel, BoxLayout.Y_AXIS));
+        spinnerPanel.add(rowsSpinner);
+        spinnerPanel.add(colsSpinner);
+        spinnerPanel.add(applyboardSizeButton);
+        rightPanel.add(spinnerPanel);
+        rightPanel.add(Box.createVerticalStrut(10));
+        JLabel paternLabel = new JLabel("Patterns");
+        paternLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        paternLabel.setFont(new Font("Arial", Font.BOLD, 12));
+        rightPanel.add(paternLabel);
+
+        JComboBox<String> patterncombobox = new JComboBox<>();
+        patterncombobox.addItem( "pattern1");
+        patterncombobox.addItem( "pattern2");
+        patterncombobox.addItem( "pattern3");
+        patterncombobox.addItem( "pattern4");
+        rightPanel.add(patterncombobox);
+
+        // JSlider slider = new JSlider(100, 1600, 600);
+        //slider.setMajorTickSpacing(500);
+       // slider.setPaintTicks(true);
+       // slider.setPaintLabels(true);
+        // rightPanel.add(slider);
 
     }
 
@@ -166,6 +191,13 @@ public class GUI extends JFrame implements VueJeu {
         p.add(box);
         p.add(new JLabel(text));
         return p;
+    }
+
+    private JSpinner createSpinner(int value, int min, int max) {
+        JSpinner spinner = new JSpinner(new SpinnerNumberModel(value, min, max, 1));
+        spinner.setFont(new Font("Arial", Font.PLAIN, 12));
+        spinner.setPreferredSize(new Dimension(50, 35));
+        return spinner;
     }
 
     /* ===================== UPDATE VIEW ===================== */
