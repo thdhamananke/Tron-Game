@@ -20,6 +20,10 @@ public class Player {
     }
 
     /** les getters */
+    public String getName() {
+        return this.name;
+    }
+    
     public Position getPosition() {
         return position;
     }

@@ -12,12 +12,9 @@ public class GameController{
     public int delay;
 
     public GameController(ModeleJeu Game ,VueJeu Vue){
-
             this.game = Game;
             this.vue = Vue;
 
     }
-
-
     
 }

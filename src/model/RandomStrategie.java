@@ -1,6 +1,6 @@
 package model;
-import java.util.Random;
-import java.util.random.*;
+
+import java.util.*;
 
 public class RandomStrategie  implements  Strategie{
     Random random = new Random();
@@ -18,6 +18,7 @@ public class RandomStrategie  implements  Strategie{
     }
     
 }
+
 /*
 function minimax(node, depth, maximizingPlayer) is
     if depth = 0 or node is a terminal node then

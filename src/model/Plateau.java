@@ -1,16 +1,13 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Représente le plateau du jeu de Tron.
  * Le plateau est une grille de cellules (Cellule) sur laquelle
  * évoluent les joueurs et leurs murs.
- */
-public class Plateau 
-{
-
+*/
+public class Plateau {
     private final int nbLignes;
     private final int nbColonnes;
     private final Cellule[][] grille;
@@ -20,7 +17,7 @@ public class Plateau
      *
      * @param nbLignes nombre de lignes
      * @param nbColonnes nombre de colonnes
-     */
+    */
     public Plateau(int nbLignes, int nbColonnes) {
         this.nbLignes = nbLignes;
         this.nbColonnes = nbColonnes;
@@ -30,15 +27,11 @@ public class Plateau
 
     /**
      * Initialise le plateau avec des cellules vides.
-     */
-    private void initialiser() 
-    {
-        for (int ligne = 0; ligne < nbLignes; ligne++) 
-        {
-            for (int colonne = 0; colonne < nbColonnes; colonne++) 
-            {
-                grille[ligne][colonne] =
-                                 new Cellule(new Position(ligne, colonne));
+    */
+    private void initialiser() {
+        for (int ligne = 0; ligne < nbLignes; ligne++) {
+            for (int colonne = 0; colonne < nbColonnes; colonne++) {
+                grille[ligne][colonne] = new Cellule(new Position(ligne, colonne));
             }
         }
     }

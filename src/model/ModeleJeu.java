@@ -66,7 +66,7 @@ public class ModeleJeu
      * Joue un tour complet : chaque joueur vivant effectue un déplacement.
      *
      * @param coups liste des directions choisies dans le même ordre que getJoueurs()
-     */
+    */
     public void tourSuivant(List<Direction> coups) {
         if (!jeuEnCours) return;
 

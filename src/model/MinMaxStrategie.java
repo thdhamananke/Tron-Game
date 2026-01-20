@@ -1,15 +1,14 @@
 package model;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Stratégie utilisant l'algorithme Minimax.
  * 
  * Cette stratégie explore récursivement les coups possibles jusqu'à une profondeur maximale
  * et choisit le mouvement qui maximise la valeur retournée par l'heuristique.
- */
+*/
 public class MinMaxStrategie implements Strategie {
-
     /** Profondeur maximale de recherche */
     private static final int DEPTH_MAX = 10;
 
@@ -128,7 +127,7 @@ public class MinMaxStrategie implements Strategie {
      * @param player joueur à déplacer
      * @param dir direction du déplacement
      * @param plateau plateau concerné
-     */
+    */
     private void deplacer(Player player, Direction dir, Plateau plateau) {
 
         Position ancienne = player.getPosition();
@@ -143,7 +142,7 @@ public class MinMaxStrategie implements Strategie {
 
     /**
      * @return nom de la stratégie
-     */
+    */
     @Override
     public String getNom() {
         return "Stratégie MINMAX";
