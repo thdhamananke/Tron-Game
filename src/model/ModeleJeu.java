@@ -120,10 +120,10 @@ public class ModeleJeu
     }
 
     /**
-     * Indique si la partie est terminée.
-     * Règle : si une seule équipe a encore des joueurs vivants, ou un seul joueur vivant.
-     * @return true si terminé
-     */
+     * Indique si la partie est terminée. En appliquant les règles, si une 
+     * seule équipe a encore des joueurs vivants, ou un seul joueur vivant.
+     * @return true si terminé et false sinon
+    */
     public boolean estTermine() {
         List<Player> vivants = getJoueursVivants();
         if (vivants.size() <= 1) return true;
@@ -135,9 +135,7 @@ public class ModeleJeu
         return equipesVivantes.size() <= 1;
     }
 
-    /**
-     * @return plateau courant
-     */
+    /** @return plateau courant */
     public Plateau getPlateau() {
         return plateau;
     }
@@ -167,8 +165,8 @@ public class ModeleJeu
 
     /**
      * Retourne l'équipe gagnante si la partie est terminée et qu'il y a un gagnant.
-     *@return équipe gagnante ou null si match nul / non terminé
-     */
+     * @return équipe gagnante ou null si match nul / non terminé
+    */
     public Team getEquipeGagnante() {
         if (!estTermine()) return null;
 

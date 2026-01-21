@@ -19,8 +19,8 @@ public class AdvancedHeuristic implements Heuristic {
             return -1000000.0;
         }
 
-        int rows = plateau.getNbrows();
-        int cols = plateau.getNbcols();
+        int rows = plateau.getNbLignes();
+        int cols = plateau.getNbColonnes();
 
         // Structures pour le flood-fill
         int[] distance = new int[rows * cols];

@@ -1,7 +1,4 @@
 package model;
-
-import javax.swing.text.Position;
-
 public class Cellule {
     private Position position;
     private Player owner ;
