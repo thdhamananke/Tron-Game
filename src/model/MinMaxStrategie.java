@@ -1,146 +1,151 @@
-// package model;
+package model;
 
-// import java.util.*;
+import java.util.List;
 
-// /**
-//  * Stratégie utilisant l'algorithme Minimax.
-//  * 
-//  * Cette stratégie explore récursivement les coups possibles jusqu'à une profondeur maximale
-//  * et choisit le mouvement qui maximise la valeur retournée par l'heuristique.
-// */
-// public class MinMaxStrategie implements Strategie {
-//     /** Profondeur maximale de recherche */
-//     private static final int DEPTH_MAX = 10;
-//     private final Heuristic heuristic;
+/**
+ * Stratégie utilisant l'algorithme Minimax.
+ * 
+ * Cette stratégie explore récursivement les coups possibles jusqu'à une profondeur maximale
+ * et choisit le mouvement qui maximise la valeur retournée par l'heuristique.
+ */
+public class MinMaxStrategie implements Strategie {
 
-//     /**
-//      * Crée une stratégie Minimax.
-//      * @param heuristic heuristique utilisée pour évaluer le plateau
-//     */
-//     public MinMaxStrategie(Heuristic heuristic) {
-//         this.heuristic = heuristic;
-//     }
+    /** Profondeur maximale de recherche */
+    private static final int DEPTH_MAX = 10;
 
-//     /**
-//      * Calcule le meilleur mouvement pour le joueur courant en utilisant 
-//      * l'algorithme Minimax (alpha-beta)
-//      * 
-//      * @param player    joueur courant
-//      * @param plateau   plateau du jeu
-//      * @return          direction choisie
-//     */
-//     @Override
-//     public Direction calculerMouvement(Player player, Plateau plateau) {
+    /** Heuristique utilisée pour évaluer le plateau */
+    private final Heuristic heuristic;
 
-//         int bestValue = Integer.MIN_VALUE;
-//         Direction bestDirection = null;
+    /**
+     * Crée une stratégie Minimax.
+     *
+     * @param heuristic heuristique utilisée pour évaluer le plateau
+     */
+    public MinMaxStrategie(Heuristic heuristic) {
+        this.heuristic = heuristic;
+    }
 
-//         List<Direction> coups = plateau.getCoupsPossibles(player.getPosition());
+    /**
+     * Calcule le meilleur mouvement pour le joueur courant
+     * en utilisant l'algorithme Minimax.
+     *
+     * @param player joueur courant
+     * @param plateau plateau du jeu
+     * @return direction choisie
+     */
+    @Override
+    public Direction calculerMouvement(Player player, Plateau plateau) {
 
-//         for (Direction dir : coups) {
+        int bestValue = Integer.MIN_VALUE;
+        Direction bestDirection = null;
 
-//             Plateau copiePlateau = Plateau.copierPlateau(plateau);
+        List<Direction> coups = plateau.getCoupsPossibles(player.getPosition());
 
-//             Player copyPlayer = new Player(
-//                     player.getColor(),
-//                     new Position(
-//                             player.getPosition().getRow(),
-//                             player.getPosition().getCol()
-//                     )
-//             );
+        for (Direction dir : coups) {
 
-//             // Simulation du coup
-//             deplacer(copyPlayer, dir, copiePlateau);
+            Plateau copiePlateau = Plateau.copierPlateau(plateau);
 
-//             // Minimax
-//             int valeur = minimax(copiePlateau, copyPlayer, DEPTH_MAX - 1, false);
+            Player copiePlayer = new Player(
+                    player.getColor(),
+                    new Position(
+                            player.getPosition().getRow(),
+                            player.getPosition().getCol()
+                    )
+            );
 
-//             if (valeur > bestValue) {
-//                 bestValue = valeur;
-//                 bestDirection = dir;
-//             }
-//         }
+            // Simulation du coup
+            deplacer(copiePlayer, dir, copiePlateau);
 
-//         return bestDirection;
-//     }
+            // Minimax
+            int valeur = minimax(copiePlateau, copiePlayer, DEPTH_MAX - 1, false);
 
-//     /**
-//      * Implémentation récursive de l'algorithme Minimax.
-//      *
-//      * @param plateau    état du plateau
-//      * @param player     joueur simulé
-//      * @param depth      la profondeur restante
-//      * @param maximisant true si on maximise, false sinon
-//      * @return           la valeur évaluée
-//     */
-//     private int minimax(Plateau plateau, Player player, int depth, boolean maximisant) {
+            if (valeur > bestValue) {
+                bestValue = valeur;
+                bestDirection = dir;
+            }
+        }
 
-//         if (depth == 0 || plateau.getCoupsPossibles(player.getPosition()).isEmpty()) {
-//             return heuristic.evaluate(plateau, player);
-//         }
+        return bestDirection;
+    }
 
-//         if (maximisant) {
-//             int bestValue = Integer.MIN_VALUE;
-//             for (Direction dir : plateau.getCoupsPossibles(player.getPosition())) {
+    /**
+     * Implémentation récursive de l'algorithme Minimax.
+     *
+     * @param plateau état du plateau
+     * @param player joueur simulé
+     * @param depth profondeur restante
+     * @param maximisant true si on maximise, false sinon
+     * @return valeur évaluée
+     */
+    private int minimax(Plateau plateau, Player player, int depth, boolean maximisant) {
 
-//                 Plateau copiePlateau = Plateau.copierPlateau(plateau);
-//                 Player copyPlayer = new Player(
-//                         player.getColor(),
-//                         new Position(player.getPosition().getRow(),
-//                                      player.getPosition().getCol())
-//                 );
+        if (depth == 0 || plateau.getCoupsPossibles(player.getPosition()).isEmpty()) {
+            return heuristic.evaluate(plateau, player);
+        }
 
-//                 deplacer(copyPlayer, dir, copiePlateau);
+        if (maximisant) {
+            int bestValue = Integer.MIN_VALUE;
+            for (Direction dir : plateau.getCoupsPossibles(player.getPosition())) {
 
-//                 int value = minimax(copiePlateau, copyPlayer, depth - 1, false);
-//                 bestValue = Math.max(bestValue, value);
-//             }
-//             return bestValue;
+                Plateau copiePlateau = Plateau.copierPlateau(plateau);
+                Player copiePlayer = new Player(
+                        player.getColor(),
+                        new Position(player.getPosition().getRow(),
+                                     player.getPosition().getCol())
+                );
 
-//         } else {
-//             int worstValue = Integer.MAX_VALUE;
-//             for (Direction dir : plateau.getCoupsPossibles(player.getPosition())) {
+                deplacer(copiePlayer, dir, copiePlateau);
 
-//                 Plateau copiePlateau = Plateau.copierPlateau(plateau);
-//                 Player copyPlayer = new Player(
-//                         player.getColor(),
-//                         new Position(player.getPosition().getRow(),
-//                                      player.getPosition().getCol())
-//                 );
+                int value = minimax(copiePlateau, copiePlayer, depth - 1, false);
+                bestValue = Math.max(bestValue, value);
+            }
+            return bestValue;
 
-//                 deplacer(copyPlayer, dir, copiePlateau);
+        } else {
+            int worstValue = Integer.MAX_VALUE;
+            for (Direction dir : plateau.getCoupsPossibles(player.getPosition())) {
 
-//                 int value = minimax(copiePlateau, copyPlayer, depth - 1, true);
-//                 worstValue = Math.min(worstValue, value);
-//             }
-//             return worstValue;
-//         }
-//     }
+                Plateau copiePlateau = Plateau.copierPlateau(plateau);
+                Player copiePlayer = new Player(
+                        player.getColor(),
+                        new Position(player.getPosition().getRow(),
+                                     player.getPosition().getCol())
+                );
 
-//     /**
-//      * Simule le déplacement d’un joueur sur le plateau.
-//      * L'ancienne position devient un mur et la nouvelle est occupée par le joueur.
-//      *
-//      * @param player joueur à déplacer
-//      * @param dir direction du déplacement
-//      * @param plateau plateau concerné
-//     */
-//     private void deplacer(Player player, Direction dir, Plateau plateau) {
+                deplacer(copiePlayer, dir, copiePlateau);
 
-//         Position ancienne = player.getPosition();
-//         Position nouvelle = ancienne.move(dir);
+                int value = minimax(copiePlateau, copiePlayer, depth - 1, true);
+                worstValue = Math.min(worstValue, value);
+            }
+            return worstValue;
+        }
+    }
+
+    /**
+     * Simule le déplacement d’un joueur sur le plateau.
+     * L'ancienne position devient un mur et la nouvelle est occupée par le joueur.
+     *
+     * @param player joueur à déplacer
+     * @param dir direction du déplacement
+     * @param plateau plateau concerné
+     */
+    private void deplacer(Player player, Direction dir, Plateau plateau) {
+
+        Position ancienne = player.getPosition();
+        Position nouvelle = ancienne.move(dir);
 
 
-//         plateau.placerMur(ancienne, player);
+        plateau.placerMur(ancienne, player);
 
-//         player.setPosition(nouvelle);
-//         plateau.placerJoueur(nouvelle, player);
-//     }
+        player.setPosition(nouvelle);
+        plateau.placerJoueur(nouvelle, player);
+    }
 
-//     /**  @return nom de la stratégie */
-//     @Override
-//     public String getNom() {
-//         return "Stratégie MINMAX";
-//     }
-// }
-
+    /**
+     * @return nom de la stratégie
+     */
+    @Override
+    public String getNom() {
+        return "Stratégie MINMAX";
+    }
+}
