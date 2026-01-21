@@ -4,7 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.*;
 
-public class GUI extends JFrame implements VueJeu {
+import observer.EcouteurModele;
+
+public class GUI extends JFrame implements VueJeu  {
 
     private JPanel topPanel;
     private GameBoardPanel gameBoard;
@@ -216,4 +218,6 @@ public class GUI extends JFrame implements VueJeu {
         repaint();
         revalidate();
     }
+
+
 }

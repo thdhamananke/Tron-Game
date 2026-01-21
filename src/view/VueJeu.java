@@ -1,6 +1,8 @@
 package view;
 
-public interface VueJeu{
+import observer.EcouteurModele;
+
+public interface VueJeu {
 
 public void mettreAjourAffichage();
 

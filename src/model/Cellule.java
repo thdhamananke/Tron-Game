@@ -19,6 +19,7 @@ public class Cellule {
     public boolean isEmpty() {
         return owner == null;
     }
+
     
     public void occupy(Player player) {
         this.owner = player;

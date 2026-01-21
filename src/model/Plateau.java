@@ -169,4 +169,23 @@ public class Plateau {
         }
         return copie;
     }
+
+    public CellState[][] getEtatPourVue() {
+        CellState[][] etat = new CellState[nbLignes][nbColonnes];
+
+        for (int l = 0; l < nbLignes; l++) {
+            for (int c = 0; c < nbColonnes; c++) {
+                Cellule cell = grille[l][c];
+                if (cell.isEmpty()) {
+                    etat[l][c] = CellState.EMPTY;
+                } else if (cell.getState()==CellState.WALL) {
+                    etat[l][c] = CellState.WALL;
+                } else {
+                    etat[l][c] = CellState.PLAYER; // ou PLAYER_ROUGE / PLAYER_BLEU
+                }
+            }
+        }
+        return etat;
+    }
+
 }
