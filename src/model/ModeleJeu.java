@@ -76,6 +76,7 @@ public class ModeleJeu
 
         // Tour séquentiel : on applique joueur par joueur
         for (int i = 0; i < joueurs.size(); i++) {
+            // ici ca doit etre la listes des players vivants
             Player joueur = joueurs.get(i);
             if (!joueur.isAlive()) continue;
 

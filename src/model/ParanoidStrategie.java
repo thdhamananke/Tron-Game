@@ -67,7 +67,7 @@ public class ParanoidStrategie implements Strategie {
         List<Direction> coups = plateau.getCoupsPossibles(joueurMax.getPosition());
         
         for (Direction dir : coups) {
-            /
+
 
             Plateau copiePlateau = Plateau.copierPlateau(plateau);
             Position pos = joueurMax.getPosition();
