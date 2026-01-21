@@ -104,6 +104,16 @@ public class GUI extends JFrame implements VueJeu {
         JSpinner colsSpinner = createSpinner(30,15,100 );
         JButton applyboardSizeButton = createButton("Applique",null);
 
+        applyboardSizeButton.addActionListener(e -> {
+            int rows = (int) rowsSpinner.getValue();
+            int cols = (int) colsSpinner.getValue();
+
+            gameBoard.setGridSize(rows, cols);
+
+            gameBoard.revalidate();
+            gameBoard.repaint();
+        });
+
         JLabel sizeLabel = new JLabel("board size");
         sizeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         sizeLabel.setFont(new Font("Arial", Font.BOLD, 12));
