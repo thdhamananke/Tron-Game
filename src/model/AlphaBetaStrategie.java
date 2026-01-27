@@ -6,10 +6,10 @@ import java.util.List;
  * Stratégie d'IA basée sur l'algorithme Minimax avec élagage Alpha-Beta
  * pour le jeu Tron.
  */
-public class MinMaxStrategy extends AbstractStrategie {
+public class AlphaBetaStrategie extends AbstractStrategie {
 
 
-    public MinMaxStrategy(Heuristic heuristic, int depth) {
+    public AlphaBetaStrategie(Heuristic heuristic, int depth) {
         super(heuristic , depth);
         
     }

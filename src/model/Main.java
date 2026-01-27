@@ -22,7 +22,7 @@ public class Main {
         Team equipeBleu = new Team("Equipe Bleue", new ArrayList<>(), Color.BLUE);
         
         // Création des joueurs avec positions initiales bien séparées
-        Player joueur1 = new Player("Alice", equipeRouge, new Position(4, 4));
+        Player joueur1 = new Player("Alice", equipeRouge, new Position(2 ,4));
         Player joueur2 = new Player("Bob", equipeBleu, new Position(5, 5));
         
         // Ajout des joueurs aux équipes
@@ -47,7 +47,7 @@ public class Main {
         Heuristic heuristiqueAvancee = new AdvancedHeuristic();
         
         // Création des stratégies
-        Strategie strategieMinMax1 = new MinMaxStrategie(heuristiqueAvancee, 4);
+        Strategie strategieMinMax1 = new MinMaxStrategie(heuristiqueSimple, 4);
         Strategie strategieMinMax2 = new MinMaxStrategie(heuristiqueSimple, 4);
         
         System.out.println("🤖 Stratégies :");
@@ -68,7 +68,7 @@ public class Main {
     /**
      * Joue une partie complète avec affichage graphique
      */
-    private static void jouerPartieAvecAffichage(ModeleJeu modele, Player joueur1, Player joueur2,
+    private static void jouerPartieAvecAffichage(ModeleJeu modele, Player joueur2, Player joueur1,
                                                    Strategie strat1, Strategie strat2, int maxTours) {
         
         int tour = 0;
