@@ -4,6 +4,7 @@ public class Player {
     private final String name;
     private final Team team;
     private Position position;
+    private Strategie strategie;
     private boolean alive;
 
     /**
@@ -23,7 +24,7 @@ public class Player {
     public String getName() {
         return this.name;
     }
-    
+
     public Position getPosition() {
         return position;
     }

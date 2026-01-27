@@ -1,30 +1,12 @@
-// package model;
-
-// public class ParanoidStrategie implements Strategie {
-
-//     @Override
-//     public Direction calculerMouvement(Player player, Plateau plateau) {
-//         // TODO Auto-generated method stub
-//         throw new UnsupportedOperationException("Unimplemented method 'calculerMouvement'");
-//     }
-
-//     @Override
-//     public String getNom() {
-//         return "Stratégie paranoid ";
-//     }
-    
-// }
 package model;
 
-import java.util.List;
+import java.util.*;
 
 public class ParanoidStrategie extends AbstractStrategie {
-
-    private static final int DEPTH_MAX = 5;
     private final List<Player> joueurs;
 
-    public ParanoidStrategie(Heuristic heuristic, List<Player> joueurs) {
-        super(heuristic);
+    public ParanoidStrategie(Heuristic heuristic, List<Player> joueurs, int depth) {
+        super(heuristic, depth);
         this.joueurs = joueurs;
     }
 
@@ -40,7 +22,7 @@ public class ParanoidStrategie extends AbstractStrategie {
         for (Direction dir : plateau.getCoupsPossibles(me.getPosition())) {
 
             MoveBackup backup = applyMove(plateau, me, dir);
-            double value = paranoidMin(plateau, me, DEPTH_MAX - 1, alpha, beta);
+            double value = paranoidMin(plateau, me, depth-1, alpha, beta);
             undoMove(plateau, me, backup);
 
             if (value > bestValue) {
@@ -55,11 +37,8 @@ public class ParanoidStrategie extends AbstractStrategie {
     }
 
     /* ================= ALGORITHME ================= */
-
     // MAX : joueur paranoïaque
-    private double paranoidMax(Plateau plateau, Player me, int depth,
-                               double alpha, double beta) {
-
+    private double paranoidMax(Plateau plateau, Player me, int depth, double alpha, double beta) {
         if (depth == 0 || !me.isAlive()) {
             return heuristic.evaluate(plateau, me);
         }
