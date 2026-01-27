@@ -18,7 +18,7 @@ public class MinMaxStrategy extends AbstractStrategie {
     public Direction calculerMouvement(Player me, Plateau plateau) {
 
         double bestValue = Double.NEGATIVE_INFINITY;
-        Direction bestDirection = null;
+        Direction bestDirection = Direction.HAUT;
 
         Player opponent = findOpponent(me, plateau);
 

@@ -15,7 +15,7 @@ public class MinMaxStrategie extends AbstractStrategie {
     public Direction calculerMouvement(Player player, Plateau plateau) {
 
         int bestValue = Integer.MIN_VALUE;
-        Direction bestDirection = null;
+        Direction bestDirection = Direction.HAUT;
 
         List<Direction> coups = plateau.getCoupsPossibles(player.getPosition());
 
