@@ -3,36 +3,14 @@ package model;
 import java.util.List;
 
 /**
- * Stratégie utilisant l'algorithme Minimax.
- * 
- * Cette stratégie explore récursivement les coups possibles jusqu'à une profondeur maximale
- * et choisit le mouvement qui maximise la valeur retournée par l'heuristique.
+ * Stratégie utilisant l'algorithme Minimax simple
  */
-public class MinMaxStrategie implements Strategie {
+public class MinMaxStrategie extends AbstractStrategie {
 
-    /** Profondeur maximale de recherche */
-    private static final int DEPTH_MAX = 10;
-
-    /** Heuristique utilisée pour évaluer le plateau */
-    private final Heuristic heuristic;
-
-    /**
-     * Crée une stratégie Minimax.
-     *
-     * @param heuristic heuristique utilisée pour évaluer le plateau
-     */
-    public MinMaxStrategie(Heuristic heuristic) {
-        this.heuristic = heuristic;
+    public MinMaxStrategie(Heuristic heuristic , int depth) {
+        super(heuristic , depth);
     }
 
-    /**
-     * Calcule le meilleur mouvement pour le joueur courant
-     * en utilisant l'algorithme Minimax.
-     *
-     * @param player joueur courant
-     * @param plateau plateau du jeu
-     * @return direction choisie
-     */
     @Override
     public Direction calculerMouvement(Player player, Plateau plateau) {
 
@@ -46,18 +24,17 @@ public class MinMaxStrategie implements Strategie {
             Plateau copiePlateau = Plateau.copierPlateau(plateau);
 
             Player copiePlayer = new Player(
-                    player.getColor(),
-                    new Position(
-                            player.getPosition().getRow(),
-                            player.getPosition().getCol()
-                    )
+                    player.getName(),
+                    player.getTeam(),
+                    new Position(player.getPosition().getRow(),
+                                 player.getPosition().getCol())
             );
 
             // Simulation du coup
             deplacer(copiePlayer, dir, copiePlateau);
 
             // Minimax
-            int valeur = minimax(copiePlateau, copiePlayer, DEPTH_MAX - 1, false);
+            int valeur = minimax(copiePlateau, copiePlayer, super.getDepth()- 1, false);
 
             if (valeur > bestValue) {
                 bestValue = valeur;
@@ -68,19 +45,10 @@ public class MinMaxStrategie implements Strategie {
         return bestDirection;
     }
 
-    /**
-     * Implémentation récursive de l'algorithme Minimax.
-     *
-     * @param plateau état du plateau
-     * @param player joueur simulé
-     * @param depth profondeur restante
-     * @param maximisant true si on maximise, false sinon
-     * @return valeur évaluée
-     */
     private int minimax(Plateau plateau, Player player, int depth, boolean maximisant) {
 
         if (depth == 0 || plateau.getCoupsPossibles(player.getPosition()).isEmpty()) {
-            return heuristic.evaluate(plateau, player);
+            return (int) heuristic.evaluate(plateau, player);
         }
 
         if (maximisant) {
@@ -89,14 +57,15 @@ public class MinMaxStrategie implements Strategie {
 
                 Plateau copiePlateau = Plateau.copierPlateau(plateau);
                 Player copiePlayer = new Player(
-                        player.getColor(),
+                        player.getName(),
+                        player.getTeam(),
                         new Position(player.getPosition().getRow(),
                                      player.getPosition().getCol())
                 );
 
                 deplacer(copiePlayer, dir, copiePlateau);
 
-                int value = minimax(copiePlateau, copiePlayer, depth - 1, false);
+                int value = minimax(copiePlateau, copiePlayer, super.getDepth() - 1, false);
                 bestValue = Math.max(bestValue, value);
             }
             return bestValue;
@@ -107,7 +76,8 @@ public class MinMaxStrategie implements Strategie {
 
                 Plateau copiePlateau = Plateau.copierPlateau(plateau);
                 Player copiePlayer = new Player(
-                        player.getColor(),
+                        player.getName(),
+                        player.getTeam(),
                         new Position(player.getPosition().getRow(),
                                      player.getPosition().getCol())
                 );
@@ -121,29 +91,14 @@ public class MinMaxStrategie implements Strategie {
         }
     }
 
-    /**
-     * Simule le déplacement d’un joueur sur le plateau.
-     * L'ancienne position devient un mur et la nouvelle est occupée par le joueur.
-     *
-     * @param player joueur à déplacer
-     * @param dir direction du déplacement
-     * @param plateau plateau concerné
-     */
+    // On réutilise le deplacer() de AbstractStrategie
     private void deplacer(Player player, Direction dir, Plateau plateau) {
-
-        Position ancienne = player.getPosition();
-        Position nouvelle = ancienne.move(dir);
-
-
-        plateau.placerMur(ancienne, player);
-
-        player.setPosition(nouvelle);
-        plateau.placerJoueur(nouvelle, player);
+        // Ici, on peut utiliser applyMove si on veut suivre le pattern Do/Undo
+        MoveBackup backup = applyMove(plateau, player, dir);
+        // Rien à undo ici puisque c’est une simulation isolée
+        undoMove(plateau, player, backup);
     }
 
-    /**
-     * @return nom de la stratégie
-     */
     @Override
     public String getNom() {
         return "Stratégie MINMAX";

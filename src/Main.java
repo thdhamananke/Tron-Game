@@ -24,7 +24,7 @@ public class Main {
         List<Player> listedeplayers = new ArrayList<Player>();
         listedeplayers.add(player1);
         listedeplayers.add(player2);
-
+        
         ModeleJeu  game =  new ModeleJeu(15, 15, listedeplayers);
         VueJeu view =  new GUI();
         GameController controller = new GameController(game, view);
