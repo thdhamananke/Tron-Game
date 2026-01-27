@@ -3,14 +3,14 @@ package model;
 import java.util.*;
 
 /**
- * Classe Main pour tester la stratégie MinMaxStrategy
+ * Classe principale pour tester les strategie (MinMax et AlphaBeta)
  * avec affichage graphique de la grille
- */
+*/
 public class Main {
     
     public static void main(String[] args) {
         System.out.println("╔════════════════════════════════════════════╗");
-        System.out.println("║   TEST STRATEGIE MINMAX - JEU DE TRON     ║");
+        System.out.println("║         BIENVENUE AU JEU DE TRON           ║");
         System.out.println("╚════════════════════════════════════════════╝\n");
         
         // Configuration du plateau
@@ -68,8 +68,8 @@ public class Main {
     /**
      * Joue une partie complète avec affichage graphique
      */
-    private static void jouerPartieAvecAffichage(ModeleJeu modele, Player joueur2, Player joueur1,
-                                                   Strategie strat1, Strategie strat2, int maxTours) {
+    private static void jouerPartieAvecAffichage(ModeleJeu modele, Player joueur1, Player joueur2,
+                                                Strategie strat1, Strategie strat2, int maxTours) {
         
         int tour = 0;
         
@@ -187,7 +187,7 @@ public class Main {
                     }
                 }
                 
-                if (j < colonnes - 1) System.out.print("│");
+                if (j < colonnes - 1) System.out.print(" │");
             }
             
             System.out.println("│");
@@ -214,7 +214,9 @@ public class Main {
     
     /**
      * Affiche les statistiques du jeu
-     */
+     * @param plateau le plateau
+     * @param joueur
+    */
     private static void afficherStatistiques(Plateau plateau, Player joueur1, Player joueur2) {
         FreeSpaceHeuristic heuristic = new FreeSpaceHeuristic();
         
@@ -233,6 +235,8 @@ public class Main {
     
     /**
      * Affiche les résultats finaux
+     * @param modele 
+     * @param tour
      */
     private static void afficherResultatsFinaux(ModeleJeu modele, int tour) {
         clearScreen();
@@ -263,9 +267,7 @@ public class Main {
         System.out.println("\n" + "═".repeat(60) + "\n");
     }
     
-    /**
-     * Formate une direction avec une flèche
-     */
+    /** Formate une direction avec une flèche */
     private static String formatDirection(Direction dir) {
         switch (dir) {
             case HAUT: return "↑ HAUT";
@@ -276,9 +278,7 @@ public class Main {
         }
     }
     
-    /**
-     * Efface l'écran (compatible multi-plateformes)
-     */
+    /** Efface l'écran (compatible multi-plateformes) */
     private static void clearScreen() {
         try {
             if (System.getProperty("os.name").contains("Windows")) {
@@ -293,14 +293,73 @@ public class Main {
         }
     }
     
-    /**
-     * Met en pause l'exécution
-     */
+    /** Met en pause l'exécution */
     private static void pause(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+
+    /**
+     * Lecture sécurisée d'un entier positif
+     * @param scanner   le scanner
+     * @param prompt    l'entrer donnée
+     * @return un entier valide.
+    */
+    private static int entier(Scanner scanner, String prompt) {
+        int value;
+        while (true) {
+            System.out.print(prompt);
+            if (scanner.hasNextInt()) {
+                value = scanner.nextInt();
+                scanner.nextLine();
+                if (value > 0) break; 
+                else System.out.println("Merci d'entrer un entier positif.");
+            } else {
+                System.out.println("Erreur : veuillez entrer un entier.");
+                scanner.nextLine();
+            }
+        }
+        return value;
+    }
+
+    /**
+     * Pour composer les membres de l'équipe.
+     * @param teamName  nom de l'equipe
+     * @param teamSize  la taille de l'equipe
+     * @param plateau   le plateau du jeu
+     * @param color la couleur de l'équipe
+     * @return la liste des joueurs d'une équipe donnée
+    */
+    private static List<Player> playersForTeam(String teamName, int teamSize, Plateau plateau, Color color) {
+        List<Player> players = new ArrayList<>();
+        for (int i = 0; i < teamSize; i++) {
+            Position pos = findEmptyPosition(plateau);
+            Player player = new Player(teamName + "_" + i, null, pos);
+            players.add(player);
+            plateau.placerJoueur(pos, player);
+        }
+        return players;
+    }
+
+    /**
+     * Permet de trouver une position vide sur le plateau pour pouvoir placer un joueur
+     * @param plateau le plateau concerné
+     * @return une position choisie aléatoirement.
+    */
+    private static Position findEmptyPosition(Plateau plateau) {
+        Random rand = new Random();
+        int row, col;
+        Position pos;
+        do {
+            row = rand.nextInt(plateau.getNbLignes());
+            col = rand.nextInt(plateau.getNbColonnes());
+            pos = new Position(row, col);
+        } while (!plateau.estLibre(pos));
+
+        return pos;
     }
 }

@@ -1,19 +1,21 @@
 package model;
 
-import java.util.List;
-
+import java.util.*;
 /**
- * Stratégie d'IA basée sur l'algorithme Minimax avec élagage Alpha-Beta
- * pour le jeu Tron.
- */
+ * Stratégie d'IA basée sur l'algorithme Minimax avec élagage Alpha-Beta pour le jeu Tron.
+*/
 public class AlphaBetaStrategie extends AbstractStrategie {
-
 
     public AlphaBetaStrategie(Heuristic heuristic, int depth) {
         super(heuristic , depth);
-        
     }
 
+    /**
+     * Calcul le mouvement du joueur sur le plateau du jeu
+     * @param me le joueur concerné
+     * @param plateau le plateau du jeu
+     * @return une direction donnée
+    */
     @Override
     public Direction calculerMouvement(Player me, Plateau plateau) {
 
@@ -42,6 +44,17 @@ public class AlphaBetaStrategie extends AbstractStrategie {
         return bestDirection;
     }
 
+    /**
+     * Implémentation récursive de l'algorithme Minimax avec élagage Alpha-Beta.
+     * @param plateau état courant du plateau
+     * @param me joueur maximisant (joueur initial)
+     * @param opponent adversaire du joueur maximisant
+     * @param depth profondeur restante de recherche
+     * @param alpha borne inférieure (meilleure valeur garantie pour MAX)
+     * @param beta borne supérieure (meilleure valeur garantie pour MIN)
+     * @param maximizing indique si le joueur courant maximise ou minimise
+     * @return valeur heuristique de l'état exploré
+    */
     private double minimaxAlphaBeta(Plateau plateau, Player me, Player opponent,
                                     int depth, double alpha, double beta, boolean maximizing) {
 
@@ -80,6 +93,12 @@ public class AlphaBetaStrategie extends AbstractStrategie {
         }
     }
 
+    /**
+     * Elle permet de trouver l'adversaire
+     * @param me    le joueur courant
+     * @param plateau   le plateau de jeu
+     * @return  l'adversaire
+    */
     private Player findOpponent(Player me, Plateau plateau) {
         for (int ligne = 0; ligne < plateau.getNbLignes(); ligne++) {
             for (int colonne = 0; colonne < plateau.getNbColonnes(); colonne++) {
@@ -91,6 +110,7 @@ public class AlphaBetaStrategie extends AbstractStrategie {
         }
         return null;
     }
+
 
     @Override
     public String getNom() {
