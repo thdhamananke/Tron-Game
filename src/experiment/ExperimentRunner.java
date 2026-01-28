@@ -22,9 +22,9 @@ public class ExperimentRunner {
             List<Player> players = createTeam(team, config.getTeamSize(), plateau);
             teams.put(team, players);
 
-            Strategie strategy = new MinMaxStrategy(
-                    new AdvancedHeuristic(), config.getDepth()
-            );
+            //Strategie strategy = new MinMaxStrategy(
+             //       new AdvancedHeuristic(), config.getDepth()
+            //);
 
             for (Player player : players) {
                 // controller.addPlayer(player, strategy);

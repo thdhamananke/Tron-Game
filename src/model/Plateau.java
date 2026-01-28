@@ -8,9 +8,9 @@ import java.util.*;
  * évoluent les joueurs et leurs murs.
 */
 public class Plateau {
-    private final int nbLignes;
-    private final int nbColonnes;
-    private final Cellule[][] grille;
+    private int nbLignes;
+    private int nbColonnes;
+    private Cellule[][] grille;
 
     /**
      * Construit un plateau vide.
@@ -170,6 +170,8 @@ public class Plateau {
         return copie;
     }
 
+
+
     public CellState[][] getEtatPourVue() {
         CellState[][] etat = new CellState[nbLignes][nbColonnes];
 
@@ -186,6 +188,12 @@ public class Plateau {
             }
         }
         return etat;
+    }
+
+    public void setSize(int rows, int cols) {
+        this.nbLignes = rows;
+        this.nbColonnes = cols;
+        this.grille = new Cellule[rows][cols];
     }
 
 }

@@ -41,6 +41,29 @@ public class Player {
         return alive;
     }
 
+    public java.awt.Color getAwtColor() {
+        Color color = getColor(); // ton enum model.Color
+
+        return switch (color) {
+            case RED -> java.awt.Color.RED;
+            case BLUE -> java.awt.Color.BLUE;
+            case GREEN -> java.awt.Color.GREEN;
+            case YELLOW -> java.awt.Color.YELLOW;
+            case MAGENTA -> java.awt.Color.MAGENTA;
+            case CYAN -> java.awt.Color.CYAN;
+
+            // “Bright” personnalisées
+            case BRIGHT_RED -> new java.awt.Color(255, 50, 50);
+            case BRIGHT_GREEN -> new java.awt.Color(50, 255, 50);
+            case BRIGHT_YELLOW -> new java.awt.Color(255, 255, 100);
+            case BRIGHT_BLUE -> new java.awt.Color(50, 50, 255);
+
+            default -> java.awt.Color.BLACK; // sécurité
+        };
+    }
+
+
+
     /** les setteurs */
     public void setPosition(Position position) {
         this.position = position;

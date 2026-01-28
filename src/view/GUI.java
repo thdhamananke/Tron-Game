@@ -4,23 +4,31 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.*;
 
+import controller.GameController;
+import model.ModeleJeu;
 import observer.EcouteurModele;
 
-public class GUI extends JFrame implements VueJeu  {
+public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
 
+    // private ModeleJeu game;
     private JPanel topPanel;
-    private GameBoardPanel gameBoard;
     private JPanel rightPanel;
     private JPanel bottomPanel;
+    private GameBoardPanel gameBoard;
+    private GameController controller;
+    private JComboBox<String> strategieRougeBox;
+    private JComboBox<String> strategieBleuBox;
 
-    public GUI() {
+
+    public GUI(GameController controller) {
+
         setTitle("Jeu Tron - Combat de Bots");
         setSize(900, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(5, 5));
-
+        this.controller = controller;
         createTopPanel();
-        createGameBoard();
+        createGameBoard(this.controller.getGame());
         createRightPanel();
         createBottomPanel();
 
@@ -54,8 +62,8 @@ public class GUI extends JFrame implements VueJeu  {
     }
 
     /* ===================== GAME BOARD ===================== */
-    private void createGameBoard() {
-        gameBoard = new GameBoardPanel(); // rows, cols
+    private void createGameBoard(ModeleJeu game) {
+        gameBoard = new GameBoardPanel(game); // rows, cols
 
         gameBoard.setBorder(new CompoundBorder(
                 new BevelBorder(BevelBorder.LOWERED),
@@ -82,23 +90,51 @@ public class GUI extends JFrame implements VueJeu  {
 
         rightPanel.add(title);
         rightPanel.add(Box.createVerticalStrut(10));
-
-        rightPanel.add(createButton("▶ Démarrer", new Color(0, 200, 0)));
+        JButton startButton = createButton("▶ Démarrer", new Color(0, 200, 0));
+        rightPanel.add(startButton);
         rightPanel.add(Box.createVerticalStrut(8));
 
+        startButton.addActionListener(e -> {
+            gameBoard.setGame(controller.getGame());
+            new Thread(() -> controller.lunchgame()).start();
+           this.repaint();
+           this.revalidate();
+
+        });
         rightPanel.add(createButton("⏸ Pause", new Color(255, 200, 0)));
         rightPanel.add(Box.createVerticalStrut(8));
 
         rightPanel.add(createButton("⏭ Tour Suivant", new Color(0, 200, 200)));
         rightPanel.add(Box.createVerticalStrut(8));
 
-        rightPanel.add(createButton("⟲ Redémarrer", new Color(220, 0, 0)));
+        JButton restartButton = createButton("⟲ Redémarrer", new Color(220, 0, 0));
+        rightPanel.add(restartButton);
+        restartButton.addActionListener(e -> {
+            controller.restart();
+            gameBoard.setGame(controller.getGame());
+            new Thread(() -> controller.lunchgame()).start();
+            this.repaint();
+            this.revalidate();
 
+        });
         rightPanel.add(Box.createVerticalStrut(15));
 
-        rightPanel.add(createStrategyBox("Bot Rouge", new String[]{"Aléatoire"}));
+        strategieRougeBox = createStrategyBox("Bot Rouge");
         rightPanel.add(Box.createVerticalStrut(10));
-        rightPanel.add(createStrategyBox("Bot Bleu", new String[]{"Éviter Murs"}));
+        strategieBleuBox = createStrategyBox("Bot Bleu");
+        JButton applyStrategieButton = createButton("Appliquer stratégies", null);
+
+        applyStrategieButton.addActionListener(e -> {
+            String strategieRouge = getStrategieRouge();
+            String strategieBleu  = getStrategieBleu();
+
+            controller.appliquerStrategie(strategieRouge, strategieBleu);
+        });
+
+
+        rightPanel.add(Box.createVerticalStrut(10));
+        rightPanel.add(applyStrategieButton);
+
 
         rightPanel.add(Box.createVerticalStrut(15));
 
@@ -109,11 +145,8 @@ public class GUI extends JFrame implements VueJeu  {
         applyboardSizeButton.addActionListener(e -> {
             int rows = (int) rowsSpinner.getValue();
             int cols = (int) colsSpinner.getValue();
+            this.controller.changeGridSize(rows, cols);
 
-            gameBoard.setGridSize(rows, cols);
-
-            gameBoard.revalidate();
-            gameBoard.repaint();
         });
 
         JLabel sizeLabel = new JLabel("board size");
@@ -167,7 +200,8 @@ public class GUI extends JFrame implements VueJeu  {
         return btn;
     }
 
-    private JPanel createStrategyBox(String title, String[] values) {
+
+    private JComboBox<String> createStrategyBox(String title) {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(new Color(245, 245, 245));
         panel.setBorder(new CompoundBorder(
@@ -178,13 +212,22 @@ public class GUI extends JFrame implements VueJeu  {
         JLabel label = new JLabel(title, SwingConstants.CENTER);
         label.setFont(new Font("Arial", Font.BOLD, 12));
 
-        JComboBox<String> combo = new JComboBox<>(values);
+        JComboBox<String> combo = new JComboBox<>(new String[]{
+                "Random",
+                "Minimax",
+                "AlphaBeta",
+                "MaxN",
+                "Paranoid",
+                "SOS"
+        });
 
         panel.add(label, BorderLayout.NORTH);
         panel.add(combo, BorderLayout.CENTER);
+        rightPanel.add(panel);
 
-        return panel;
+        return combo;
     }
+
 
     /* ================= BOTTOM PANEL ================= */
     private void createBottomPanel() {
@@ -215,8 +258,38 @@ public class GUI extends JFrame implements VueJeu  {
     /* ===================== UPDATE VIEW ===================== */
     @Override
     public void mettreAjourAffichage() {
+        // modeleMisAJour(this);
+        gameBoard.setGame(controller.getGame());
+        this.gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
         repaint();
         revalidate();
+    }
+
+
+    @Override
+    public void modeleMisAJour(Object source) {
+        this.gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
+        mettreAjourAffichage();
+    }
+
+    public void setController(GameController controller){
+        this.controller = controller;
+    }
+
+    public int getColumns() {
+        return this.gameBoard.getColumns() ;
+    }
+
+    public int getRows() {
+        return this.gameBoard.getRows();
+    }
+
+    public String getStrategieRouge() {
+        return (String) strategieRougeBox.getSelectedItem();
+    }
+
+    public String getStrategieBleu() {
+        return (String) strategieBleuBox.getSelectedItem();
     }
 
 

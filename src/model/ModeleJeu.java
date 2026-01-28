@@ -1,5 +1,7 @@
 package model;
 
+import observer.AbstractModeleEcoutable;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.Set;
  * Modèle (MVC) du jeu de Tron.
  * Contient l'état du jeu (plateau, joueurs, tour) et applique les règles.
  */
-public class ModeleJeu 
+public class ModeleJeu extends AbstractModeleEcoutable
 {
     private Plateau plateau;
     private final List<Player> joueurs;
@@ -23,7 +25,7 @@ public class ModeleJeu
      * @param nbColonnes nombre de colonnes du plateau
      * @param joueurs liste des joueurs (avec position initiale non null)
      */
-    public ModeleJeu(int nbLignes, int nbColonnes, List<Player> joueurs) {
+    public ModeleJeu(int nbLignes , int nbColonnes , List<Player> joueurs) {
         if (joueurs == null || joueurs.isEmpty()) {
             throw new IllegalArgumentException("La liste des joueurs ne peut pas être vide.");
         }
@@ -89,6 +91,7 @@ public class ModeleJeu
         if (estTermine()) {
             jeuEnCours = false;
         }
+        notifier();
     }
 
     /**
@@ -175,4 +178,22 @@ public class ModeleJeu
         if (vivants.isEmpty()) return null; // match nul : tout le monde est mort
         return vivants.get(0).getTeam();
     }
+
+    // Dans ModeleJeu ou Plateau
+    public Player getJoueurAt(Position pos) {
+        for (Player p : joueurs) {
+            if (p.getPosition().equals(pos)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+
+    public void setPlateauSize(int rows, int cols) {
+        this.plateau.setSize(rows, cols);
+
+    }
+
+
 }
