@@ -1,6 +1,12 @@
 package model;
 
-public class MaxNStrategie  implements Strategie{
+public class MaxNStrategie  extends AbstractStrategie{
+
+    public MaxNStrategie(Heuristic heuristic, int depth) {
+        super(heuristic, depth);
+        //TODO Auto-generated constructor stub
+    }
+
 
     @Override
     public Direction calculerMouvement(Player player, Plateau plateau) {
@@ -9,7 +15,7 @@ public class MaxNStrategie  implements Strategie{
     }
 
     @Override
-    public String getNom() {
+    public String getName() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getNom'");
     }

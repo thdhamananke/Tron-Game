@@ -87,6 +87,23 @@ public class Plateau {
     }
 
     /**
+     * @return nombre de cellules encore libres sur le plateau
+    */
+    public int getNbCasesLibres() {
+        int count = 0;
+
+        for (int l = 0; l < nbLignes; l++) {
+            for (int c = 0; c < nbColonnes; c++) {
+                if (grille[l][c].isEmpty()) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+
+    /**
      * Place un joueur sur une cellule.
      *
      * @param position position cible

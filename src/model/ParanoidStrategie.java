@@ -86,7 +86,7 @@ public class ParanoidStrategie extends AbstractStrategie {
     }
 
     @Override
-    public String getNom() {
+    public String getName() {
         return "Stratégie Paranoid";
     }
 }

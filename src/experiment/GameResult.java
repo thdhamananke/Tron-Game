@@ -1,39 +1,26 @@
 package experiment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.*;
 
-/**
- * Résultat d'une partie,donc c'est cette classe qui permet de
- * faire le transfert pour les expérimentations.
-*/
 public class GameResult {
 
-    private final Team winningTeam;
-    private final long gameTimeMs;
+    private final Team winner;
+    private final long timeMs;
     private final int turns;
+    private final List<Player> joueurs;
 
-    /**
-     * Construit le resultat d'une partie du jeu.
-     * 
-     * @param winningTeam   l'equipe gagnete
-     * @param gameTimeMs  le temps du jeu en milliseconde
-     * @param turns les tours effectués
-    */
-    public GameResult(Team winningTeam, long gameTimeMs, int turns) {
-        this.winningTeam = winningTeam;
-        this.gameTimeMs = gameTimeMs;
+    public GameResult(Team winner, long timeMs, int turns, List<Player> joueurs) {
+        this.winner = winner;
+        this.timeMs = timeMs;
         this.turns = turns;
+        this.joueurs = new ArrayList<>(joueurs);
     }
 
-    public Team getWinningTeam() {
-        return winningTeam;
-    }
-
-    public long getGameTimeMs() {
-        return gameTimeMs;
-    }
-
-    public int getTurns() {
-        return turns;
-    }
+    public Team getWinner() { return winner; }
+    public long getTimeMs() { return timeMs; }
+    public int getTurns() { return turns; }
+    public List<Player> getJoueurs() { return joueurs; }
 }

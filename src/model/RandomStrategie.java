@@ -2,8 +2,14 @@ package model;
 import java.util.Random;
 import java.util.random.*;
 
-public class RandomStrategie  implements  Strategie{
+public class RandomStrategie  extends  AbstractStrategie{
     Random random = new Random();
+    
+    public RandomStrategie(Heuristic heuristic, int depth) {
+        super(heuristic, depth);
+        //TODO Auto-generated constructor stub
+    }
+
 
     @Override
     public Direction calculerMouvement(Player player, Plateau plateau) {
@@ -13,7 +19,7 @@ public class RandomStrategie  implements  Strategie{
     }
 
     @Override
-    public String getNom() {
+    public String getName() {
         return " Stratégie Aléatoire";
     }
     

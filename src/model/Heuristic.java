@@ -8,4 +8,5 @@ public interface Heuristic {
      * @return Une valeur numérique (score) représentant la qualité de la position
     */
     double evaluate(Plateau grid, Player player);
+    String getName();
 }

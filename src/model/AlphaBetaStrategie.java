@@ -6,6 +6,9 @@ import java.util.*;
 */
 public class AlphaBetaStrategie extends AbstractStrategie {
 
+    private long startTime;
+    private static final long TIME_LIMIT_MS = 100;
+
     public AlphaBetaStrategie(Heuristic heuristic, int depth) {
         super(heuristic , depth);
     }
@@ -18,6 +21,7 @@ public class AlphaBetaStrategie extends AbstractStrategie {
     */
     @Override
     public Direction calculerMouvement(Player me, Plateau plateau) {
+        startTime = System.currentTimeMillis();
 
         double bestValue = Double.NEGATIVE_INFINITY;
         Direction bestDirection = Direction.HAUT;
@@ -27,10 +31,14 @@ public class AlphaBetaStrategie extends AbstractStrategie {
         double alpha = Double.NEGATIVE_INFINITY;
         double beta = Double.POSITIVE_INFINITY;
 
+        int nbCaseLibre = plateau.getNbCasesLibres();
+        int effDepth = Math.min(this.depth, nbCaseLibre / 2);
+
+
         for (Direction dir : plateau.getCoupsPossibles(me.getPosition())) {
 
             MoveBackup backup = applyMove(plateau, me, dir);
-            double value = minimaxAlphaBeta(plateau, me, opponent, depth - 1, alpha, beta, false);
+            double value = minimaxAlphaBeta(plateau, me, opponent, effDepth - 1, alpha, beta, false);
             undoMove(plateau, me, backup);
 
             if (value > bestValue) {
@@ -60,6 +68,10 @@ public class AlphaBetaStrategie extends AbstractStrategie {
 
         Player currentPlayer = maximizing ? me : opponent;
         List<Direction> coups = plateau.getCoupsPossibles(currentPlayer.getPosition());
+
+        if (System.currentTimeMillis() - startTime > TIME_LIMIT_MS) {
+            return (int) heuristic.evaluate(plateau, me);
+        }
 
         if (depth == 0 || coups.isEmpty() || !currentPlayer.isAlive()) {
             return heuristic.evaluate(plateau, me);
@@ -113,7 +125,7 @@ public class AlphaBetaStrategie extends AbstractStrategie {
 
 
     @Override
-    public String getNom() {
-        return "MINMAX Alpha-Beta";
+    public String getName() {
+        return "Stratégie AlphaBeta";
     }
 }

@@ -91,7 +91,8 @@
 
         <jar jarfile="${dist.home}/${app.fullname}.jar" basedir="${build.home}">
             <manifest>
-                <attribute name="Main-Class" value="model.Main"/>
+                <!-- <attribute name="Main-Class" value="model.Main"/> -->
+                <attribute name="Main-Class" value="experiment.ExperimentMain"/>
             </manifest>
         </jar>
 

@@ -2,42 +2,56 @@ package experiment;
 
 import java.util.List;
 
-import model.Team;
+import model.Strategie;
 
 public class ExperimentConfig {
-    private final int gridSize;
-    private final int teamSize;
-    private final int depth;
-    private final int nbGames;
-    private final List<Team> teams; 
+    public final int nbLignes;
+    public final int nbColonnes;
+    public final int nbEquipes;
+    public final int joueurs;
+    public final int depth;
+    public final int nbGames;
 
+    private List<Strategie> strategies;
 
-    public ExperimentConfig(int gridSize, int teamSize, int depth, int nbGames, List<Team> teams) {
-        this.gridSize = gridSize;
-        this.teamSize = teamSize;
+    public ExperimentConfig(int nbLignes, int nbColonnes, int nbEquipes, int joueurs, 
+                            int depth, int nbGames, List<Strategie> strategies) {
+        this.nbLignes = nbLignes;
+        this.nbColonnes = nbColonnes;
+        this.nbEquipes = nbEquipes;
+        this.joueurs = joueurs;
         this.depth = depth;
         this.nbGames = nbGames;
-        this.teams = teams;
+        this.strategies = strategies;
     }
 
-    public int getGridSize() {
-        return gridSize;
+    public int getNbLignes() {
+        return nbLignes;
     }
 
-    public int getTeamSize() {
-        return teamSize;
+    public int getNbColonnes() {
+        return nbColonnes;
+    }
+
+    public int getNbEquipes() {
+        return nbEquipes;
+    }
+
+    public int getJoueurs() {
+        return joueurs;
     }
 
     public int getDepth() {
         return depth;
     }
 
-    public int getNbGames() {
-        return nbGames;
+    public int getNbGames() { 
+        return nbGames; 
     }
 
-    public List<Team> getTeams() {
-        return teams;
+    public List<Strategie> getStrategies() {
+        return strategies;
     }
+
     
 }
