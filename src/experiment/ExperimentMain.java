@@ -70,9 +70,16 @@ public class ExperimentMain {
 
         System.out.println("\nDonnez le nom du fichier CSV pour l'export : ");
         String csv = sc.nextLine().trim();
+
+        File csvDir = new File("csv");
+        if (!csvDir.exists()) {
+            csvDir.mkdirs();
+        }
+
+        String filePath = "csv/" + csv + ".csv";
         try {
-            CSVExporter.export(config, result, csv+ ".csv");
-            System.out.println("Résultats exportés dans avec succès !");
+            CSVExporter.export(config, result, filePath);
+            System.out.println("Résultats exportés dans avec succès dans csv/ !");
         } catch (IOException e) {
             System.err.println("Erreur lors de l'export CSV : " + e.getMessage());
         }
