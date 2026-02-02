@@ -1,21 +1,27 @@
 package model;
 
-import java.util.List;
-
+import java.util.*;
 /**
- * Stratégie d'IA basée sur l'algorithme Minimax avec élagage Alpha-Beta
- * pour le jeu Tron.
- */
+ * Stratégie d'IA basée sur l'algorithme Minimax avec élagage Alpha-Beta pour le jeu Tron.
+*/
 public class AlphaBetaStrategie extends AbstractStrategie {
 
+    private long startTime;
+    private static final long TIME_LIMIT_MS = 100;
 
     public AlphaBetaStrategie(Heuristic heuristic, int depth) {
         super(heuristic , depth);
-        
     }
 
+    /**
+     * Calcul le mouvement du joueur sur le plateau du jeu
+     * @param me le joueur concerné
+     * @param plateau le plateau du jeu
+     * @return une direction donnée
+    */
     @Override
     public Direction calculerMouvement(Player me, Plateau plateau) {
+        startTime = System.currentTimeMillis();
 
         double bestValue = Double.NEGATIVE_INFINITY;
         Direction bestDirection = Direction.HAUT;
@@ -25,10 +31,14 @@ public class AlphaBetaStrategie extends AbstractStrategie {
         double alpha = Double.NEGATIVE_INFINITY;
         double beta = Double.POSITIVE_INFINITY;
 
+        int nbCaseLibre = plateau.getNbCasesLibres();
+        int effDepth = Math.min(this.depth, nbCaseLibre / 2);
+
+
         for (Direction dir : plateau.getCoupsPossibles(me.getPosition())) {
 
             MoveBackup backup = applyMove(plateau, me, dir);
-            double value = minimaxAlphaBeta(plateau, me, opponent, depth - 1, alpha, beta, false);
+            double value = minimaxAlphaBeta(plateau, me, opponent, effDepth - 1, alpha, beta, false);
             undoMove(plateau, me, backup);
 
             if (value > bestValue) {
@@ -42,11 +52,26 @@ public class AlphaBetaStrategie extends AbstractStrategie {
         return bestDirection;
     }
 
+    /**
+     * Implémentation récursive de l'algorithme Minimax avec élagage Alpha-Beta.
+     * @param plateau état courant du plateau
+     * @param me joueur maximisant (joueur initial)
+     * @param opponent adversaire du joueur maximisant
+     * @param depth profondeur restante de recherche
+     * @param alpha borne inférieure (meilleure valeur garantie pour MAX)
+     * @param beta borne supérieure (meilleure valeur garantie pour MIN)
+     * @param maximizing indique si le joueur courant maximise ou minimise
+     * @return valeur heuristique de l'état exploré
+    */
     private double minimaxAlphaBeta(Plateau plateau, Player me, Player opponent,
                                     int depth, double alpha, double beta, boolean maximizing) {
 
         Player currentPlayer = maximizing ? me : opponent;
         List<Direction> coups = plateau.getCoupsPossibles(currentPlayer.getPosition());
+
+        if (System.currentTimeMillis() - startTime > TIME_LIMIT_MS) {
+            return (int) heuristic.evaluate(plateau, me);
+        }
 
         if (depth == 0 || coups.isEmpty() || !currentPlayer.isAlive()) {
             return heuristic.evaluate(plateau, me);
@@ -80,6 +105,12 @@ public class AlphaBetaStrategie extends AbstractStrategie {
         }
     }
 
+    /**
+     * Elle permet de trouver l'adversaire
+     * @param me    le joueur courant
+     * @param plateau   le plateau de jeu
+     * @return  l'adversaire
+    */
     private Player findOpponent(Player me, Plateau plateau) {
         for (int ligne = 0; ligne < plateau.getNbLignes(); ligne++) {
             for (int colonne = 0; colonne < plateau.getNbColonnes(); colonne++) {
@@ -92,8 +123,9 @@ public class AlphaBetaStrategie extends AbstractStrategie {
         return null;
     }
 
+
     @Override
-    public String getNom() {
-        return "MINMAX Alpha-Beta";
+    public String getName() {
+        return "Stratégie AlphaBeta";
     }
 }

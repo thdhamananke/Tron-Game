@@ -1,8 +1,6 @@
 package model;
 
-import java.util.List;
-import java.util.Random;
-import java.util.random.*;
+import java.util.*;
 
 /**
  * Stratégie utilisant l'algorithme Minimax.
@@ -12,6 +10,9 @@ import java.util.random.*;
  */
 public class MinMaxStrategie extends AbstractStrategie{
      
+    private long startTime;
+    private static final long TIME_LIMIT_MS = 100;
+
     public MinMaxStrategie(Heuristic heuristic , int depth) {
         super(heuristic, depth);
     }
@@ -26,14 +27,14 @@ public class MinMaxStrategie extends AbstractStrategie{
      */
     @Override
     public Direction calculerMouvement(Player player, Plateau plateau) {
-    //  Random random = new Random();
+
+        startTime = System.currentTimeMillis();
 
         int bestValue = Integer.MIN_VALUE;
-    //    int val =  random.nextInt(4);
- //       Direction bestDirection =  Direction.values()[val];
- Direction bestDirection = Direction.HAUT;
-       
-       
+        Direction bestDirection = Direction.HAUT;
+
+        int nbCaseLibre = plateau.getNbCasesLibres();
+        int effDepth = Math.min(this.depth, nbCaseLibre / 2);
 
         List<Direction> coups = plateau.getCoupsPossibles(player.getPosition());
 
@@ -48,7 +49,7 @@ public class MinMaxStrategie extends AbstractStrategie{
             deplacer(copiePlayer, dir, copiePlateau);
 
             // Minimax
-            int valeur = minimax(copiePlateau, copiePlayer, depth - 1, false);
+            int valeur = minimax(copiePlateau, copiePlayer, effDepth - 1, false);
 
             if (valeur > bestValue) {
                 bestValue = valeur;
@@ -69,6 +70,9 @@ public class MinMaxStrategie extends AbstractStrategie{
      * @return valeur évaluée
      */
     private int minimax(Plateau plateau, Player player, int depth, boolean maximisant) {
+        if (System.currentTimeMillis() - startTime > TIME_LIMIT_MS) {
+            return (int) heuristic.evaluate(plateau, player);
+        }
 
         if (depth == 0 || plateau.getCoupsPossibles(player.getPosition()).isEmpty()) {
             return (int) heuristic.evaluate(plateau, player);
@@ -130,7 +134,7 @@ public class MinMaxStrategie extends AbstractStrategie{
      * @return nom de la stratégie
      */
     @Override
-    public String getNom() {
+    public String getName() {
         return "Stratégie MINMAX";
     }
 }

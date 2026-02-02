@@ -113,10 +113,10 @@ public class GameController{
         return switch (nom) {
             case "Minimax"    -> new MinMaxStrategie(new FreeSpaceHeuristic(),5);
             case "AlphaBeta"  -> new AlphaBetaStrategie(new FreeSpaceHeuristic(),5);
-            case "MaxN"       -> new MaxNStrategie();
+            case "MaxN"       -> new MaxNStrategie(new FreeSpaceHeuristic(), 5);
             case "Paranoid"   -> new ParanoidStrategie(new FreeSpaceHeuristic(),players,5);
-            case "SOS"        -> new SOSStrategie(new FreeSpaceHeuristic());
-            default           -> new RandomStrategie();
+            case "SOS"        -> new SOSStrategie(new FreeSpaceHeuristic(), 5);
+            default           -> new RandomStrategie(new FreeSpaceHeuristic(),5);
         };
     }
 

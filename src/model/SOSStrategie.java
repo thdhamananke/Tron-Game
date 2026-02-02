@@ -2,13 +2,13 @@ package model;
 
 import java.util.List;
 
-public class SOSStrategie implements Strategie {
+public class SOSStrategie extends AbstractStrategie {
     
     private Heuristic heuristic;
     private Direction derniereDirection = null;
     
-    public SOSStrategie(Heuristic heuristic) {
-        this.heuristic = heuristic;
+    public SOSStrategie(Heuristic heuristic, int depth) {
+        super(heuristic, depth);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class SOSStrategie implements Strategie {
     }
     
     @Override
-    public String getNom() {
+    public String getName() {
         return "SOS Stratégie";
     }
 }

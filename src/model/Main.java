@@ -3,237 +3,261 @@ package model;
 import java.util.*;
 
 /**
- * Classe Main pour tester la stratégie MinMaxStrategy
+ * Classe principale pour tester les strategies (MinMax et AlphaBeta)
  * avec affichage graphique de la grille
- */
+*/
 public class Main {
-    
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // --- CONFIGURATION UNIQUE ---
         System.out.println("╔════════════════════════════════════════════╗");
-        System.out.println("║   TEST STRATEGIE MINMAX - JEU DE TRON     ║");
+        System.out.println("║         BIENVENUE AU JEU DE TRON           ║");
         System.out.println("╚════════════════════════════════════════════╝\n");
-        
-        // Configuration du plateau
-        int nbLignes = 10;
-        int nbColonnes = 10;
-        
-        // Création des équipes
-        Team equipeRouge = new Team("Equipe Rouge", new ArrayList<>(), Color.RED);
-        Team equipeBleu = new Team("Equipe Bleue", new ArrayList<>(), Color.BLUE);
-        
-        // Création des joueurs avec positions initiales bien séparées
-        Player joueur1 = new Player("Alice", equipeRouge, new Position(2 ,4));
-        Player joueur2 = new Player("Bob", equipeBleu, new Position(5, 5));
-        
-        // Ajout des joueurs aux équipes
-        equipeRouge.getMembers().add(joueur1);
-        equipeBleu.getMembers().add(joueur2);
-        
-        // Liste des joueurs
-        List<Player> joueurs = Arrays.asList(joueur1, joueur2);
-        
-        // Création du modèle de jeu
-        ModeleJeu modele = new ModeleJeu(nbLignes, nbColonnes, joueurs);
-        modele.demarrer();
-        
-        System.out.println("📊 Configuration du jeu :");
-        System.out.println("   Plateau : " + nbLignes + "×" + nbColonnes);
-        System.out.println("   " + joueur1.getColor().paint("█") + " " + joueur1.getName() + " (" + equipeRouge.getName() + ") départ: " + joueur1.getPosition());
-        System.out.println("   " + joueur2.getColor().paint("█") + " " + joueur2.getName() + " (" + equipeBleu.getName() + ") départ: " + joueur2.getPosition());
-        System.out.println();
-        
-        // Création des heuristiques
-        Heuristic heuristiqueSimple = new FreeSpaceHeuristic();
-        Heuristic heuristiqueAvancee = new AdvancedHeuristic();
-        
-        // Création des stratégies
-        Strategie strategieMinMax1 = new MinMaxStrategie(heuristiqueSimple, 4);
-        Strategie strategieMinMax2 = new MinMaxStrategie(heuristiqueSimple, 4);
-        
-        System.out.println("🤖 Stratégies :");
-        System.out.println("   " + joueur1.getName() + " : " + strategieMinMax1.getNom() + " (Advanced)");
-        System.out.println("   " + joueur2.getName() + " : " + strategieMinMax2.getNom() + " (Simple)");
-        System.out.println("\n" + "═".repeat(60) + "\n");
-        
-        // Affichage initial
-        System.out.println("🎮 ÉTAT INITIAL :\n");
-        afficherPlateauColore(modele.getPlateau(), joueurs);
-        
-        pause(2000);
-        
-        // Jouer la partie avec affichage
-        jouerPartieAvecAffichage(modele, joueur1, joueur2, strategieMinMax1, strategieMinMax2, 100);
+
+        int nbLignes  = entier(sc, "Nombre de lignes et de colonnes du plateau : ");
+        int nbEquipes  = entier(sc, "Nombre d'équipes : ");
+        int joueursParEquipe = entier(sc, "Nombre de joueurs par équipe : ");
+        int profondeur = entier(sc, "Profondeur MinMax / AlphaBeta : ");
+        int nbColonnes = nbLignes;
+
+        Plateau plateau = new Plateau(nbLignes, nbColonnes);
+
+        // --- STRATÉGIES : demander une seule fois ---
+        List<Player> joueurs = new ArrayList<>();
+        List<Team> equipes = new ArrayList<>();
+
+        Color[] colors = couleursAleatoires(nbEquipes);
+
+        for (int i = 0; i < nbEquipes; i++) {
+            Color color = colors[i];
+            Team team = new Team("Equipe_" + (i + 1), new ArrayList<>(), color);
+
+            List<Player> teamPlayers = playersForTeam(team.getName(), joueursParEquipe, plateau, team);
+            team.getMembers().addAll(teamPlayers);
+            equipes.add(team);
+            joueurs.addAll(teamPlayers);
+        }
+
+        List<Strategie> strategies = new ArrayList<>();
+        for (Player player : joueurs) {
+            System.out.println("\nConfiguration pour " + player.getName());
+            System.out.println("Stratégie à utiliser ?");
+            System.out.println("1 - MinMax");
+            System.out.println("2 - AlphaBeta");
+
+            int choix = entier(sc, "Votre Choix : ");
+            System.out.println("Heuristique à utiliser ? ");
+            System.out.println("1 - FreeSpaceHeuristic");
+            System.out.println("2 - AdvancedHeuristic");
+
+            int choixHeuristique = entier(sc, "Votre choix : ");
+
+            Heuristic heuristic = (choixHeuristique == 2)
+                    ? new AdvancedHeuristic()
+                    : new FreeSpaceHeuristic();
+                            
+            Strategie strat = (choix == 2)
+                    ? new AlphaBetaStrategie(heuristic, profondeur)
+                    : new MinMaxStrategie(heuristic, profondeur);
+
+            strategies.add(strat);
+        }
+
+        // BOUCLE DE PARTIES 
+        boolean continuer = true;
+        while (continuer) {
+            // créer un plateau et réinitialiser les joueurs pour la nouvelle partie
+            plateau = new Plateau(nbLignes, nbColonnes);
+            ModeleJeu modele = new ModeleJeu(nbLignes, nbColonnes, joueurs);
+            modele.demarrer();
+
+            // placer les joueurs sur le plateau
+            for (Team team : equipes) {
+                for (Player player : team.getMembers()) {
+                    Position pos = randomEmptyPosition(plateau);
+                    player.setAlive(true);
+                    plateau.placerJoueur(pos, player);
+                }
+            }
+
+            // jouer une partie
+            int maxTours = calculerMaxTours(nbLignes, nbColonnes, nbEquipes * joueursParEquipe);
+            jouerPartieGenerique(modele, joueurs, strategies, maxTours);
+
+            // demander si l’utilisateur veut rejouer
+            System.out.println("Voulez-vous rejouer une partie ? (O/N) : ");
+            String reponse = sc.nextLine().trim().toUpperCase();
+            if (!reponse.equals("O")) {
+                continuer = false;
+                System.out.println("Merci d'avoir joué ! À bientôt !");
+            }
+        }
     }
-    
+
     /**
-     * Joue une partie complète avec affichage graphique
-     */
-    private static void jouerPartieAvecAffichage(ModeleJeu modele, Player joueur2, Player joueur1,
-                                                   Strategie strat1, Strategie strat2, int maxTours) {
-        
+     * Permet de joueur une partie.
+     * @param modele    le modele du jeu
+     * @param joueurs   list des joueurs
+     * @param strategies    list des strategies
+     * @param maxTours  le nombre de tour maximale
+    */
+    public static void jouerPartieGenerique(ModeleJeu modele, List<Player> joueurs, List<Strategie> strategies, int maxTours) {
+
         int tour = 0;
-        
+
         while (!modele.estTermine() && tour < maxTours) {
-            
+
             tour++;
-            
-            // Calcul des mouvements
-            Direction dir1 = null;
-            Direction dir2 = null;
-            
-            long debut1 = 0, temps1 = 0;
-            long debut2 = 0, temps2 = 0;
-            
-            if (joueur1.isAlive()) {
-                debut1 = System.currentTimeMillis();
-                dir1 = strat1.calculerMouvement(joueur1, modele.getPlateau());
-                temps1 = System.currentTimeMillis() - debut1;
-            } else {
-                dir1 = Direction.HAUT;
-            }
-            
-            if (joueur2.isAlive()) {
-                debut2 = System.currentTimeMillis();
-                dir2 = strat2.calculerMouvement(joueur2, modele.getPlateau());
-                temps2 = System.currentTimeMillis() - debut2;
-            } else {
-                dir2 = Direction.HAUT;
-            }
-            
-            // Affichage des informations du tour
-            clearScreen();
-            System.out.println("╔════════════════════════════════════════════╗");
-            System.out.println("║          TOUR " + String.format("%3d", tour) + "                          ║");
+            // clearScreen();
+
+            System.out.println("\n╔════════════════════════════════════════════╗");
+            System.out.println("║               TOUR " + String.format("%3d", tour) + "                     ║");
             System.out.println("╚════════════════════════════════════════════╝\n");
-            
-            if (joueur1.isAlive()) {
-                System.out.println(joueur1.getColor().paint("█") + " " + joueur1.getName() + 
-                                 " : " + formatDirection(dir1) + 
-                                 " (calculé en " + temps1 + "ms)");
+
+            List<Direction> coups = new ArrayList<>();
+
+            for (int i = 0; i < joueurs.size(); i++) {
+                Player p = joueurs.get(i);
+                Strategie s = strategies.get(i);
+
+                if (p.isAlive()) {
+                    long start = System.currentTimeMillis();
+                    Direction d = s.calculerMouvement(p, modele.getPlateau());
+                    long time = System.currentTimeMillis() - start;
+
+                    coups.add(d);
+
+                    System.out.println(p.getColor().paint("█") + " " + p.getName() +
+                            " : " + formatDirection(d) +
+                            " (calculé en " + time + "ms)");
+                } else {
+                    coups.add(Direction.HAUT);
+                }
             }
-            
-            if (joueur2.isAlive()) {
-                System.out.println(joueur2.getColor().paint("█") + " " + joueur2.getName() + 
-                                 " : " + formatDirection(dir2) + 
-                                 " (calculé en " + temps2 + "ms)");
-            }
-            
+
             System.out.println();
-            
-            // Exécution du tour
-            List<Direction> coups = Arrays.asList(dir1, dir2);
+
             modele.tourSuivant(coups);
-            
-            // Affichage du plateau
-            afficherPlateauColore(modele.getPlateau(), modele.getJoueurs());
-            
-            // Statistiques
-            afficherStatistiques(modele.getPlateau(), joueur1, joueur2);
-            
-            // Pause pour voir l'évolution (ajustez selon vos besoins)
+            afficherPlateauColore(modele.getPlateau(), joueurs);
             pause(500);
         }
-        
-        // Résultats finaux
+
         afficherResultatsFinaux(modele, tour);
     }
-    
+
+
     /**
-     * Affiche le plateau avec couleurs
-     */
+     * Affiche le plateau avec cellules carrées (console)
+    */
     private static void afficherPlateauColore(Plateau plateau, List<Player> joueurs) {
+
         int lignes = plateau.getNbLignes();
         int colonnes = plateau.getNbColonnes();
-        
-        // En-tête avec numéros de colonnes
+
+        // En-tête colonnes
         System.out.print("    ");
         for (int j = 0; j < colonnes; j++) {
             System.out.print(String.format("%2d ", j));
         }
         System.out.println();
-        
+
         // Bordure supérieure
         System.out.print("   ┌");
         for (int j = 0; j < colonnes; j++) {
             System.out.print("──");
             if (j < colonnes - 1) System.out.print("┬");
         }
-        System.out.println("─┐");
-        
-        // Contenu du plateau
+        System.out.println("┐");
+
+        // Contenu
         for (int i = 0; i < lignes; i++) {
             System.out.print(String.format("%2d │", i));
-            
+
             for (int j = 0; j < colonnes; j++) {
                 Position pos = new Position(i, j);
                 Cellule cellule = plateau.getCellule(pos);
-                
-                // Vérifier si c'est la tête d'un joueur
-                boolean isJoueurHead = false;
+
+                boolean headPrinted = false;
+
                 for (Player p : joueurs) {
                     if (p.isAlive() && p.getPosition().equals(pos)) {
                         System.out.print(p.getColor().paintHead("●●"));
-                        isJoueurHead = true;
+                        headPrinted = true;
                         break;
                     }
                 }
-                
-                if (!isJoueurHead) {
+
+                if (!headPrinted) {
                     if (cellule.isEmpty()) {
-                        System.out.print(" ·");
+                        System.out.print("  "); 
                     } else {
-                        Player owner = cellule.getOwner();
-                        System.out.print(owner.getColor().paint("██"));
+                        System.out.print(cellule.getOwner().getColor().paint("██"));
                     }
                 }
-                
+
                 if (j < colonnes - 1) System.out.print("│");
             }
-            
+
             System.out.println("│");
-            
-            // Séparateur entre lignes
+
+            // Séparateur horizontal
             if (i < lignes - 1) {
                 System.out.print("   ├");
                 for (int j = 0; j < colonnes; j++) {
                     System.out.print("──");
                     if (j < colonnes - 1) System.out.print("┼");
                 }
-                System.out.println("─┤");
+                System.out.println("┤");
             }
         }
-        
+
         // Bordure inférieure
         System.out.print("   └");
         for (int j = 0; j < colonnes; j++) {
             System.out.print("──");
             if (j < colonnes - 1) System.out.print("┴");
         }
-        System.out.println("─┘\n");
+        System.out.println("┘\n");
     }
-    
+
     /**
-     * Affiche les statistiques du jeu
-     */
-    private static void afficherStatistiques(Plateau plateau, Player joueur1, Player joueur2) {
-        FreeSpaceHeuristic heuristic = new FreeSpaceHeuristic();
-        
-        double espace1 = joueur1.isAlive() ? heuristic.evaluate(plateau, joueur1) : 0;
-        double espace2 = joueur2.isAlive() ? heuristic.evaluate(plateau, joueur2) : 0;
-        
-        System.out.println("📈 STATISTIQUES :");
-        System.out.println("   " + joueur1.getColor().paint("█") + " " + joueur1.getName() + 
-                         " : " + (int)espace1 + " cases libres | " + 
-                         (joueur1.isAlive() ? "✓ VIVANT" : "✗ MORT"));
-        System.out.println("   " + joueur2.getColor().paint("█") + " " + joueur2.getName() + 
-                         " : " + (int)espace2 + " cases libres | " + 
-                         (joueur2.isAlive() ? "✓ VIVANT" : "✗ MORT"));
-        System.out.println();
+     * Calcule un maxTours adapté à la taille du plateau et au nombre de joueurs.
+     * Facteur dépend du nombre de joueurs : plus il y a de joueurs, plus le plateau se remplit vite
+    */
+    private static int calculerMaxTours(int nbLignes, int nbColonnes, int nbJoueurs) {
+        int taillePlateau = nbLignes * nbColonnes;
+
+        double facteur = Math.max(0.5, 1.0 - (nbJoueurs - 1) * 0.1);
+
+        return (int) (taillePlateau * facteur);
     }
+
+    /**
+     * Determine une coleur aleatroire pour les equipes
+     * @param nbEquipes nombre d'equipe
+     * @return  la couleur
+    */
+    private static Color[] couleursAleatoires(int nbEquipes) {
+        Color[] result = new Color[nbEquipes];
+        List<Color> available = new ArrayList<>(Arrays.asList(Color.values()));
+        Random rand = new Random();
+
+        for (int i = 0; i < nbEquipes; i++) {
+            int index = rand.nextInt(available.size());
+            result[i] = available.get(index);
+            available.remove(index);
+        }
+        return result;
+    }
+
     
     /**
      * Affiche les résultats finaux
-     */
+     * @param modele le modele du jeu
+     * @param tour  le tour.
+    */
     private static void afficherResultatsFinaux(ModeleJeu modele, int tour) {
         clearScreen();
         System.out.println("\n" + "═".repeat(60));
@@ -263,9 +287,7 @@ public class Main {
         System.out.println("\n" + "═".repeat(60) + "\n");
     }
     
-    /**
-     * Formate une direction avec une flèche
-     */
+    /** Formate une direction avec une flèche */
     private static String formatDirection(Direction dir) {
         switch (dir) {
             case HAUT: return "↑ HAUT";
@@ -276,9 +298,7 @@ public class Main {
         }
     }
     
-    /**
-     * Efface l'écran (compatible multi-plateformes)
-     */
+    /** Efface l'écran (compatible multi-plateformes) */
     private static void clearScreen() {
         try {
             if (System.getProperty("os.name").contains("Windows")) {
@@ -293,9 +313,7 @@ public class Main {
         }
     }
     
-    /**
-     * Met en pause l'exécution
-     */
+    /** Met en pause l'exécution */
     private static void pause(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
@@ -303,4 +321,70 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+
+    /**
+     * Lecture sécurisée d'un entier positif
+     * @param scanner   le scanner
+     * @param prompt    l'entrer donnée
+     * @return un entier valide.
+    */
+    public static int entier(Scanner scanner, String prompt) {
+        int value;
+        while (true) {
+            System.out.println(prompt);
+            if (scanner.hasNextInt()) {
+                value = scanner.nextInt();
+                scanner.nextLine();
+                if (value > 0) break; 
+                else System.out.println("Merci d'entrer un entier positif.");
+            } else {
+                System.out.println("Erreur : veuillez entrer un entier.");
+                scanner.nextLine();
+            }
+        }
+        return value;
+    }
+
+    /**
+     * Pour composer les membres de l'équipe.
+     * @param teamName  nom de l'equipe
+     * @param teamSize  la taille de l'equipe
+     * @param plateau   le plateau du jeu
+     * @param team l'équipe concerné
+     * @return la liste des joueurs d'une équipe donnée
+    */
+    public static List<Player> playersForTeam(String teamName, int teamSize, Plateau plateau, Team team) {
+        List<Player> players = new ArrayList<>();
+        for (int i = 0; i < teamSize; i++) {
+            Position pos = randomEmptyPosition(plateau);
+            Player player = new Player(teamName + "_" + (i+1), team, pos);
+            players.add(player);
+            plateau.placerJoueur(pos, player);
+        }
+        return players;
+    }
+
+    /**
+     * Permet de trouver une position vide sur le plateau pour pouvoir placer un joueur
+     * @param plateau le plateau concerné
+     * @return une position choisie aléatoirement.
+    */
+    private static Position randomEmptyPosition(Plateau plateau) {
+        Random random = new Random();
+        Position position;
+        int essais = 0;
+        do {
+            position = new Position(
+                random.nextInt(plateau.getNbLignes()),
+                random.nextInt(plateau.getNbColonnes())
+            );
+            essais++;
+            if (essais > plateau.getNbLignes() * plateau.getNbColonnes()) {
+                throw new IllegalStateException("Impossible de trouver une case libre");
+            }
+        } while (!plateau.estLibre(position));
+        return position;
+    }
+
 }

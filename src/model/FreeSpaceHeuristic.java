@@ -9,6 +9,11 @@ import java.util.*;
 public class FreeSpaceHeuristic implements Heuristic {
 
     @Override
+    public String getName() {
+        return "Heuristique Simple";
+    }
+
+    @Override
     public double evaluate(Plateau grid, Player player) {
         if (!player.isAlive()) {
             return -1000000.0;

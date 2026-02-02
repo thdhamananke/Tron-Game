@@ -4,8 +4,9 @@ public class Player {
     private final String name;
     private final Team team;
     private Position position;
-    private Strategie strategie;
     private boolean alive;
+    private Heuristic heuristic;
+    private Strategie strategie;
 
     /**
      * Constructeur de player
@@ -41,6 +42,35 @@ public class Player {
         return alive;
     }
 
+    public Strategie getStrategie() {
+        return strategie;
+    }
+
+    public Heuristic getHeuristic() { 
+        return heuristic; 
+    }
+
+    /** les setteurs */
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public void die() {
+        this.alive = false;
+    }
+
+    public void setHeuristic(Heuristic heuristic) {
+        this.heuristic = heuristic;
+    }
+
+    public void setStrategie(Strategie strategie) {
+        this.strategie = strategie;
+    }
+
     public java.awt.Color getAwtColor() {
         Color color = getColor(); // ton enum model.Color
 
@@ -60,16 +90,5 @@ public class Player {
 
             default -> java.awt.Color.BLACK; // sécurité
         };
-    }
-
-
-
-    /** les setteurs */
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public void die() {
-        this.alive = false;
     }
 }

@@ -9,13 +9,15 @@ public abstract class AbstractStrategie implements Strategie {
         this.depth=depth;
         this.heuristic = heuristic;
     }
-     public int getDepth() {
+
+    public int getDepth() {
         return depth;
     }
+
+    @Override
     public Heuristic getHeuristic() {
         return heuristic;
     }
-
   
     protected static class MoveBackup {
         protected Position oldPosition;

@@ -1,67 +1,85 @@
 package experiment;
 
+import model.Player;
+import model.Team;
 import java.util.*;
 
-import model.*;
-
-/**
- * Stocke les résultats d'une série de parties pour une configuration donnée.
- * Tout est en millisecondes.
-*/
 public class ExperimentResult {
 
-    private int numero;  
-    private final Map<Team, Integer> winsPerTeam;
-    private long totalGameTimeMs; 
-    private int totalTurns;
-
-    public ExperimentResult() {
-        this.winsPerTeam = new HashMap<>();
-    }
+    private int games = 0;
+    private long totalTime = 0;
+    private int totalTurns = 0;
+    private final Map<Team, Integer> wins = new HashMap<>();
+    private List<Player> players;
+    private List<GameResult> history = new ArrayList<>();
 
     /**
-     * Enregistre le résultat d'une partie.
-     *
-     * @param winningTeam équipe gagnante ou null si match nul
-     * @param gameTimeMs durée de la partie en millisecondes
-     * @param turns nombre de tours joués
+     * Cette méthode est synchronized car elle est appelée par 
+     * tous les threads du pool à chaque fin de partie.
     */
-    public void recordGame(Team winningTeam, long gameTimeMs, int turns) {
-        numero++;
-        totalGameTimeMs += gameTimeMs;
-        totalTurns += turns;
+    public synchronized void record(GameResult game) {
 
-        if (winningTeam != null) {
-            winsPerTeam.put(
-                winningTeam,
-                winsPerTeam.getOrDefault(winningTeam, 0) + 1
-            );
+        if (this.players == null) {
+            this.players = game.getJoueurs();
+        }
+        history.add(game);
+        this.games++;
+        this.totalTime += game.getTimeMs();
+        this.totalTurns += game.getTurns();
+
+        if (game.getWinner() != null) {
+            int currentWins = wins.getOrDefault(game.getWinner(), 0);
+            wins.put(game.getWinner(), currentWins + 1);
         }
     }
 
-    /** @return nombre total de parties jouées */
-    public int getNumero() {
-        return numero;
+    // On synchronise aussi le setter
+    public synchronized void setPlayers(List<Player> players) {
+        this.players = players;
     }
 
-    /** Retourne le taux de victoire d'une équipe. */
-    public double getWinRate(Team team) {
-        int wins = winsPerTeam.getOrDefault(team, 0);
-        return numero == 0 ? 0.0 : (double) wins / numero;
+    public List<GameResult> getHistory() {
+        return history;
     }
 
-    /** @return durée moyenne d'une partie (ms) */
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    // Statistiques globales
+
+    public int getNbGames() {
+        return games;
+    }
+
+    public long getTotalTimeMs() {
+        return totalTime;
+    }
+
+    public int getTotalTurns() {
+        return totalTurns;
+    }
+
     public double getAverageTimeMs() {
-        return numero == 0 ? 0.0 : (double) totalGameTimeMs / numero;
+        return games == 0 ? 0 : totalTime / (double) games;
     }
 
-    /** @return nombre moyen de tours par partie */
     public double getAverageTurns() {
-        return numero == 0 ? 0.0 : (double) totalTurns / numero;
+        return games == 0 ? 0 : totalTurns / (double) games;
     }
 
-    /** @return nombre de victoires par équipe */
+    // Statistiques par équipe
+
+    public int getWins(Team team) {
+        return wins.getOrDefault(team, 0);
+    }
+
+    public double getWinRate(Team team) {
+        if (games == 0) return 0;
+        return (getWins(team) / (double) games) * 100;
+    }
+
     public Map<Team, Integer> getWinsPerTeam() {
-        return Collections.unmodifiableMap(winsPerTeam);
+        return Collections.unmodifiableMap(wins);
     }
 }

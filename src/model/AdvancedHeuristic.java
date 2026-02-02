@@ -14,6 +14,11 @@ public class AdvancedHeuristic implements Heuristic {
     private static final double TERRITORY_WEIGHT = 1.0;
 
     @Override
+    public String getName() {
+        return "Heuristique Simple";
+    }
+
+    @Override
     public double evaluate(Plateau plateau, Player player) {
         if (!player.isAlive()) {
             return -1000000.0;
