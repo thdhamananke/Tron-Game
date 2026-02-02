@@ -8,10 +8,10 @@ public class TestRunner {
     public static void main(String[] args) {
         System.out.println("===== LANCEMENT DE TOUS LES TESTS =====");
 
-        // Ajoute toutes les classes de test ici
         Class[] tests = {
-            MinMaxStrategieTest.class
-            // tu peux ajouter d'autres classes de test ici
+            MinMaxStrategieTest.class,
+            AlphaBetaStrategieTest.class
+            
         };
 
         int totalTests = 0;

@@ -114,50 +114,6 @@
             </batchtest>
         </junit>
     </target>
-<<<<<<< HEAD
-
-    <!-- Compilation des tests -->
-<target name="compile-tests" depends="compile">
-    <mkdir dir="${test.classes.dir}"/>
-
-    <javac srcdir="${src.dir}/test"
-           destdir="${test.classes.dir}"
-           encoding="UTF-8"
-           debug="true"
-           includeantruntime="false">
-
-        <classpath>
-            <path refid="classpath"/>
-            <pathelement path="${classes.dir}"/>
-        </classpath>
-
-    </javac>
-</target>
-
-<target name="test" depends="compile,compile-tests">
-    <java classname="test.TestRunner" fork="true">
-        <classpath>
-            <pathelement path="${classes.dir}"/>
-            <pathelement path="${test.classes.dir}"/>
-            <fileset dir="${lib.dir}">
-                <include name="**/*.jar"/>
-            </fileset>
-        </classpath>
-    </java>
-</target>
-
-
-
-<target name = "help" description ="Affichage de tableau d'aide" >
-    <echo message = "les targets disponibles:"/>
-    <echo message = "compile   : compiler tous les fichiers"/>
-    <echo message = "run       : Lance le Main "/>
-    <echo message = "clean     : Nettoie les fichiers "/>
-    <echo message = "test      : sert à compiler et éxecuter les tets"/>
-    <echo message = "jar       : crée un jar éxecutable"/>
-    <echo message = "doc       : Génère la documentation JavaDoc"/>
-=======
->>>>>>> 237339ba2c4bdf21009be21253747d782c1aedb0
 
     <!-- ==================== Run ==================== -->
     <target name="run" depends="dist" description="Run application">
