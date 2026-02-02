@@ -69,8 +69,40 @@
             </classpath>
         </java>
     </target>
-<!-- Affichage de commandes-->
- <target name = "help" description ="Affichage de tableau d'aide" >
+
+    <!-- Compilation des tests -->
+<target name="compile-tests" depends="compile">
+    <mkdir dir="${test.classes.dir}"/>
+
+    <javac srcdir="${src.dir}/test"
+           destdir="${test.classes.dir}"
+           encoding="UTF-8"
+           debug="true"
+           includeantruntime="false">
+
+        <classpath>
+            <path refid="classpath"/>
+            <pathelement path="${classes.dir}"/>
+        </classpath>
+
+    </javac>
+</target>
+
+<target name="test" depends="compile,compile-tests">
+    <java classname="test.TestRunner" fork="true">
+        <classpath>
+            <pathelement path="${classes.dir}"/>
+            <pathelement path="${test.classes.dir}"/>
+            <fileset dir="${lib.dir}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+
+
+
+<target name = "help" description ="Affichage de tableau d'aide" >
     <echo message = "les targets disponibles:"/>
     <echo message = "compile   : compiler tous les fichiers"/>
     <echo message = "run       : Lance le Main "/>
