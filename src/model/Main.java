@@ -24,7 +24,7 @@ public class Main {
 
         Plateau plateau = new Plateau(nbLignes, nbColonnes);
 
-        //  strategie demander une seule fois 
+        // --- STRATÉGIES : demander une seule fois ---
         List<Player> joueurs = new ArrayList<>();
         List<Team> equipes = new ArrayList<>();
 
@@ -59,8 +59,8 @@ public class Main {
                     : new FreeSpaceHeuristic();
                             
             Strategie strat = (choix == 2)
-                    ? new AlphaBetaStrategie(heuristic, profondeur)
-                    : new MinMaxStrategie(heuristic, profondeur);
+                    ? new AlphaBetaStrategie(heuristic, profondeur  )
+                    : new MinMaxStrategie(heuristic, profondeur  );
 
             strategies.add(strat);
         }
@@ -71,28 +71,18 @@ public class Main {
             // créer un plateau et réinitialiser les joueurs pour la nouvelle partie
             plateau = new Plateau(nbLignes, nbColonnes);
             ModeleJeu modele = new ModeleJeu(nbLignes, nbColonnes, joueurs);
-            
-            // placer les joueurs sur le plateau
-            for (Player player : joueurs) {
-                Position pos = randomEmptyPosition(plateau);
-                player.setPosition(pos);
-                player.setAlive(true);
-                plateau.placerJoueur(pos, player);
-            }
-            
-            System.out.println("\n╔════════════════════════════════════════════╗");
-            System.out.println("║         ÉTAT INITIAL DU PLATEAU            ║");
-            System.out.println("║    Veuillez appuyez sur Entrée pour jouer  ║");
-            System.out.println("╚════════════════════════════════════════════╝\n");
-            
-            afficherPlateauColore(plateau, joueurs);
-            System.out.println("Appuyez sur Entrée pour jouer !!");
-            sc.nextLine();
-
-            
-            
-            // jouer une partie
             modele.demarrer();
+
+            // placer les joueurs sur le plateau
+            for (Team team : equipes) {
+                for (Player player : team.getMembers()) {
+                    Position pos = randomEmptyPosition(plateau);
+                    player.setAlive(true);
+                    plateau.placerJoueur(pos, player);
+                }
+            }
+
+            // jouer une partie
             int maxTours = calculerMaxTours(nbLignes, nbColonnes, nbEquipes * joueursParEquipe);
             jouerPartieGenerique(modele, joueurs, strategies, maxTours);
 
@@ -370,7 +360,7 @@ public class Main {
             Position pos = randomEmptyPosition(plateau);
             Player player = new Player(teamName + "_" + (i+1), team, pos);
             players.add(player);
-            // plateau.placerJoueur(pos, player);
+            plateau.placerJoueur(pos, player);
         }
         return players;
     }

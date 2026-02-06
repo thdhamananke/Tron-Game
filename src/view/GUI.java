@@ -96,7 +96,7 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
 
         startButton.addActionListener(e -> {
             gameBoard.setGame(controller.getGame());
-            new Thread(() -> controller.lunchgame()).start();
+            new Thread(() -> controller.run()).start();
            this.repaint();
            this.revalidate();
 
@@ -112,7 +112,7 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
         restartButton.addActionListener(e -> {
             controller.restart();
             gameBoard.setGame(controller.getGame());
-            new Thread(() -> controller.lunchgame()).start();
+            new Thread(() -> controller.run()).start();
             this.repaint();
             this.revalidate();
 
