@@ -1,0 +1,33 @@
+NombreEquipes = 4
+JoueursParEquipe = 1
+ProfondeurIA = 10
+NombreParties = 20
+
+Equipe,Joueur,Strategie,Heuristique,VictoiresTotal,TauxDeVictoire
+Equipe_1,Equipe_1_1,MinMaxStrategie,FreeSpaceHeuristic,4,20.00%
+Equipe_2,Equipe_2_1,MinMaxStrategie,FreeSpaceHeuristic,3,15.00%
+Equipe_3,Equipe_3_1,MinMaxStrategie,FreeSpaceHeuristic,6,30.00%
+Equipe_4,Equipe_4_1,MinMaxStrategie,FreeSpaceHeuristic,5,25.00%
+
+TailleGrille,EquipeGagnante,Point,Note,TempsMoyen,NbMoyenTours
+100,Equipe_2,1,1.0,1852.45,4.95
+100,Equipe_4,1,1.0,1852.45,4.95
+100,Equipe_2,1,1.0,1852.45,4.95
+100,Equipe_4,1,1.0,1852.45,4.95
+100,Equipe_1,1,1.0,1852.45,4.95
+100,Equipe_2,1,1.0,1852.45,4.95
+100,Equipe_4,1,1.0,1852.45,4.95
+100,Equipe_3,1,1.0,1852.45,4.95
+100,Equipe_3,1,1.0,1852.45,4.95
+100,Equipe_1,1,1.0,1852.45,4.95
+100,Equipe_3,1,1.0,1852.45,4.95
+100,Equipe_3,1,1.0,1852.45,4.95
+100,Equipe_1,1,1.0,1852.45,4.95
+100,Equipe_3,1,1.0,1852.45,4.95
+100,Match Nul,1,1.0,1852.45,4.95
+100,Equipe_4,1,1.0,1852.45,4.95
+100,Equipe_1,1,1.0,1852.45,4.95
+100,Equipe_4,1,1.0,1852.45,4.95
+100,Equipe_3,1,1.0,1852.45,4.95
+100,Match Nul,1,1.0,1852.45,4.95
+============================================================================================

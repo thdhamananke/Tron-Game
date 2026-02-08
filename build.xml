@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jeuxdetorne" default="run" basedir=".">
+
+    <!-- ==================== Application info ==================== -->
+    <property name="app.name" value="jeuxdetorne"/>
+    <property name="app.version" value="1.0"/>
+    <property name="app.fullname" value="${app.name}-${app.version}"/>
+
+    <!-- ==================== Directories ==================== -->
+    <property name="src.home" value="${basedir}/src"/>
+    <property name="src.test.home" value="${basedir}/src/test"/>
+    <property name="lib.home" value="${basedir}/lib"/>
+
+    <property name="build.home" value="${basedir}/build/classes"/>
+    <property name="build.test.home" value="${basedir}/build/test-classes"/>
+    <property name="dist.home" value="${basedir}/dist"/>
+    <property name="docs.home" value="${basedir}/docs"/>
+    <property name="test.report.home" value="${basedir}/build/test/results"/>
+
+    <!-- ==================== Java options ==================== -->
+    <property name="javac.encoding" value="UTF-8"/>
+    <property name="compile.debug" value="true"/>
+    <property name="compile.deprecation" value="false"/>
+    <property name="compile.optimize" value="true"/>
+
+    <!-- ==================== Main class ==================== -->
+    <property name="main.class" value="Main"/>
+
+    <!-- ==================== Classpath ==================== -->
+    <path id="compile.classpath">
+        <fileset dir="${lib.home}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- ==================== Global Target ==================== -->
+    <target name="all" depends="clean,compile" description="Clean and compile project"/>
+
+    <!-- ==================== Clean ==================== -->
+    <target name="clean" description="Clean build, dist and docs directories">
+        <delete dir="${basedir}/build"/>
+        <delete dir="${dist.home}"/>
+        <delete dir="${docs.home}"/>
+    </target>
+
+    <!-- ==================== Prepare ==================== -->
+    <target name="prepare">
+        <mkdir dir="${build.home}"/>
+        <mkdir dir="${build.test.home}"/>
+        <mkdir dir="${dist.home}"/>
+        <mkdir dir="${test.report.home}"/>
+        <mkdir dir="${docs.home}"/>
+    </target>
+
+    <!-- ==================== Compile ==================== -->
+    <target name="compile" depends="prepare" description="Compile main and test sources">
+
+        <!-- Compile main sources -->
+        <javac srcdir="${src.home}" destdir="${build.home}"
+               debug="${compile.debug}"
+               deprecation="${compile.deprecation}"
+               optimize="${compile.optimize}"
+               encoding="${javac.encoding}"
+               includeantruntime="false">
+            <classpath refid="compile.classpath"/>
+        </javac>
+
+        <!-- Compile test sources -->
+        <javac srcdir="${src.test.home}" destdir="${build.test.home}" includeantruntime="false">
+            <classpath>
+                <pathelement location="${build.home}"/>
+                <path refid="compile.classpath"/>
+            </classpath>
+        </javac>
+
+    </target>
+
+    <!-- ==================== Javadoc ==================== -->
+    <target name="javadoc" depends="compile" description="Generate Javadoc">
+        <javadoc sourcepath="${src.home}" destdir="${docs.home}" encoding="UTF-8" author="true" version="true" additionalparam="-Xdoclint:none">
+            <classpath refid="compile.classpath"/>
+        </javadoc>
+    </target>
+
+    <!-- ==================== Dist ==================== -->
+    <target name="dist" depends="compile,javadoc" description="Create executable jar">
+
+        <copy todir="${dist.home}/lib">
+            <fileset dir="${lib.home}"/>
+        </copy>
+
+        <jar jarfile="${dist.home}/${app.fullname}.jar" basedir="${build.home}">
+            <manifest>
+                <attribute name="Main-Class" value="model.Main"/>
+                <!-- <attribute name="Main-Class" value="experiment.ExperimentMain"/> -->
+            </manifest>
+        </jar>
+
+    </target>
+
+    <!-- ==================== Tests ==================== -->
+    <target name="test" depends="compile" description="Run JUnit tests">
+        <junit fork="true" printsummary="on" haltonfailure="false">
+            <classpath>
+                <pathelement location="${build.home}"/>
+                <pathelement location="${build.test.home}"/>
+                <path refid="compile.classpath"/>
+            </classpath>
+
+            <batchtest todir="${test.report.home}">
+                <fileset dir="${build.test.home}">
+                    <include name="**/*Test.class"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    <!-- ==================== Run ==================== -->
+    <target name="run" depends="dist" description="Run application">
+        <java jar="${dist.home}/${app.fullname}.jar" fork="true"/>
+    </target>
+
+    <!-- ==================== Help ==================== -->
+    <target name="help">
+        <echo message="Targets disponibles :"/>
+        <echo message=" clean     : Nettoie le projet"/>
+        <echo message=" compile   : Compile sources et tests"/>
+        <echo message=" test      : Exécute les tests JUnit"/>
+        <echo message=" dist      : Crée le jar exécutable"/>
+        <echo message=" run       : Lance l'application"/>
+        <echo message=" javadoc   : Génère la documentation"/>
+    </target>
+
+</project>

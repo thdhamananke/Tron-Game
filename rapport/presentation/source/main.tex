@@ -1,0 +1,456 @@
+\documentclass[12pt]{beamer}
+\usetheme{Madrid}
+\usecolortheme{whale}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees,shapes.geometric,arrows.meta,decorations.pathreplacing,calc,shadows,positioning,patterns,backgrounds}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{animate}
+\usepackage{listings}
+\usepackage{fontawesome5}
+
+% --- Couleurs personnalisées ---
+\definecolor{donecolor}{RGB}{76,175,80}     % vert
+\definecolor{todoColor}{RGB}{255,193,7}     % jaune
+\definecolor{undonecolor}{RGB}{244,67,54}   % rouge
+\definecolor{team1color}{RGB}{66,133,244}   % bleu
+\definecolor{team2color}{RGB}{219,68,55}    % rouge
+\definecolor{team3color}{RGB}{244,180,0}    % orange
+\definecolor{team4color}{RGB}{15,157,88}    % vert foncé
+\definecolor{umlcolor}{RGB}{0,102,204}      % bleu UML
+\definecolor{codebg}{RGB}{240,245,250}      % fond code
+\definecolor{accentcolor}{RGB}{103,58,183}  % violet accent
+\definecolor{donecolor}{RGB}{0,150,0}    
+\definecolor{graycircle}{RGB}{200,200,200} 
+% Style pour les listings de code
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{codebg},
+    frame=single,
+    frameround=tttt,
+    rulecolor=\color{lightgray},
+    tabsize=2,
+    upquote=true,
+    showstringspaces=false
+}
+
+% Configuration Beamer
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{caption}[numbered]
+
+% Boîte personnalisée pour les membres
+\newtcolorbox{membrebox}[2][]{
+    enhanced,
+    colback=white,
+    colframe=#2,
+    arc=3mm,
+    boxrule=1.5pt,
+    drop fuzzy shadow,
+    fonttitle=\bfseries,
+    title=#1
+}
+\usetheme{Madrid}
+
+\usepackage{multicol}
+\usepackage{fontawesome5}
+\usepackage{appendixnumberbeamer}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{wrapfig} % pour l'image
+
+\usepackage{array}
+
+
+\title{{\large \texttt{Projet 2 de génie logiciel \og Jeu de Tron\fg{}}}}
+\author{
+    \textit{\textbf{équipe :}} \\
+    \textbf{HADJ BENABDELMOULA} Lamia \\
+    \textbf{KHELALFA} Selssabil \\
+    \textbf{DIALLO} Hammady II \\
+     \textbf{BAH} Oumar 
+    \vspace{-0.6cm}
+}
+\date{\textit{\textbf{Présenté le :}} \today}
+
+% En-tête vide
+\setbeamertemplate{headline}{}
+
+\begin{document}
+    \begin{frame}
+        \begin{center}
+            \includegraphics[width=0.30\linewidth]{images/logo.png} \\
+            \vspace{0.1cm}
+            \texttt{ \large {Licence 3 Informatique}}
+        \end{center}
+        \vspace{-0.4cm}
+        \titlepage
+    \end{frame}
+
+
+    % plan de la presentation
+    \begin{frame}{Plan de la présentation}
+        \centering
+        \begin{minipage}{0.7\textwidth}
+        \small
+        \tableofcontents[sections={1-3}, hideallsubsections]
+        \vspace{0.05cm}
+        \tableofcontents[sections={4-7}, hideallsubsections]
+        \end{minipage}
+
+    
+        \vspace{0.2cm}
+        \begin{tikzpicture}
+            \draw[fill=blue!60, draw=blue, thick, rounded corners] (0,0) rectangle (4.5,0.8);
+            \node[white] at (2.25,0.4) {\small \textbf{Durée : 10 - 15 min}};
+    
+            \draw[fill=blue!10, draw=blue, thick, rounded corners] (4.6,0) rectangle (10.5,0.8);
+            \node[black] at (7.55,0.4) {\small Présenté par toute l'équipe};
+        \end{tikzpicture}
+    \end{frame}
+
+    %====================== CONTEXTE ======================
+    \section{Contexte du projet}
+    \begin{frame}{Présentation du projet « Jeu de Tron »}
+        \begin{columns}[T]
+            % Colonne texte
+            \begin{column}{0.60\textwidth}
+             \vspace{0.5cm}
+                \begin{itemize}
+                    \item Jeu \textbf{Tron} : variante multi-joueurs du jeu du serpent
+                    \item Environnement sur grille avec collisions éliminatoires
+                    \item Déplacements simultanés laissant des murs infranchissables
+                    \item Objectif : être le dernier joueur survivant
+                    \item Simulation de comportements \textbf{multi-agents}
+                \end{itemize}
+            \end{column}
+    
+            % Colonne image
+            \begin{column}{0.35\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{images/jeu.png}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+
+    %====================== PROBLEMATIQUE & OBJECTIFS ======================
+    \section{Problématique et objectifs du projet}
+    
+    \begin{frame}{Problématique et objectifs du projet}
+    
+        \begin{block}{Problématique}
+            Comment analyser et évaluer les stratégies de décision collective dans un jeu de Tron
+            multi-joueurs, en tenant compte des coalitions, de la taille des équipes et de la
+            profondeur de recherche ?
+        \end{block}
+    
+        \begin{tcolorbox}[colback=green!5!white,colframe=donecolor,title=Objectifs du projet]
+            \begin{itemize}
+                \item Modéliser un jeu de \textbf{Tron  multi-joueurs} sans intervention humaine.
+                \item Gérer la \textbf{prise de décision collective} au sein d’équipes.
+                \item Adapter des algorithmes de recherche à un contexte \textbf{multi-équipes}.
+                \item Analyser l’impact des paramètres de jeu (taille de la grille, équipes, profondeur de recherche).
+            \end{itemize}
+        \end{tcolorbox}
+    
+    \end{frame}
+
+
+    % ARCHITECTURE
+    %-------------------------------------------------
+      \begin{frame}{Structure du Cœur de Jeu}
+
+    \centering
+    \begin{tikzpicture}[node distance=1cm]
+    
+    % Bloc Modèle indépendant
+    \node[fill=blue!10, rounded corners, text width=0.55\textwidth, align=center, draw=blue!50, thick, minimum height=1.2cm] (mod) 
+    {\faCube\ \textbf{Modèle indépendant}};
+    
+    % Bloc Testable unitairement
+    \node[fill=green!10, rounded corners, text width=0.55\textwidth, align=center, draw=green!50, thick, minimum height=1.2cm, below=0.5cm of mod] (test) 
+    {\faVial\ \textbf{Testable unitairement}};
+    
+    % Bloc Extensible facilement
+    \node[fill=orange!10, rounded corners, text width=0.55\textwidth, align=center, draw=orange!50, thick, minimum height=1.2cm, below=0.5cm of test] (ext) 
+    {\faArrowsAlt\ \textbf{Extensible facilement}};
+    
+    \end{tikzpicture}
+
+\end{frame}
+    \section{Architecture et Modélisation}
+    
+    \begin{frame}{Pattern observateur – Découplage modèle/vue}
+    \centering
+    
+    \resizebox{0.85\textwidth}{!}{%
+    \begin{tikzpicture}[
+        node distance=0.5cm,
+        box/.style={rectangle, rounded corners, minimum width=3cm, minimum height=1cm,
+        text centered, draw=black, thick, font=\small},
+        arrow/.style={thick, ->, >=stealth, blue!60!black},
+        observer/.style={ellipse, draw=green!60!black, thick,
+        minimum width=2cm, minimum height=0.3cm, font=\small}
+    ]
+    
+    % Modèle
+    \node[box, fill=blue!10] (modele) {Modèle (ModeleJeu)};
+    \node[box, fill=blue!5, below=2cm of modele] (modeleEcoutable) {\texttt{ModeleEcoutable}};
+    
+    % Observateurs
+    \node[observer, fill=green!5, right=2cm of modele] (vue1) {Vue (GUI)};
+    \node[observer, fill=green!5, above=0.5cm of vue1] (vue2) {GameBoardPanel};
+    \node[observer, fill=green!5, below=0.5cm of vue1] (vue3) {Autres Vues};
+    
+    % Interface
+    \node[box, fill=orange!5, above right=0.5cm and 2cm of vue1] (interface) {\texttt{EcouteurModele}};
+    
+    % Flèches
+    \draw[arrow, dashed] (modele) -- node[midway, above, font=\tiny] {implémente} (modeleEcoutable);
+    \draw[arrow, <->] (modeleEcoutable) -- node[midway, above, sloped, font=\tiny] {notifie()} (vue1);
+    \draw[arrow, <->] (modeleEcoutable) -- (vue2);
+    \draw[arrow, <->] (modeleEcoutable) -- (vue3);
+    \draw[arrow] (vue1) -- node[midway, above, sloped, font=\tiny] {implémente} (interface);
+    \draw[arrow] (vue2) -- (interface);
+    \draw[arrow] (vue3) -- (interface);
+    
+    \end{tikzpicture}
+    }
+    
+    \end{frame}
+
+    %-------------------------------------------------
+       
+     \begin{frame}{Architecture générale MVC}
+        \centering
+        \includegraphics[width=1\linewidth, height=0.9\paperheight, keepaspectratio]{images/uml.png}
+    \end{frame}
+
+
+    \begin{frame}{Diagramme UML du Modèle}
+        \begin{block}{}
+           Le diagramme UML suivant représente la structure du modèle du le coeur du jeu. 
+        \end{block}
+        \vspace{0.4cm}
+        \centering
+        \begin{tcolorbox}[
+        colback=blue!5!white,
+        colframe=umlcolor, title=\faProjectDiagram\ Diagramme UML]
+    
+        Cliquez ici pour voir le diagramme :
+        \bigskip
+        
+        \href{run:model.png}{\Large\textbf{\faImage\ model.png}}
+        \end{tcolorbox}
+        
+    \end{frame}
+
+    %-------------------------------------------------
+    
+
+ 
+   
+    
+    % Présentation par membre 
+    \begin{frame}{Répartition des tâches réalisées par membre}
+    \centering
+    \renewcommand{\arraystretch}{1.20}
+    
+    \begin{tabular}{|m{2cm}|m{8.5cm}|}
+        \hline
+        \textbf{Membres} & \textbf{Implémentations réalisées} \\
+        \hline
+        
+        \textbf{Oumar} &
+        \begin{itemize}
+            \item[\faCheckCircle] Une partie du modèle (le cœur du jeu)
+            \item[\faCheckCircle] Le pattern Observer.
+            \item[\faSpinner] Un \texttt{main} pour la démo.
+        \end{itemize} \\
+        \hline
+        
+        \textbf{Lamia} &
+        \begin{itemize}
+            \item[\faCheckCircle] Le pattern Stratégie (MinMax et Alpha-Beta)
+            \item[\faCheckCircle] Les classes de tests pour ces algorithmes.
+            \item[\faSpinner] La modélisation UML
+        \end{itemize} \\
+        \hline
+        
+        \textbf{Selssabil} &
+        \begin{itemize}
+            \item[\faCheckCircle] L’interface graphique
+            \item[\faCheckCircle] Le contrôleur du jeu
+            \item[\faSpinner] La vue
+        \end{itemize} \\
+        \hline
+        
+        \textbf{Hammady} &
+        \begin{itemize}
+            \item[\faCheckCircle] Une partie du modèle (le cœur du jeu)
+            \item[\faCheckCircle] Les heuristiques et leurs évaluateurs
+            \item[\faSpinner] L’analyse et l’expérimentation
+        \end{itemize} \\
+        \hline
+    
+    \end{tabular}
+    \end{frame}
+
+    
+    % Niveau de prograssion (global et individuel)
+    \section{État d'avancement global et individuel}
+    \begin{frame}{Progression globale}
+        \centering
+        \begin{tikzpicture}
+        \draw[gray!30, line width=20pt] (0,0) circle(2.8cm);
+        \draw[donecolor, line width=20pt] (90:2.8cm) arc (90:324:2.8cm);
+        
+        \node at (0,0) {\LARGE \textbf{60-65\%}};
+        \node at (0,-0.8) {\large  Valeur approximative};
+        \end{tikzpicture}
+    \end{frame}
+    
+    \begin{frame}{État d'avancement par composant}
+        \centering
+        \begin{tikzpicture}[y=-0.8cm]
+        
+        \foreach \y/\task/\perc/\color in {
+        0/\textbf{Moteur de jeu}/85/donecolor,
+        1/Algorithmes IA/60/donecolor,
+        2/\textbf{Interface graphique}/60/donecolor,
+        3/Console interactive/100/donecolor,
+        4/\textbf{Système de tests}/20/donecolor,
+        5/Optimisation/59/donecolor,
+        6/\textbf{Documentation}/45/donecolor,
+        7/L'analyse et l'expérimentation/45/donecolor}
+        {
+        \node[anchor=east] at (-1.4,\y) {\task};
+        % Barre de fond (plus épaisse)
+        \draw[gray!20, fill=gray!10] (0,\y-0.3) rectangle (4,\y+0.3);
+        % Barre de progression
+        \draw[\color, fill=\color!30] (0,\y-0.3) rectangle (4*\perc/100,\y+0.3);
+
+        \node[anchor=west] at (4.15,\y) {\textbf{\perc\%}};
+        }
+        \end{tikzpicture}
+    \end{frame}
+    
+
+    % Planning prévisionnel
+    \section{Planning prévisionnel}
+    \begin{frame}{Planning prévisionnel des semaines à venir}
+    \centering
+    
+    \begin{tikzpicture}[
+        arrow/.style={->, thick, black},
+        smallcircle/.style={draw=graycircle, line width=3pt, circle, minimum size=1.5cm, inner sep=2pt},
+        bigcircle/.style={draw=donecolor, line width=3pt, circle, minimum size=2.8cm, inner sep=2pt},
+        textstyle/.style={font=\scriptsize, align=center}
+    ]
+    
+    % Cercle central gris
+    \node[smallcircle] (center) at (0,0) {};
+    \node[textstyle] at (center) {\textbf{À venir}};
+    
+    % Cercles du haut (1,2,3)
+    \node[bigcircle] (s1) at (-3,2.0) {};
+    \node[textstyle] at (s1) {\textbf{Séance 1}\\ Robustesse du jeu, \\,l'expérimentation\\ Plan rapport};
+    
+    \node[bigcircle] (s2) at (0,2.5) {};
+    \node[textstyle] at (s2) {\textbf{Séance 2}\\ Performance
+    \\Tests unitaires\\ L'expérimentation};
+    
+    
+    \node[bigcircle] (s3) at (3,2.0) {};
+    \node[textstyle] at (s3) {\textbf{Séance 3}\\ Tests intégration\\ Multi-joueurs en GUI\\ Rapport};
+    
+    % Cercles du bas (4,5,6)
+    \node[bigcircle] (s4) at (-3,-2.0) {};
+    \node[textstyle] at (s4) {\textbf{Séance 4}\\Multithreading \\ Amélioration des algos\\et Optimisation\\Rapport};
+    
+    \node[bigcircle] (s5) at (0,-2.5) {};
+    \node[textstyle] at (s5) {\textbf{Séance 5}\\ 
+    Finalisation de \\l'interface graphique\\et Multithreading};
+    
+    \node[bigcircle] (s6) at (3,-2.0) {};
+    \node[textstyle] at (s6) {\textbf{Séance 6}\\
+    
+    Finalisation des \\testes \\ Nettoyage code\\ Rapport final};
+    
+    % Flèches du centre vers les cercles
+    \foreach \s in {s1,s2,s3,s4,s5,s6} {
+        \draw[arrow] (center) -- (\s);
+    }
+    
+    \end{tikzpicture}
+    
+    \end{frame}
+
+    
+    % Démonstrations et résultats
+    \section{Démonstrations et résultats}
+    \begin{frame}{Démonstrations et résultats}
+        \begin{enumerate}
+            \item \textbf{\large  Démonstration avec l'interface graphique.}
+            \item \textbf{\large Démonstration avec la console}
+            \item \textbf{\large L'analyse et l'expérimentation}
+        \end{enumerate}
+    \end{frame}
+    
+    
+    % CONCLUSION
+    \section{Conclusion et perspectives}
+    \begin{frame}{Conclusion et perspectives}
+        \begin{itemize}
+            \item[\faCheck] \textbf{Objectifs atteints} : 
+                \begin{enumerate}
+                    \item Moteur de jeu fonctionnel avec que des IA
+                    \item L'interface graphique de la première partie
+                    \item L'analyse et l'expérimentation de la première version du jeu.
+                \end{enumerate}
+            \vspace{0.7cm}
+            \item[\faLightbulb] \textbf{Perspectives} : 
+                \begin{itemize}
+                    \item Intégration de l'algorithme pour plus de 2 équipes.
+                    \item Amélioration de l'interface graphique en utilisant des patterns.
+                \end{itemize}
+            \vspace{1cm}
+            \centering
+            \LARGE {\item[\faQuestionCircle] \textbf{Questions ?}}
+        \end{itemize}
+    \end{frame}
+
+    
+   % \begin{frame}{Difficultés rencontrées et solutions}
+    % Défis et solutions avec icônes, colonnes
+    %\end{frame}
+    
+    % ANNEXES
+    %\appendix
+    %\begin{frame}{Annexe : Détails techniques des heuristiques}
+    % Heuristique, optimisations et métriques
+    %\end{frame}
+    
+    %\begin{frame}{Annexe : Tests (unitaires, performance et autres)}
+    % Tests unitaires, performance et intégration
+  
+
+\end{document}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
