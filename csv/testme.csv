@@ -1,0 +1,21 @@
+NombreEquipes = 2
+JoueursParEquipe = 1
+ProfondeurIA = 5
+NombreParties = 10
+
+Equipe,Joueur,Strategie,Heuristique,VictoiresTotal,TauxDeVictoire
+Equipe_1,Equipe_1_1,MinMaxStrategie,FreeSpaceHeuristic,0,0.00%
+Equipe_2,Equipe_2_1,AlphaBetaStrategie,AdvancedHeuristic,10,100.00%
+
+TailleGrille,EquipeGagnante,Point,Note,TempsMoyen,NbMoyenTours
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+144,Equipe_2,1,1.0,132.20,2.00
+============================================================================================

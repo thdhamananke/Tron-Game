@@ -32,19 +32,20 @@ public class Main {
         player2.setStrategie(new RandomStrategie(new FreeSpaceHeuristic(), 5));
 
         ModeleJeu  game =  new ModeleJeu(30, 30, listedeplayers);
-        GameController controller = new GameThread(game, null);
+        GameController controller = new GameController(game, null);
         
-        GUI view =  new GUI(controller);
-        controller.setVue(view);
-        game.ajoutEcouteur(view);
-        //view.setController(controller);
+         //new GUI(controller);
+      
+       // view.setController(controller);
        // new Thread(() -> controller.lunchgame()).start();
 
         // controller.lunchgame();
-      //  SwingUtilities.invokeLater(() -> {
-        //    new GUI();
-        //});
-       controller.start();
+        SwingUtilities.invokeLater(() -> {
+           GUI view =  new GUI(controller);
+             controller.setVue(view);
+        game.ajoutEcouteur(view);
+        });
+       //controller.start();
 
     }
 

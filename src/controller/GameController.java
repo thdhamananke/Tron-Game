@@ -10,7 +10,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameController extends Thread{
+public class GameController{
 
     private ModeleJeu game;
     private GUI vue;
@@ -104,9 +104,7 @@ public class GameController extends Thread{
     public void setVue(GUI vue) {
         this.vue = vue;
     }
- public GUI getVue() {
-     return vue;
- }
+
     public ModeleJeu getGame(){
         return this.game;
     }

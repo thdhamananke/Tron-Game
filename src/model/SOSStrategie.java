@@ -2,7 +2,8 @@ package model;
 
 import java.util.List;
 
-public class SOSStrategie {
+public class SOSStrategie 
+{
     
 }
 
