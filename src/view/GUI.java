@@ -14,6 +14,9 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
     private JPanel topPanel;
     private JPanel rightPanel;
     private JPanel bottomPanel;
+    private JLabel tourLabel;
+    private JLabel statutLabel;
+    private JLabel gagnantLabel;
     private GameBoardPanel gameBoard;
     private GameController controller;
     private JComboBox<String> strategieRougeBox;
@@ -47,17 +50,23 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
     private void createTopPanel() {
         topPanel = new JPanel(new GridLayout(1, 3, 10, 10));
 
-        topPanel.add(createInfoBox("TOUR", "14"));
-        topPanel.add(createInfoBox("STATUT", "Terminé"));
-        topPanel.add(createInfoBox("GAGNANT", "Bot Bleu"));
+        tourLabel = new JLabel("", SwingConstants.CENTER);
+        statutLabel = new JLabel("", SwingConstants.CENTER);
+        gagnantLabel = new JLabel("", SwingConstants.CENTER);
+
+        topPanel.add(createInfoBox("TOUR", tourLabel));
+        topPanel.add(createInfoBox("STATUT", statutLabel));
+        topPanel.add(createInfoBox("GAGNANT", gagnantLabel));
 
         topPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+
+        updateTopPanel(); // initial values
     }
 
-    private JPanel createInfoBox(String title, String value) {
+    private JPanel createInfoBox(String title, JLabel label) {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder(title));
-        panel.add(new JLabel(value, SwingConstants.CENTER), BorderLayout.CENTER);
+        panel.add(label, BorderLayout.CENTER);
         return panel;
     }
 
@@ -83,7 +92,19 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
                 new EmptyBorder(10, 10, 10, 10)
         ));
         rightPanel.setBackground(new Color(245, 245, 245));
+        JLabel title2 = new JLabel("Players settings");
+        title2.setFont(new Font("Arial", Font.BOLD, 14));
+        title2.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        rightPanel.add(title2);
+        JPanel players = new JPanel(new GridLayout(1,2));
+
+        JButton addplayer = createButton("+",Color.GREEN);
+        JButton deletplayer = createButton("-",Color.RED);
+        players.add(addplayer);
+        players.add(deletplayer);
+        rightPanel.add(players);
+        rightPanel.add(Box.createVerticalStrut(10));
         JLabel title = new JLabel("Contrôles");
         title.setFont(new Font("Arial", Font.BOLD, 14));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -101,7 +122,20 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
            this.revalidate();
 
         });
-        rightPanel.add(createButton("⏸ Pause", new Color(255, 200, 0)));
+        JButton pauseButton = createButton("⏸ Pause", new Color(255, 200, 0));
+        pauseButton.addActionListener(e -> {
+            controller.setPause();
+            if(controller.getPause()){
+                controller.setDelay(100);
+            }else{
+                controller.setDelay(10000000);
+            }
+            this.repaint();
+            this.revalidate();
+
+        });
+        rightPanel.add(pauseButton);
+
         rightPanel.add(Box.createVerticalStrut(8));
 
         rightPanel.add(createButton("⏭ Tour Suivant", new Color(0, 200, 200)));
@@ -120,20 +154,22 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
         rightPanel.add(Box.createVerticalStrut(15));
 
         strategieRougeBox = createStrategyBox("Bot Rouge");
+        strategieRougeBox.addActionListener(e -> {
+            String strategieRouge = getStrategieRouge();
+            String strategieBleu  = getStrategieBleu();
+
+            controller.appliquerStrategie(strategieRouge, strategieBleu);
+        });
         rightPanel.add(Box.createVerticalStrut(10));
         strategieBleuBox = createStrategyBox("Bot Bleu");
-        JButton applyStrategieButton = createButton("Appliquer stratégies", null);
-
-        applyStrategieButton.addActionListener(e -> {
+        strategieBleuBox.addActionListener(e -> {
             String strategieRouge = getStrategieRouge();
             String strategieBleu  = getStrategieBleu();
 
             controller.appliquerStrategie(strategieRouge, strategieBleu);
         });
 
-
         rightPanel.add(Box.createVerticalStrut(10));
-        rightPanel.add(applyStrategieButton);
 
 
         rightPanel.add(Box.createVerticalStrut(15));
@@ -261,6 +297,7 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
         // modeleMisAJour(this);
         gameBoard.setGame(controller.getGame());
         this.gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
+        updateTopPanel();
         repaint();
         revalidate();
     }
@@ -268,7 +305,8 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
 
     @Override
     public void modeleMisAJour(Object source) {
-        this.gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
+        //this.gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
+        // updateTopPanel();
         mettreAjourAffichage();
     }
 
@@ -292,5 +330,10 @@ public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
         return (String) strategieBleuBox.getSelectedItem();
     }
 
+    private void updateTopPanel() {
+        tourLabel.setText(String.valueOf(controller.getTour()));
+        statutLabel.setText(controller.getGameState());
+        gagnantLabel.setText(controller.getWinner());
+    }
 
 }

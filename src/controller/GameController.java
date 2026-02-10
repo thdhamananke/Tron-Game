@@ -17,6 +17,7 @@ public class GameController{
     private String strategieRouge = "Random";
     private String strategieBleu  = "Random";
     public int delay = 1000;
+    private boolean pause ;
 
     public GameController(ModeleJeu Game , GUI Vue){
             this.game = Game;
@@ -53,7 +54,7 @@ public class GameController{
         //    Game.set
         //}
         //Est ce que c mieux de crier les players dans le main u c mieux de les criéer ici dans cette méthode
-
+        pause=false;
         game.demarrer();
         Strategie strategie;
         while (game.isJeuEnCours()) {
@@ -135,4 +136,53 @@ public class GameController{
         this.strategieBleu  = bleu;
     }
 
+    public void setPause(){
+        if(!pause){
+            this.pause=true;
+
+     }else{
+            this.pause=false;
+        }
+
+    }
+
+    public boolean getPause(){
+        return this.pause;
+    }
+
+    public int getTour(){
+
+        return this.game.getTour();
+    }
+
+    public String getGameState(){
+
+        if(this.game.estTermine()){
+            return "Términer";
+        }else{
+            if(this.getTour() == 0){
+                return "n’a pas encore commencé  ";
+            }else{
+                return "En cours";
+            }
+
+        }
+    }
+
+    public String getWinner(){
+
+        if(this.game.estTermine()){
+            if(game.getEquipeGagnante() == null){
+                return "Null";
+            }
+            return "Bot "+game.getEquipeGagnante().getName();
+        }else{
+            return "";
+        }
+    }
+
+
+    public void setDelay(int delay){
+        this.delay = delay;
+    }
 }
