@@ -1,14 +1,24 @@
 package model;
 public class Cellule {
     private Position position;
+    private CellState state;
     private Player owner ;
 
-    /**
-     * @param position  la position de la cellule
-    */
+    /** @param position  la position de la cellule */
     public Cellule(Position position) {
         this.position = position;
+        this.state = CellState.EMPTY;
         this.owner = null;
+    }
+
+    // Constructeur de copie
+    public Cellule(Cellule other) {
+        this.position = new Position(
+            other.position.getRow(),
+            other.position.getCol()
+        );
+        this.state = other.state;
+        this.owner = other.owner; // référence (Player immuable ici)
     }
 
     /** obtenir la position de la cellule */

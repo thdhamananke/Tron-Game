@@ -193,4 +193,48 @@ public class ModeleJeu extends AbstractModeleEcoutable
     }
 
 
+    /**
+     * permet de gerer la réflexion parallèle et applique le tour.
+     * Cette méthode fait le lien entre les Threads des joueurs et la logique du jeu.
+    */
+    public void executerTourAutomatique(int timeoutMs) {
+        if (!jeuEnCours || estTermine()) return;
+
+        // Lancer la réflexion en parallèle
+        for (Player player : joueurs) {
+            if (player.isAlive()) {
+                player.lancerReflexion(this.plateau.copierPlateau());
+            }
+        }
+
+        // Attendre la fin du temps alloué
+        try {
+            Thread.sleep(timeoutMs);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // Récupérer les décisions
+        List<Direction> coupsDuTour = new ArrayList<>();
+        for (Player player : joueurs) {
+            if (player.isAlive()) {
+                Direction dir = player.getDernierCoupCal();
+                
+                if (dir == null) {
+                    // L'IA n'a pas répondu à temps donc éliminée
+                    System.out.println("TIMEOUT : " + player.getName() + " n'a pas répondu. Direction HAUT par defaut");
+                    coupsDuTour.add(Direction.HAUT);
+                    // player.die(); 
+                } else {
+                    coupsDuTour.add(dir);
+                }
+            } else {
+                coupsDuTour.add(Direction.HAUT);
+            }
+        }
+
+        // Appliquer les mouvements physiquement
+        this.tourSuivant(coupsDuTour);
+    }
+
 }

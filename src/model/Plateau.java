@@ -75,6 +75,11 @@ public class Plateau {
         return grille[position.getRow()][position.getCol()];
     }
 
+    public void setCellule(Position pos, Cellule cell) {
+        if (!estDansPlateau(pos)) return;
+        grille[pos.getRow()][pos.getCol()] = cell;
+    }
+
     /**
      * Indique si une cellule est vide.
      *
@@ -163,31 +168,37 @@ public class Plateau {
      *
      * @param original plateau à copier
      * @return copie indépendante du plateau
-     */
-    public static Plateau copierPlateau(Plateau original) {
-        Plateau copie =
-                new Plateau(original.nbLignes, original.nbColonnes);
-
-        for (int ligne = 0; ligne < original.nbLignes; ligne++) {
-            for (int colonne = 0; colonne < original.nbColonnes; colonne++) {
-
-                Cellule celluleOriginale =
-                        original.grille[ligne][colonne];
-
-                Cellule nouvelleCellule =
-                        new Cellule(new Position(ligne, colonne));
-
+    */
+    public Plateau copierPlateau() {
+        Plateau copie = new Plateau(this.nbLignes, this.nbColonnes);
+        
+        for (int row = 0; row < nbLignes; row++) {
+            for (int col = 0; col < nbColonnes; col++) {
+                Cellule celluleOriginale = this.grille[row][col];
                 if (!celluleOriginale.isEmpty()) {
-                    nouvelleCellule.occupy(celluleOriginale.getOwner());
+                    // On occupe la cellule de la copie avec le même propriétaire
+                    copie.grille[row][col].occupy(celluleOriginale.getOwner());
                 }
-
-                copie.grille[ligne][colonne] = nouvelleCellule;
             }
         }
         return copie;
     }
 
 
+    /**
+     * Retourne le joueur présent sur une cellule donnée, s'il y en a un.
+     * @param pos La position à vérifier
+     * @return Le Player occupant la case, ou null si la case est vide ou contient juste un mur.
+    */
+    public Player getJoueurAt(Position pos) {
+        if (!estDansPlateau(pos)) return null;
+        
+        Cellule cell = getCellule(pos);
+        if (!cell.isEmpty() && cell.getState() == CellState.PLAYER) {
+            return cell.getOwner();
+        }
+        return null;
+    }
 
     public CellState[][] getEtatPourVue() {
         CellState[][] etat = new CellState[nbLignes][nbColonnes];
@@ -211,6 +222,7 @@ public class Plateau {
         this.nbLignes = rows;
         this.nbColonnes = cols;
         this.grille = new Cellule[rows][cols];
+        initialiser();
     }
 
 }

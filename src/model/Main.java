@@ -40,29 +40,37 @@ public class Main {
             joueurs.addAll(teamPlayers);
         }
 
-        List<Strategie> strategies = new ArrayList<>();
         for (Player player : joueurs) {
             System.out.println("\nConfiguration pour " + player.getName());
             System.out.println("Stratégie à utiliser ?");
             System.out.println("1 - MinMax");
             System.out.println("2 - AlphaBeta");
+            System.out.println("3 - MaxN");
+            // System.out.println("4 - Paranoid");
+            System.out.println("5 - SOS");
 
-            int choix = entier(sc, "Votre Choix : ");
+            int choixAlgo = entier(sc, "Votre Choix : ");
             System.out.println("Heuristique à utiliser ? ");
             System.out.println("1 - FreeSpaceHeuristic");
-            System.out.println("2 - AdvancedHeuristic");
+            System.out.println("2 - VoronoiHeuristic");
 
             int choixHeuristique = entier(sc, "Votre choix : ");
 
             Heuristic heuristic = (choixHeuristique == 2)
-                    ? new AdvancedHeuristic()
+                    ? new VoronoiHeuristic()
                     : new FreeSpaceHeuristic();
-                            
-            Strategie strat = (choix == 2)
-                    ? new AlphaBetaStrategie(heuristic, profondeur  )
-                    : new MinMaxStrategie(heuristic, profondeur  );
+   
+            Strategie strat;
+            switch (choixAlgo) {
+                case 1 -> strat = new MinMaxStrategie(heuristic, profondeur);
+                case 2 -> strat = new AlphaBetaStrategie(heuristic, profondeur);
+                case 3 -> strat = new MaxNStrategie(heuristic, profondeur);
+                // case 4 -> strat = new ParanoidStrategie(heuristic, profondeur);
+                default -> strat = new MinMaxStrategie(heuristic, profondeur);
+            }
 
-            strategies.add(strat);
+            // On stocke la stratégie directement dans le joueur
+            player.setStrategie(strat);
         }
 
         // BOUCLE DE PARTIES 
@@ -84,7 +92,7 @@ public class Main {
 
             // jouer une partie
             int maxTours = calculerMaxTours(nbLignes, nbColonnes, nbEquipes * joueursParEquipe);
-            jouerPartieGenerique(modele, joueurs, strategies, maxTours);
+            jouerPartieGenerique(modele, joueurs, maxTours);
 
             // demander si l’utilisateur veut rejouer
             System.out.println("Voulez-vous rejouer une partie ? (O/N) : ");
@@ -103,12 +111,11 @@ public class Main {
      * @param strategies    list des strategies
      * @param maxTours  le nombre de tour maximale
     */
-    public static void jouerPartieGenerique(ModeleJeu modele, List<Player> joueurs, List<Strategie> strategies, int maxTours) {
-
+    public static void jouerPartieGenerique(ModeleJeu modele, List<Player> joueurs, int maxTours) {
         int tour = 0;
+        int tempsReflexionMs = 500; // Temps alloué à chaque IA par tour
 
         while (!modele.estTermine() && tour < maxTours) {
-
             tour++;
             clearScreen();
 
@@ -116,32 +123,26 @@ public class Main {
             System.out.println("║               TOUR " + String.format("%3d", tour) + "                     ║");
             System.out.println("╚════════════════════════════════════════════╝\n");
 
-            List<Direction> coups = new ArrayList<>();
+            // On utilise le modèle pour gérer les threads et le chrono
+            // Cette méthode va lancer les threads, attendre 500ms, et bouger les joueurs
+            modele.executerTourAutomatique(tempsReflexionMs);
 
-            for (int i = 0; i < joueurs.size(); i++) {
-                Player p = joueurs.get(i);
-                Strategie s = strategies.get(i);
-
-                if (p.isAlive()) {
-                    long start = System.currentTimeMillis();
-                    Direction d = s.calculerMouvement(p, modele.getPlateau());
-                    long time = System.currentTimeMillis() - start;
-
-                    coups.add(d);
-
-                    System.out.println(p.getColor().paint("█") + " " + p.getName() +
-                            " : " + formatDirection(d) +
-                            " (calculé en " + time + "ms)");
+            // Affichage des résultats du tour
+            for (Player player : joueurs) {
+                if (player.isAlive()) {
+                    Direction d = player.getDernierCoupCal();
+                    System.out.println(player.getColor().paint("█") + " " + player.getName() +
+                            " : " + (d != null ? formatDirection(d) : "TIMEOUT"));
                 } else {
-                    coups.add(Direction.HAUT);
+                    System.out.println(player.getColor().paint(" ") + " " + player.getName() + " : MORT");
                 }
             }
 
             System.out.println();
-
-            modele.tourSuivant(coups);
             afficherPlateauColore(modele.getPlateau(), joueurs);
-            pause(500);
+            
+            // Petite pause visuelle pour l'utilisateur
+            pause(200);
         }
 
         afficherResultatsFinaux(modele, tour);

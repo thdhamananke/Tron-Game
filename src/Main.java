@@ -4,7 +4,6 @@ import view.VueJeu;
 import javax.swing.*;
 
 import controller.GameController;
-import controller.GameThread;
 
 import java.util.*;
 import model.Color;

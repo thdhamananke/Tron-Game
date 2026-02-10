@@ -17,6 +17,12 @@ public class MinMaxStrategie extends AbstractStrategie{
         super(heuristic, depth);
     }
 
+    /** * @return nom de la stratégie */
+    @Override
+    public String getName() {
+        return "Stratégie MINMAX";
+    }
+
     /**
      * Calcule le meilleur mouvement pour le joueur courant
      * en utilisant l'algorithme Minimax.
@@ -40,7 +46,7 @@ public class MinMaxStrategie extends AbstractStrategie{
 
         for (Direction dir : coups) {
 
-            Plateau copiePlateau = Plateau.copierPlateau(plateau);
+            Plateau copiePlateau = plateau.copierPlateau();
 
             
             Player copiePlayer = new Player(player.getName(), player.getTeam(), player.getPosition());
@@ -82,7 +88,7 @@ public class MinMaxStrategie extends AbstractStrategie{
             int bestValue = Integer.MIN_VALUE;
             for (Direction dir : plateau.getCoupsPossibles(player.getPosition())) {
 
-                Plateau copiePlateau = Plateau.copierPlateau(plateau);
+                Plateau copiePlateau = plateau.copierPlateau();
                 
             Player copiePlayer = new Player(player.getName(), player.getTeam(), player.getPosition());
 
@@ -97,7 +103,7 @@ public class MinMaxStrategie extends AbstractStrategie{
             int worstValue = Integer.MAX_VALUE;
             for (Direction dir : plateau.getCoupsPossibles(player.getPosition())) {
 
-                Plateau copiePlateau = Plateau.copierPlateau(plateau);
+                Plateau copiePlateau = plateau.copierPlateau();
                             Player copiePlayer = new Player(player.getName(), player.getTeam(), player.getPosition());
 
 
@@ -130,11 +136,4 @@ public class MinMaxStrategie extends AbstractStrategie{
         plateau.placerJoueur(nouvelle, player);
     }
 
-    /**
-     * @return nom de la stratégie
-     */
-    @Override
-    public String getName() {
-        return "Stratégie MINMAX";
-    }
 }

@@ -22,6 +22,7 @@ public class FreeSpaceHeuristic implements Heuristic {
     }
 
     private int countAccessibleCells(Plateau grid, Position posi) {
+        if (!grid.estDansPlateau(posi)) return 0;
         int count = 1; 
 
         boolean[][] visited = new boolean[grid.getNbLignes()][grid.getNbColonnes()];

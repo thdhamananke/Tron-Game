@@ -12,7 +12,7 @@ public class MinMaxStrategieTest {
     @Test
     public void testDirectionNonNulleAvecHeuristic() {
 
-        Heuristic heuristic = new AdvancedHeuristic();
+        Heuristic heuristic = new VoronoiHeuristic();
 
         MinMaxStrategie strategie = new MinMaxStrategie(heuristic, 3);
         Plateau plateau = new Plateau(1,1);
@@ -28,7 +28,7 @@ public class MinMaxStrategieTest {
 
     @Test
     public void testCoupsPossiblesAvecHeuristic() {
-        Heuristic heuristic = new AdvancedHeuristic();
+        Heuristic heuristic = new VoronoiHeuristic();
 
         MinMaxStrategie strategie = new MinMaxStrategie(heuristic, 2);
         Plateau plateau = new Plateau(5,5);
@@ -45,7 +45,7 @@ public class MinMaxStrategieTest {
 
     @Test
     public void testMinMaxRetourneToujoursUneDirection() {
-        Heuristic heuristic = new AdvancedHeuristic();
+        Heuristic heuristic = new VoronoiHeuristic();
 
         MinMaxStrategie strategie = new MinMaxStrategie(heuristic, 2);
         Plateau plateau = new Plateau(4,4);

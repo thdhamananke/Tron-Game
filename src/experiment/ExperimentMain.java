@@ -40,7 +40,7 @@ public class ExperimentMain {
             System.out.println("2 - Advanced");
             int heuris = Main.entier(sc, "Votre choix : ");
 
-            Heuristic heuristic = (heuris == 2) ? new AdvancedHeuristic() : new FreeSpaceHeuristic();
+            Heuristic heuristic = (heuris == 2) ? new VoronoiHeuristic() : new FreeSpaceHeuristic();
 
             Strategie strat = (choix == 2)
                     ? new AlphaBetaStrategie(heuristic, profondeur)

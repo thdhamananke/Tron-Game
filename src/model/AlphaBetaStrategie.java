@@ -7,7 +7,7 @@ import java.util.*;
 public class AlphaBetaStrategie extends AbstractStrategie {
 
     private long startTime;
-    private static final long TIME_LIMIT_MS = 100;
+    private static final long TIME_LIMIT_MS = 500;
 
     public AlphaBetaStrategie(Heuristic heuristic, int depth) {
         super(heuristic , depth);
@@ -23,34 +23,37 @@ public class AlphaBetaStrategie extends AbstractStrategie {
     public Direction calculerMouvement(Player me, Plateau plateau) {
         startTime = System.currentTimeMillis();
 
+        // Player opponent = findOpponent(me, plateau);
+        List<Direction> coups = plateau.getCoupsPossibles(me.getPosition());
+        if (coups.isEmpty()) return Direction.HAUT;
+        Collections.shuffle(coups); // pour melanger les directions
+
         double bestValue = Double.NEGATIVE_INFINITY;
-        Direction bestDirection = Direction.HAUT;
+        Direction bestDirection = coups.get(0);
 
-        Player opponent = findOpponent(me, plateau);
+        for (Direction dir : coups) {
+            Plateau copieSaine = plateau.copierPlateau();
+            
+            Position ancienne = me.getPosition();
+            Position nouvelle = ancienne.move(dir);
+            copieSaine.placerMur(ancienne, me);
+            
+            Player meVirtuel = new Player(me.getName(), me.getTeam(), nouvelle);
+            copieSaine.placerJoueur(nouvelle, meVirtuel);
+            
+            Player opponent = findOpponent(meVirtuel, copieSaine);
 
-        double alpha = Double.NEGATIVE_INFINITY;
-        double beta = Double.POSITIVE_INFINITY;
-
-        int nbCaseLibre = plateau.getNbCasesLibres();
-        int effDepth = Math.min(this.depth, nbCaseLibre / 2);
-
-
-        for (Direction dir : plateau.getCoupsPossibles(me.getPosition())) {
-
-            MoveBackup backup = applyMove(plateau, me, dir);
-            double value = minimaxAlphaBeta(plateau, me, opponent, effDepth - 1, alpha, beta, false);
-            undoMove(plateau, me, backup);
+            double value = minimaxAlphaBeta(copieSaine, meVirtuel, opponent, depth - 1, 
+                                            Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, false);
 
             if (value > bestValue) {
                 bestValue = value;
                 bestDirection = dir;
             }
-
-            alpha = Math.max(alpha, bestValue);
         }
-
         return bestDirection;
     }
+
 
     /**
      * Implémentation récursive de l'algorithme Minimax avec élagage Alpha-Beta.
@@ -63,46 +66,51 @@ public class AlphaBetaStrategie extends AbstractStrategie {
      * @param maximizing indique si le joueur courant maximise ou minimise
      * @return valeur heuristique de l'état exploré
     */
+ 
     private double minimaxAlphaBeta(Plateau plateau, Player me, Player opponent,
                                     int depth, double alpha, double beta, boolean maximizing) {
 
-        Player currentPlayer = maximizing ? me : opponent;
-        List<Direction> coups = plateau.getCoupsPossibles(currentPlayer.getPosition());
-
         if (System.currentTimeMillis() - startTime > TIME_LIMIT_MS) {
-            return (int) heuristic.evaluate(plateau, me);
-        }
-
-        if (depth == 0 || coups.isEmpty() || !currentPlayer.isAlive()) {
             return heuristic.evaluate(plateau, me);
         }
 
-        if (maximizing) {
-            double value = Double.NEGATIVE_INFINITY;
-            for (Direction dir : coups) {
-                MoveBackup backup = applyMove(plateau, currentPlayer, dir);
-                value = Math.max(value,
-                        minimaxAlphaBeta(plateau, me, opponent, depth - 1, alpha, beta, false));
-                undoMove(plateau, currentPlayer, backup);
-
-                alpha = Math.max(alpha, value);
-                if (beta <= alpha) break;
-            }
-            return value;
-
-        } else {
-            double value = Double.POSITIVE_INFINITY;
-            for (Direction dir : coups) {
-                MoveBackup backup = applyMove(plateau, currentPlayer, dir);
-                value = Math.min(value,
-                        minimaxAlphaBeta(plateau, me, opponent, depth - 1, alpha, beta, true));
-                undoMove(plateau, currentPlayer, backup);
-
-                beta = Math.min(beta, value);
-                if (beta <= alpha) break;
-            }
-            return value;
+        if (depth == 0 || (maximizing && !me.isAlive()) || (!maximizing && opponent != null && !opponent.isAlive())) {
+            return heuristic.evaluate(plateau, me);
         }
+
+        Player current = maximizing ? me : opponent;
+        if (current == null) return heuristic.evaluate(plateau, me);
+
+        List<Direction> coups = plateau.getCoupsPossibles(current.getPosition());
+        if (coups.isEmpty()) return heuristic.evaluate(plateau, me);
+
+        double value = maximizing ? Double.NEGATIVE_INFINITY : Double.POSITIVE_INFINITY;
+
+        for (Direction dir : coups) {
+            Plateau simulation = plateau.copierPlateau();
+            Position ancienne = current.getPosition();
+            Position nouvelle = ancienne.move(dir);
+            
+            simulation.placerMur(ancienne, current);
+            Player virtuel = new Player(current.getName(), current.getTeam(), nouvelle);
+            simulation.placerJoueur(nouvelle, virtuel);
+
+            // On met à jour les références pour l'appel suivant
+            Player nextMe = maximizing ? virtuel : me;
+            Player nextOpponent = maximizing ? opponent : virtuel;
+
+            double eval = minimaxAlphaBeta(simulation, nextMe, nextOpponent, depth - 1, alpha, beta, !maximizing);
+
+            if (maximizing) {
+                value = Math.max(value, eval);
+                alpha = Math.max(alpha, value);
+            } else {
+                value = Math.min(value, eval);
+                beta = Math.min(beta, value);
+            }
+            if (beta <= alpha) break;
+        }
+        return value;
     }
 
     /**

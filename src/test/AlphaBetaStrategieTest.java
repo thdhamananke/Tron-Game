@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import model.AdvancedHeuristic;
+import model.VoronoiHeuristic;
 import model.AlphaBetaStrategie;
 import model.Color;
 import model.Heuristic;
@@ -15,7 +15,7 @@ public class AlphaBetaStrategieTest {
     
     @Test
     public void testsDirectionNonNullAvecheuristic(){
-        Heuristic heuristic = new AdvancedHeuristic();
+        Heuristic heuristic = new VoronoiHeuristic();
         AlphaBetaStrategie strategie = new AlphaBetaStrategie(heuristic , 5);
 
         Plateau  plateau = new Plateau(1,1);

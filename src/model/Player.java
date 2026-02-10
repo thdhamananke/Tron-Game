@@ -9,6 +9,13 @@ public class Player {
     private Strategie strategie;
 
     /**
+     *  volatile : permet de garantit que la valeur lue est toujours la version 
+     *  la plus récente écrite par un autre thread
+    */
+    private volatile Direction dernierCoupCal;
+
+
+    /**
      * Constructeur de player
      * @param name  nom du player
      * @param team  l'equipe dans la quelle il appartient
@@ -69,6 +76,29 @@ public class Player {
 
     public void setStrategie(Strategie strategie) {
         this.strategie = strategie;
+    }
+
+
+    /**
+     * On crée un thread qui va faire le calcul séparement
+     * @param plateauCopie le plateau copier
+    */
+    public void lancerReflexion(Plateau plateauCopie) {
+        this.dernierCoupCal = null; 
+
+        new Thread(() -> {
+            try {
+                if (this.strategie != null && this.alive) {
+                    this.dernierCoupCal = this.strategie.calculerMouvement(this, plateauCopie);
+                }
+            } catch (Exception e) {
+                e.printStackTrace(); 
+            }
+        }, "Thread-Joueur-" + name).start();
+    }
+
+    public Direction getDernierCoupCal() {
+        return dernierCoupCal;
     }
 
     public java.awt.Color getAwtColor() {
