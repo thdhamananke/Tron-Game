@@ -59,8 +59,8 @@ public class Main {
                     : new FreeSpaceHeuristic();
                             
             Strategie strat = (choix == 2)
-                    ? new AlphaBetaStrategie(heuristic, profondeur)
-                    : new MinMaxStrategie(heuristic, profondeur);
+                    ? new AlphaBetaStrategie(heuristic, profondeur  )
+                    : new MinMaxStrategie(heuristic, profondeur  );
 
             strategies.add(strat);
         }
@@ -110,7 +110,7 @@ public class Main {
         while (!modele.estTermine() && tour < maxTours) {
 
             tour++;
-            // clearScreen();
+            clearScreen();
 
             System.out.println("\n╔════════════════════════════════════════════╗");
             System.out.println("║               TOUR " + String.format("%3d", tour) + "                     ║");

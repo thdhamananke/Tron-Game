@@ -2,7 +2,7 @@ package observer;
 
 import java.util.*;
 
-// Une classe abstrait qui implement l'interface PaquetEcoutable
+// Une classe abstrait qui implement l'interface ModeleEcoutable
 public abstract class AbstractModeleEcoutable implements ModeleEcoutable{
     private List<EcouteurModele> ecouteurs;
 

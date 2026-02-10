@@ -10,7 +10,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameController{
+public class GameController extends Thread{
 
     private ModeleJeu game;
     private GUI vue;
@@ -104,7 +104,9 @@ public class GameController{
     public void setVue(GUI vue) {
         this.vue = vue;
     }
-
+ public GUI getVue() {
+     return vue;
+ }
     public ModeleJeu getGame(){
         return this.game;
     }
@@ -116,7 +118,7 @@ public class GameController{
             case "AlphaBeta"  -> new AlphaBetaStrategie(new FreeSpaceHeuristic(),5);
             case "MaxN"       -> new MaxNStrategie(new FreeSpaceHeuristic(), 5);
             case "Paranoid"   -> new ParanoidStrategie(new FreeSpaceHeuristic(),players,5);
-            case "SOS"        -> new SOSStrategie(new FreeSpaceHeuristic(), 5);
+            //case "SOS"        -> new SOSStrategie(new FreeSpaceHeuristic(), 5);
             default           -> new RandomStrategie(new FreeSpaceHeuristic(),5);
         };
     }

@@ -18,7 +18,6 @@ public class ExperimentRunner {
         if (config.getNbGames() == 1) {
             GameResult game = runner.runGame(config);
             result.record(game);
-            // Plus besoin de result.setPlayers(...) ici, record s'en occupe !
             return result;
         }
 
@@ -32,7 +31,6 @@ public class ExperimentRunner {
 
         for (Future<GameResult> f : futures) {
             try {
-                // record(game) va automatiquement remplir la liste players dans ExperimentResult
                 result.record(f.get());
             } catch (Exception e) {
                 e.printStackTrace();
@@ -43,3 +41,22 @@ public class ExperimentRunner {
         return result;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

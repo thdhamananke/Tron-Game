@@ -4,11 +4,14 @@ import view.VueJeu;
 import javax.swing.*;
 
 import controller.GameController;
+import controller.GameThread;
 
 import java.util.*;
 import model.Color;
+import model.FreeSpaceHeuristic;
 import model.ModeleJeu;
 import model.Position;
+import model.RandomStrategie;
 import model.Team;
 import model.Player;
 
@@ -25,9 +28,12 @@ public class Main {
         List<Player> listedeplayers = new ArrayList<Player>();
         listedeplayers.add(player1);
         listedeplayers.add(player2);
-        
+         player1.setStrategie(new RandomStrategie(new FreeSpaceHeuristic(), 5));
+        player2.setStrategie(new RandomStrategie(new FreeSpaceHeuristic(), 5));
+
         ModeleJeu  game =  new ModeleJeu(30, 30, listedeplayers);
-        GameController controller = new GameController(game, null);
+        GameController controller = new GameThread(game, null);
+        
         GUI view =  new GUI(controller);
         controller.setVue(view);
         game.ajoutEcouteur(view);
@@ -38,7 +44,7 @@ public class Main {
       //  SwingUtilities.invokeLater(() -> {
         //    new GUI();
         //});
-
+       controller.start();
 
     }
 
