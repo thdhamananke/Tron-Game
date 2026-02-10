@@ -11,7 +11,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // --- CONFIGURATION UNIQUE ---
+        //  configuration unique
         System.out.println("╔════════════════════════════════════════════╗");
         System.out.println("║         BIENVENUE AU JEU DE TRON           ║");
         System.out.println("╚════════════════════════════════════════════╝\n");
@@ -19,12 +19,12 @@ public class Main {
         int nbLignes  = entier(sc, "Nombre de lignes et de colonnes du plateau : ");
         int nbEquipes  = entier(sc, "Nombre d'équipes : ");
         int joueursParEquipe = entier(sc, "Nombre de joueurs par équipe : ");
-        int profondeur = entier(sc, "Profondeur MinMax / AlphaBeta : ");
+        int profondeur = entier(sc, "Profondeur de la recherche : ");
         int nbColonnes = nbLignes;
 
         Plateau plateau = new Plateau(nbLignes, nbColonnes);
 
-        // --- STRATÉGIES : demander une seule fois ---
+        //  strategies demander une seule fois 
         List<Player> joueurs = new ArrayList<>();
         List<Team> equipes = new ArrayList<>();
 
@@ -46,19 +46,23 @@ public class Main {
             System.out.println("1 - MinMax");
             System.out.println("2 - AlphaBeta");
             System.out.println("3 - MaxN");
-            // System.out.println("4 - Paranoid");
+            System.out.println("4 - Paranoid");
             System.out.println("5 - SOS");
-
             int choixAlgo = entier(sc, "Votre Choix : ");
+
             System.out.println("Heuristique à utiliser ? ");
             System.out.println("1 - FreeSpaceHeuristic");
             System.out.println("2 - VoronoiHeuristic");
-
+            System.out.println("3 - TreeOfChambersHeuristic");
             int choixHeuristique = entier(sc, "Votre choix : ");
 
-            Heuristic heuristic = (choixHeuristique == 2)
-                    ? new VoronoiHeuristic()
-                    : new FreeSpaceHeuristic();
+            Heuristic heuristic ;
+            switch (choixHeuristique) {
+                case 1 -> heuristic = new FreeSpaceHeuristic();
+                case 2 -> heuristic = new VoronoiHeuristic();
+                case 3 -> heuristic = new TreeOfChambersHeuristic();
+                default -> heuristic = new FreeSpaceHeuristic();
+            }
    
             Strategie strat;
             switch (choixAlgo) {
@@ -79,6 +83,9 @@ public class Main {
             // créer un plateau et réinitialiser les joueurs pour la nouvelle partie
             plateau = new Plateau(nbLignes, nbColonnes);
             ModeleJeu modele = new ModeleJeu(nbLignes, nbColonnes, joueurs);
+            ModeleJeuThread modeleThread = new ModeleJeuThread(modele, 700);
+            
+            
             modele.demarrer();
 
             // placer les joueurs sur le plateau
@@ -91,8 +98,8 @@ public class Main {
             }
 
             // jouer une partie
-            int maxTours = calculerMaxTours(nbLignes, nbColonnes, nbEquipes * joueursParEquipe);
-            jouerPartieGenerique(modele, joueurs, maxTours);
+            int maxTours = calculerMaxTours(nbLignes, nbColonnes, joueurs.size());
+            jouerPartieGenerique(modeleThread, joueurs, maxTours);
 
             // demander si l’utilisateur veut rejouer
             System.out.println("Voulez-vous rejouer une partie ? (O/N) : ");
@@ -104,6 +111,7 @@ public class Main {
         }
     }
 
+
     /**
      * Permet de joueur une partie.
      * @param modele    le modele du jeu
@@ -111,11 +119,10 @@ public class Main {
      * @param strategies    list des strategies
      * @param maxTours  le nombre de tour maximale
     */
-    public static void jouerPartieGenerique(ModeleJeu modele, List<Player> joueurs, int maxTours) {
+    public static void jouerPartieGenerique(ModeleJeuThread modeleThread, List<Player> joueurs, int maxTours) {
         int tour = 0;
-        int tempsReflexionMs = 500; // Temps alloué à chaque IA par tour
 
-        while (!modele.estTermine() && tour < maxTours) {
+        while (!modeleThread.estTermine() && tour < maxTours) {
             tour++;
             clearScreen();
 
@@ -123,29 +130,28 @@ public class Main {
             System.out.println("║               TOUR " + String.format("%3d", tour) + "                     ║");
             System.out.println("╚════════════════════════════════════════════╝\n");
 
-            // On utilise le modèle pour gérer les threads et le chrono
-            // Cette méthode va lancer les threads, attendre 500ms, et bouger les joueurs
-            modele.executerTourAutomatique(tempsReflexionMs);
+            // Faire réfléchir les IA et applique le mouvement
+            modeleThread.avancerTour();
 
             // Affichage des résultats du tour
             for (Player player : joueurs) {
                 if (player.isAlive()) {
-                    Direction d = player.getDernierCoupCal();
-                    System.out.println(player.getColor().paint("█") + " " + player.getName() +
-                            " : " + (d != null ? formatDirection(d) : "TIMEOUT"));
+                    Direction dir = player.getDernierCoupCal();
+                    String directionTexte = (dir != null) ? formatDirection(dir) : "TIMEOUT/ATTENTE";
+                    System.out.println(player.getColor().paint("█") + " " + player.getName() + " : " + directionTexte);
                 } else {
                     System.out.println(player.getColor().paint(" ") + " " + player.getName() + " : MORT");
                 }
             }
 
             System.out.println();
-            afficherPlateauColore(modele.getPlateau(), joueurs);
+            afficherPlateauColore(modeleThread.getPlateau(), joueurs);
             
             // Petite pause visuelle pour l'utilisateur
             pause(200);
         }
 
-        afficherResultatsFinaux(modele, tour);
+        afficherResultatsFinaux(modeleThread.getModele(), tour);
     }
 
 
@@ -229,9 +235,7 @@ public class Main {
     */
     private static int calculerMaxTours(int nbLignes, int nbColonnes, int nbJoueurs) {
         int taillePlateau = nbLignes * nbColonnes;
-
         double facteur = Math.max(0.5, 1.0 - (nbJoueurs - 1) * 0.1);
-
         return (int) (taillePlateau * facteur);
     }
 
@@ -253,9 +257,8 @@ public class Main {
         return result;
     }
 
-    
     /**
-     * Affiche les résultats finaux
+     * Affiche les résultats finaux  (utilise le modèle pur)
      * @param modele le modele du jeu
      * @param tour  le tour.
     */
@@ -290,6 +293,7 @@ public class Main {
     
     /** Formate une direction avec une flèche */
     private static String formatDirection(Direction dir) {
+        if (dir == null) return "TIMEOUT (STAY)";
         switch (dir) {
             case HAUT: return "↑ HAUT";
             case BAS: return "↓ BAS";

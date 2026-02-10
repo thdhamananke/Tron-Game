@@ -33,7 +33,7 @@ public class VoronoiHeuristic implements Heuristic {
 
         Queue<Integer> queue = new ArrayDeque<>();
 
-        // OPTIMISATION : On récupère les positions des joueurs via le plateau
+        // optimisation on récupère les positions des joueurs via le plateau
         // plutôt que de scanner toutes les cases vides.
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {

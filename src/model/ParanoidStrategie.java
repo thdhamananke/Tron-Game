@@ -11,6 +11,11 @@ public class ParanoidStrategie extends AbstractStrategie {
     }
 
     @Override
+    public String getName() {
+        return "Stratégie Paranoid";
+    }
+
+    @Override
     public Direction calculerMouvement(Player me, Plateau plateau) {
 
         double bestValue = Double.NEGATIVE_INFINITY;
@@ -85,8 +90,4 @@ public class ParanoidStrategie extends AbstractStrategie {
         return value;
     }
 
-    @Override
-    public String getName() {
-        return "Stratégie Paranoid";
-    }
 }

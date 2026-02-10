@@ -1,6 +1,5 @@
 package model;
 
-import observer.*;
 
 import java.util.*;
 
@@ -8,8 +7,7 @@ import java.util.*;
  * Modèle (MVC) du jeu de Tron.
  * Contient l'état du jeu (plateau, joueurs, tour) et applique les règles.
  */
-public class ModeleJeu extends AbstractModeleEcoutable
-{
+public class ModeleJeu {
     private Plateau plateau;
     private final List<Player> joueurs;
     private int tour;
@@ -35,13 +33,11 @@ public class ModeleJeu extends AbstractModeleEcoutable
     /**
      * Démarre une nouvelle partie : réinitialise le plateau et place les joueurs.
      */
-    public void demarrer() 
-    {
+    public void demarrer() {
         this.plateau = new Plateau(plateau.getNbLignes(), plateau.getNbColonnes());
         this.tour = 0;
         this.jeuEnCours = true;
-        for (Player j : joueurs) 
-        {
+        for (Player j : joueurs) {
             if (j.getPosition() == null) 
             {
                 throw new IllegalStateException("Un joueur n'a pas de position initiale.");
@@ -63,7 +59,6 @@ public class ModeleJeu extends AbstractModeleEcoutable
 
     /**
      * Joue un tour complet : chaque joueur vivant effectue un déplacement.
-     *
      * @param coups liste des directions choisies dans le même ordre que getJoueurs()
     */
     public void tourSuivant(List<Direction> coups) {
@@ -88,7 +83,6 @@ public class ModeleJeu extends AbstractModeleEcoutable
         if (estTermine()) {
             jeuEnCours = false;
         }
-        notifier();
     }
 
     /**
@@ -99,8 +93,7 @@ public class ModeleJeu extends AbstractModeleEcoutable
      * @param joueur joueur vivant
      * @param direction direction choisie
     */
-    private void appliquerDeplacement(Player joueur, Direction direction) 
-    {
+    private void appliquerDeplacement(Player joueur, Direction direction) {
         Position actuelle = joueur.getPosition();
         Position suivante = actuelle.move(direction);
 
@@ -190,51 +183,6 @@ public class ModeleJeu extends AbstractModeleEcoutable
     public void setPlateauSize(int rows, int cols) {
         this.plateau.setSize(rows, cols);
 
-    }
-
-
-    /**
-     * permet de gerer la réflexion parallèle et applique le tour.
-     * Cette méthode fait le lien entre les Threads des joueurs et la logique du jeu.
-    */
-    public void executerTourAutomatique(int timeoutMs) {
-        if (!jeuEnCours || estTermine()) return;
-
-        // Lancer la réflexion en parallèle
-        for (Player player : joueurs) {
-            if (player.isAlive()) {
-                player.lancerReflexion(this.plateau.copierPlateau());
-            }
-        }
-
-        // Attendre la fin du temps alloué
-        try {
-            Thread.sleep(timeoutMs);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
-        // Récupérer les décisions
-        List<Direction> coupsDuTour = new ArrayList<>();
-        for (Player player : joueurs) {
-            if (player.isAlive()) {
-                Direction dir = player.getDernierCoupCal();
-                
-                if (dir == null) {
-                    // L'IA n'a pas répondu à temps donc éliminée
-                    System.out.println("TIMEOUT : " + player.getName() + " n'a pas répondu. Direction HAUT par defaut");
-                    coupsDuTour.add(Direction.HAUT);
-                    // player.die(); 
-                } else {
-                    coupsDuTour.add(dir);
-                }
-            } else {
-                coupsDuTour.add(Direction.HAUT);
-            }
-        }
-
-        // Appliquer les mouvements physiquement
-        this.tourSuivant(coupsDuTour);
     }
 
 }

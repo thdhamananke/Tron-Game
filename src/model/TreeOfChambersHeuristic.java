@@ -3,99 +3,97 @@ package model;
 import java.util.*;
 
 /**
- * Heuristique "Tree of Chambers" (Lukas Kang, section 4.3) :
- * 1) Calcule une partition Voronoi (région du joueur / région adverse / battlefront)
- * 2) Si la région du joueur contient des points d'articulation :
- *    - Construire la "chambre" du joueur en n'itérant pas à travers les articulations
- *    - Explorer les chambres adjacentes via articulations
- *    - Ne garder que les chambres adjacentes qui NE contiennent PAS la battlefront
- *    - Score joueur = taille(chambre) + max(taille(chambreAdjacenteValide))
- * 3) Sinon score joueur = taille(région Voronoi)
- * 4) Valeur retournée = score(joueur) - meilleurScore(adversaire)
+ * Heuristique "Tree of Chambers" (Lukas Kang).
  *
- * Référence: Kang BSc paper, p.5 (Tree of Chambers). :contentReference[oaicite:3]{index=3}
+ * Principe :
+ * - Partition Voronoï joueur / adversaire / battlefront
+ * - Analyse des points d'articulation dans la région Voronoï
+ * - Construction d'une chambre principale et de chambres adjacentes
+ * - Le score correspond à l'espace contrôlable maximal
+ * Valeur finale score(joueur) - score(meilleur adversaire)
  */
 public class TreeOfChambersHeuristic implements Heuristic {
-
     @Override
     public String getName() {
         return "Tree of Chambers";
     }
 
+    /**
+     * Évalue le plateau pour un joueur donné en utilisant l'heuristique "Tree of Chambers".
+     *
+     * @param grid le plateau de jeu
+     * @param player le joueur pour lequel calculer le score
+     * @return un score double représentant la valeur stratégique de la position
+    */
     @Override
     public double evaluate(Plateau grid, Player player) {
-        if (player == null || !player.isAlive()) return -1_000_000.0;
+        if (player == null || !player.isAlive()) {
+            return -1000000.0;
+        }
 
         List<Player> opponents = getOpponents(grid, player);
         if (opponents.isEmpty()) {
-            // fallback : sans adversaire connu, on renvoie juste l'espace accessible
             return countAccessibleCells(grid, player.getPosition());
         }
 
-        // On compare au "meilleur adversaire" (le plus dangereux)
-        double myBest = Double.NEGATIVE_INFINITY;
-        double oppBest = Double.NEGATIVE_INFINITY;
+        int myBest = 0;
+        int oppBest = 0;
 
         for (Player opp : opponents) {
-            if (opp == null || !opp.isAlive()) continue;
+            VoronoiResult vr = computeVoronoi2P(grid, player.getPosition(), opp.getPosition() );
 
-            VoronoiResult vr = computeVoronoi2P(grid, player.getPosition(), opp.getPosition());
-
-            int myVal = tocValueForPlayer(grid, vr, /*isP1=*/true);
-            int oppVal = tocValueForPlayer(grid, vr, /*isP1=*/false);
-
-            myBest = Math.max(myBest, myVal);
-            oppBest = Math.max(oppBest, oppVal);
+            myBest = Math.max(myBest, tocValueForPlayer(grid, vr, true));
+            oppBest = Math.max(oppBest, tocValueForPlayer(grid, vr, false));
         }
-
-        if (myBest == Double.NEGATIVE_INFINITY) myBest = 0;
-        if (oppBest == Double.NEGATIVE_INFINITY) oppBest = 0;
 
         return myBest - oppBest;
     }
 
     /**
-     * Idée: retourner tous les joueurs vivants != player (ou juste le "principal adversaire").
-     */
-    @SuppressWarnings("unchecked")
-    private List<Player> getOpponents(Plateau grid, Player player) {
+     * Récupère la liste des joueurs adverses encore en vie.
+     * @param grid le plateau de jeu
+     * @param me le joueur courant
+     * @return liste des adversaires vivants
+    */
+    private List<Player> getOpponents(Plateau grid, Player me) {
         List<Player> res = new ArrayList<>();
-        try {
-            // Si tu as Plateau.getPlayers(): List<Player>
-            // Remplace si ton projet utilise un autre nom: getJoueurs(), getAllPlayers(), etc.
-            List<Player> all = (List<Player>) grid.getClass().getMethod("getPlayers").invoke(grid);
-            for (Player p : all) {
-                if (p != null && p != player && p.isAlive()) res.add(p);
+
+        for (int r = 0; r < grid.getNbLignes(); r++) {
+            for (int c = 0; c < grid.getNbColonnes(); c++) {
+                Position pos = new Position(r, c);
+                Player p = grid.getJoueurAt(pos);
+
+                if (p != null && p != me && p.isAlive() && !res.contains(p)) {
+                    res.add(p);
+                }
             }
-        } catch (Exception e) {
-            // Si pas de getPlayers(), adapte ici manuellement
-            // (ex: grid.getJoueurs(), grid.getListeJoueurs(), etc.)
         }
+
         return res;
     }
 
-    // -------------------- VORONOI 2 JOUEURS --------------------
+    /* ===================== VORONOI ===================== */
 
+    /** Résultat d'une partition Voronoï entre deux joueurs */
     private static class VoronoiResult {
-        // owner[r][c] : 1 -> P1, 2 -> P2, 0 -> battlefront, -1 -> wall/occupied/unreachable
-        int[][] owner;
-        boolean[][] battlefront;
+        int[][] owner;              // 1 joueur, 2 adversaire, 0 battlefront, -1 bloqué
         boolean[][] regionP1;
         boolean[][] regionP2;
+        boolean[][] battlefront;
     }
 
     /**
-     * Voronoi 2 joueurs via BFS multi-source.
-     * On calcule distP1 et distP2, puis:
-     * - si distP1 < distP2 -> P1
-     * - si distP2 < distP1 -> P2
-     * - si égal et atteignable -> battlefront (0)
-     */
+     * Calcule la partition Voronoï à deux joueurs.
+     * @param grid le plateau de jeu
+     * @param p1 position du joueur 1
+     * @param p2 position du joueur 2
+     * @return un VoronoiResult contenant régions et battlefront
+    */
     private VoronoiResult computeVoronoi2P(Plateau grid, Position p1, Position p2) {
         int R = grid.getNbLignes();
         int C = grid.getNbColonnes();
+        int INF = 1000000;
 
-        int INF = 1_000_000;
         int[][] d1 = new int[R][C];
         int[][] d2 = new int[R][C];
 
@@ -109,16 +107,15 @@ public class TreeOfChambersHeuristic implements Heuristic {
 
         VoronoiResult vr = new VoronoiResult();
         vr.owner = new int[R][C];
-        vr.battlefront = new boolean[R][C];
         vr.regionP1 = new boolean[R][C];
         vr.regionP2 = new boolean[R][C];
+        vr.battlefront = new boolean[R][C];
 
         for (int r = 0; r < R; r++) {
             for (int c = 0; c < C; c++) {
                 Position pos = new Position(r, c);
 
-                // Si c'est un mur/case occupée, on marque inaccessible
-                if (!grid.estLibre(pos) && !(r == p1.getRow() && c == p1.getCol()) && !(r == p2.getRow() && c == p2.getCol())) {
+                if (!grid.estLibre(pos) && !pos.equals(p1) && !pos.equals(p2)) {
                     vr.owner[r][c] = -1;
                     continue;
                 }
@@ -126,40 +123,44 @@ public class TreeOfChambersHeuristic implements Heuristic {
                 int a = d1[r][c];
                 int b = d2[r][c];
 
-                if (a == INF && b == INF) {
-                    vr.owner[r][c] = -1;
-                } else if (a < b) {
+                if (a < b) {
                     vr.owner[r][c] = 1;
                     vr.regionP1[r][c] = true;
                 } else if (b < a) {
                     vr.owner[r][c] = 2;
                     vr.regionP2[r][c] = true;
-                } else {
-                    // égal et atteignable -> battlefront
+                } else if (a != INF) {
                     vr.owner[r][c] = 0;
                     vr.battlefront[r][c] = true;
+                } else {
+                    vr.owner[r][c] = -1;
                 }
             }
         }
 
-        // Assure que la position de départ est dans sa région
         vr.regionP1[p1.getRow()][p1.getCol()] = true;
         vr.regionP2[p2.getRow()][p2.getCol()] = true;
-        vr.owner[p1.getRow()][p1.getCol()] = 1;
-        vr.owner[p2.getRow()][p2.getCol()] = 2;
 
         return vr;
     }
 
+    /**
+     * Calcule les distances minimales depuis une position vers toutes 
+     * les cases accessibles du plateau via BFS.
+     *
+     * @param grid le plateau du jeu
+     * @param start position de départ
+     * @param dist tableau des distances à remplir
+    */
     private void bfsDistances(Plateau grid, Position start, int[][] dist) {
         int R = grid.getNbLignes();
         int C = grid.getNbColonnes();
 
-        boolean[][] vis = new boolean[R][C];
+        boolean[][] visited = new boolean[R][C];
         ArrayDeque<Position> q = new ArrayDeque<>();
 
+        visited[start.getRow()][start.getCol()] = true;
         dist[start.getRow()][start.getCol()] = 0;
-        vis[start.getRow()][start.getCol()] = true;
         q.add(start);
 
         while (!q.isEmpty()) {
@@ -169,13 +170,10 @@ public class TreeOfChambersHeuristic implements Heuristic {
             for (Direction dir : Direction.values()) {
                 Position nxt = cur.move(dir);
                 if (!grid.estDansPlateau(nxt)) continue;
+                if (!grid.estLibre(nxt) && !nxt.equals(start)) continue;
 
-                // Autorise la case start même si estLibre() est false (selon ton moteur)
-                boolean free = grid.estLibre(nxt) || (nxt.getRow() == start.getRow() && nxt.getCol() == start.getCol());
-                if (!free) continue;
-
-                if (!vis[nxt.getRow()][nxt.getCol()]) {
-                    vis[nxt.getRow()][nxt.getCol()] = true;
+                if (!visited[nxt.getRow()][nxt.getCol()]) {
+                    visited[nxt.getRow()][nxt.getCol()] = true;
                     dist[nxt.getRow()][nxt.getCol()] = cd + 1;
                     q.add(nxt);
                 }
@@ -183,90 +181,88 @@ public class TreeOfChambersHeuristic implements Heuristic {
         }
     }
 
-    // -------------------- TREE OF CHAMBERS --------------------
+    /* ===================== TREE OF CHAMBERS ===================== */
 
+    /**
+     * Calcule la valeur de la chambre principale + meilleure chambre 
+     * adjacente pour un joueur donné.
+     * @param grid le plateau
+     * @param vr résultat Voronoï
+     * @param isP1 true si joueur = P1
+     * @return score numérique
+    */
     private int tocValueForPlayer(Plateau grid, VoronoiResult vr, boolean isP1) {
         boolean[][] region = isP1 ? vr.regionP1 : vr.regionP2;
+        Set<Integer> nodes = cellsToNodeSet(grid, region);
+        if (nodes.isEmpty()) return 0;
 
-        // 1) Si pas de points d’articulation -> taille région Voronoi
-        Set<Integer> regionNodes = cellsToNodeSet(grid, region);
-        if (regionNodes.isEmpty()) return 0;
-
-        Set<Integer> articulations = findArticulationPoints(grid, regionNodes);
-
+        Set<Integer> articulations = findArticulationPoints(grid, nodes);
         if (articulations.isEmpty()) {
-            return regionNodes.size();
+            return nodes.size();
         }
 
-        // 2) Sinon : chambre depuis la position du joueur (dans owner==1 ou 2)
-        Position start = findStartInVoronoi(vr, isP1);
-        if (start == null) return regionNodes.size(); // fallback
+        Position start = findAnyCell(region);
+        if (start == null) return nodes.size();
 
-        // Chambre principale: BFS dans la région en interdisant de TRAVERSER les articulations
         Chamber main = exploreChamber(grid, region, articulations, vr.battlefront, start);
 
-        // 3) Chambres adjacentes via articulations touchées par la chambre principale
-        int bestNeighbor = 0;
-        for (int artNode : main.borderArticulations) {
-            int ar = artNode / grid.getNbColonnes();
-            int ac = artNode % grid.getNbColonnes();
-            Position artPos = new Position(ar, ac);
+        int bestAdj = 0;
+        for (int art : main.borderArticulations) {
+            Position p = new Position(art / grid.getNbColonnes(), art % grid.getNbColonnes());
 
-            Chamber neigh = exploreChamber(grid, region, articulations, vr.battlefront, artPos);
+            Chamber ch = exploreChamber(grid, region, articulations, vr.battlefront, p);
 
-            // Si la chambre contient la battlefront -> discard (papier)
-            if (neigh.touchesBattlefront) continue;
-
-            bestNeighbor = Math.max(bestNeighbor, neigh.size);
+            if (!ch.touchesBattlefront) {
+                bestAdj = Math.max(bestAdj, ch.size);
+            }
         }
 
-        return main.size + bestNeighbor;
+        return main.size + bestAdj;
     }
 
-    private Position findStartInVoronoi(VoronoiResult vr, boolean isP1) {
-        int target = isP1 ? 1 : 2;
-        for (int r = 0; r < vr.owner.length; r++) {
-            for (int c = 0; c < vr.owner[0].length; c++) {
-                // On prend la case "joueur" (normalement unique = position actuelle)
-                // Comme on ne l'a pas explicitement, on privilégie les cases marquées owner==target
-                // et adjacentes à des murs (souvent la trace).
-                if (vr.owner[r][c] == target) {
-                    return new Position(r, c);
-                }
+    /**
+     * Retourne n'importe quelle cellule présente dans la région.
+     * @param region matrice booléenne représentant la région
+     * @return position d'une cellule, ou null si aucune
+    */
+    private Position findAnyCell(boolean[][] region) {
+        for (int r = 0; r < region.length; r++) {
+            for (int c = 0; c < region[0].length; c++) {
+                if (region[r][c]) return new Position(r, c);
             }
         }
         return null;
     }
 
+    /** Représente une chambre explorée dans la grille */
     private static class Chamber {
-        int size;
-        boolean touchesBattlefront;
+        int size = 0;
+        boolean touchesBattlefront = false;
         Set<Integer> borderArticulations = new HashSet<>();
     }
 
     /**
-     * Explore une chambre à partir d'un start:
-     * - On reste dans "region"
-     * - On ne traverse PAS les articulation points (sauf si start est articulation: on l'autorise comme entrée)
-     * - On collecte les articulations rencontrées en bordure
+     * Explore une chambre à partir d'une position initiale.
+     * @param grid le plateau
+     * @param region matrice de cellules accessibles
+     * @param articulations ensemble de points d'articulation
+     * @param battlefront matrice des battlefronts
+     * @param start position de départ
+     * @return une instance Chamber avec taille et borderArticulations
      */
-    private Chamber exploreChamber(Plateau grid, boolean[][] region, Set<Integer> articulations,
-                                   boolean[][] battlefront, Position start) {
-
+    private Chamber exploreChamber( Plateau grid, boolean[][] region, Set<Integer> 
+                                    articulations, boolean[][] battlefront, Position start) {
         int R = grid.getNbLignes();
         int C = grid.getNbColonnes();
 
         Chamber ch = new Chamber();
-
-        boolean[][] vis = new boolean[R][C];
+        boolean[][] visited = new boolean[R][C];
         ArrayDeque<Position> q = new ArrayDeque<>();
 
         int startId = start.getRow() * C + start.getCol();
-
-        // Si start n'est même pas dans la région, chambre vide
         if (!region[start.getRow()][start.getCol()]) return ch;
 
-        vis[start.getRow()][start.getCol()] = true;
+        visited[start.getRow()][start.getCol()] = true;
         q.add(start);
 
         while (!q.isEmpty()) {
@@ -275,27 +271,21 @@ public class TreeOfChambersHeuristic implements Heuristic {
             int id = r * C + c;
 
             ch.size++;
-
             if (battlefront[r][c]) ch.touchesBattlefront = true;
 
             for (Direction dir : Direction.values()) {
                 Position nxt = cur.move(dir);
                 if (!grid.estDansPlateau(nxt)) continue;
+                if (!region[nxt.getRow()][nxt.getCol()]) continue;
 
-                int nr = nxt.getRow(), nc = nxt.getCol();
-                if (!region[nr][nc]) continue;
-
-                int nid = nr * C + nc;
-
-                // Si c'est une articulation : on ne traverse pas, on la note comme bordure
-                // Exception: si la case actuelle est start articulation, on autorise l'entrée uniquement au départ
+                int nid = nxt.getRow() * C + nxt.getCol();
                 if (articulations.contains(nid) && nid != startId) {
                     ch.borderArticulations.add(nid);
                     continue;
                 }
 
-                if (!vis[nr][nc]) {
-                    vis[nr][nc] = true;
+                if (!visited[nxt.getRow()][nxt.getCol()]) {
+                    visited[nxt.getRow()][nxt.getCol()] = true;
                     q.add(nxt);
                 }
             }
@@ -304,34 +294,40 @@ public class TreeOfChambersHeuristic implements Heuristic {
         return ch;
     }
 
+    /* ===================== ARTICULATIONS ===================== */
+
+    /**
+     * Transforme les cellules accessibles en ensemble d'IDs.
+     * @param grid plateau
+     * @param region région booléenne
+     * @return ensemble d'entiers représentant les cellules
+    */
     private Set<Integer> cellsToNodeSet(Plateau grid, boolean[][] region) {
-        Set<Integer> nodes = new HashSet<>();
-        int R = grid.getNbLignes();
+        Set<Integer> res = new HashSet<>();
         int C = grid.getNbColonnes();
-        for (int r = 0; r < R; r++) {
-            for (int c = 0; c < C; c++) {
-                if (region[r][c]) nodes.add(r * C + c);
+        for (int r = 0; r < region.length; r++) {
+            for (int c = 0; c < region[0].length; c++) {
+                if (region[r][c]) res.add(r * C + c);
             }
         }
-        return nodes;
+        return res;
     }
 
     /**
-     * Points d'articulation dans le graphe 4-voisins induit par "regionNodes".
-     * Tarjan DFS (disc/low).
-     */
-    private Set<Integer> findArticulationPoints(Plateau grid, Set<Integer> regionNodes) {
-        int C = grid.getNbColonnes();
-
-        Map<Integer, List<Integer>> adj = buildAdj(grid, regionNodes);
-
+     * Identifie les points d'articulation dans un graphe 4-voisins.
+     * @param grid plateau
+     * @param nodes ensemble de cellules
+     * @return ensemble de points d'articulation
+    */
+    private Set<Integer> findArticulationPoints(Plateau grid, Set<Integer> nodes) {
+        Map<Integer, List<Integer>> adj = buildAdj(grid, nodes);
         Map<Integer, Integer> disc = new HashMap<>();
         Map<Integer, Integer> low = new HashMap<>();
         Map<Integer, Integer> parent = new HashMap<>();
         Set<Integer> ap = new HashSet<>();
         int[] time = {0};
 
-        for (int u : regionNodes) {
+        for (int u : nodes) {
             if (!disc.containsKey(u)) {
                 dfsAP(u, adj, disc, low, parent, ap, time);
             }
@@ -339,46 +335,35 @@ public class TreeOfChambersHeuristic implements Heuristic {
         return ap;
     }
 
-    private void dfsAP(int u,
-                       Map<Integer, List<Integer>> adj,
-                       Map<Integer, Integer> disc,
-                       Map<Integer, Integer> low,
-                       Map<Integer, Integer> parent,
-                       Set<Integer> ap,
-                       int[] time) {
-
+    private void dfsAP(int u, Map<Integer, List<Integer>> adj, Map<Integer, Integer> disc, Map<Integer, 
+                        Integer> low, Map<Integer, Integer> parent, Set<Integer> ap, int[] time ) {
         disc.put(u, ++time[0]);
         low.put(u, disc.get(u));
-
         int children = 0;
 
-        for (int v : adj.getOrDefault(u, Collections.emptyList())) {
+        for (int v : adj.getOrDefault(u, List.of())) {
             if (!disc.containsKey(v)) {
                 children++;
                 parent.put(v, u);
                 dfsAP(v, adj, disc, low, parent, ap, time);
-
                 low.put(u, Math.min(low.get(u), low.get(v)));
 
-                Integer pu = parent.get(u);
-
-                // u racine
-                if (pu == null && children > 1) ap.add(u);
-
-                // u non-racine
-                if (pu != null && low.get(v) >= disc.get(u)) ap.add(u);
-
-            } else if (!Objects.equals(parent.get(u), v)) {
-                // back edge
+                if (parent.get(u) == null && children > 1) ap.add(u);
+                if (parent.get(u) != null && low.get(v) >= disc.get(u)) ap.add(u);
+            } else if (v != parent.getOrDefault(u, -1)) {
                 low.put(u, Math.min(low.get(u), disc.get(v)));
             }
         }
     }
 
-    private Map<Integer, List<Integer>> buildAdj(Plateau grid, Set<Integer> nodes) {
-        int R = grid.getNbLignes();
+    /**
+     * Construit la liste d'adjacence pour le graphe 4-voisins.
+     * @param grid plateau
+     * @param nodes ensemble de cellules
+     * @return map id -> liste des voisins
+    */
+    private Map<Integer, List<Integer>> buildAdj(Plateau grid, Set<Integer> nodes ) {
         int C = grid.getNbColonnes();
-
         Map<Integer, List<Integer>> adj = new HashMap<>();
         for (int id : nodes) adj.put(id, new ArrayList<>());
 
@@ -387,8 +372,8 @@ public class TreeOfChambersHeuristic implements Heuristic {
             int c = id % C;
             Position cur = new Position(r, c);
 
-            for (Direction dir : Direction.values()) {
-                Position nxt = cur.move(dir);
+            for (Direction d : Direction.values()) {
+                Position nxt = cur.move(d);
                 if (!grid.estDansPlateau(nxt)) continue;
                 int nid = nxt.getRow() * C + nxt.getCol();
                 if (nodes.contains(nid)) {
@@ -399,11 +384,18 @@ public class TreeOfChambersHeuristic implements Heuristic {
         return adj;
     }
 
-    // -------------------- UTILS --------------------
+    /* ===================== UTILS ===================== */
 
+    /**
+     * Compte le nombre de cellules accessibles depuis une position donnée (BFS simple).
+     * @param grid plateau
+     * @param start position de départ
+     * @return nombre de cellules accessibles
+    */
     private int countAccessibleCells(Plateau grid, Position start) {
         boolean[][] visited = new boolean[grid.getNbLignes()][grid.getNbColonnes()];
-        Queue<Position> q = new LinkedList<>();
+        Queue<Position> q = new ArrayDeque<>();
+
         visited[start.getRow()][start.getCol()] = true;
         q.add(start);
 
@@ -413,14 +405,15 @@ public class TreeOfChambersHeuristic implements Heuristic {
             for (Direction dir : Direction.values()) {
                 Position nxt = cur.move(dir);
                 if (grid.estDansPlateau(nxt)
-                        && !visited[nxt.getRow()][nxt.getCol()]
-                        && grid.estLibre(nxt)) {
+                        && grid.estLibre(nxt)
+                        && !visited[nxt.getRow()][nxt.getCol()]) {
                     visited[nxt.getRow()][nxt.getCol()] = true;
                     q.add(nxt);
                     count++;
                 }
             }
         }
+        
         return count;
     }
 }
