@@ -11,23 +11,18 @@ public class ParanoidStrategie extends AbstractStrategie {
     }
 
     @Override
-    public String getName() {
-        return "Stratégie Paranoid";
-    }
-
-    @Override
     public Direction calculerMouvement(Player me, Plateau plateau) {
 
-        double bestValue = Double.NEGATIVE_INFINITY;
+        double bestValue = Double.MIN_VALUE;
         Direction bestDir = null;
 
-        double alpha = Double.NEGATIVE_INFINITY;
-        double beta = Double.POSITIVE_INFINITY;
+        double alpha = Double.MIN_VALUE;
+        double beta = Double.MAX_VALUE;
 
         for (Direction dir : plateau.getCoupsPossibles(me.getPosition())) {
 
             MoveBackup backup = applyMove(plateau, me, dir);
-            double value = paranoidMin(plateau, me, depth-1, alpha, beta);
+            double value = paranoid(plateau, me, depth-1, alpha, beta , true);
             undoMove(plateau, me, backup);
 
             if (value > bestValue) {
@@ -40,54 +35,55 @@ public class ParanoidStrategie extends AbstractStrategie {
 
         return bestDir;
     }
-
-    /* ================= ALGORITHME ================= */
-    // MAX : joueur paranoïaque
-    private double paranoidMax(Plateau plateau, Player me, int depth, double alpha, double beta) {
-        if (depth == 0 || !me.isAlive()) {
+    private double  paranoid(Plateau plateau , Player me , int depth , double alpha , double beta , boolean maximiserJoueur){
+       
+       // double value =0;
+        if(depth == 0 || !(me.isAlive())){
             return heuristic.evaluate(plateau, me);
         }
+        if(maximiserJoueur){
 
-        double value = Double.NEGATIVE_INFINITY;
-
-        for (Direction dir : plateau.getCoupsPossibles(me.getPosition())) {
-            MoveBackup backup = applyMove(plateau, me, dir);
-            value = Math.max(value,
-                    paranoidMin(plateau, me, depth - 1, alpha, beta));
-            undoMove(plateau, me, backup);
-
-            alpha = Math.max(alpha, value);
-            if (alpha >= beta) break;
-        }
-
-        return value;
-    }
-
-    // MIN : coalition des adversaires
-    private double paranoidMin(Plateau plateau, Player me, int depth,
-                               double alpha, double beta) {
-
-        if (depth == 0) {
-            return heuristic.evaluate(plateau, me);
-        }
-
-        double value = Double.POSITIVE_INFINITY;
-
-        for (Player adv : joueurs) {
-            if (adv == me || !adv.isAlive()) continue;
-
-            for (Direction dir : plateau.getCoupsPossibles(adv.getPosition())) {
-                MoveBackup backup = applyMove(plateau, adv, dir);
-                value = Math.min(value,
-                        paranoidMax(plateau, me, depth - 1, alpha, beta));
-                undoMove(plateau, adv, backup);
-
-                beta = Math.min(beta, value);
-                if (beta <= alpha) break;
+             double maxVal = Double.MIN_VALUE;
+            for(Direction dir : plateau.getCoupsPossibles(me.getPosition())){
+                MoveBackup backup = applyMove(plateau, me, dir);
+               double val = paranoid(plateau, me, depth-1, alpha, beta, false);
+               undoMove(plateau, me, backup);
+               maxVal = Math.max(maxVal , val);
+               alpha= Math.max(alpha , maxVal);
+               if(beta<=alpha){
+                break;
+               }
             }
+            return maxVal;
+
+        }else{
+
+            for (Player player : joueurs) {
+                if(player!=me && player.isAlive()){
+                  
+            
+            double minVal =Double.MAX_VALUE;
+            for (Direction dir : plateau.getCoupsPossibles(me.getPosition()))  {
+                MoveBackup backup = applyMove(plateau, me, dir);
+                double val = paranoid(plateau, me, depth-1, alpha, beta, maximiserJoueur);
+                undoMove(plateau, me, backup);
+                minVal = Math.min(val , minVal);
+                beta= Math.min(beta , minVal);
+                if(beta<= alpha ){
+                    break;
+                }
+
+            }
+            return minVal;
         }
 
-        return value;
+        }
+            }
+        return 0;     
     }
 
+    @Override
+    public String getName() {
+        return "Stratégie Paranoid";
+    }
 }
