@@ -13,7 +13,7 @@ import model.Position;
 import model.RandomStrategie;
 import model.Team;
 import model.Player;
-
+import model.*;
 public class Main {
 
     public static void main(String[] args)
@@ -42,7 +42,7 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
            GUI view =  new GUI(controller);
              controller.setVue(view);
-        game.ajoutEcouteur(view);
+        //game.ajoutEcouteur(view);
         });
        //controller.start();
 
