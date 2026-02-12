@@ -69,7 +69,8 @@ public class Main {
                 case 1 -> strat = new MinMaxStrategie(heuristic, profondeur);
                 case 2 -> strat = new AlphaBetaStrategie(heuristic, profondeur);
                 case 3 -> strat = new MaxNStrategie(heuristic, profondeur);
-                // case 4 -> strat = new ParanoidStrategie(heuristic, profondeur);
+                case 4 -> strat = new ParanoidStrategie(heuristic,joueurs, profondeur);
+                case 5 -> strat = new SOSStrategie(heuristic , profondeur , joueurs);
                 default -> strat = new MinMaxStrategie(heuristic, profondeur);
             }
 

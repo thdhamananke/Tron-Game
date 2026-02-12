@@ -1,6 +1,6 @@
 package model;
 
-import java.util.*;
+import java.util.List;
 
 public class ParanoidStrategie extends AbstractStrategie {
     private final List<Player> joueurs;
@@ -13,16 +13,18 @@ public class ParanoidStrategie extends AbstractStrategie {
     @Override
     public Direction calculerMouvement(Player me, Plateau plateau) {
 
-        double bestValue = Double.MIN_VALUE;
-        Direction bestDir = null;
+        List<Direction> coups = plateau.getCoupsPossibles(me.getPosition());
+        if (coups.isEmpty()) return Direction.NONE; 
 
-        double alpha = Double.MIN_VALUE;
-        double beta = Double.MAX_VALUE;
+        double bestValue = Double.NEGATIVE_INFINITY;
+        Direction bestDir = Direction.NONE;
 
-        for (Direction dir : plateau.getCoupsPossibles(me.getPosition())) {
+        double alpha = Double.NEGATIVE_INFINITY;
+        double beta = Double.POSITIVE_INFINITY;
 
+        for (Direction dir : coups) {
             MoveBackup backup = applyMove(plateau, me, dir);
-            double value = paranoid(plateau, me, depth-1, alpha, beta , true);
+            double value = paranoid(plateau, me, depth - 1, alpha, beta, true);
             undoMove(plateau, me, backup);
 
             if (value > bestValue) {
@@ -35,51 +37,52 @@ public class ParanoidStrategie extends AbstractStrategie {
 
         return bestDir;
     }
-    private double  paranoid(Plateau plateau , Player me , int depth , double alpha , double beta , boolean maximiserJoueur){
-       
-       // double value =0;
-        if(depth == 0 || !(me.isAlive())){
+
+    private double paranoid(Plateau plateau, Player me, int depth,
+                            double alpha, double beta, boolean maximiserJoueur) {
+
+        if (depth == 0 || !me.isAlive()) {
             return heuristic.evaluate(plateau, me);
         }
-        if(maximiserJoueur){
 
-             double maxVal = Double.MIN_VALUE;
-            for(Direction dir : plateau.getCoupsPossibles(me.getPosition())){
+        if (maximiserJoueur) { 
+            double maxVal = Double.NEGATIVE_INFINITY;
+            List<Direction> coups = plateau.getCoupsPossibles(me.getPosition());
+
+            for (Direction dir : coups) {
                 MoveBackup backup = applyMove(plateau, me, dir);
-               double val = paranoid(plateau, me, depth-1, alpha, beta, false);
-               undoMove(plateau, me, backup);
-               maxVal = Math.max(maxVal , val);
-               alpha= Math.max(alpha , maxVal);
-               if(beta<=alpha){
-                break;
-               }
+                double val = paranoid(plateau, me, depth - 1, alpha, beta, false);
+                undoMove(plateau, me, backup);
+
+                maxVal = Math.max(maxVal, val);
+                alpha = Math.max(alpha, maxVal);
+
+                if (beta <= alpha) break; 
             }
             return maxVal;
-
-        }else{
-
-            for (Player player : joueurs) {
-                if(player!=me && player.isAlive()){
-                  
-            
-            double minVal =Double.MAX_VALUE;
-            for (Direction dir : plateau.getCoupsPossibles(me.getPosition()))  {
-                MoveBackup backup = applyMove(plateau, me, dir);
-                double val = paranoid(plateau, me, depth-1, alpha, beta, maximiserJoueur);
-                undoMove(plateau, me, backup);
-                minVal = Math.min(val , minVal);
-                beta= Math.min(beta , minVal);
-                if(beta<= alpha ){
-                    break;
-                }
-
-            }
-            return minVal;
         }
 
-        }
+        double minVal = Double.POSITIVE_INFINITY;
+
+        for (Player player : joueurs) {
+            if (player == me || !player.isAlive()) continue;
+
+            List<Direction> coups = plateau.getCoupsPossibles(player.getPosition());
+            if (coups.isEmpty()) continue; 
+
+            for (Direction dir : coups) {
+                MoveBackup backup = applyMove(plateau, player, dir);
+                double val = paranoid(plateau, me, depth - 1, alpha, beta, true);
+                undoMove(plateau, player, backup);
+
+                minVal = Math.min(minVal, val);
+                beta = Math.min(beta, minVal);
+
+                if (beta <= alpha) break; 
             }
-        return 0;     
+        }
+
+        return minVal;
     }
 
     @Override
