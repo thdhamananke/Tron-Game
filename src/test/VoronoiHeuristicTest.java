@@ -28,24 +28,24 @@ public class VoronoiHeuristicTest {
         assertEquals("Score nul attendu pour partage équitable", 0.0, scoreP1, 5.0);
     }
 
-    // @Test
-    // public void testAvantageTerritorial() {
-    //     VoronoiHeuristic heuristic = new VoronoiHeuristic();
-    //     Plateau plateau = new Plateau(5, 5);
+    @Test
+    public void testAvantageTerritorial() {
+        VoronoiHeuristic heuristic = new VoronoiHeuristic();
+        Plateau plateau = new Plateau(5, 5);
 
-    //     Team teamA = new Team("A", new ArrayList<>(), Color.BLUE);
-    //     Player p1 = new Player("P1", teamA, new Position(2, 2)); // joueur au centre
-    //     plateau.placerJoueur(p1.getPosition(), p1);
+        Team teamA = new Team("A", new ArrayList<>(), Color.BLUE);
+        Player p1 = new Player("P1", teamA, new Position(2, 2)); // joueur au centre
+        plateau.placerJoueur(p1.getPosition(), p1);
 
-    //     Team teamB = new Team("B", new ArrayList<>(), Color.RED);
-    //     Player p2 = new Player("P2", teamB, new Position(0, 0)); // joueur dans un coin
-    //     plateau.placerJoueur(p2.getPosition(), p2);
+        Team teamB = new Team("B", new ArrayList<>(), Color.RED);
+        Player p2 = new Player("P2", teamB, new Position(0, 0)); // joueur dans un coin
+        plateau.placerJoueur(p2.getPosition(), p2);
 
-    //     double scoreP1 = heuristic.evaluate(plateau, p1);
+        double scoreP1 = heuristic.evaluate(plateau, p1);
 
-    //     // Joueur central doit avoir plus de cases contrôlées → score positif
-    //     assertTrue("Le joueur central doit avoir un score positif", scoreP1 > 0);
-    // }
+        // Joueur central doit avoir plus de cases contrôlées → score positif
+        assertTrue("Le joueur central doit avoir un score positif", scoreP1 > 0);
+    }
 
     @Test
     public void testJoueurMort() {

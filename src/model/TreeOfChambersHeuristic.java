@@ -223,28 +223,14 @@ public class TreeOfChambersHeuristic implements Heuristic {
      * @param region matrice booléenne représentant la région
      * @return position d'une cellule, ou null si aucune
     */
-    // private Position findAnyCell(boolean[][] region) {
-    //     for (int r = 0; r < region.length; r++) {
-    //         for (int c = 0; c < region[0].length; c++) {
-    //             if (region[r][c]) return new Position(r, c);
-    //         }
-    //     }
-    //     return null;
-    // }
     private Position findAnyCell(boolean[][] region) {
-    int sumR = 0, sumC = 0, count = 0;
-    for (int r = 0; r < region.length; r++) {
-        for (int c = 0; c < region[0].length; c++) {
-            if (region[r][c]) {
-                sumR += r;
-                sumC += c;
-                count++;
+        for (int r = 0; r < region.length; r++) {
+            for (int c = 0; c < region[0].length; c++) {
+                if (region[r][c]) return new Position(r, c);
             }
         }
+        return null;
     }
-    if (count == 0) return null;
-    return new Position(sumR / count, sumC / count);
-}
 
     /** Représente une chambre explorée dans la grille */
     private static class Chamber {

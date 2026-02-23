@@ -55,23 +55,23 @@ public class TreeOfChambersHeuristicTest {
      * Test 3 : Symétrie.
      * Sur un plateau vide avec deux joueurs à égale distance du centre, le score doit être 0.
      */
-    // @Test
-    // public void testSymetrie() {
-    //     TreeOfChambersHeuristic toc = new TreeOfChambersHeuristic();
-    //     Plateau plateau = new Plateau(5, 5);
+    @Test
+    public void testSymetrie() {
+        TreeOfChambersHeuristic toc = new TreeOfChambersHeuristic();
+        Plateau plateau = new Plateau(5, 5);
 
-    //     Team t1 = new Team("T1", new ArrayList<>(), Color.BLUE);
-    //     Player p1 = new Player("P1", t1, new Position(0, 2));
-    //     plateau.placerJoueur(p1.getPosition(), p1);
+        Team t1 = new Team("T1", new ArrayList<>(), Color.BLUE);
+        Player p1 = new Player("P1", t1, new Position(0, 2));
+        plateau.placerJoueur(p1.getPosition(), p1);
 
-    //     Team t2 = new Team("T2", new ArrayList<>(), Color.RED);
-    //     Player p2 = new Player("P2", t2, new Position(4, 2));
-    //     plateau.placerJoueur(p2.getPosition(), p2);
+        Team t2 = new Team("T2", new ArrayList<>(), Color.RED);
+        Player p2 = new Player("P2", t2, new Position(4, 2));
+        plateau.placerJoueur(p2.getPosition(), p2);
 
-    //     double score = toc.evaluate(plateau, p1);
+        double score = toc.evaluate(plateau, p1);
 
-    //     assertEquals("Sur un plateau parfaitement symétrique, le score TOC doit être 0", 0.0, score, 1.0);
-    // }
+        assertEquals("Sur un plateau parfaitement symétrique, le score TOC doit être 0", 0.0, score, 1.0);
+    }
 
     /**
      * Test 4 : Joueur mort.
