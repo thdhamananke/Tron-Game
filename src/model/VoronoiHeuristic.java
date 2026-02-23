@@ -61,8 +61,8 @@ public class VoronoiHeuristic implements Heuristic {
             for (Direction dir : Direction.values()) {
                 int nr = r + (dir == Direction.BAS ? 1 : (dir == Direction.HAUT ? -1 : 0));
                 int nc = c + (dir == Direction.DROITE ? 1 : (dir == Direction.GAUCHE ? -1 : 0));
-
-                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && plateau.estLibre(new Position(nr, nc))) {
+                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols) {
+             //   if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && plateau.estLibre(new Position(nr, nc))) {
                     int nextIndex = nr * cols + nc;
 
                     if (distance[nextIndex] == Integer.MAX_VALUE) {
