@@ -47,7 +47,6 @@ public class ExperimentResult {
     }
 
     // Statistiques globales
-
     public int getNbGames() {
         return games;
     }
@@ -69,7 +68,6 @@ public class ExperimentResult {
     }
 
     // Statistiques par équipe
-
     public int getWins(Team team) {
         return wins.getOrDefault(team, 0);
     }
@@ -81,5 +79,37 @@ public class ExperimentResult {
 
     public Map<Team, Integer> getWinsPerTeam() {
         return Collections.unmodifiableMap(wins);
+    }
+
+    // calcul de la confience.
+    public double getConfidence(Team team, double confidenceLevel) {
+        if (games == 0) return 0;
+
+        double p = getWins(team) / (double) games;
+        return confidenceLevel * Math.sqrt((p * (1 - p)) / games) * 100;
+    }
+
+    // Ajoute cette classe interne
+    public static class ResumeSession {
+        public final int nbParties;
+        public final Map<Team, Double> winRates;
+        public final double confidence;
+
+        public ResumeSession(int nb, Map<Team, Double> rates, double conf) {
+            this.nbParties = nb;
+            this.winRates = rates;
+            this.confidence = conf;
+        }
+    }
+
+    // Dans la classe ExperimentResult, ajoute la liste et la méthode :
+    private final List<ResumeSession> resumesSession = new ArrayList<>();
+
+    public void recordSession(int nb, Map<Team, Double> rates, double conf) {
+        this.resumesSession.add(new ResumeSession(nb, rates, conf));
+    }
+
+    public List<ResumeSession> getResumesSession() {
+        return resumesSession;
     }
 }

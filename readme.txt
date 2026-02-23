@@ -3,6 +3,7 @@ README – Module Stratégies (AI)
 Aperçu
 ------
 
+
 Le module 'model.strategy' contient toutes les stratégies d’intelligence artificielle utilisées pour le jeu Tron.
 Chaque stratégie implémente l’interface 'Strategie', garantissant la méthode principale :
 

@@ -73,7 +73,6 @@ public class TreeOfChambersHeuristic implements Heuristic {
     }
 
     /* ===================== VORONOI ===================== */
-
     /** Résultat d'une partition Voronoï entre deux joueurs */
     private static class VoronoiResult {
         int[][] owner;              // 1 joueur, 2 adversaire, 0 battlefront, -1 bloqué
@@ -182,7 +181,6 @@ public class TreeOfChambersHeuristic implements Heuristic {
     }
 
     /* ===================== TREE OF CHAMBERS ===================== */
-
     /**
      * Calcule la valeur de la chambre principale + meilleure chambre 
      * adjacente pour un joueur donné.
@@ -268,7 +266,7 @@ public class TreeOfChambersHeuristic implements Heuristic {
         while (!q.isEmpty()) {
             Position cur = q.poll();
             int r = cur.getRow(), c = cur.getCol();
-            int id = r * C + c;
+            // int id = r * C + c;
 
             ch.size++;
             if (battlefront[r][c]) ch.touchesBattlefront = true;
@@ -295,7 +293,6 @@ public class TreeOfChambersHeuristic implements Heuristic {
     }
 
     /* ===================== ARTICULATIONS ===================== */
-
     /**
      * Transforme les cellules accessibles en ensemble d'IDs.
      * @param grid plateau

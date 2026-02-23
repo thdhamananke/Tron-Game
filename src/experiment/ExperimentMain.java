@@ -9,77 +9,185 @@ public class ExperimentMain {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Mode d'expérimentation :");
-        System.out.println("1 - Console");
-        System.out.println("2 - Graphique");
+        System.out.println("╔═══════════════════════════════════════════════════════════╗");
+        System.out.println("║         ALLEZ C'EST PARTIE POUR L'EXPERIMENTATION !!      ║");
+        System.out.println("╚═══════════════════════════════════════════════════════════╝\n");
 
-        int mode = Main.entier(sc, "Votre choix : ");
 
-        GameRunner runner = (mode == 2) ? new GraphicGameRunner() : new ConsoleGameRunner();
+        GameRunner runner = new GameRunner();
         ExperimentRunner experiment = new ExperimentRunner(runner);
 
         int taille = Main.entier(sc, "Taille du plateau : ");
-        int equipes = Main.entier(sc, "Nombre d'équipes : ");
-        int joueurs = Main.entier(sc, "Nombre de joueurs par équipe : ");
+        int nbEquipes = Main.entier(sc, "Nombre d'équipes : ");
+        int nbJoueurs = Main.entier(sc, "Nombre de nbJoueurs par équipe : ");
         int profondeur = Main.entier(sc, "Profondeur de l'IA : ");
         int nbGames = Main.entier(sc, "Nombre de partie : ");
 
         List<Strategie> strategies = new ArrayList<>();
-        int totalPlayers = equipes * joueurs;
+        Random random = new Random();
+        // int totalPlayers = nbEquipes * nbJoueurs;
 
-        for (int i = 0; i < totalPlayers; i++) {
-            System.out.println("Stratégie et Heuristique du joueur " + (i + 1));
 
-            System.out.println("Stratégie ?");
-            System.out.println("1 - MinMax");
-            System.out.println("2 - AlphaBeta");
-            int choix = Main.entier(sc, "Votre choix : ");
+        System.out.println("Configuration des stratégies :");
+        int modeConfig;
+        do {
+            System.out.println("1 - Manuel");
+            System.out.println("2 - Random");
+            modeConfig = Main.entier(sc, "Votre choix : ");
+            if (modeConfig < 1 || modeConfig > 2) System.out.println("Choix invalide ! Recommencez.");
+        } while (modeConfig < 1 || modeConfig > 2);
 
-            System.out.println("Heuristique ?");
-            System.out.println("1 - FreeSpace");
-            System.out.println("2 - Advanced");
-            int heuris = Main.entier(sc, "Votre choix : ");
+        // 
+        for (int i = 0; i < nbEquipes; i++) {
+            int choixStrat, choixHeur;
 
-            Heuristic heuristic = (heuris == 2) ? new VoronoiHeuristic() : new FreeSpaceHeuristic();
+            // Mode Random
+            if (modeConfig == 2) {
+                choixStrat = random.nextInt(3) + 1; 
+                choixHeur = random.nextInt(3) + 1;  
+            } else {
+                System.out.println("\nConf de l'EQUIPE " + (i + 1));
+                
+                do {
+                    System.out.println("Stratégie ?");
+                    System.out.println("1 - MinMax");
+                    System.out.println("2 - AlphaBeta");
+                    System.out.println("3 - MaxN");
+                    System.out.println("4 - Paranoid");
+                    System.out.println("5 - SOS");
 
-            Strategie strat = (choix == 2)
-                    ? new AlphaBetaStrategie(heuristic, profondeur)
-                    : new MinMaxStrategie(heuristic, profondeur);
+                    choixStrat = Main.entier(sc, "Votre choix de stratégie : ");
+                    if (choixStrat < 1 || choixStrat > 5) System.out.println("Choix invalide ! Recommencez.");
+                } while (choixStrat < 1 || choixStrat > 5);
 
-            strategies.add(strat);
-        }
+                do {
+                    System.out.println("Heuristique ?");
+                    System.out.println("1 - FreeSpace");
+                    System.out.println("2 - Voronoi");
+                    System.out.println("3 - TreeOfChambers");
 
-        ExperimentConfig config = new ExperimentConfig(taille, taille, equipes, joueurs, profondeur, nbGames, strategies);
-       
-        System.out.println("Expérimentation en cours.... !");
-        ExperimentResult result = experiment.run(config);
+                    choixHeur = Main.entier(sc, "Votre choix de l'Heuristique : ");
+                    if (choixHeur < 1 || choixHeur > 3) System.out.println("Choix invalide ! Recommencez.");
+                } while (choixHeur < 1 || choixHeur > 3);
 
-        System.out.println("Expérimentation terminée !");
-        System.out.println("Tours joués : " + result.getTotalTurns());
-
-        Map<Team, Integer> winners = result.getWinsPerTeam();
-        if (winners != null && !winners.isEmpty()) {
-            System.out.print("Gagnant(s) : ");
-            for (Team t : winners.keySet()) {
-                System.out.print(t.getName() + " ");
             }
-            System.out.println();
-        } else {
-            System.out.println("Match nul");
+            // l'Heuristique
+            Heuristic heuristic = switch (choixHeur) {
+                case 2 -> new VoronoiHeuristic();
+                case 3 -> new TreeOfChambersHeuristic();
+                default -> new FreeSpaceHeuristic();
+            };
+
+            // Stratégie
+            Strategie strat = switch (choixStrat) {
+                // case 1 -> new MinMaxStrategie(heuristic, profondeur);
+                case 2 -> new AlphaBetaStrategie(heuristic, profondeur);
+                case 3 -> new MaxNStrategie(heuristic, profondeur);
+                // case 4 -> new ParanoidStrategie(heuristic, profondeur);
+                // case 5 -> new SOSStrategie(heuristic, profondeur);
+                default -> new MinMaxStrategie(heuristic, profondeur);
+            };
+
+            // On ajoute cette même stratégie pour tous les joueurs de cette équipe
+            for (int jouer = 0; jouer < nbJoueurs; jouer++) {
+                strategies.add(strat);
+            }
+            
+            if (modeConfig == 2) {
+                System.out.println("Equipe " + (i + 1) + " "+ strat.getClass().getSimpleName() + " avec " + heuristic.getClass().getSimpleName());
+            }
+            
         }
 
-        System.out.println("\nDonnez le nom du fichier CSV pour l'export : ");
-        String csv = sc.nextLine().trim();
+        ExperimentConfig config = new ExperimentConfig(taille, taille, nbEquipes, nbJoueurs, profondeur, nbGames, strategies);
+        ExperimentResult globalResult = new ExperimentResult();
+        boolean continuer = true;
+        int partiesPourCetteSession = nbGames;
 
+        while (continuer) {
+            ExperimentConfig sessionConfig = new ExperimentConfig(taille, taille, nbEquipes, nbJoueurs, profondeur, partiesPourCetteSession, strategies);
+           
+            System.out.println("\nExpérimentation de " + partiesPourCetteSession + " parties en cours.... !");
+            ExperimentResult sessionRes = experiment.run(sessionConfig); 
+
+            System.out.println("Expérimentation terminée !");
+            System.out.println("Tours joués dans cette session : " + sessionRes.getTotalTurns());
+
+            // les gagnants de cette session
+            Map<Team, Integer> winners = sessionRes.getWinsPerTeam();
+            if (winners != null && !winners.isEmpty()) {
+                System.out.print("Gagnant(s) de la session : ");
+                for (Team team : winners.keySet()) {
+                    System.out.print(team.getName() + " ");
+                }
+                System.out.println();
+            } else {
+                System.out.println("Match nul sur cette session");
+            }
+
+            // enregistrement des stats de cette session dans le globalResult 
+            Map<Team, Double> rates = new HashMap<>();
+            for(Team team : sessionRes.getWinsPerTeam().keySet()) {
+                rates.put(team, sessionRes.getWinRate(team));
+            }
+
+            double maxConfSession = 0.0;
+            for (Team team : sessionRes.getWinsPerTeam().keySet()) {
+                double conf = sessionRes.getConfidence(team, 1.96);
+                if (conf > maxConfSession) maxConfSession = conf;
+            }
+            globalResult.recordSession(partiesPourCetteSession, rates, maxConfSession);
+
+            for(GameResult gr : sessionRes.getHistory()) {
+                globalResult.record(gr);
+            }
+
+            System.out.println("\nSession terminée. Total cumulé : " + globalResult.getNbGames() + " parties.");
+            
+            System.out.println("Voulez-vous relancer une session avec la même config ? ");
+            System.out.println("1: OUI ");
+            System.out.println("2: NON");
+            int choixRelance = Main.entier(sc, "Votre choix : ");
+            
+            while (choixRelance != 1 && choixRelance != 2) {
+                choixRelance = Main.entier(sc, "Choix invalide. Tapez 1 pour OUI ou 2 pour NON : ");
+            }
+
+            if (choixRelance == 1) {
+                partiesPourCetteSession = Main.entier(sc, "Nombre de parties pour la nouvelle session : ");
+                continuer = true;
+            } else {
+                continuer = false;
+            }
+        }
+
+
+        String defaultName = "Exp_" + nbEquipes + "eq_" + profondeur + "depth";
+        System.out.println("\nLe nom du fichier ou taper entrer pour garder le (nom par défaut : " + defaultName + ") : ");
+        String input = sc.nextLine().trim();
+        String csv = input.isEmpty() ? defaultName : input;
+        String pdfPath = "pdf/" + csv + ".pdf";
+
+    
         File csvDir = new File("csv");
-        if (!csvDir.exists()) {
+        File pdfDir = new File("pdf");
+        if (!csvDir.exists() && !pdfDir.exists()) {
             csvDir.mkdirs();
+            pdfDir.mkdirs();
         }
 
-        String filePath = "csv/" + csv + ".csv";
+        if (!pdfDir.exists()) {
+            pdfDir.mkdirs();
+        }
+        
+
+        PDFExporter.export(config, globalResult, strategies, pdfPath);
+        System.out.println("PDF généré avec succès !");
+
         try {
-            CSVExporter.export(config, result, filePath);
-            System.out.println("Résultats exportés dans avec succès dans csv/ !");
+            String filePath = "csv/" + csv + ".csv";
+            CSVExporter.export(config, globalResult, strategies, filePath);
+            System.out.println("Résultats exportés dans avec succès dans csv !");
         } catch (IOException e) {
             System.err.println("Erreur lors de l'export CSV : " + e.getMessage());
         }
@@ -90,7 +198,7 @@ public class ExperimentMain {
         //ExperimentAnalyzer.generateAllCharts(result);
         ExperimentResult result1 = experiment.run(config);
 
-        ChartGenerator.showWinPieChart(result);
+        ChartGenerator.showWinPieChart(globalResult);
 
         //------------------------------------------------------------------
 

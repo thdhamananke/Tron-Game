@@ -1,13 +1,11 @@
 package model;
 import java.util.Random;
-import java.util.random.*;
 
 public class RandomStrategie  extends  AbstractStrategie{
     Random random = new Random();
     
     public RandomStrategie(Heuristic heuristic, int depth) {
         super(heuristic, depth);
-        //TODO Auto-generated constructor stub
     }
 
 

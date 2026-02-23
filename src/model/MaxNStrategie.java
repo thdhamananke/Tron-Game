@@ -95,7 +95,7 @@ public class MaxNStrategie extends AbstractStrategie {
     /**
      * Algorithme MaxN récursif pour un jeu multi-joueurs. Chaque état du jeu est évalué par 
      * un vecteur de valeurs, une par joueur. Le joueur courant choisit le coup qui maximise 
-     * sa propre composante dans ce vecteur.
+     * sa propre chance de gnagner.
      *
      * @param plateau état courant du jeu
      * @param players liste ordonnée des joueurs encore en vie

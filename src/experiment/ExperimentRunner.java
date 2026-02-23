@@ -40,6 +40,27 @@ public class ExperimentRunner {
         pool.shutdown();
         return result;
     }
+
+    public void runInto(ExperimentConfig config, ExperimentResult globalResult) {
+        // Mode Multi-thread pour la session en cours
+        ExecutorService pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        List<Future<GameResult>> futures = new ArrayList<>();
+
+        // On lance le nombre de parties demandé pour CETTE session
+        for (int i = 0; i < config.getNbGames(); i++) {
+            futures.add(pool.submit(() -> runner.runGame(config)));
+        }
+
+        for (Future<GameResult> f : futures) {
+            try {
+                // On enregistre dans l'objet global passé en paramètre
+                globalResult.record(f.get());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        pool.shutdown();
+    }
 }
 
 

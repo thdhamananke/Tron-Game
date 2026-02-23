@@ -84,7 +84,6 @@
 
     <!-- ==================== Dist ==================== -->
     <target name="dist" depends="compile,javadoc" description="Create executable jar">
-
         <copy todir="${dist.home}/lib">
             <fileset dir="${lib.home}"/>
         </copy>
@@ -96,7 +95,6 @@
                 <!-- <attribute name="Main-Class" value="experiment.ExperimentMain"/> -->
             </manifest>
         </jar>
-
     </target>
 
     <!-- ==================== Tests ==================== -->
@@ -118,8 +116,14 @@
 
     <!-- ==================== Run ==================== -->
     <target name="run" depends="dist" description="Run application">
-        <java jar="${dist.home}/${app.fullname}.jar" fork="true"/>
+        <java classname="experiment.ExperimentMain" fork="true">
+            <classpath>
+                <pathelement location="${dist.home}/${app.fullname}.jar"/>
+                <path refid="compile.classpath"/>
+            </classpath>
+        </java>
     </target>
+
 
     <!-- ==================== Help ==================== -->
     <target name="help">
