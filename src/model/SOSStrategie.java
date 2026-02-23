@@ -2,12 +2,6 @@ package model;
 
 import java.util.List;
 
-// SOS ne fait jamais min
-// Chaque joueur maximise son utilite percue
-// Les feuilles retournent un vecteur
-// La matrice sociale est appliquee uniquement aux feuilles
-// La comparaison se fait sur l ID du joueur courant
-
 public class SOSStrategie extends AbstractStrategie {
 
     private final List<Player> joueurs;
@@ -26,12 +20,20 @@ public class SOSStrategie extends AbstractStrategie {
 
         for (Direction dir : plateau.getCoupsPossibles(player.getPosition())) {
 
-            MoveBackup backup = applyMove(plateau, player, dir);
+          //  MoveBackup backup = applyMove(plateau, player, dir);
+            Plateau plateauCopie = plateau.copierPlateau();
+
+            Position oldPos = player.getPosition();
+            Position newPos = oldPos.move(dir);
+
+            plateauCopie.placerMur(oldPos, player);
+            Player playerCopie = new Player(player.getName(), player.getTeam(), newPos);
+            plateauCopie.placerJoueur(newPos, playerCopie);
 
             // sos pour next joueur
-            double[] vecteur = sos(plateau, depth - 1, nextPlayer(player));
+            double[] vecteur = sos(plateauCopie, depth - 1, nextPlayer(playerCopie));
 
-            undoMove(plateau, player, backup);
+      //      undoMove(plateau, player, backup);
 
             if (vecteur[idRacine] > bestScore) {
                 bestScore = vecteur[idRacine];
@@ -54,11 +56,19 @@ public class SOSStrategie extends AbstractStrategie {
         double[] bestVecteur = utiliteSociale(Double.NEGATIVE_INFINITY);
 
         for (Direction dir : plateau.getCoupsPossibles(player.getPosition())) {
-            MoveBackup backup = applyMove(plateau, player, dir);
+       //     MoveBackup backup = applyMove(plateau, player, dir);
+           
+            Plateau plateauCopie = plateau.copierPlateau();
 
-            double[] currentVecteur = sos(plateau, depth - 1, nextPlayer(player));
+            Position oldPos = player.getPosition();
+            Position newPos = oldPos.move(dir);
 
-            undoMove(plateau, player, backup);
+            plateauCopie.placerMur(oldPos, player);
+            Player playerCopie = new Player(player.getName(), player.getTeam(), newPos);
+            plateauCopie.placerJoueur(newPos, playerCopie);
+            double[] currentVecteur = sos(plateauCopie, depth - 1, nextPlayer(playerCopie));
+
+         //   undoMove(plateau, player, backup);
 
             if (currentVecteur[id] > bestScore) {
                 bestScore = currentVecteur[id];
@@ -87,3 +97,4 @@ public class SOSStrategie extends AbstractStrategie {
         return "SOS Stratégie";
     }
 }
+

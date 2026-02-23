@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class AbstractStrategie implements Strategie {
 
     protected final Heuristic heuristic;
@@ -57,6 +60,37 @@ public abstract class AbstractStrategie implements Strategie {
         plateau.setCellule(player.getPosition(), backup.newCell);
         plateau.setCellule(backup.oldPosition, backup.oldCell);
         player.setPosition(backup.oldPosition);
+    }
+      /**
+     * Récupère la liste des joueurs encore en vie sur le plateau.
+     * @param plateau plateau de jeu
+     * @return liste des joueurs vivants sans doublons
+    */
+    protected List<Player> getAlivePlayers(Plateau plateau) {
+        List<Player> res = new ArrayList<>();
+        for (int i = 0; i < plateau.getNbLignes(); i++) {
+            for (int j = 0; j < plateau.getNbColonnes(); j++) {
+                Player p = plateau.getCellule(new Position(i, j)).getOwner();
+                if (p != null && p.isAlive() && !res.contains(p)) {
+                    res.add(p);
+                }
+            }
+        }
+        return res;
+    }
+
+    /**
+     * Remplace un joueur par sa version virtuelle dans une copie de la liste.
+     * @param list liste originale des joueurs
+     * @param oldP joueur à remplacer
+     * @param newP joueur virtuel
+     * @return nouvelle liste avec le joueur remplacé
+    */
+    protected List<Player> replacePlayer(List<Player> list, Player oldP, Player newP) {
+        List<Player> copy = new ArrayList<>(list);
+        int idx = copy.indexOf(oldP);
+        if (idx >= 0) copy.set(idx, newP);
+        return copy;
     }
 
 }

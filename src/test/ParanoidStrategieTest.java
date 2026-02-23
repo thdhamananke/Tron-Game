@@ -23,7 +23,7 @@ public class ParanoidStrategieTest {
         joueurs.add(joueur1);
         plateau.placerJoueur(joueur1.getPosition(), joueur1);
 
-        ParanoidStrategie strategie = new ParanoidStrategie(heuristic, joueurs, 3);
+        ParanoidStrategie strategie = new ParanoidStrategie(heuristic, 3);
 
         Direction dir = strategie.calculerMouvement(joueur1, plateau);
         assertTrue("la direction n'est jamais null", dir != null);
@@ -44,7 +44,7 @@ public class ParanoidStrategieTest {
         plateau.placerJoueur(joueur1.getPosition(), joueur1);
         plateau.placerJoueur(joueur2.getPosition(), joueur2);
         List<Direction> coupsPossibles = plateau.getCoupsPossibles(joueur1.getPosition());
-        ParanoidStrategie strategie = new ParanoidStrategie(heuristic, joueurs, 2);
+        ParanoidStrategie strategie = new ParanoidStrategie(heuristic, 2);
      
         Direction dir = strategie.calculerMouvement(joueur1, plateau);
 
@@ -67,7 +67,7 @@ public class ParanoidStrategieTest {
         plateau.placerJoueur(joueur1.getPosition(), joueur1);
         plateau.placerJoueur(joueur2.getPosition(), joueur2);
 
-        ParanoidStrategie strategie = new ParanoidStrategie(heuristic, joueurs, 2);
+        ParanoidStrategie strategie = new ParanoidStrategie(heuristic, 2);
 
         Direction dir = strategie.calculerMouvement(joueur1, plateau);
         List<Direction> coupsPossibles = plateau.getCoupsPossibles(joueur1.getPosition());
