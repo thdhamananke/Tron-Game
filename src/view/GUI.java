@@ -1,339 +1,193 @@
 package view;
 
-import javax.swing.*;
-import java.awt.*;
-import javax.swing.border.*;
-
 import controller.GameController;
+import controller.GameRecord;
 import model.ModeleJeu;
 import observer.EcouteurModele;
 
-public class GUI extends JFrame implements VueJeu ,EcouteurModele  {
+import javax.swing.*;
+import java.awt.*;
+import java.util.List;
 
-    // private ModeleJeu game;
-    private JPanel topPanel;
-    private JPanel rightPanel;
-    private JPanel bottomPanel;
-    private JLabel tourLabel;
-    private JLabel statutLabel;
-    private JLabel gagnantLabel;
+public class GUI extends JFrame implements  EcouteurModele {
+
+    private final GameController controller;
+
+    private TopPanel topPanel;
+    private SidePanel sidePanel;
+    private BottomPanel bottomPanel;
     private GameBoardPanel gameBoard;
-    private GameController controller;
-    private JComboBox<String> strategieRougeBox;
-    private JComboBox<String> strategieBleuBox;
-
 
     public GUI(GameController controller) {
 
-        setTitle("Jeu Tron - Combat de Bots");
-        setSize(900, 650);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout(5, 5));
         this.controller = controller;
-        createTopPanel();
-        createGameBoard(this.controller.getGame());
-        createRightPanel();
-        createBottomPanel();
 
-        add(topPanel, BorderLayout.NORTH);
-        add(gameBoard, BorderLayout.CENTER);
-        add(rightPanel, BorderLayout.EAST);
-        add(bottomPanel, BorderLayout.SOUTH);
-       // rightPanel.setMinimumSize(new Dimension(40,100));
+        setTitle("Jeu Tron - Combat de Bots Avancé");
+        setSize(1100, 750);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout(5,5));
+
+        initComponents();
+        createMenuBar();
 
         setLocationRelativeTo(null);
         setVisible(true);
-    }
 
-
-    /* ===================== TOP PANEL ===================== */
-    private void createTopPanel() {
-        topPanel = new JPanel(new GridLayout(1, 3, 10, 10));
-
-        tourLabel = new JLabel("", SwingConstants.CENTER);
-        statutLabel = new JLabel("", SwingConstants.CENTER);
-        gagnantLabel = new JLabel("", SwingConstants.CENTER);
-
-        topPanel.add(createInfoBox("TOUR", tourLabel));
-        topPanel.add(createInfoBox("STATUT", statutLabel));
-        topPanel.add(createInfoBox("GAGNANT", gagnantLabel));
-
-        topPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-
-        updateTopPanel(); // initial values
-    }
-
-    private JPanel createInfoBox(String title, JLabel label) {
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.setBorder(BorderFactory.createTitledBorder(title));
-        panel.add(label, BorderLayout.CENTER);
-        return panel;
-    }
-
-    /* ===================== GAME BOARD ===================== */
-    private void createGameBoard(ModeleJeu game) {
-        gameBoard = new GameBoardPanel(game); // rows, cols
-
-        gameBoard.setBorder(new CompoundBorder(
-                new BevelBorder(BevelBorder.LOWERED),
-                new EmptyBorder(10, 10, 10, 10)
-        ));
-        gameBoard.setBackground(Color.BLACK);
-    }
-
-
-    /* ===================== RIGHT PANEL ===================== */
-    private void createRightPanel() {
-        rightPanel = new JPanel();
-
-        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
-        rightPanel.setBorder(new CompoundBorder(
-                new BevelBorder(BevelBorder.RAISED),
-                new EmptyBorder(10, 10, 10, 10)
-        ));
-        rightPanel.setBackground(new Color(245, 245, 245));
-        JLabel title2 = new JLabel("Players settings");
-        title2.setFont(new Font("Arial", Font.BOLD, 14));
-        title2.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        rightPanel.add(title2);
-        JPanel players = new JPanel(new GridLayout(1,2));
-
-        JButton addplayer = createButton("+",Color.GREEN);
-        JButton deletplayer = createButton("-",Color.RED);
-        players.add(addplayer);
-        players.add(deletplayer);
-        rightPanel.add(players);
-        rightPanel.add(Box.createVerticalStrut(10));
-        JLabel title = new JLabel("Contrôles");
-        title.setFont(new Font("Arial", Font.BOLD, 14));
-        title.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        rightPanel.add(title);
-        rightPanel.add(Box.createVerticalStrut(10));
-        JButton startButton = createButton("▶ Démarrer", new Color(0, 200, 0));
-        rightPanel.add(startButton);
-        rightPanel.add(Box.createVerticalStrut(8));
-
-        startButton.addActionListener(e -> {
-            gameBoard.setGame(controller.getGame());
-            new Thread(() -> controller.lunchgame()).start();
-           this.repaint();
-           this.revalidate();
-
-        });
-        JButton pauseButton = createButton("⏸ Pause", new Color(255, 200, 0));
-        pauseButton.addActionListener(e -> {
-            controller.setPause();
-            if(controller.getPause()){
-                controller.setDelay(100);
-            }else{
-                controller.setDelay(10000000);
-            }
-            this.repaint();
-            this.revalidate();
-
-        });
-        rightPanel.add(pauseButton);
-
-        rightPanel.add(Box.createVerticalStrut(8));
-
-        rightPanel.add(createButton("⏭ Tour Suivant", new Color(0, 200, 200)));
-        rightPanel.add(Box.createVerticalStrut(8));
-
-        JButton restartButton = createButton("⟲ Redémarrer", new Color(220, 0, 0));
-        rightPanel.add(restartButton);
-        restartButton.addActionListener(e -> {
-            controller.restart();
-            gameBoard.setGame(controller.getGame());
-            new Thread(() -> controller.lunchgame()).start();
-            this.repaint();
-            this.revalidate();
-
-        });
-        rightPanel.add(Box.createVerticalStrut(15));
-
-        strategieRougeBox = createStrategyBox("Bot Rouge");
-        strategieRougeBox.addActionListener(e -> {
-            String strategieRouge = getStrategieRouge();
-            String strategieBleu  = getStrategieBleu();
-
-            controller.appliquerStrategie(strategieRouge, strategieBleu);
-        });
-        rightPanel.add(Box.createVerticalStrut(10));
-        strategieBleuBox = createStrategyBox("Bot Bleu");
-        strategieBleuBox.addActionListener(e -> {
-            String strategieRouge = getStrategieRouge();
-            String strategieBleu  = getStrategieBleu();
-
-            controller.appliquerStrategie(strategieRouge, strategieBleu);
-        });
-
-        rightPanel.add(Box.createVerticalStrut(10));
-
-
-        rightPanel.add(Box.createVerticalStrut(15));
-
-        JSpinner rowsSpinner = createSpinner(30,15,100 );
-        JSpinner colsSpinner = createSpinner(30,15,100 );
-        JButton applyboardSizeButton = createButton("Applique",null);
-
-        applyboardSizeButton.addActionListener(e -> {
-            int rows = (int) rowsSpinner.getValue();
-            int cols = (int) colsSpinner.getValue();
-            this.controller.changeGridSize(rows, cols);
-
-        });
-
-        JLabel sizeLabel = new JLabel("board size");
-        sizeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        sizeLabel.setFont(new Font("Arial", Font.BOLD, 12));
-        rightPanel.add(sizeLabel);
-
-        JPanel spinnerPanel = new JPanel();
-        spinnerPanel.setLayout(new BoxLayout(spinnerPanel, BoxLayout.Y_AXIS));
-        spinnerPanel.add(rowsSpinner);
-        spinnerPanel.add(colsSpinner);
-        spinnerPanel.add(applyboardSizeButton);
-        rightPanel.add(spinnerPanel);
-        rightPanel.add(Box.createVerticalStrut(10));
-        JLabel paternLabel = new JLabel("Patterns");
-        paternLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        paternLabel.setFont(new Font("Arial", Font.BOLD, 12));
-        rightPanel.add(paternLabel);
-
-        JComboBox<String> patterncombobox = new JComboBox<>();
-        patterncombobox.addItem( "pattern1");
-        patterncombobox.addItem( "pattern2");
-        patterncombobox.addItem( "pattern3");
-        patterncombobox.addItem( "pattern4");
-        rightPanel.add(patterncombobox);
-
-        // JSlider slider = new JSlider(100, 1600, 600);
-        //slider.setMajorTickSpacing(500);
-       // slider.setPaintTicks(true);
-       // slider.setPaintLabels(true);
-        // rightPanel.add(slider);
-
-    }
-
-    private JButton createButton(String text, Color color) {
-        JButton btn = new JButton(text);
-        btn.setBackground(color);
-        btn.setOpaque(true);
-        btn.setFocusPainted(false);
-        btn.setAlignmentX(Component.CENTER_ALIGNMENT);
-        btn.setBorder(new BevelBorder(BevelBorder.RAISED));
-
-        btn.getModel().addChangeListener(e -> {
-            if (btn.getModel().isPressed()) {
-                btn.setBorder(new BevelBorder(BevelBorder.LOWERED));
-            } else {
-                btn.setBorder(new BevelBorder(BevelBorder.RAISED));
-            }
-        });
-
-        return btn;
-    }
-
-
-    private JComboBox<String> createStrategyBox(String title) {
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(new Color(245, 245, 245));
-        panel.setBorder(new CompoundBorder(
-                new BevelBorder(BevelBorder.LOWERED),
-                new EmptyBorder(5, 5, 5, 5)
-        ));
-
-        JLabel label = new JLabel(title, SwingConstants.CENTER);
-        label.setFont(new Font("Arial", Font.BOLD, 12));
-
-        JComboBox<String> combo = new JComboBox<>(new String[]{
-                "Random",
-                "Minimax",
-                "AlphaBeta",
-                "MaxN",
-                "Paranoid",
-                "SOS"
-        });
-
-        panel.add(label, BorderLayout.NORTH);
-        panel.add(combo, BorderLayout.CENTER);
-        rightPanel.add(panel);
-
-        return combo;
-    }
-
-
-    /* ================= BOTTOM PANEL ================= */
-    private void createBottomPanel() {
-        bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
-        bottomPanel.add(createLegend(Color.RED, "Bot Rouge"));
-        bottomPanel.add(createLegend(Color.BLUE, "Bot Bleu"));
-        bottomPanel.add(createLegend(Color.GRAY, "Mur"));
-    }
-
-    private JPanel createLegend(Color color, String text) {
-        JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        JLabel box = new JLabel("   ");
-        box.setOpaque(true);
-        box.setBackground(color);
-        p.add(box);
-        p.add(new JLabel(text));
-        return p;
-    }
-
-    private JSpinner createSpinner(int value, int min, int max) {
-        JSpinner spinner = new JSpinner(new SpinnerNumberModel(value, min, max, 1));
-        spinner.setFont(new Font("Arial", Font.PLAIN, 12));
-        spinner.setPreferredSize(new Dimension(50, 35));
-        return spinner;
-    }
-
-    /* ===================== UPDATE VIEW ===================== */
-    @Override
-    public void mettreAjourAffichage() {
-        // modeleMisAJour(this);
-        gameBoard.setGame(controller.getGame());
-        this.gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
-        updateTopPanel();
-        repaint();
-        revalidate();
-    }
-
-
-    @Override
-    public void modeleMisAJour(Object source) {
-        //this.gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
-        // updateTopPanel();
         mettreAjourAffichage();
     }
 
-    public void setController(GameController controller){
-        this.controller = controller;
-    }
+    private void initComponents() {
 
-    public int getColumns() {
-        return this.gameBoard.getColumns() ;
+        ModeleJeu game = controller.getGame();
+
+        topPanel = new TopPanel();
+        gameBoard = new GameBoardPanel(game);
+        sidePanel = new SidePanel(controller, this, gameBoard);
+        bottomPanel = new BottomPanel();
+
+        add(topPanel, BorderLayout.NORTH);
+        add(gameBoard, BorderLayout.CENTER);
+
+        // 🔥 ScrollPane correct
+        JScrollPane scrollPane = new JScrollPane(sidePanel);
+        scrollPane.setPreferredSize(new Dimension(300, 0));
+        scrollPane.setHorizontalScrollBarPolicy(
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setVerticalScrollBarPolicy(
+                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+        add(scrollPane, BorderLayout.EAST);
+        add(bottomPanel, BorderLayout.SOUTH);
+
+        revalidate();
+        repaint();
     }
 
     public int getRows() {
-        return this.gameBoard.getRows();
+        return gameBoard.getRows();
     }
 
-    public String getStrategieRouge() {
-        return (String) strategieRougeBox.getSelectedItem();
+    public int getColumns() {
+        return gameBoard.getColumns();
     }
 
-    public String getStrategieBleu() {
-        return (String) strategieBleuBox.getSelectedItem();
+    /* ================= MENU ================= */
+
+    private void createMenuBar() {
+
+        JMenuBar menuBar = new JMenuBar();
+
+        JMenu jeuMenu = new JMenu("Jeu");
+
+        JMenuItem nouvellePartie = new JMenuItem("Nouvelle Partie");
+        nouvellePartie.addActionListener(e ->
+                sidePanel.getControlSection().restart());
+
+        JMenuItem quitter = new JMenuItem("Quitter");
+        quitter.addActionListener(e -> System.exit(0));
+
+        jeuMenu.add(nouvellePartie);
+        jeuMenu.addSeparator();
+        jeuMenu.add(quitter);
+
+        JMenu historiqueMenu = new JMenu("Historique");
+
+        JMenuItem voirHistorique = new JMenuItem("Voir l'historique");
+        voirHistorique.addActionListener(e -> afficherHistorique());
+
+        JMenuItem statistiques = new JMenuItem("Statistiques");
+        statistiques.addActionListener(e -> afficherStatistiques());
+
+        historiqueMenu.add(voirHistorique);
+        historiqueMenu.add(statistiques);
+
+        menuBar.add(jeuMenu);
+        menuBar.add(historiqueMenu);
+
+        setJMenuBar(menuBar);
     }
 
-    private void updateTopPanel() {
-        tourLabel.setText(String.valueOf(controller.getTour()));
-        statutLabel.setText(controller.getGameState());
-        gagnantLabel.setText(controller.getWinner());
+    private void afficherHistorique() {
+
+        List<GameRecord> parties =
+                controller.getHistory().getParties();
+
+        if (parties.isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "Aucune partie dans l'historique",
+                    "Historique",
+                    JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        JTextArea textArea = new JTextArea(parties.toString());
+        textArea.setEditable(false);
+
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setPreferredSize(new Dimension(600,400));
+
+        JOptionPane.showMessageDialog(this,
+                scrollPane,
+                "Historique",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 
+    private void afficherStatistiques() {
+
+        JOptionPane.showMessageDialog(this,
+                controller.getHistory().getStatistiques(),
+                "Statistiques",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void mettreAjourAffichage() {
+
+        if (controller.getGame() == null) return;
+
+        topPanel.update(
+                controller.getTour(),
+                controller.getGameState(),
+                controller.getWinner()
+        );
+
+        gameBoard.setGame(controller.getGame());
+        gameBoard.repaint();
+
+        if (controller.getGame().estTermine()
+                && controller.isRunning()) {
+
+            controller.setRunning(false);
+            afficherMessageVictoire();
+            sidePanel.getControlSection().enableStart();
+        }
+    }
+
+    private void afficherMessageVictoire() {
+
+        String winner = controller.getWinner();
+
+        String message;
+        String title;
+
+        if (winner.equals("Match nul")) {
+            message = "Match nul !\nAucun joueur n'a survécu.";
+            title = "Égalité";
+        } else {
+            message = "🏆 Victoire pour " + winner +
+                      "\nNombre de tours : " + controller.getTour();
+            title = "Partie Terminée";
+        }
+
+        JOptionPane.showMessageDialog(
+                this,
+                message,
+                title,
+                JOptionPane.INFORMATION_MESSAGE
+        );
+    }
+
+    @Override
+    public void modeleMisAJour(Object source) {
+        SwingUtilities.invokeLater(this::mettreAjourAffichage);
+    }
 }

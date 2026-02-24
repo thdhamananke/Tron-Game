@@ -1,53 +1,89 @@
 import view.GUI;
-import view.VueJeu;
+import controller.GameController;
+import model.*;
 
 import javax.swing.*;
-
-import controller.GameController;
-
 import java.util.*;
-import model.Color;
-import model.FreeSpaceHeuristic;
-import model.ModeleJeu;
-import model.Position;
-import model.RandomStrategie;
-import model.Team;
-import model.Player;
-import model.*;
+
 public class Main {
 
-    public static void main(String[] args)
-    {
-       // VueJeu gui = new GUI();
-        
+    public static void main(String[] args) {
 
-        // public Team(String name, List<Player> members, Color color)
-        Player player1 = new Player("bot01",new Team("One", null, Color.RED),new Position(5, 5)  );
-        Player player2 = new Player("bot02",new Team("Two", null, Color.BLUE),new Position(14, 14)  );
-        List<Player> listedeplayers = new ArrayList<Player>();
-        listedeplayers.add(player1);
-        listedeplayers.add(player2);
-         player1.setStrategie(new RandomStrategie(new FreeSpaceHeuristic(), 5));
-        player2.setStrategie(new RandomStrategie(new FreeSpaceHeuristic(), 5));
-
-        ModeleJeu  game =  new ModeleJeu(30, 30, listedeplayers);
-        GameController controller = new GameController(game, null);
-        
-         //new GUI(controller);
-      
-       // view.setController(controller);
-       // new Thread(() -> controller.lunchgame()).start();
-
-        // controller.lunchgame();
         SwingUtilities.invokeLater(() -> {
-           GUI view =  new GUI(controller);
-             controller.setVue(view);
-        //game.ajoutEcouteur(view);
+
+            try {
+
+                UIManager.setLookAndFeel(
+                        UIManager.getSystemLookAndFeelClassName()
+                );
+
+                System.out.println("=== Démarrage du Jeu Tron ===");
+
+                /* ===================== JOUEURS ===================== */
+
+                Player player1 = new Player(
+                        "Bot Rouge",
+                        new Team("Rouge", new ArrayList<>(), Color.RED),
+                        new Position(2, 2)
+                );
+
+                Player player2 = new Player(
+                        "Bot Bleu",
+                        new Team("Bleu", new ArrayList<>(), Color.BLUE),
+                        new Position(27, 27)
+                );
+
+                player1.getTeam().getMembers().add(player1);
+                player2.getTeam().getMembers().add(player2);
+
+                player1.setStrategie(
+                        new AlphaBetaStrategie(
+                                new FreeSpaceHeuristic(),
+                                5
+                        )
+                );
+
+                player2.setStrategie(
+                        new AlphaBetaStrategie(
+                                new FreeSpaceHeuristic(),
+                                5
+                        )
+                );
+
+                List<Player> joueurs = new ArrayList<>();
+                joueurs.add(player1);
+                joueurs.add(player2);
+
+                /* ===================== MODELE ===================== */
+
+                ModeleJeu modele = new ModeleJeu(30, 30, joueurs);
+               
+                /* ===================== CONTROLLER ===================== */
+
+                     GameController controller = new GameController(modele, null);
+
+                /* ===================== VUE ===================== */
+
+                GUI gui = new GUI(controller);
+
+                controller.setVue(gui);
+
+                System.out.println("✓ Interface initialisée");
+                System.out.println("✓ ModeleJeuThread activé");
+                System.out.println("🎮 Prêt à jouer !");
+
+            } catch (Exception e) {
+
+                e.printStackTrace();
+
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Erreur au démarrage:\n" + e.getMessage(),
+                        "Erreur",
+                        JOptionPane.ERROR_MESSAGE
+                );
+            }
+
         });
-       //controller.start();
-
     }
-
-
-
 }

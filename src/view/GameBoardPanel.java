@@ -5,87 +5,234 @@ import observer.EcouteurModele;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.geom.Ellipse2D;
 
 public class GameBoardPanel extends JPanel implements EcouteurModele {
 
-
     private int columns = 30;
     private int rows = 30;
-    private static final double CELL_SIZE_SCALE = 1;
+
+    private static final double CELL_SIZE_SCALE = 0.95;
+    private static final int MIN_CELL_SIZE = 10;
+    private static final int MAX_CELL_SIZE = 50;
+
     private CellState[][] cellStates;
     private ModeleJeu game;
 
     public GameBoardPanel(ModeleJeu game) {
         this.game = game;
+
         cellStates = new CellState[rows][columns];
-        setBackground(Color.WHITE);
+        setBackground(java.awt.Color.WHITE);
+        setPreferredSize(new Dimension(600, 600));
+        initializeCellStates();
+
+        // 🔥 Gestion clic souris pour obstacles
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (game == null) return;
+                toggleObstacle(e.getX(), e.getY());
+            }
+        });
+    }
+
+    private void initializeCellStates() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                cellStates[i][j] = CellState.EMPTY;
+            }
+        }
     }
 
     public void setGridSize(int rows, int cols) {
         this.rows = rows;
         this.columns = cols;
         this.cellStates = new CellState[rows][columns];
+        initializeCellStates();
         repaint();
     }
+
+    /* ================= OBSTACLES ================= */
+
+    private void toggleObstacle(int mouseX, int mouseY) {
+
+        int cellSize = calculateCellSize();
+        int offsetX = (getWidth() - columns * cellSize) / 2;
+        int offsetY = (getHeight() - rows * cellSize) / 2;
+
+        int col = (mouseX - offsetX) / cellSize;
+        int row = (mouseY - offsetY) / cellSize;
+
+        if (row < 0 || row >= rows || col < 0 || col >= columns) return;
+
+        Position pos = new Position(row, col);
+
+        // Interdire position de départ
+        if ((row == 2 && col == 2)
+                || (row == rows - 3 && col == columns - 3)) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Impossible de placer un obstacle sur une position de départ!",
+                    "Avertissement",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // 🔥 Utilisation propre du modèle
+        if (game.getPlateau().getObstacles().contains(pos)) {
+            game.retirerObstacle(pos);
+        } else {
+            game.ajouterObstacle(pos);
+        }
+
+        repaint();
+    }
+
+    public void clearObstacles() {
+        if (game != null) {
+            game.clearObstacles();
+            repaint();
+        }
+    }
+
+    /* ================= OBSERVATEUR ================= */
 
     @Override
     public void modeleMisAJour(Object source) {
-        if (!(source instanceof Plateau plateau)) return;
-        CellState[][] etat = plateau.getEtatPourVue();
-        updateFromModel(etat);
+        if (game != null && game.getPlateau() != null) {
+            updateFromModel(game.getPlateau().getEtatPourVue());
+        }
     }
 
     public void updateFromModel(CellState[][] modelGrid) {
+
+        if (modelGrid == null || modelGrid.length == 0) return;
+
         this.rows = modelGrid.length;
         this.columns = modelGrid[0].length;
         this.cellStates = modelGrid;
+
         repaint();
     }
 
+    /* ================= AFFICHAGE ================= */
+
+    private int calculateCellSize() {
+
+        int availableWidth = getWidth() - 20;
+        int availableHeight = getHeight() - 20;
+
+        int cellSize = Math.min(
+                availableWidth / columns,
+                availableHeight / rows
+        );
+
+        cellSize = (int)(cellSize * CELL_SIZE_SCALE);
+
+        return Math.max(
+                MIN_CELL_SIZE,
+                Math.min(MAX_CELL_SIZE, cellSize)
+        );
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
+
         super.paintComponent(g);
 
         if (rows == 0 || columns == 0) return;
 
         Graphics2D g2d = (Graphics2D) g;
-        int cellSize = (int)(Math.min(getWidth() / columns, getHeight() / rows) * CELL_SIZE_SCALE);
+        g2d.setRenderingHint(
+                RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON
+        );
 
-        int offsetX = (getWidth() - columns * cellSize) / 2;
-        int offsetY = (getHeight() - rows * cellSize) / 2;
+        int cellSize = calculateCellSize();
+        int totalWidth = columns * cellSize;
+        int totalHeight = rows * cellSize;
+
+        int offsetX = (getWidth() - totalWidth) / 2;
+        int offsetY = (getHeight() - totalHeight) / 2;
 
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns; col++) {
 
-                if (cellStates[row][col] == null) cellStates[row][col] = CellState.EMPTY;
-
-                java.awt.Color fillColor = Color.WHITE; // default
-
-                Position pos = new Position(row, col);
-                Player player = game.getJoueurAt(pos);
-
-                if (player != null) {
-                    // Player takes priority
-                    fillColor = player.getAwtColor();
-                } else if (cellStates[row][col] == CellState.WALL) {
-                    fillColor = Color.GRAY;
-                } else {
-                    fillColor = Color.WHITE;
-                }
-
                 int x = offsetX + col * cellSize;
                 int y = offsetY + row * cellSize;
+
+                java.awt.Color fillColor = getCellColor(row, col);
 
                 g2d.setColor(fillColor);
                 g2d.fillRect(x, y, cellSize, cellSize);
 
-                g2d.setColor(Color.BLACK);
+                g2d.setColor(new java.awt.Color(200, 200, 200));
                 g2d.drawRect(x, y, cellSize, cellSize);
+
+                if (game != null) {
+                    Position pos = new Position(row, col);
+                    Player player = game.getJoueurAt(pos);
+
+                    if (player != null
+                            && player.getPosition().equals(pos)
+                            && player.isAlive()) {
+
+                        drawPlayerHead(g2d, player, x, y, cellSize);
+                    }
+                }
             }
         }
+
+        g2d.setColor(java.awt.Color.BLACK);
+        g2d.setStroke(new BasicStroke(3));
+        g2d.drawRect(offsetX - 1, offsetY - 1,
+                totalWidth + 2, totalHeight + 2);
     }
+
+    private void drawPlayerHead(Graphics2D g2d,
+                                Player player,
+                                int x, int y,
+                                int cellSize) {
+
+        g2d.setColor(player.getAwtColor().darker());
+
+        int headSize = cellSize - 4;
+        int headX = x + 2;
+        int headY = y + 2;
+
+        Ellipse2D.Double head =
+                new Ellipse2D.Double(headX, headY,
+                        headSize, headSize);
+
+        g2d.fill(head);
+    }
+
+   private java.awt.Color getCellColor(int row, int col) {
+
+    if (cellStates == null) return java.awt.Color.WHITE;
+
+    switch (cellStates[row][col]) {
+
+        case EMPTY:
+            return java.awt.Color.WHITE;
+
+        case WALL:
+            return java.awt.Color.DARK_GRAY; // trace visible
+
+        case PLAYER:
+            Player p = game.getJoueurAt(new Position(row, col));
+            if (p != null) {
+                return p.getAwtColor();
+            }
+            return java.awt.Color.WHITE;
+
+        default:
+            return java.awt.Color.WHITE;
+    }
+}
 
     public int getColumns() {
         return columns;
@@ -97,9 +244,8 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
 
     public void setGame(ModeleJeu game) {
         this.game = game;
+        if (game != null && game.getPlateau() != null) {
+            updateFromModel(game.getPlateau().getEtatPourVue());
+        }
     }
-
-
 }
-
-

@@ -91,7 +91,7 @@
         <jar jarfile="${dist.home}/${app.fullname}.jar" basedir="${build.home}">
             <manifest>
                 <!-- <attribute name="Main-Class" value="Main"/> -->
-                <attribute name="Main-Class" value="model.Main"/>
+                <attribute name="Main-Class" value="Main"/>
                 <!-- <attribute name="Main-Class" value="experiment.ExperimentMain"/> -->
             </manifest>
         </jar>
@@ -116,7 +116,7 @@
 
     <!-- ==================== Run ==================== -->
     <target name="run" depends="dist" description="Run application">
-        <java classname="experiment.ExperimentMain" fork="true">
+        <java classname="Main" fork="true">
             <classpath>
                 <pathelement location="${dist.home}/${app.fullname}.jar"/>
                 <path refid="compile.classpath"/>

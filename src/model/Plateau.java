@@ -80,6 +80,24 @@ public class Plateau {
         grille[pos.getRow()][pos.getCol()] = cell;
     }
 
+    private Set<Position> obstacles = new HashSet<>();
+
+public void ajouterObstacle(Position p) {
+    obstacles.add(p);
+}
+
+public void retirerObstacle(Position p) {
+    obstacles.remove(p);
+}
+
+public void clearObstacles() {
+    obstacles.clear();
+}
+
+public Set<Position> getObstacles() {
+    return obstacles;
+}
+
     /**
      * Indique si une cellule est vide.
      *
@@ -224,5 +242,7 @@ public class Plateau {
         this.grille = new Cellule[rows][cols];
         initialiser();
     }
+
+
 
 }

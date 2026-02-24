@@ -8,7 +8,8 @@ import java.util.*;
  * Cette stratégie explore récursivement les coups possibles jusqu'à une profondeur maximale
  * et choisit le mouvement qui maximise la valeur retournée par l'heuristique.
  */
-public class MinMaxStrategie extends AbstractStrategie{
+public class MinMaxStrategie extends AbstractStrategie
+{
      
     private long startTime;
     private static final long TIME_LIMIT_MS = 100;
