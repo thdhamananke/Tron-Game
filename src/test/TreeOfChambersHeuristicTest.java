@@ -14,7 +14,7 @@ public class TreeOfChambersHeuristicTest {
     @Test
     public void testScoreSeulSurPlateau() {
         TreeOfChambersHeuristic toc = new TreeOfChambersHeuristic();
-        Plateau plateau = new Plateau(3, 3); // 9 cases
+        Plateau plateau = new Plateau(3, 3); 
 
         Team team = new Team("Solo", new ArrayList<>(), Color.BLUE);
         Player p1 = new Player("Moi", team, new Position(0, 0));
@@ -26,8 +26,8 @@ public class TreeOfChambersHeuristicTest {
     }
 
     /**
-     * Test 2 : Détection d'une chambre isolée (Cul-de-sac).
-     * On crée une chambre de 2 cases protégée par un "pont" (point d'articulation).
+     * Test 2 : Détection d'une chambre isolée (
+     * On crée une chambre de 2 cases protégée par un "pont"
      */
     @Test
     public void testChambreIsolee() {

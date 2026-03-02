@@ -38,9 +38,10 @@ public class FreeSpaceHeuristic implements Heuristic {
             for (Direction dir : Direction.values()) {
                 Position next = current.move(dir);
 
-                if (grid.estDansPlateau(next)
-                        && !visited[next.getRow()][next.getCol()]
-                        && grid.estLibre(next)) {
+                // On vérifie que la case est dans le plateau, non visitée ET possède l'état EMPTY
+                 if (grid.estDansPlateau(next) 
+                 && !visited[next.getRow()][next.getCol()] 
+                 && grid.getCellule(next).getState() == CellState.EMPTY) {
 
                     visited[next.getRow()][next.getCol()] = true;
                     queue.add(next);
