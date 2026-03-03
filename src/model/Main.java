@@ -84,7 +84,7 @@ public class Main {
             // créer un plateau et réinitialiser les joueurs pour la nouvelle partie
             plateau = new Plateau(nbLignes, nbColonnes);
             ModeleJeu modele = new ModeleJeu(nbLignes, nbColonnes, joueurs);
-            ModeleJeuThread modeleThread = new ModeleJeuThread(modele, 700);
+            ModeleJeuThread modeleThread = new ModeleJeuThread(modele, 1000);
             
             
             modele.demarrer();

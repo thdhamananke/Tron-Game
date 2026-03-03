@@ -221,6 +221,11 @@ public class PDFExporter {
     }
 
 
+    /**
+     * Un petit resumé 
+     * @param result
+     * @return
+     */
     private static String conclusion(ExperimentResult result) {
         Team best = null;
         double maxRate = -1;
