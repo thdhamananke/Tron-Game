@@ -198,7 +198,7 @@ public class ExperimentMain {
         //ExperimentAnalyzer.generateAllCharts(result);
         ExperimentResult result1 = experiment.run(config);
 
-        ChartGenerator.showWinPieChart(globalResult);
+        //ChartGenerator.showWinPieChart(globalResult);
 
         //------------------------------------------------------------------
 
