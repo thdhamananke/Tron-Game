@@ -10,7 +10,7 @@ import java.util.*;
 public class ModeleJeuThread extends AbstractModeleEcoutable {
     
     private final ModeleJeu modele;
-    private final int timeoutMs;
+    private int timeoutMs;
 
     public ModeleJeuThread(ModeleJeu modele, int timeoutMs) {
         this.modele = modele;
@@ -74,5 +74,10 @@ public class ModeleJeuThread extends AbstractModeleEcoutable {
     
     public Plateau getPlateau() { 
         return modele.getPlateau(); 
+    }
+
+    public void setTimeout(int timeoutMs) 
+    {
+      this.timeoutMs = timeoutMs;
     }
 }

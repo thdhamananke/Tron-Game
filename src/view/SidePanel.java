@@ -5,48 +5,60 @@ import controller.GameController;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel latéral complet.
+ */
 public class SidePanel extends JPanel {
 
-    private ControlSection controlSection;
-    private StrategySection strategySection;
-    private ConfigSection configSection;
-    private ObstacleSection obstacleSection;
-    private SpeedSection speedSection;
+    private final GameController controller;
+    private final GUI gui;
+    private final GameBoardPanel gameBoard;
 
-    public SidePanel(GameController controller,
-                     GUI gui,
-                     GameBoardPanel board) {
+    public SidePanel(GameController controller, GUI gui, GameBoardPanel gameBoard) {
+        this.controller = controller;
+        this.gui = gui;
+        this.gameBoard = gameBoard;
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setBackground(new Color(240, 248, 255));
+        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // 🔥 IMPORTANT : hauteur forcée pour activer le scroll
-        setPreferredSize(new Dimension(260, 1000));
-
-        setBackground(new java.awt.Color(245,245,245));
-
-        controlSection = new ControlSection(controller);
-        strategySection = new StrategySection(controller, gui);
-        configSection = new ConfigSection(controller, board);
-        obstacleSection = new ObstacleSection(board);
-        speedSection = new SpeedSection(controller);
-
-        add(controlSection);
+        add(createTitle());
         add(Box.createVerticalStrut(10));
 
-        add(strategySection);
+        add(new ControlSection(controller));
         add(Box.createVerticalStrut(10));
 
-        add(configSection);
+        // Nouvelle StrategySection simplifiée
+        add(new StrategySection(controller, gui));
         add(Box.createVerticalStrut(10));
 
-        add(obstacleSection);
+        add(new ConfigSection(controller, gameBoard));
         add(Box.createVerticalStrut(10));
 
-        add(speedSection);
-        add(Box.createVerticalStrut(20));
+        add(new ObstacleSection(gameBoard));
+        add(Box.createVerticalStrut(10));
+
+        add(new SpeedSection(controller));
+        add(Box.createVerticalStrut(10));
+
+        add(new HistorySection(controller));
+
+        add(Box.createVerticalGlue());
     }
 
-    public ControlSection getControlSection() {
-        return controlSection;
+    private JPanel createTitle() {
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.setBackground(new Color(70, 130, 180));
+        panel.setBorder(BorderFactory.createEmptyBorder(15, 10, 15, 10));
+
+        JLabel title = new JLabel("⚙️ CONTRÔLES", SwingConstants.CENTER);
+        title.setFont(new Font("Arial", Font.BOLD, 16));
+        title.setForeground(Color.WHITE);
+
+        panel.add(title, BorderLayout.CENTER);
+        panel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
+
+        return panel;
     }
 }

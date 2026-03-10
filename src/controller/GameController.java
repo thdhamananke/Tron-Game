@@ -3,12 +3,11 @@ package controller;
 import model.*;
 import view.GUI;
 
-import java.util.ArrayList;
+import javax.swing.*;
 import java.util.List;
 
 /**
- * Contrôleur principal du jeu
- * Gère la logique, le thread, l'historique et l'état
+ * Contrôleur principal - VERSION COMPLÈTE AVEC LOGS
  */
 public class GameController {
 
@@ -17,224 +16,258 @@ public class GameController {
     private GUI vue;
     private GameHistory history;
 
-    private String strategieRouge = "AlphaBeta";
-    private String strategieBleu = "AlphaBeta";
-
     private volatile boolean running = false;
     private volatile boolean paused = false;
 
     private int delay = 500;
-    private int rows = 30;
-    private int cols = 30;
-
-    /* ================= CONSTRUCTEUR ================= */
 
     public GameController(ModeleJeu game, GUI vue) {
         this.game = game;
         this.vue = vue;
         this.history = new GameHistory();
-    }
 
-    /* ================= INITIALISATION ================= */
-
-    public void initialiserGame() {
-
-        if (vue != null) {
-            rows = vue.getRows();
-            cols = vue.getColumns();
-        }
-
-        Player rouge = new Player(
-                "Bot Rouge",
-                new Team("Rouge", new ArrayList<>(), model.Color.RED),
-                new Position(2, 2)
-        );
-
-        Player bleu = new Player(
-                "Bot Bleu",
-                new Team("Bleu", new ArrayList<>(), model.Color.BLUE),
-                new Position(rows - 3, cols - 3)
-        );
-
-        rouge.getTeam().getMembers().add(rouge);
-        bleu.getTeam().getMembers().add(bleu);
-
-        ArrayList<Player> joueurs = new ArrayList<>();
-        joueurs.add(rouge);
-        joueurs.add(bleu);
-
-        rouge.setStrategie(creerStrategie(strategieRouge, joueurs));
-        bleu.setStrategie(creerStrategie(strategieBleu, joueurs));
-
-        game = new ModeleJeu(rows, cols, joueurs);
-        modeleThread = new ModeleJeuThread(game, delay);
+        this.modeleThread = new ModeleJeuThread(game, delay);
 
         if (vue != null) {
             game.ajoutEcouteur(vue);
-            vue.mettreAjourAffichage();
         }
+        
+        System.out.println("✓ Controller créé");
     }
 
     /* ================= DEMARRAGE ================= */
 
     public void demarrerJeu() {
-
-        if (running) return;
+        if (running) {
+            System.out.println("⚠️ Le jeu est déjà en cours !");
+            return;
+        }
 
         running = true;
         paused = false;
 
         new Thread(() -> {
+            try {
+                game.demarrer();
+                miseAJourVue();
+                
+                System.out.println("\n🎮 Jeu démarré avec " + game.getJoueurs().size() + " joueurs\n");
+                afficherConfigJoueurs();
 
-            game.demarrer();
-
-            while (!modeleThread.estTermine() && running) {
-
-                if (!paused) {
-                    modeleThread.avancerTour();
-                }
-
-                try {
+                int tourActuel = 0;
+                while (!modeleThread.estTermine() && running) {
+                    if (!paused) {
+                        tourActuel++;
+                        
+                        // 🔥 LOG: Directions
+                        System.out.println("\nTour " + tourActuel + ":");
+                        logDirections();
+                        
+                        modeleThread.avancerTour();
+                        miseAJourVue();
+                    }
                     Thread.sleep(delay);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
                 }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            } finally {
+                running = false;
+                enregistrerPartie();
+                miseAJourVue();
+                System.out.println("\n🏁 Partie terminée après " + game.getTour() + " tours\n");
             }
-
-            running = false;
-            enregistrerPartie();
-
-            if (vue != null) {
-                vue.mettreAjourAffichage();
+        }, "GameLoop").start();
+    }
+    
+    /**
+     * 🔥 Affiche la config des joueurs au démarrage
+     */
+    private void afficherConfigJoueurs() {
+        System.out.println("📋 Configuration des joueurs :");
+        for (Player p : game.getJoueurs()) {
+            int depth = (p.getStrategie() instanceof AbstractStrategie) ?
+                       ((AbstractStrategie)p.getStrategie()).getDepth() : 0;
+            
+            System.out.println("  " + p.getTeam().getColor().getEmoji() + " " + 
+                             p.getName() + ": " +
+                             p.getStrategie().getName() + " + " +
+                             p.getHeuristic().getName() + 
+                             " (prof=" + depth + ") [Pos: " + p.getPosition() + "]");
+        }
+        System.out.println();
+    }
+    
+    /**
+     * 🔥 Affiche les directions choisies par chaque joueur
+     */
+    private void logDirections() {
+        for (Player p : game.getJoueurs()) {
+            if (p.isAlive()) {
+                Direction dir = p.getDernierCoupCal();
+                String dirStr = (dir != null) ? dir.toString() : "CALCUL EN COURS...";
+                System.out.println("  " + p.getTeam().getColor().getEmoji() + " " + 
+                                 p.getName() + " → " + dirStr);
+            } else {
+                System.out.println("  " + p.getTeam().getColor().getEmoji() + " " + 
+                                 p.getName() + " ✗ MORT");
             }
+        }
+    }
 
-        }).start();
+    private void miseAJourVue() {
+        if (vue != null) {
+            SwingUtilities.invokeLater(vue::mettreAjourAffichage);
+        }
     }
 
     /* ================= CONTROLES ================= */
 
     public void togglePause() {
         paused = !paused;
+        System.out.println(paused ? "⏸ Pause" : "▶️ Reprise");
     }
 
     public void restart() {
+        System.out.println("\n🔄 Redémarrage...");
         stopGame();
-        initialiserGame();
+
+        // Attendre que le thread se termine
+        try { Thread.sleep(300); } catch (InterruptedException ignored) {}
+
+        // Recréer le modèle avec les mêmes joueurs
+        List<Player> joueurs = game.getJoueurs();
+        
+        // Réinitialiser les joueurs
+        for (Player p : joueurs) {
+            p.setAlive(true);
+        }
+        
+        game = new ModeleJeu(game.getPlateau().getNbLignes(),
+                             game.getPlateau().getNbColonnes(),
+                             joueurs);
+        modeleThread = new ModeleJeuThread(game, delay);
+        
+        if (vue != null) {
+            game.ajoutEcouteur(vue);
+            SwingUtilities.invokeLater(vue::mettreAjourAffichage);
+        }
+        
+        System.out.println("✓ Jeu réinitialisé\n");
     }
 
     public void stopGame() {
         running = false;
         paused = false;
+        System.out.println("⏹ Jeu arrêté");
     }
 
-    public void changeGridSize(int r, int c) {
+    public void changeGridSize(int rows, int cols) {
         if (running) stopGame();
-        this.rows = r;
-        this.cols = c;
-        initialiserGame();
+        
+        List<Player> joueurs = game.getJoueurs();
+        game = new ModeleJeu(rows, cols, joueurs);
+        modeleThread = new ModeleJeuThread(game, delay);
+        
+        if (vue != null) {
+            game.ajoutEcouteur(vue);
+        }
+        
+        System.out.println("✓ Taille du plateau changée: " + rows + "x" + cols);
     }
 
-    /* ================= STRATEGIES ================= */
+    /* ================= CONFIGURATION STRATEGIES ================= */
 
-    private Strategie creerStrategie(String nom, List<Player> players) {
-
-        return switch (nom) {
-
-            case "Minimax" ->
-                    new MinMaxStrategie(new FreeSpaceHeuristic(), 5);
-
-            case "AlphaBeta" ->
-                    new AlphaBetaStrategie(new FreeSpaceHeuristic(), 5);
-
-            case "MaxN" ->
-                    new MaxNStrategie(new FreeSpaceHeuristic(), 5);
-
-            case "Paranoid" ->
-                    new ParanoidStrategie(new FreeSpaceHeuristic(), 5);
-
-            default ->
-                    new RandomStrategie(new FreeSpaceHeuristic(), 5);
-        };
-    }
-
-    public void appliquerStrategieComplete(
-            String stratRouge, String heurRouge, int depthRouge,
-            String stratBleu, String heurBleu, int depthBleu) {
-
-        Heuristic hR = creerHeuristique(heurRouge);
-        Heuristic hB = creerHeuristique(heurBleu);
-
-        Player rouge = game.getJoueurs().get(0);
-        Player bleu = game.getJoueurs().get(1);
-
-        rouge.setStrategie(creerStrategie(stratRouge, hR, depthRouge));
-        bleu.setStrategie(creerStrategie(stratBleu, hB, depthBleu));
+    /**
+     * 🔥 NOUVELLE MÉTHODE: Permet de changer la stratégie d'un joueur
+     */
+    public void setPlayerStrategy(int playerIndex, String stratName, String heurName, int depth) {
+        List<Player> joueurs = game.getJoueurs();
+        
+        if (playerIndex < 0 || playerIndex >= joueurs.size()) {
+            System.err.println("❌ Index joueur invalide: " + playerIndex);
+            return;
+        }
+        
+        Player player = joueurs.get(playerIndex);
+        Heuristic heur = creerHeuristique(heurName);
+        Strategie strat = creerStrategie(stratName, heur, depth, joueurs);
+        
+        player.setStrategie(strat);
+        player.setHeuristic(heur);
+        
+        System.out.println("✓ Stratégie mise à jour pour " + player.getName() + 
+                         ": " + stratName + " + " + heurName + " (prof=" + depth + ")");
     }
 
     private Heuristic creerHeuristique(String nom) {
         return switch (nom) {
-            case "Advanced" -> new VoronoiHeuristic(); // sécurité
+            case "FreeSpace" -> new FreeSpaceHeuristic();
+            case "Voronoi" -> new VoronoiHeuristic();
+            case "TreeOfChambers" -> new TreeOfChambersHeuristic();
             default -> new FreeSpaceHeuristic();
         };
     }
 
-    private Strategie creerStrategie(
-            String nom, Heuristic heur, int depth) {
-
+    private Strategie creerStrategie(String nom, Heuristic heur, int depth, List<Player> joueurs) {
         return switch (nom) {
-            case "AlphaBeta" -> new AlphaBetaStrategie(heur, depth);
+            case "Random" -> new RandomStrategie(heur, depth);
             case "MinMax" -> new MinMaxStrategie(heur, depth);
-            default -> new RandomStrategie(heur, depth);
+            case "AlphaBeta" -> new AlphaBetaStrategie(heur, depth);
+            case "MaxN" -> new MaxNStrategie(heur, depth);
+            case "Paranoid" -> new ParanoidStrategie(heur, depth);
+            case "SOS" -> new SOSStrategie(heur, depth, joueurs);
+            default -> new AlphaBetaStrategie(heur, depth);
         };
     }
 
     /* ================= HISTORIQUE ================= */
 
-    public void enregistrerPartie() {
-
+    private void enregistrerPartie() {
         if (game != null && game.estTermine()) {
+            StringBuilder stratRougeDesc = new StringBuilder();
+            StringBuilder stratBleuDesc = new StringBuilder();
+            List<Player> joueurs = game.getJoueurs();
+            
+            for (Player p : joueurs) {
+                int depth = (p.getStrategie() instanceof AbstractStrategie) ?
+                           ((AbstractStrategie)p.getStrategie()).getDepth() : 0;
+                
+                String desc = p.getStrategie().getName() + "+" + 
+                             p.getHeuristic().getName() + "(" + depth + ") ";
+                
+                if (p.getTeam().getColor() == model.Color.RED || 
+                    p.getTeam().getColor() == model.Color.BRIGHT_RED) {
+                    stratRougeDesc.append(desc);
+                } else {
+                    stratBleuDesc.append(desc);
+                }
+            }
 
             history.ajouterPartie(
                     new GameRecord(
                             game.getTour(),
                             game.getEquipeGagnante(),
-                            strategieRouge,
-                            strategieBleu,
-                            rows,
-                            cols
+                            stratRougeDesc.toString(),
+                            stratBleuDesc.toString(),
+                            game.getPlateau().getNbLignes(),
+                            game.getPlateau().getNbColonnes()
                     )
             );
+            System.out.println("💾 Partie enregistrée dans l'historique");
         }
     }
 
     /* ================= GETTERS ================= */
 
-    public ModeleJeu getGame() {
-        return game;
-    }
-
-    public GameHistory getHistory() {
-        return history;
-    }
-
-    public boolean isRunning() {
-        return running;
-    }
-
-    public void setRunning(boolean b) {
-        running = b;
-    }
-
-    public boolean isPaused() {
-        return paused;
-    }
-
-    public int getDelay() {
-        return delay;
-    }
+    public ModeleJeu getGame() { return game; }
+    public GameHistory getHistory() { return history; }
+    public boolean isRunning() { return running; }
+    public boolean isPaused() { return paused; }
+    public int getDelay() { return delay; }
 
     public void setDelay(int d) {
-        delay = d;
+        this.delay = d;
+        if (modeleThread != null) modeleThread.setTimeout(d);
     }
 
     public int getTour() {
@@ -242,15 +275,14 @@ public class GameController {
     }
 
     public String getGameState() {
-
         if (game == null) return "Non initialisé";
         if (game.estTermine()) return "Terminé";
         if (getTour() == 0) return "Prêt";
+        if (paused) return "En pause";
         return "En cours";
     }
 
     public String getWinner() {
-
         if (game == null || !game.estTermine()) return "-";
         if (game.getEquipeGagnante() == null) return "Match nul";
         return game.getEquipeGagnante().getName();
@@ -258,5 +290,8 @@ public class GameController {
 
     public void setVue(GUI vue) {
         this.vue = vue;
+        if (vue != null && game != null) {
+            game.ajoutEcouteur(vue);
+        }
     }
 }

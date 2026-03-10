@@ -4,7 +4,7 @@ import model.*;
 import observer.EcouteurModele;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.*; // pour java.awt.Color, Graphics, etc.
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Ellipse2D;
@@ -29,7 +29,6 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
         setPreferredSize(new Dimension(600, 600));
         initializeCellStates();
 
-        // 🔥 Gestion clic souris pour obstacles
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -58,7 +57,6 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
     /* ================= OBSTACLES ================= */
 
     private void toggleObstacle(int mouseX, int mouseY) {
-
         int cellSize = calculateCellSize();
         int offsetX = (getWidth() - columns * cellSize) / 2;
         int offsetY = (getHeight() - rows * cellSize) / 2;
@@ -70,10 +68,9 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
 
         Position pos = new Position(row, col);
 
-        // Interdire position de départ
-        if ((row == 2 && col == 2)
-                || (row == rows - 3 && col == columns - 3)) {
-
+        // Interdire position de départ (si vous voulez conserver cette règle)
+        // Ici on peut laisser ou adapter selon la configuration réelle
+        if ((row == 2 && col == 2) || (row == rows - 3 && col == columns - 3)) {
             JOptionPane.showMessageDialog(this,
                     "Impossible de placer un obstacle sur une position de départ!",
                     "Avertissement",
@@ -81,7 +78,6 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
             return;
         }
 
-        // 🔥 Utilisation propre du modèle
         if (game.getPlateau().getObstacles().contains(pos)) {
             game.retirerObstacle(pos);
         } else {
@@ -108,7 +104,6 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
     }
 
     public void updateFromModel(CellState[][] modelGrid) {
-
         if (modelGrid == null || modelGrid.length == 0) return;
 
         this.rows = modelGrid.length;
@@ -121,13 +116,12 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
     /* ================= AFFICHAGE ================= */
 
     private int calculateCellSize() {
-
         int availableWidth = getWidth() - 20;
         int availableHeight = getHeight() - 20;
 
         int cellSize = Math.min(
-                availableWidth / columns,
-                availableHeight / rows
+                availableWidth / Math.max(1, columns),
+                availableHeight / Math.max(1, rows)
         );
 
         cellSize = (int)(cellSize * CELL_SIZE_SCALE);
@@ -140,7 +134,6 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
 
     @Override
     protected void paintComponent(Graphics g) {
-
         super.paintComponent(g);
 
         if (rows == 0 || columns == 0) return;
@@ -158,9 +151,9 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
         int offsetX = (getWidth() - totalWidth) / 2;
         int offsetY = (getHeight() - totalHeight) / 2;
 
+        // Dessiner les cellules
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns; col++) {
-
                 int x = offsetX + col * cellSize;
                 int y = offsetY + row * cellSize;
 
@@ -169,78 +162,65 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
                 g2d.setColor(fillColor);
                 g2d.fillRect(x, y, cellSize, cellSize);
 
+                // Contour léger
                 g2d.setColor(new java.awt.Color(200, 200, 200));
                 g2d.drawRect(x, y, cellSize, cellSize);
+            }
+        }
 
-                if (game != null) {
-                    Position pos = new Position(row, col);
-                    Player player = game.getJoueurAt(pos);
-
-                    if (player != null
-                            && player.getPosition().equals(pos)
-                            && player.isAlive()) {
-
-                        drawPlayerHead(g2d, player, x, y, cellSize);
-                    }
+        // Dessiner les têtes des joueurs par-dessus (priorité absolue)
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < columns; col++) {
+                Position pos = new Position(row, col);
+                Player player = game.getJoueurAt(pos);
+                if (player != null && player.isAlive() && player.getPosition().equals(pos)) {
+                    int x = offsetX + col * cellSize;
+                    int y = offsetY + row * cellSize;
+                    drawPlayerHead(g2d, player, x, y, cellSize);
                 }
             }
         }
 
+        // Bordure noire autour du plateau
         g2d.setColor(java.awt.Color.BLACK);
         g2d.setStroke(new BasicStroke(3));
-        g2d.drawRect(offsetX - 1, offsetY - 1,
-                totalWidth + 2, totalHeight + 2);
+        g2d.drawRect(offsetX - 1, offsetY - 1, totalWidth + 2, totalHeight + 2);
     }
 
-    private void drawPlayerHead(Graphics2D g2d,
-                                Player player,
-                                int x, int y,
-                                int cellSize) {
-
+    private void drawPlayerHead(Graphics2D g2d, Player player, int x, int y, int cellSize) {
+        // On utilise une couleur plus foncée pour la tête
         g2d.setColor(player.getAwtColor().darker());
 
         int headSize = cellSize - 4;
         int headX = x + 2;
         int headY = y + 2;
 
-        Ellipse2D.Double head =
-                new Ellipse2D.Double(headX, headY,
-                        headSize, headSize);
-
+        Ellipse2D.Double head = new Ellipse2D.Double(headX, headY, headSize, headSize);
         g2d.fill(head);
     }
 
-   private java.awt.Color getCellColor(int row, int col) {
+    private java.awt.Color getCellColor(int row, int col) {
+        if (cellStates == null) return java.awt.Color.WHITE;
 
-    if (cellStates == null) return java.awt.Color.WHITE;
-
-    switch (cellStates[row][col]) {
-
-        case EMPTY:
-            return java.awt.Color.WHITE;
-
-        case WALL:
-            return java.awt.Color.DARK_GRAY; // trace visible
-
-        case PLAYER:
-            Player p = game.getJoueurAt(new Position(row, col));
-            if (p != null) {
-                return p.getAwtColor();
-            }
-            return java.awt.Color.WHITE;
-
-        default:
-            return java.awt.Color.WHITE;
-    }
-}
-
-    public int getColumns() {
-        return columns;
+        switch (cellStates[row][col]) {
+            case EMPTY:
+                return java.awt.Color.WHITE;
+            case WALL:
+                return java.awt.Color.DARK_GRAY;
+            case PLAYER:
+                // On retourne la couleur du joueur plus claire pour le fond
+                Player p = game.getJoueurAt(new Position(row, col));
+                if (p != null) {
+                    return p.getAwtColor().brighter();
+                }
+                return java.awt.Color.WHITE;
+            default:
+                return java.awt.Color.WHITE;
+        }
     }
 
-    public int getRows() {
-        return rows;
-    }
+    public int getColumns() { return columns; }
+    public int getRows() { return rows; }
 
     public void setGame(ModeleJeu game) {
         this.game = game;

@@ -1,32 +1,83 @@
 package view;
 
+import model.Player;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
+/**
+ * Panel inférieur avec légende des joueurs - CORRIGÉ
+ */
 public class BottomPanel extends JPanel {
 
+    private JPanel legendPanel;
+
     public BottomPanel() {
+        setLayout(new BorderLayout());
+        setBackground(new java.awt.Color(245, 245, 245));
+        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        setLayout(new FlowLayout(FlowLayout.LEFT));
+        JLabel title = new JLabel("Légende:", SwingConstants.LEFT);
+        title.setFont(new Font("Arial", Font.BOLD, 12));
+        add(title, BorderLayout.WEST);
 
-        add(createLegend(java.awt.Color.RED, "Bot Rouge"));
-        add(createLegend(java.awt.Color.BLUE, "Bot Bleu"));
-        add(createLegend(java.awt.Color.GRAY, "Mur"));
-        add(createLegend(java.awt.Color.WHITE, "Libre"));
+        legendPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 5));
+        legendPanel.setBackground(new java.awt.Color(245, 245, 245));
+        add(legendPanel, BorderLayout.CENTER);
     }
 
-    private JPanel createLegend(java.awt.Color color, String text) {
+    /**
+     * 🔥 Met à jour la légende avec la liste des joueurs
+     */
+    public void updateLegend(List<Player> joueurs) {
+        legendPanel.removeAll();
 
-        JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        if (joueurs == null || joueurs.isEmpty()) {
+            legendPanel.revalidate();
+            legendPanel.repaint();
+            return;
+        }
 
-        JLabel box = new JLabel("   ");
-        box.setOpaque(true);
-        box.setBackground(color);
-        box.setBorder(BorderFactory.createLineBorder(java.awt.Color.BLACK));
+        for (Player player : joueurs) {
+            JPanel entry = createLegendEntry(player);
+            legendPanel.add(entry);
+        }
 
-        p.add(box);
-        p.add(new JLabel(text));
+        legendPanel.revalidate();
+        legendPanel.repaint();
+    }
 
-        return p;
+    /**
+     * Crée une entrée de légende pour un joueur
+     */
+    private JPanel createLegendEntry(Player player) {
+        JPanel entry = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
+        entry.setBackground(new java.awt.Color(245, 245, 245));
+
+        // Carré coloré
+        JPanel colorBox = new JPanel();
+        colorBox.setPreferredSize(new Dimension(20, 20));
+        colorBox.setBackground(player.getColor().toAWT());
+        colorBox.setBorder(BorderFactory.createLineBorder(java.awt.Color.BLACK, 1));
+
+        // Nom
+        JLabel nameLabel = new JLabel(player.getName());
+        nameLabel.setFont(new Font("Arial", Font.PLAIN, 11));
+
+        // Statut
+        String statut = player.isAlive() ? "✓" : "✗";
+        JLabel statusLabel = new JLabel(statut);
+        statusLabel.setFont(new Font("Arial", Font.BOLD, 11));
+        statusLabel.setForeground(player.isAlive() ? 
+            new java.awt.Color(34, 139, 34) : 
+            new java.awt.Color(178, 34, 34)
+        );
+
+        entry.add(colorBox);
+        entry.add(nameLabel);
+        entry.add(statusLabel);
+
+        return entry;
     }
 }

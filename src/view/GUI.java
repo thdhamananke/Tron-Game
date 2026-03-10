@@ -1,193 +1,217 @@
 package view;
 
 import controller.GameController;
-import controller.GameRecord;
-import model.ModeleJeu;
+import model.*;
 import observer.EcouteurModele;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.List;
 
-public class GUI extends JFrame implements  EcouteurModele {
+/**
+ * Interface Graphique - TOUTES LES CORRECTIONS
+ */
+public class GUI extends JFrame implements EcouteurModele {
 
     private final GameController controller;
-
     private TopPanel topPanel;
+    private GameBoardPanel gameBoard;
+    private JScrollPane scrollPane;
     private SidePanel sidePanel;
     private BottomPanel bottomPanel;
-    private GameBoardPanel gameBoard;
+
+    private int rows = 30;
+    private int columns = 30;
 
     public GUI(GameController controller) {
-
         this.controller = controller;
 
-        setTitle("Jeu Tron - Combat de Bots Avancé");
-        setSize(1100, 750);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout(5,5));
+        setTitle("🎮 Jeu de Tron - Version Graphique Complète");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout(5, 5));
+        
+        getContentPane().setBackground(new java.awt.Color(230, 240, 250));
 
         initComponents();
-        createMenuBar();
-
+        
+        // 🔥 FIX: Taille fixe pour éviter le scroll
+        setSize(1400, 900);
         setLocationRelativeTo(null);
         setVisible(true);
 
-        mettreAjourAffichage();
+        System.out.println("=== Démarrage du Jeu Tron ===");
+        System.out.println("✓ Interface initialisée");
+        System.out.println("🎮 Prêt à jouer !");
     }
 
     private void initComponents() {
-
-        ModeleJeu game = controller.getGame();
-
+        
+        // TopPanel
         topPanel = new TopPanel();
-        gameBoard = new GameBoardPanel(game);
-        sidePanel = new SidePanel(controller, this, gameBoard);
-        bottomPanel = new BottomPanel();
-
         add(topPanel, BorderLayout.NORTH);
-        add(gameBoard, BorderLayout.CENTER);
 
-        // 🔥 ScrollPane correct
-        JScrollPane scrollPane = new JScrollPane(sidePanel);
-        scrollPane.setPreferredSize(new Dimension(300, 0));
-        scrollPane.setHorizontalScrollBarPolicy(
-                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setVerticalScrollBarPolicy(
-                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        // 🔥 GameBoard avec taille appropriée
+        gameBoard = new GameBoardPanel(controller.getGame());
+        gameBoard.setPreferredSize(new Dimension(750, 750));
+        
+        scrollPane = new JScrollPane(gameBoard);
+        scrollPane.setBorder(BorderFactory.createLineBorder(new java.awt.Color(70, 130, 180), 3));
+        scrollPane.setPreferredSize(new Dimension(800, 750));
+        add(scrollPane, BorderLayout.CENTER);
 
-        add(scrollPane, BorderLayout.EAST);
+        // SidePanel avec scroll interne
+        sidePanel = new SidePanel(controller, this, gameBoard);
+        
+        // 🔥 FIX: SidePanel avec son propre scroll
+        JScrollPane sidePanelScroll = new JScrollPane(sidePanel);
+        sidePanelScroll.setPreferredSize(new Dimension(320, 750));
+        sidePanelScroll.setBorder(BorderFactory.createEmptyBorder());
+        sidePanelScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        sidePanelScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        add(sidePanelScroll, BorderLayout.EAST);
+
+        // BottomPanel
+        bottomPanel = new BottomPanel();
         add(bottomPanel, BorderLayout.SOUTH);
-
-        revalidate();
-        repaint();
     }
 
-    public int getRows() {
-        return gameBoard.getRows();
-    }
-
-    public int getColumns() {
-        return gameBoard.getColumns();
-    }
-
-    /* ================= MENU ================= */
-
-    private void createMenuBar() {
-
-        JMenuBar menuBar = new JMenuBar();
-
-        JMenu jeuMenu = new JMenu("Jeu");
-
-        JMenuItem nouvellePartie = new JMenuItem("Nouvelle Partie");
-        nouvellePartie.addActionListener(e ->
-                sidePanel.getControlSection().restart());
-
-        JMenuItem quitter = new JMenuItem("Quitter");
-        quitter.addActionListener(e -> System.exit(0));
-
-        jeuMenu.add(nouvellePartie);
-        jeuMenu.addSeparator();
-        jeuMenu.add(quitter);
-
-        JMenu historiqueMenu = new JMenu("Historique");
-
-        JMenuItem voirHistorique = new JMenuItem("Voir l'historique");
-        voirHistorique.addActionListener(e -> afficherHistorique());
-
-        JMenuItem statistiques = new JMenuItem("Statistiques");
-        statistiques.addActionListener(e -> afficherStatistiques());
-
-        historiqueMenu.add(voirHistorique);
-        historiqueMenu.add(statistiques);
-
-        menuBar.add(jeuMenu);
-        menuBar.add(historiqueMenu);
-
-        setJMenuBar(menuBar);
-    }
-
-    private void afficherHistorique() {
-
-        List<GameRecord> parties =
-                controller.getHistory().getParties();
-
-        if (parties.isEmpty()) {
-            JOptionPane.showMessageDialog(this,
-                    "Aucune partie dans l'historique",
-                    "Historique",
-                    JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-
-        JTextArea textArea = new JTextArea(parties.toString());
-        textArea.setEditable(false);
-
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setPreferredSize(new Dimension(600,400));
-
-        JOptionPane.showMessageDialog(this,
-                scrollPane,
-                "Historique",
-                JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    private void afficherStatistiques() {
-
-        JOptionPane.showMessageDialog(this,
-                controller.getHistory().getStatistiques(),
-                "Statistiques",
-                JOptionPane.INFORMATION_MESSAGE);
-    }
-
+    /**
+     * 🔥 Mise à jour complète de l'affichage
+     */
     public void mettreAjourAffichage() {
+        
+        ModeleJeu game = controller.getGame();
+        
+        if (game == null) return;
 
-        if (controller.getGame() == null) return;
+        int tour = controller.getTour();
+        String statut = controller.getGameState();
+        String gagnant = controller.getWinner();
 
-        topPanel.update(
-                controller.getTour(),
-                controller.getGameState(),
-                controller.getWinner()
-        );
+        // Mettre à jour tous les panels
+        topPanel.update(tour, statut, gagnant, controller);
+        
+        // 🔥 FIX: Conversion correcte avec les têtes des joueurs
+        CellState[][] cellStates = convertToCellStates(game);
+        gameBoard.updateFromModel(cellStates);
+        
+        bottomPanel.updateLegend(game.getJoueurs());
 
-        gameBoard.setGame(controller.getGame());
-        gameBoard.repaint();
-
-        if (controller.getGame().estTermine()
-                && controller.isRunning()) {
-
-            controller.setRunning(false);
-            afficherMessageVictoire();
-            sidePanel.getControlSection().enableStart();
+        // Message de victoire
+        if (game.estTermine() && !controller.isRunning()) {
+            SwingUtilities.invokeLater(this::afficherMessageVictoire);
         }
     }
 
-    private void afficherMessageVictoire() {
-
-        String winner = controller.getWinner();
-
-        String message;
-        String title;
-
-        if (winner.equals("Match nul")) {
-            message = "Match nul !\nAucun joueur n'a survécu.";
-            title = "Égalité";
-        } else {
-            message = "🏆 Victoire pour " + winner +
-                      "\nNombre de tours : " + controller.getTour();
-            title = "Partie Terminée";
+    /**
+     * 🔥 CORRECTION MAJEURE: Afficher les têtes des joueurs correctement
+     */
+    private CellState[][] convertToCellStates(ModeleJeu game) {
+        Plateau plateau = game.getPlateau();
+        int rows = plateau.getNbLignes();
+        int cols = plateau.getNbColonnes();
+        
+        CellState[][] states = new CellState[rows][cols];
+        
+        // D'abord remplir avec les murs et cellules vides
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                Position pos = new Position(i, j);
+                Cellule cell = plateau.getCellule(pos);
+                
+                if (cell.isEmpty()) {
+                    states[i][j] = CellState.EMPTY;
+                } else {
+                    states[i][j] = CellState.WALL;
+                }
+            }
         }
+        
+        // 🔥 FIX: Ensuite marquer les TÊTES des joueurs vivants
+        // (ça écrase les murs aux positions actuelles des joueurs)
+        for (Player p : game.getJoueurs()) {
+            if (p.isAlive() && p.getPosition() != null) {
+                Position pos = p.getPosition();
+                if (plateau.estDansPlateau(pos)) {
+                    states[pos.getRow()][pos.getCol()] = CellState.PLAYER;
+                }
+            }
+        }
+        
+        return states;
+    }
+
+    /**
+     * Message de victoire
+     */
+    private void afficherMessageVictoire() {
+        
+        ModeleJeu game = controller.getGame();
+        Team gagnant = game.getEquipeGagnante();
+        
+        String message;
+        String titre;
+        
+        if (gagnant == null) {
+            titre = "🤝 MATCH NUL 🤝";
+            message = String.format(
+                "═══════════════════════════════\n" +
+                "        PARTIE TERMINÉE\n" +
+                "═══════════════════════════════\n\n" +
+                "📊 Nombre de tours : %d\n\n" +
+                "Match nul !\n\n" +
+                "═══════════════════════════════",
+                controller.getTour()
+            );
+        } else {
+            titre = "🏆 VICTOIRE DE " + gagnant.getName().toUpperCase() + " 🏆";
+            
+            StringBuilder sb = new StringBuilder();
+            sb.append("═══════════════════════════════\n");
+            sb.append("        PARTIE TERMINÉE\n");
+            sb.append("═══════════════════════════════\n\n");
+            sb.append(String.format("📊 Nombre de tours : %d\n\n", controller.getTour()));
+            
+            sb.append("Résumé:\n");
+            for (Player p : game.getJoueurs()) {
+                String statut = p.isAlive() ? "✓ VIVANT" : "✗ MORT";
+                sb.append(String.format("   %s : %s\n", p.getName(), statut));
+            }
+            
+            sb.append("\n🎉 GAGNANT : ").append(gagnant.getName()).append(" 🎉\n\n");
+            sb.append("═══════════════════════════════");
+            
+            message = sb.toString();
+        }
+
+        JTextArea textArea = new JTextArea(message);
+        textArea.setFont(new Font("Monospaced", Font.BOLD, 12));
+        textArea.setEditable(false);
+        textArea.setOpaque(false);
 
         JOptionPane.showMessageDialog(
-                this,
-                message,
-                title,
-                JOptionPane.INFORMATION_MESSAGE
+            this,
+            textArea,
+            titre,
+            JOptionPane.INFORMATION_MESSAGE
         );
     }
 
+    /**
+     * Observer pattern
+     */
     @Override
     public void modeleMisAJour(Object source) {
         SwingUtilities.invokeLater(this::mettreAjourAffichage);
+    }
+
+    // Getters
+    public int getRows() { return rows; }
+    public int getColumns() { return columns; }
+    public GameBoardPanel getGameBoard() { return gameBoard; }
+    
+    public void setGridSize(int r, int c) {
+        this.rows = r;
+        this.columns = c;
+        gameBoard.setGridSize(r, c);
     }
 }
