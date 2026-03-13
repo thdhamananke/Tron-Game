@@ -23,8 +23,7 @@ public class CSVExporter {
             List<ExperimentResult.ResumeSession> sessions = result.getResumesSession();
             if (!sessions.isEmpty()) {
                 List<Team> teams = result.getPlayers().stream().map(Player::getTeam)
-                                        .distinct().sorted(Comparator.comparing(Team::getName)).toList();
-
+                    .distinct().sorted(Comparator.comparing(Team::getName)).toList();
                 
                 // En-tête
                 pw.print("Parties");
@@ -58,11 +57,12 @@ public class CSVExporter {
                 // la confiance
                 double maxConfiance = 0.0;
                 for (Team team : teams) {
-                    double confEquipe = result.getConfidence(team, 1.96);
+                    double confEquipe = result.getConfidence(team);
                     if (confEquipe > maxConfiance) {
                         maxConfiance = confEquipe;
                     }
                 }
+                
                 pw.printf(Locale.US, ",±%.2f%%", maxConfiance);
                 pw.println();
             }
@@ -93,6 +93,11 @@ public class CSVExporter {
         }
     }
 
+    /**
+     * la méthode qui retourn le nom cours de la stratégie et de l'heuristique
+     * @param obj le nom
+     * @return le nom cours de la stratégie et de l'heuristique
+    */
     private static String nomCourt(Object obj) {
         String name = obj.getClass().getSimpleName();
         return switch (name) {

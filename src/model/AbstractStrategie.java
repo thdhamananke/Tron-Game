@@ -61,7 +61,8 @@ public abstract class AbstractStrategie implements Strategie {
         plateau.setCellule(backup.oldPosition, backup.oldCell);
         player.setPosition(backup.oldPosition);
     }
-      /**
+    
+    /**
      * Récupère la liste des joueurs encore en vie sur le plateau.
      * @param plateau plateau de jeu
      * @return liste des joueurs vivants sans doublons

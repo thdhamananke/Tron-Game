@@ -2,8 +2,11 @@ package experiment;
 
 import java.util.List;
 
-import model.Strategie;
+import model.*;
 
+/**
+ * sert à la configuiration du jeu
+ */
 public class ExperimentConfig {
     public final int nbLignes;
     public final int nbColonnes;
@@ -53,5 +56,4 @@ public class ExperimentConfig {
         return strategies;
     }
 
-    
 }

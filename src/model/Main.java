@@ -16,11 +16,11 @@ public class Main {
         System.out.println("║         BIENVENUE AU JEU DE TRON           ║");
         System.out.println("╚════════════════════════════════════════════╝\n");
 
-        int nbLignes  = entier(sc, "Nombre de lignes et de colonnes du plateau : ");
+        int nbLignes  = entier(sc, "Nombre de lignes du plateau : ");
+        int nbColonnes  = entier(sc, "Nombre de colonnes du plateau : ");
         int nbEquipes  = entier(sc, "Nombre d'équipes : ");
         int joueursParEquipe = entier(sc, "Nombre de joueurs par équipe : ");
         int profondeur = entier(sc, "Profondeur de la recherche : ");
-        int nbColonnes = nbLignes;
 
         Plateau plateau = new Plateau(nbLignes, nbColonnes);
 
@@ -78,13 +78,13 @@ public class Main {
             player.setStrategie(strat);
         }
 
-        // BOUCLE DE PARTIES 
+        // la boucle des parties
         boolean continuer = true;
         while (continuer) {
             // créer un plateau et réinitialiser les joueurs pour la nouvelle partie
             plateau = new Plateau(nbLignes, nbColonnes);
             ModeleJeu modele = new ModeleJeu(nbLignes, nbColonnes, joueurs);
-            ModeleJeuThread modeleThread = new ModeleJeuThread(modele, 1000);
+            ModeleJeuThread modeleThread = new ModeleJeuThread(modele, 700);
             
             
             modele.demarrer();

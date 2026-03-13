@@ -194,6 +194,15 @@ public class ExperimentMain {
         } catch (IOException e) {
             System.err.println("Erreur lors de l'export CSV : " + e.getMessage());
         }
+
+        // ------------------------------------------------------------------
+        // ExperimentResult result = experiment.run(config);
+
+        // ExperimentAnalyzer.generateAllCharts(result);
+        // ExperimentResult result1 = experiment.run(config);
+
+        // ChartGenerator.showWinPieChart(globalResult);
+
     }
 
     // ========== MODE BATCH ==========

@@ -56,7 +56,11 @@ public class Cellule {
         return state;
         
     }
-
+    
+    public void setState(CellState state) {
+        this.state = state; 
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -71,4 +75,5 @@ public class Cellule {
     public void setOwner(Player owner) {
         this.owner = owner;
     }
+
 }

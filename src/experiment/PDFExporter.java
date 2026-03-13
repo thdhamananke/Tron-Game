@@ -181,7 +181,6 @@ public class PDFExporter {
         }
     }
 
-
     private static void addCell(PdfPTable table, String text, boolean isBold) {
         Font font = isBold ? FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10) : FontFactory.getFont(FontFactory.HELVETICA, 10);
         PdfPCell cell = new PdfPCell(new Phrase(text, font));
@@ -189,7 +188,6 @@ public class PDFExporter {
         cell.setPadding(5);
         table.addCell(cell);
     }
-
 
     private static void addHeaderCell(PdfPTable table, String text) {
         Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10);

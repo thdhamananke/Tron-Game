@@ -192,7 +192,6 @@ public class ModeleJeu extends AbstractModeleEcoutable {
     }
 
     /* ================= GETTERS ================= */
-
     public Plateau getPlateau() { return plateau; }
     public List<Player> getJoueurs() { return new ArrayList<>(joueurs); }
     public int getTour() { return tour; }
