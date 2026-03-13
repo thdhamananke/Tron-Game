@@ -4,11 +4,11 @@ import java.util.List;
 
 public class SOSStrategie extends AbstractStrategie {
 
-    private  List<Player> joueurs;
+    private final List<Player> joueurs;
 
-    public SOSStrategie(Heuristic heuristic, int depth) {
+    public SOSStrategie(Heuristic heuristic, int depth, List<Player> joueurs) {
         super(heuristic, depth);
-       // this.joueurs = joueurs;
+        this.joueurs = joueurs;
     }
 
     @Override
