@@ -24,7 +24,7 @@ public class SOSStrategieTest {
         plateau.placerJoueur(joueur1.getPosition(), joueur1);
         plateau.placerJoueur(joueur2.getPosition(), joueur2);
 
-        SOSStrategie strategie = new SOSStrategie(heuristic, 2, joueurs);
+        SOSStrategie strategie = new SOSStrategie(heuristic, 2);
 
         Direction dir = strategie.calculerMouvement(joueur1, plateau);
         List<Direction> coupsPossibles = plateau.getCoupsPossibles(joueur1.getPosition());
@@ -51,7 +51,7 @@ public class SOSStrategieTest {
         plateau.placerJoueur(joueur2.getPosition(), joueur2);
         plateau.placerJoueur(joueur3.getPosition(), joueur3);
 
-        SOSStrategie strategie = new SOSStrategie(heuristic, 2, joueurs);
+        SOSStrategie strategie = new SOSStrategie(heuristic, 2);
 
 
         
@@ -90,7 +90,7 @@ public class SOSStrategieTest {
         plateau.placerJoueur(joueur2.getPosition(), joueur2);
         plateau.placerJoueur(joueur3.getPosition(), joueur3);
 
-        Strategie strategie = new SOSStrategie(heuristic, 2, joueurs);
+        Strategie strategie = new SOSStrategie(heuristic, 2);
 
         for (Player p : joueurs) {
             Direction dir = strategie.calculerMouvement(p, plateau);

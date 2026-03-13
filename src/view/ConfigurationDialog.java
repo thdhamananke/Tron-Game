@@ -223,7 +223,7 @@ public class ConfigurationDialog extends JDialog {
             case "AlphaBeta" -> new AlphaBetaStrategie(heur, depth);
             case "MaxN" -> new MaxNStrategie(heur, depth);
             case "Paranoid" -> new ParanoidStrategie(heur, depth);
-            case "SOS" -> new SOSStrategie(heur, depth, joueurs);
+            case "SOS" -> new SOSStrategie(heur, depth);
             default -> new AlphaBetaStrategie(heur, depth);
         };
     }
