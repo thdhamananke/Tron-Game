@@ -124,7 +124,7 @@ public class ConfigurationDialog extends JDialog {
                 joueursPanel.add(heurBox);
                 heuristiqueBoxes.add(heurBox);
 
-                JSpinner depthSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 10, 1));
+                JSpinner depthSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 50, 1));
                 joueursPanel.add(depthSpinner);
                 depthSpinners.add(depthSpinner);
             }

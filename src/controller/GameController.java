@@ -19,7 +19,7 @@ public class GameController {
     private volatile boolean running = false;
     private volatile boolean paused = false;
 
-    private int delay = 500;
+    private int delay = 700;
 
     public GameController(ModeleJeu game, GUI vue) {
         this.game = game;

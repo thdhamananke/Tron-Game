@@ -17,7 +17,7 @@ public class ParanoidStrategie extends AbstractStrategie {
 
         List<Direction> coups = plateau.getCoupsPossibles(me.getPosition());
         if (coups.isEmpty()) {
-            return Direction.HAUT; 
+            return Direction.BAS; 
         }
 
         double bestValue = Double.NEGATIVE_INFINITY;

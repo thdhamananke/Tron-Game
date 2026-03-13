@@ -42,7 +42,7 @@ public class Cellule {
     
     /** l'etat de la cellule */
     public CellState getState() {
-        return this.state;
+        return owner == null ? CellState.EMPTY : CellState.WALL;
     }
 
     @Override
@@ -59,8 +59,4 @@ public class Cellule {
     public void setOwner(Player owner) {
         this.owner = owner;
     }
-
-    public void setState(CellState state) {
-    this.state = state; 
-}
 }

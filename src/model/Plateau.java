@@ -105,9 +105,9 @@ public Set<Position> getObstacles() {
      * @return true si la cellule est vide
      */
     public boolean estLibre(Position position) {
-    return estDansPlateau(position) 
-        && getCellule(position).getState() == CellState.EMPTY;
-}
+        return estDansPlateau(position)
+            && getCellule(position).isEmpty();
+    }
 
     /**
      * @return nombre de cellules encore libres sur le plateau
@@ -134,9 +134,7 @@ public Set<Position> getObstacles() {
      */
     public void placerJoueur(Position position, Player joueur) {
         if (!estDansPlateau(position)) return;
-        Cellule cell = getCellule(position);
-        cell.occupy(joueur);
-        cell.setState(CellState.PLAYER);
+        getCellule(position).occupy(joueur);
     }
 
     /**
@@ -147,10 +145,7 @@ public Set<Position> getObstacles() {
      */
     public void placerMur(Position position, Player proprietaire) {
         if (!estDansPlateau(position)) return;
-        Cellule cell = getCellule(position);
-        cell.occupy(proprietaire);
-        cell.setState(CellState.WALL);
-
+        getCellule(position).occupy(proprietaire);
     }
 
     /**
@@ -217,7 +212,7 @@ public Set<Position> getObstacles() {
         if (!estDansPlateau(pos)) return null;
         
         Cellule cell = getCellule(pos);
-        if (cell != null && cell.getOwner() != null) {
+        if (!cell.isEmpty() && cell.getState() == CellState.PLAYER) {
             return cell.getOwner();
         }
         return null;
