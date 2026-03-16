@@ -13,9 +13,9 @@ public class GameRunner {
 
         List<Team> equipes = new ArrayList<>();
 
-         Color[] colors = couleursAleatoires(config.getNbEquipes());
+        Color[] colors = couleursAleatoires(config.getNbEquipes());
 
-         for (int i = 0; i < config.getNbEquipes(); i++) {
+        for (int i = 0; i < config.getNbEquipes(); i++) {
             Color color = colors[i];
             Team team = new Team("Equipe_" + (i + 1), new ArrayList<>(), color);
 
@@ -23,18 +23,31 @@ public class GameRunner {
                 Position pos = randomEmptyPosition(plateau);
                 Player player = new Player(team.getName() + "_" + (j + 1), team, pos);
 
-                // assigner la stratégie et l'heuristique
-                Strategie strat = strategies.get(i); 
-                player.setStrategie(strat);
-                player.setHeuristic(strat.getHeuristic()); 
+                // Strategie strat = strategies.get(i); 
+                // player.setStrategie(strat);
+                // player.setHeuristic(strat.getHeuristic()); 
                 
                 team.getMembers().add(player);
                 joueurs.add(player);
                 plateau.placerJoueur(pos, player);
-
             }
-
             equipes.add(team);
+        }
+
+        for (int idx = 0; idx < joueurs.size(); idx++) {
+            Player p = joueurs.get(idx);
+            Strategie s = strategies.get(idx);
+            
+            if (s instanceof SOSStrategie) {
+                
+                Heuristic h = s.getHeuristic();
+                SOSStrategie sos = new SOSStrategie( h, config.getDepth(), joueurs);
+                p.setStrategie(sos);
+            } else {
+                //  autres Stratégies 
+                p.setStrategie(s);
+            }
+            p.setHeuristic(p.getStrategie().getHeuristic());
         }
 
         ModeleJeu modele = new ModeleJeu(config.getNbLignes(), config.getNbColonnes(), joueurs );
@@ -68,16 +81,10 @@ public class GameRunner {
         return new GameResult(modele.getEquipeGagnante(), time, modele.getTour(), joueurs);
     }
 
-
     private int calculerMaxTours(int ligne, int colonne, int joueurs) {
         return (int) (ligne * colonne * Math.max(0.5, 1.0 - 0.1 * (joueurs - 1)));
     }
 
-    /**
-     * Determine une coleur aleatroire pour les equipes
-     * @param nbEquipes nombre d'equipe
-     * @return  la couleur
-    */
     private static Color[] couleursAleatoires(int nbEquipes) {
         Color[] result = new Color[nbEquipes];
         List<Color> available = new ArrayList<>(Arrays.asList(Color.values()));
@@ -107,5 +114,4 @@ public class GameRunner {
         } while (!plateau.estLibre(position));
         return position;
     }
-
 }

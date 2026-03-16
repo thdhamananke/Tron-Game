@@ -2,9 +2,6 @@ package experiment;
 
 import java.io.*;
 import java.util.*;
-
-import com.lowagie.text.Paragraph;
-
 import model.*;
 
 public class CSVExporter {
@@ -71,19 +68,29 @@ public class CSVExporter {
             }
             pw.println();
 
-            // début de detail
-            pw.println("TailleGrille,EquipeGagnante,Point,Note,TempsMoyen,NbMoyenTours");
+            pw.println("TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours");
+            
             for (GameResult gr : result.getHistory()) {
                 String winnerName = (gr.getWinner() != null) ? gr.getWinner().getName() : "Match Nul";
-                pw.printf(Locale.US, "%d,%s,1,1.0,%.2f,%.2f%n",
+                
+
+                // Ancienne version 
+                // pw.printf(Locale.US, "%d,%s,1,1.0,%.2f,%.2f%n",
+                //     (config.getNbLignes() * config.getNbColonnes()),
+                //     winnerName,
+                //     result.getAverageTimeMs(),
+                //     result.getAverageTurns()
+                // );
+                
+                // new
+                pw.printf(Locale.US, "%d,%s,%d,%d%n",
                     (config.getNbLignes() * config.getNbColonnes()),
                     winnerName,
-                    result.getAverageTimeMs(),
-                    result.getAverageTurns()
+                    gr.getTimeMs(),      // Temps INDIVIDUEL
+                    gr.getTurns()        // Tours INDIVIDUELS
                 );
             }
         }
-        
     }
 
     private static String nomCourt(Object obj) {

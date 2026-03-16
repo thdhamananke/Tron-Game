@@ -1,0 +1,9023 @@
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 1000
+
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Match Nul,79,2
+225,Match Nul,87,2
+225,Match Nul,88,2
+225,Match Nul,84,2
+225,Match Nul,83,2
+225,Match Nul,83,2
+225,Match Nul,81,2
+225,Match Nul,51,2
+225,Match Nul,49,2
+225,Match Nul,22,2
+225,Match Nul,20,2
+225,Match Nul,20,2
+225,Match Nul,21,2
+225,Match Nul,17,2
+225,Match Nul,17,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,19,2
+225,Match Nul,9,2
+225,Match Nul,15,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,14,2
+225,Match Nul,14,2
+225,Match Nul,17,2
+225,Match Nul,13,2
+225,Match Nul,13,2
+225,Match Nul,13,2
+225,Match Nul,13,2
+225,Match Nul,30,2
+225,Match Nul,16,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,19,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,17,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,19,2
+225,Match Nul,21,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,15,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,21,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,19,2
+225,Match Nul,15,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,99,2
+225,Match Nul,94,2
+225,Match Nul,94,2
+225,Match Nul,183,2
+225,Match Nul,94,2
+225,Match Nul,225,2
+225,Match Nul,179,2
+225,Match Nul,349,2
+225,Match Nul,187,2
+225,Match Nul,183,2
+225,Match Nul,333,2
+225,Match Nul,339,2
+225,Match Nul,62,2
+225,Match Nul,218,2
+225,Match Nul,204,2
+225,Match Nul,148,2
+225,Match Nul,193,2
+225,Match Nul,95,2
+225,Match Nul,84,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,50,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,14,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Equipe_1,2,1
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,23,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,17,2
+225,Match Nul,19,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,29,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,15,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,15,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,28,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,19,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,23,2
+225,Match Nul,15,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,17,2
+225,Match Nul,41,2
+225,Match Nul,23,2
+225,Match Nul,35,2
+225,Match Nul,22,2
+225,Match Nul,22,2
+225,Match Nul,14,2
+225,Match Nul,10,2
+225,Match Nul,14,2
+225,Match Nul,16,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,18,2
+225,Match Nul,6,2
+225,Match Nul,16,2
+225,Match Nul,12,2
+225,Match Nul,69,2
+225,Match Nul,12,2
+225,Match Nul,35,2
+225,Match Nul,16,2
+225,Match Nul,50,2
+225,Match Nul,26,2
+225,Match Nul,17,2
+225,Match Nul,19,2
+225,Match Nul,18,2
+225,Match Nul,56,2
+225,Match Nul,38,2
+225,Match Nul,40,2
+225,Match Nul,33,2
+225,Match Nul,21,2
+225,Match Nul,24,2
+225,Match Nul,22,2
+225,Match Nul,21,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,18,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,14,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,13,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,29,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,19,2
+225,Match Nul,9,2
+225,Match Nul,18,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,16,2
+225,Match Nul,17,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,16,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,18,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,20,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,17,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,15,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,15,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,30,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,2,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,51,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,17,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,23,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,21,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,13,2
+225,Match Nul,18,2
+225,Match Nul,14,2
+225,Match Nul,14,2
+225,Match Nul,12,2
+225,Match Nul,18,2
+225,Match Nul,15,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,20,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,13,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,17,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,10,2
+225,Match Nul,16,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,15,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,15,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,14,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,17,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,15,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,17,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,18,2
+225,Match Nul,14,2
+225,Match Nul,18,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,5,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,11,2
+225,Match Nul,20,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,13,2
+225,Match Nul,12,2
+225,Match Nul,13,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,13,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,16,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,15,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,18,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,13,2
+225,Match Nul,15,2
+225,Match Nul,5,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,19,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,22,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,17,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,18,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,16,2
+225,Match Nul,11,2
+225,Match Nul,17,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,17,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,23,2
+225,Match Nul,9,2
+225,Match Nul,15,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,17,2
+225,Match Nul,15,2
+225,Match Nul,15,2
+225,Match Nul,14,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,15,2
+225,Match Nul,11,2
+225,Match Nul,17,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,11,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,15,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Match Nul,87,2
+225,Match Nul,75,2
+225,Match Nul,72,2
+225,Match Nul,76,2
+225,Match Nul,79,2
+225,Match Nul,74,2
+225,Match Nul,71,2
+225,Match Nul,71,2
+225,Match Nul,14,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,12,2
+225,Match Nul,13,2
+225,Match Nul,12,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,18,2
+225,Match Nul,12,2
+225,Match Nul,14,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,23,2
+225,Match Nul,6,2
+225,Match Nul,23,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,12,2
+225,Match Nul,16,2
+225,Equipe_1,4,1
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,20,2
+225,Match Nul,15,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,16,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,20,2
+225,Match Nul,17,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,18,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,20,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,17,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,20,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,3,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,16,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,13,2
+225,Match Nul,12,2
+225,Match Nul,15,2
+225,Match Nul,18,2
+225,Match Nul,12,2
+225,Match Nul,13,2
+225,Match Nul,16,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,18,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,28,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,17,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,17,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,15,2
+225,Match Nul,19,2
+225,Match Nul,13,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,17,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,17,2
+225,Match Nul,7,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,18,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,19,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,16,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,15,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,16,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,17,2
+225,Match Nul,22,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,18,2
+225,Match Nul,9,2
+225,Match Nul,15,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,20,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,23,2
+225,Match Nul,17,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,14,2
+225,Match Nul,13,2
+225,Match Nul,15,2
+225,Match Nul,12,2
+225,Match Nul,13,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,19,2
+225,Match Nul,20,2
+225,Match Nul,11,2
+225,Match Nul,19,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,15,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,18,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,18,2
+225,Match Nul,8,2
+225,Match Nul,21,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,18,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,19,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,23,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,19,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,15,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,20,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,5,2
+225,Match Nul,15,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,17,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,21,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,18,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,18,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,18,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,20,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,13,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,13,2
+225,Match Nul,14,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,24,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,15,2
+225,Match Nul,25,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,31,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,28,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,15,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,15,2
+225,Match Nul,15,2
+225,Match Nul,15,2
+225,Match Nul,20,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,20,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,16,2
+225,Match Nul,13,2
+225,Match Nul,12,2
+225,Match Nul,15,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,17,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,20,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Equipe_2,50,5
+225,Equipe_2,67,3
+225,Equipe_1,36,3
+225,Equipe_2,41,3
+225,Equipe_2,17,2
+225,Equipe_1,48,4
+225,Equipe_2,68,6
+225,Equipe_1,78,7
+225,Equipe_1,60,8
+225,Equipe_2,23,3
+225,Equipe_1,34,6
+225,Equipe_1,45,11
+225,Equipe_2,19,4
+225,Equipe_2,23,6
+225,Match Nul,6,3
+225,Equipe_1,14,7
+225,Match Nul,8,4
+225,Equipe_1,37,7
+225,Equipe_1,13,4
+225,Equipe_1,5,3
+225,Equipe_1,26,8
+225,Equipe_1,19,5
+225,Equipe_1,10,4
+225,Equipe_1,13,3
+225,Equipe_1,7,4
+225,Equipe_1,29,12
+225,Equipe_1,7,6
+225,Equipe_1,22,10
+225,Equipe_2,14,7
+225,Equipe_2,11,3
+225,Match Nul,4,4
+225,Equipe_2,7,3
+225,Equipe_2,5,3
+225,Equipe_1,22,7
+225,Equipe_2,20,7
+225,Equipe_1,7,4
+225,Equipe_2,5,5
+225,Equipe_2,22,6
+225,Equipe_1,17,4
+225,Match Nul,3,4
+225,Equipe_1,3,3
+225,Equipe_2,29,8
+225,Equipe_1,18,3
+225,Equipe_2,28,11
+225,Equipe_2,19,3
+225,Equipe_1,55,13
+225,Equipe_1,7,4
+225,Match Nul,9,3
+225,Match Nul,46,13
+225,Equipe_2,16,11
+225,Match Nul,50,14
+225,Equipe_1,7,3
+225,Equipe_1,12,3
+225,Equipe_2,12,6
+225,Equipe_1,4,4
+225,Equipe_1,17,9
+225,Equipe_1,18,5
+225,Equipe_1,19,11
+225,Equipe_1,7,3
+225,Equipe_1,5,3
+225,Equipe_2,11,8
+225,Equipe_2,3,4
+225,Equipe_1,10,8
+225,Equipe_1,35,10
+225,Equipe_1,9,4
+225,Equipe_1,3,3
+225,Equipe_1,4,3
+225,Equipe_1,23,6
+225,Equipe_2,9,3
+225,Equipe_1,6,4
+225,Equipe_1,10,5
+225,Equipe_1,3,3
+225,Equipe_2,23,7
+225,Equipe_1,8,7
+225,Equipe_2,3,3
+225,Equipe_2,11,7
+225,Equipe_1,6,3
+225,Equipe_2,29,14
+225,Equipe_1,5,4
+225,Equipe_2,3,3
+225,Equipe_1,5,3
+225,Equipe_2,3,3
+225,Equipe_1,14,10
+225,Equipe_2,13,10
+225,Equipe_1,7,4
+225,Equipe_2,10,5
+225,Equipe_1,16,8
+225,Equipe_2,16,10
+225,Equipe_1,5,3
+225,Equipe_2,10,4
+225,Equipe_2,29,6
+225,Equipe_1,5,4
+225,Equipe_2,5,6
+225,Equipe_1,15,3
+225,Match Nul,65,13
+225,Equipe_1,3,3
+225,Equipe_1,20,8
+225,Equipe_2,20,7
+225,Equipe_2,29,11
+225,Equipe_2,13,6
+225,Equipe_2,33,7
+225,Equipe_1,24,5
+225,Equipe_1,5,3
+225,Equipe_2,7,4
+225,Equipe_2,6,3
+225,Equipe_1,8,3
+225,Equipe_1,5,3
+225,Equipe_1,6,3
+225,Equipe_1,5,3
+225,Equipe_1,8,4
+225,Equipe_2,14,4
+225,Equipe_2,10,5
+225,Equipe_1,8,4
+225,Equipe_2,4,3
+225,Equipe_1,18,9
+225,Equipe_2,9,5
+225,Equipe_2,32,7
+225,Equipe_2,12,3
+225,Equipe_2,16,6
+225,Equipe_1,6,3
+225,Equipe_1,19,4
+225,Equipe_1,17,9
+225,Equipe_1,7,4
+225,Equipe_2,8,3
+225,Equipe_2,26,12
+225,Equipe_2,5,3
+225,Equipe_1,7,3
+225,Equipe_1,7,3
+225,Equipe_1,30,9
+225,Equipe_1,19,8
+225,Equipe_1,5,3
+225,Equipe_2,12,6
+225,Equipe_1,9,3
+225,Equipe_1,4,4
+225,Equipe_1,15,4
+225,Equipe_2,10,3
+225,Equipe_2,8,3
+225,Equipe_1,12,9
+225,Match Nul,4,3
+225,Match Nul,9,4
+225,Equipe_1,6,3
+225,Equipe_2,29,13
+225,Equipe_1,13,8
+225,Equipe_1,11,8
+225,Equipe_2,3,3
+225,Equipe_1,36,13
+225,Equipe_2,13,6
+225,Equipe_1,18,11
+225,Match Nul,13,4
+225,Equipe_2,17,9
+225,Match Nul,46,12
+225,Equipe_1,5,3
+225,Equipe_2,37,10
+225,Equipe_1,5,4
+225,Equipe_2,20,8
+225,Equipe_2,7,5
+225,Match Nul,18,9
+225,Equipe_1,22,12
+225,Equipe_2,20,10
+225,Equipe_2,6,4
+225,Equipe_2,3,3
+225,Equipe_1,20,6
+225,Equipe_1,7,3
+225,Equipe_2,16,11
+225,Equipe_1,6,4
+225,Equipe_2,6,3
+225,Equipe_2,34,10
+225,Equipe_2,4,4
+225,Equipe_2,5,4
+225,Match Nul,10,4
+225,Equipe_2,6,5
+225,Equipe_1,3,3
+225,Equipe_1,16,5
+225,Equipe_2,4,4
+225,Equipe_2,7,3
+225,Equipe_2,7,5
+225,Equipe_2,5,4
+225,Equipe_1,9,6
+225,Equipe_1,19,10
+225,Equipe_2,10,3
+225,Equipe_1,19,11
+225,Equipe_1,11,4
+225,Equipe_2,3,3
+225,Equipe_2,2,3
+225,Equipe_1,4,4
+225,Equipe_2,10,3
+225,Equipe_1,3,3
+225,Equipe_2,10,3
+225,Equipe_1,3,3
+225,Equipe_2,10,4
+225,Equipe_2,13,5
+225,Equipe_2,22,6
+225,Equipe_2,3,3
+225,Equipe_2,3,3
+225,Equipe_2,3,3
+225,Equipe_1,20,8
+225,Equipe_2,28,9
+225,Equipe_2,4,4
+225,Equipe_2,9,4
+225,Equipe_2,7,6
+225,Equipe_2,21,14
+225,Equipe_2,5,4
+225,Match Nul,7,4
+225,Equipe_1,10,7
+225,Equipe_2,4,4
+225,Equipe_1,24,9
+225,Equipe_2,12,4
+225,Equipe_1,22,14
+225,Equipe_1,17,6
+225,Equipe_1,10,9
+225,Match Nul,5,4
+225,Equipe_1,7,4
+225,Equipe_2,43,10
+225,Equipe_2,4,3
+225,Equipe_1,3,3
+225,Equipe_1,7,7
+225,Equipe_2,30,12
+225,Equipe_2,17,4
+225,Equipe_1,27,7
+225,Equipe_1,42,9
+225,Equipe_2,31,9
+225,Equipe_1,11,4
+225,Equipe_2,32,6
+225,Equipe_2,22,8
+225,Equipe_1,6,4
+225,Equipe_1,4,3
+225,Equipe_2,15,8
+225,Equipe_1,5,3
+225,Equipe_1,8,3
+225,Equipe_1,4,2
+225,Equipe_2,9,3
+225,Equipe_2,42,6
+225,Equipe_1,7,3
+225,Match Nul,6,3
+225,Equipe_2,5,3
+225,Equipe_1,10,3
+225,Equipe_2,15,8
+225,Equipe_2,24,8
+225,Equipe_1,26,11
+225,Equipe_2,7,4
+225,Equipe_1,20,11
+225,Equipe_1,16,8
+225,Match Nul,15,9
+225,Equipe_1,3,3
+225,Equipe_2,10,7
+225,Equipe_1,9,7
+225,Equipe_1,3,3
+225,Match Nul,4,3
+225,Equipe_2,3,3
+225,Match Nul,11,10
+225,Equipe_1,14,9
+225,Equipe_2,10,4
+225,Equipe_2,4,4
+225,Equipe_1,3,3
+225,Equipe_1,4,3
+225,Equipe_1,22,8
+225,Equipe_2,5,4
+225,Equipe_2,4,4
+225,Equipe_2,11,6
+225,Equipe_2,30,14
+225,Equipe_2,3,3
+225,Equipe_2,7,3
+225,Match Nul,72,14
+225,Equipe_2,8,3
+225,Equipe_2,17,9
+225,Equipe_1,18,11
+225,Equipe_2,16,9
+225,Equipe_2,9,5
+225,Equipe_2,16,9
+225,Equipe_2,3,3
+225,Equipe_2,3,3
+225,Equipe_2,17,11
+225,Equipe_2,14,9
+225,Equipe_1,18,12
+225,Equipe_1,6,4
+225,Equipe_2,5,4
+225,Equipe_2,3,3
+225,Match Nul,25,14
+225,Match Nul,4,3
+225,Equipe_2,3,3
+225,Equipe_1,19,9
+225,Equipe_2,14,9
+225,Match Nul,3,3
+225,Equipe_1,6,4
+225,Equipe_1,6,4
+225,Equipe_2,18,10
+225,Equipe_1,9,7
+225,Equipe_2,3,3
+225,Equipe_1,6,5
+225,Equipe_2,4,3
+225,Equipe_2,18,8
+225,Equipe_1,19,7
+225,Equipe_1,4,3
+225,Equipe_1,5,4
+225,Equipe_1,10,5
+225,Equipe_2,6,4
+225,Equipe_2,10,6
+225,Equipe_2,16,9
+225,Equipe_1,9,3
+225,Equipe_2,3,3
+225,Equipe_1,21,10
+225,Equipe_1,6,5
+225,Equipe_2,4,4
+225,Equipe_2,5,4
+225,Equipe_1,29,10
+225,Equipe_2,29,9
+225,Equipe_2,7,6
+225,Equipe_2,4,3
+225,Equipe_2,5,4
+225,Equipe_1,5,4
+225,Equipe_2,3,3
+225,Equipe_1,3,3
+225,Equipe_2,9,6
+225,Equipe_1,25,14
+225,Equipe_1,6,4
+225,Equipe_1,3,4
+225,Equipe_2,21,12
+225,Equipe_2,4,3
+225,Equipe_2,10,6
+225,Equipe_1,4,3
+225,Equipe_1,6,4
+225,Equipe_2,23,13
+225,Match Nul,4,3
+225,Equipe_1,4,3
+225,Equipe_2,6,3
+225,Equipe_1,15,9
+225,Equipe_2,5,3
+225,Equipe_1,5,3
+225,Equipe_2,7,3
+225,Equipe_1,21,8
+225,Equipe_1,4,4
+225,Equipe_1,4,4
+225,Equipe_2,10,6
+225,Equipe_1,8,5
+225,Match Nul,2,3
+225,Equipe_1,24,10
+225,Equipe_1,13,3
+225,Match Nul,8,5
+225,Equipe_2,6,4
+225,Match Nul,6,5
+225,Equipe_2,13,6
+225,Equipe_2,6,4
+225,Equipe_2,15,8
+225,Equipe_2,19,9
+225,Equipe_2,13,6
+225,Equipe_1,4,3
+225,Equipe_2,20,8
+225,Equipe_2,3,3
+225,Equipe_2,5,3
+225,Equipe_2,3,3
+225,Equipe_2,13,7
+225,Equipe_1,8,5
+225,Equipe_2,21,11
+225,Equipe_2,3,3
+225,Equipe_1,12,6
+225,Equipe_2,3,3
+225,Equipe_1,4,3
+225,Equipe_2,9,5
+225,Equipe_2,6,3
+225,Equipe_1,16,11
+225,Equipe_2,2,3
+225,Equipe_2,4,3
+225,Equipe_1,15,8
+225,Equipe_1,30,10
+225,Equipe_2,14,8
+225,Equipe_2,8,6
+225,Equipe_2,7,4
+225,Equipe_2,6,4
+225,Equipe_1,10,6
+225,Equipe_1,6,3
+225,Equipe_1,4,3
+225,Equipe_1,15,9
+225,Equipe_1,8,6
+225,Equipe_2,12,7
+225,Equipe_2,10,7
+225,Equipe_2,4,3
+225,Equipe_1,3,3
+225,Equipe_2,3,3
+225,Equipe_2,6,4
+225,Match Nul,5,3
+225,Equipe_2,15,6
+225,Match Nul,29,12
+225,Equipe_2,15,7
+225,Equipe_2,14,3
+225,Equipe_1,3,3
+225,Equipe_2,4,4
+225,Equipe_1,4,4
+225,Equipe_2,3,3
+225,Equipe_2,6,3
+225,Equipe_1,15,4
+225,Equipe_2,8,6
+225,Equipe_2,15,8
+225,Equipe_2,3,3
+225,Equipe_2,20,11
+225,Equipe_1,9,6
+225,Equipe_1,11,7
+225,Equipe_1,4,3
+225,Equipe_1,13,7
+225,Equipe_2,6,4
+225,Equipe_2,6,3
+225,Equipe_2,13,7
+225,Match Nul,11,7
+225,Equipe_1,3,3
+225,Equipe_1,8,5
+225,Equipe_1,6,4
+225,Equipe_2,11,4
+225,Equipe_2,16,10
+225,Equipe_2,3,3
+225,Equipe_2,6,3
+225,Equipe_1,9,3
+225,Equipe_1,4,3
+225,Equipe_1,4,3
+225,Equipe_1,4,3
+225,Equipe_2,8,6
+225,Match Nul,7,6
+225,Equipe_1,6,3
+225,Equipe_1,15,9
+225,Equipe_2,5,4
+225,Equipe_2,10,4
+225,Equipe_2,46,14
+225,Equipe_2,15,12
+225,Equipe_1,8,5
+225,Equipe_2,26,13
+225,Equipe_1,15,6
+225,Equipe_2,4,3
+225,Equipe_1,15,9
+225,Match Nul,6,4
+225,Equipe_1,23,10
+225,Match Nul,17,9
+225,Equipe_1,2,3
+225,Equipe_1,4,3
+225,Equipe_1,13,5
+225,Equipe_1,6,4
+225,Equipe_2,5,3
+225,Equipe_1,11,7
+225,Match Nul,5,4
+225,Match Nul,17,10
+225,Equipe_1,14,9
+225,Equipe_2,8,5
+225,Equipe_1,7,3
+225,Equipe_2,11,7
+225,Equipe_1,26,12
+225,Equipe_1,9,6
+225,Equipe_2,8,5
+225,Equipe_1,18,5
+225,Equipe_1,4,3
+225,Equipe_1,4,3
+225,Equipe_2,8,5
+225,Equipe_1,4,3
+225,Equipe_1,11,7
+225,Equipe_2,7,5
+225,Equipe_2,8,6
+225,Equipe_1,5,4
+225,Equipe_2,8,3
+225,Equipe_1,14,9
+225,Equipe_2,4,3
+225,Equipe_1,12,7
+225,Equipe_2,19,8
+225,Equipe_1,6,4
+225,Match Nul,5,4
+225,Equipe_2,3,3
+225,Equipe_2,16,5
+225,Match Nul,7,4
+225,Equipe_2,4,3
+225,Equipe_2,12,7
+225,Equipe_1,6,5
+225,Equipe_1,15,8
+225,Equipe_1,5,4
+225,Equipe_1,16,10
+225,Equipe_2,5,4
+225,Equipe_2,3,3
+225,Equipe_1,11,5
+225,Equipe_2,4,3
+225,Equipe_1,8,4
+225,Equipe_1,10,6
+225,Equipe_2,10,7
+225,Equipe_1,8,4
+225,Match Nul,19,7
+225,Equipe_2,4,3
+225,Equipe_2,21,11
+225,Equipe_2,14,10
+225,Equipe_1,12,7
+225,Equipe_1,6,4
+225,Equipe_2,6,4
+225,Match Nul,7,4
+225,Equipe_2,5,3
+225,Equipe_1,24,13
+225,Equipe_2,18,10
+225,Equipe_2,6,4
+225,Equipe_1,23,6
+225,Equipe_2,7,5
+225,Equipe_1,10,7
+225,Equipe_1,18,9
+225,Equipe_1,13,7
+225,Equipe_2,26,12
+225,Equipe_1,6,4
+225,Equipe_1,4,3
+225,Equipe_2,5,4
+225,Equipe_1,4,3
+225,Equipe_2,3,3
+225,Equipe_1,4,3
+225,Equipe_1,6,4
+225,Equipe_2,14,8
+225,Match Nul,8,5
+225,Equipe_1,8,5
+225,Equipe_2,8,5
+225,Equipe_1,6,4
+225,Match Nul,13,3
+225,Equipe_2,7,4
+225,Equipe_2,6,4
+225,Match Nul,10,7
+225,Equipe_2,26,10
+225,Equipe_1,3,3
+225,Match Nul,7,5
+225,Equipe_1,19,8
+225,Equipe_1,16,9
+225,Equipe_2,5,4
+225,Equipe_2,7,3
+225,Equipe_1,12,4
+225,Equipe_1,9,4
+225,Match Nul,9,6
+225,Equipe_2,4,3
+225,Equipe_1,21,12
+225,Equipe_1,3,3
+225,Equipe_2,14,6
+225,Equipe_2,6,4
+225,Equipe_1,6,3
+225,Equipe_2,4,3
+225,Equipe_2,5,4
+225,Equipe_1,17,13
+225,Equipe_1,6,4
+225,Equipe_2,13,7
+225,Equipe_1,16,10
+225,Equipe_2,4,3
+225,Equipe_2,10,6
+225,Match Nul,3,4
+225,Match Nul,4,3
+225,Match Nul,12,8
+225,Equipe_1,3,3
+225,Equipe_1,5,4
+225,Equipe_1,15,9
+225,Equipe_2,20,9
+225,Equipe_2,8,5
+225,Match Nul,4,3
+225,Equipe_2,7,4
+225,Equipe_2,9,5
+225,Equipe_2,9,5
+225,Equipe_2,9,5
+225,Equipe_2,16,8
+225,Equipe_2,6,4
+225,Equipe_1,11,7
+225,Match Nul,16,8
+225,Equipe_2,6,4
+225,Equipe_1,2,3
+225,Equipe_2,16,9
+225,Equipe_1,6,4
+225,Equipe_1,6,4
+225,Equipe_2,12,5
+225,Equipe_1,19,8
+225,Equipe_2,25,11
+225,Equipe_2,15,7
+225,Equipe_2,13,7
+225,Equipe_1,8,4
+225,Equipe_1,13,8
+225,Equipe_1,5,3
+225,Equipe_2,3,3
+225,Equipe_1,23,12
+225,Equipe_2,15,7
+225,Equipe_1,2,3
+225,Equipe_2,8,5
+225,Equipe_1,13,7
+225,Equipe_2,11,6
+225,Equipe_1,35,10
+225,Equipe_2,3,3
+225,Equipe_2,10,6
+225,Match Nul,5,4
+225,Match Nul,9,6
+225,Match Nul,4,4
+225,Equipe_2,4,3
+225,Match Nul,18,10
+225,Equipe_1,7,4
+225,Match Nul,17,10
+225,Equipe_2,3,3
+225,Equipe_1,13,7
+225,Equipe_2,32,14
+225,Equipe_2,12,5
+225,Equipe_2,23,13
+225,Equipe_1,7,3
+225,Equipe_1,18,9
+225,Equipe_1,11,6
+225,Match Nul,4,3
+225,Match Nul,4,4
+225,Equipe_2,18,9
+225,Equipe_2,9,5
+225,Equipe_2,16,8
+225,Equipe_1,7,3
+225,Equipe_1,5,3
+225,Match Nul,21,10
+225,Match Nul,11,7
+225,Match Nul,7,3
+225,Equipe_1,6,4
+225,Equipe_2,8,4
+225,Equipe_1,6,4
+225,Equipe_1,20,10
+225,Equipe_1,19,9
+225,Equipe_2,24,12
+225,Equipe_2,7,4
+225,Equipe_1,9,5
+225,Equipe_1,6,4
+225,Equipe_2,7,4
+225,Equipe_2,5,3
+225,Equipe_2,5,3
+225,Equipe_2,15,11
+225,Equipe_2,16,9
+225,Equipe_1,5,4
+225,Equipe_1,4,3
+225,Equipe_2,5,3
+225,Equipe_2,7,4
+225,Equipe_1,10,7
+225,Equipe_1,7,5
+225,Equipe_2,4,3
+225,Equipe_1,5,3
+225,Equipe_1,16,10
+225,Equipe_2,5,3
+225,Equipe_2,10,5
+225,Equipe_1,6,3
+225,Equipe_1,4,3
+225,Equipe_2,9,5
+225,Equipe_2,5,4
+225,Equipe_1,8,5
+225,Equipe_1,6,4
+225,Equipe_1,4,3
+225,Equipe_2,6,3
+225,Equipe_2,5,4
+225,Equipe_2,12,8
+225,Equipe_1,9,6
+225,Equipe_2,12,7
+225,Match Nul,7,5
+225,Equipe_1,9,5
+225,Equipe_2,12,5
+225,Equipe_1,19,9
+225,Equipe_1,6,4
+225,Equipe_2,3,3
+225,Equipe_1,25,12
+225,Equipe_2,7,4
+225,Equipe_2,8,4
+225,Equipe_1,9,6
+225,Match Nul,10,5
+225,Equipe_2,28,11
+225,Equipe_2,10,5
+225,Match Nul,4,3
+225,Equipe_2,9,5
+225,Match Nul,3,4
+225,Equipe_1,4,3
+225,Equipe_2,17,9
+225,Equipe_1,7,4
+225,Equipe_2,5,4
+225,Equipe_2,9,6
+225,Equipe_1,5,4
+225,Equipe_1,7,3
+225,Equipe_1,5,4
+225,Equipe_1,6,4
+225,Equipe_2,7,4
+225,Equipe_2,13,7
+225,Equipe_1,12,6
+225,Equipe_2,6,6
+225,Equipe_1,14,7
+225,Match Nul,4,3
+225,Equipe_1,10,6
+225,Equipe_2,14,7
+225,Equipe_1,8,6
+225,Equipe_2,15,7
+225,Match Nul,4,4
+225,Equipe_1,4,3
+225,Equipe_2,5,4
+225,Equipe_2,6,4
+225,Equipe_2,6,4
+225,Equipe_2,6,3
+225,Equipe_2,5,3
+225,Equipe_1,21,10
+225,Equipe_2,9,5
+225,Equipe_1,5,3
+225,Equipe_1,5,4
+225,Equipe_2,9,5
+225,Equipe_1,5,3
+225,Equipe_1,4,3
+225,Equipe_2,25,11
+225,Equipe_2,15,8
+225,Equipe_1,9,5
+225,Equipe_2,28,12
+225,Equipe_1,5,3
+225,Equipe_1,14,9
+225,Equipe_1,9,5
+225,Equipe_2,6,3
+225,Equipe_2,5,3
+225,Equipe_2,5,4
+225,Equipe_1,9,6
+225,Equipe_2,6,3
+225,Equipe_1,10,6
+225,Equipe_1,4,3
+225,Equipe_2,24,11
+225,Equipe_1,2,3
+225,Equipe_2,24,10
+225,Equipe_2,5,3
+225,Equipe_2,17,9
+225,Equipe_1,7,4
+225,Equipe_1,4,3
+225,Equipe_2,5,3
+225,Equipe_1,14,8
+225,Equipe_2,22,12
+225,Equipe_2,20,11
+225,Equipe_1,4,3
+225,Equipe_2,21,9
+225,Equipe_2,2,3
+225,Equipe_1,11,6
+225,Equipe_1,15,8
+225,Equipe_2,8,5
+225,Match Nul,4,4
+225,Equipe_2,27,10
+225,Equipe_2,3,3
+225,Equipe_1,27,13
+225,Equipe_2,8,5
+225,Equipe_2,4,3
+225,Equipe_1,4,3
+225,Equipe_2,4,3
+225,Equipe_2,25,11
+225,Equipe_1,9,6
+225,Equipe_2,19,11
+225,Equipe_1,7,4
+225,Equipe_1,5,3
+225,Equipe_2,18,12
+225,Match Nul,2,2
+225,Equipe_2,9,5
+225,Equipe_2,5,4
+225,Equipe_2,12,6
+225,Equipe_2,4,3
+225,Equipe_2,5,3
+225,Equipe_2,8,4
+225,Equipe_2,6,4
+225,Equipe_2,3,3
+225,Equipe_2,4,3
+225,Equipe_1,15,8
+225,Equipe_2,3,3
+225,Equipe_1,4,3
+225,Equipe_1,7,4
+225,Equipe_1,12,7
+225,Equipe_1,13,7
+225,Equipe_2,19,10
+225,Equipe_2,11,6
+225,Equipe_2,4,3
+225,Equipe_2,8,4
+225,Equipe_2,8,6
+225,Equipe_1,11,6
+225,Equipe_2,5,3
+225,Equipe_2,11,6
+225,Equipe_2,9,6
+225,Equipe_1,22,11
+225,Equipe_1,22,11
+225,Equipe_2,4,3
+225,Equipe_2,33,13
+225,Equipe_2,11,6
+225,Equipe_1,18,11
+225,Equipe_2,12,8
+225,Equipe_1,18,9
+225,Equipe_2,5,3
+225,Equipe_2,6,4
+225,Equipe_1,5,3
+225,Equipe_1,4,3
+225,Equipe_2,16,8
+225,Equipe_1,11,5
+225,Equipe_2,9,5
+225,Equipe_2,10,5
+225,Equipe_1,19,11
+225,Equipe_1,5,3
+225,Equipe_2,15,8
+225,Equipe_2,14,7
+225,Equipe_1,13,7
+225,Equipe_1,3,3
+225,Equipe_2,5,3
+225,Equipe_2,12,7
+225,Equipe_2,5,3
+225,Equipe_2,9,6
+225,Equipe_2,6,4
+225,Equipe_2,8,4
+225,Equipe_1,9,5
+225,Equipe_2,4,3
+225,Equipe_1,11,8
+225,Equipe_2,5,4
+225,Equipe_2,5,3
+225,Equipe_1,4,3
+225,Equipe_2,11,6
+225,Equipe_2,6,4
+225,Equipe_1,3,3
+225,Equipe_1,12,6
+225,Equipe_2,9,4
+225,Equipe_1,4,3
+225,Equipe_2,4,3
+225,Match Nul,4,3
+225,Equipe_2,3,3
+225,Equipe_2,21,11
+225,Equipe_2,5,3
+225,Equipe_1,10,7
+225,Equipe_1,6,4
+225,Equipe_1,6,4
+225,Equipe_2,13,7
+225,Equipe_1,14,6
+225,Equipe_2,9,6
+225,Equipe_2,16,11
+225,Equipe_1,4,3
+225,Equipe_2,5,4
+225,Equipe_2,16,8
+225,Equipe_2,11,6
+225,Equipe_1,17,8
+225,Equipe_1,5,3
+225,Equipe_2,4,3
+225,Equipe_2,7,4
+225,Equipe_1,12,6
+225,Equipe_2,5,3
+225,Equipe_1,9,4
+225,Equipe_2,21,11
+225,Equipe_1,14,7
+225,Equipe_1,21,10
+225,Equipe_2,6,3
+225,Equipe_1,7,4
+225,Equipe_2,12,6
+225,Equipe_2,11,6
+225,Match Nul,3,3
+225,Equipe_2,15,8
+225,Equipe_2,5,3
+225,Equipe_2,7,4
+225,Equipe_2,12,7
+225,Equipe_2,8,5
+225,Equipe_2,16,9
+225,Equipe_2,6,4
+225,Equipe_2,8,4
+225,Equipe_1,6,4
+225,Equipe_1,11,8
+225,Equipe_2,22,8
+225,Equipe_1,5,3
+225,Equipe_1,5,4
+225,Equipe_1,5,3
+225,Equipe_2,23,10
+225,Equipe_1,9,5
+225,Equipe_2,8,5
+225,Equipe_2,16,8
+225,Equipe_1,5,3
+225,Equipe_2,4,4
+225,Equipe_2,17,9
+225,Match Nul,28,14
+225,Match Nul,14,8
+225,Equipe_2,7,5
+225,Equipe_2,6,4
+225,Equipe_2,5,3
+225,Equipe_2,13,9
+225,Equipe_1,8,6
+225,Equipe_1,12,4
+225,Equipe_1,6,4
+225,Equipe_2,24,12
+225,Equipe_1,5,3
+225,Match Nul,4,3
+225,Equipe_2,6,4
+225,Equipe_2,4,3
+225,Equipe_1,14,4
+225,Equipe_1,27,14
+225,Match Nul,10,5
+225,Equipe_2,18,9
+225,Equipe_1,6,3
+225,Equipe_1,7,3
+225,Equipe_2,16,10
+225,Equipe_2,8,5
+225,Equipe_1,19,9
+225,Equipe_2,7,3
+225,Equipe_2,8,4
+225,Equipe_1,6,4
+225,Equipe_1,7,5
+225,Equipe_2,8,4
+225,Equipe_2,9,7
+225,Equipe_2,39,11
+225,Equipe_2,5,3
+225,Match Nul,15,9
+225,Equipe_1,10,6
+225,Equipe_2,10,3
+225,Match Nul,5,4
+225,Equipe_1,6,4
+225,Equipe_2,6,4
+225,Equipe_2,4,3
+225,Equipe_1,3,3
+225,Equipe_1,3,3
+225,Equipe_1,4,4
+225,Equipe_1,7,4
+225,Equipe_2,4,4
+225,Equipe_1,5,4
+225,Match Nul,3,3
+225,Equipe_2,8,4
+225,Equipe_2,3,3
+225,Equipe_1,7,4
+225,Equipe_2,4,3
+225,Equipe_1,4,4
+225,Equipe_1,22,14
+225,Equipe_2,12,6
+225,Equipe_1,11,6
+225,Equipe_1,7,4
+225,Equipe_2,15,4
+225,Equipe_2,7,6
+225,Equipe_1,15,8
+225,Equipe_1,14,9
+225,Equipe_1,4,3
+225,Equipe_1,7,4
+225,Equipe_2,28,13
+225,Equipe_1,8,4
+225,Equipe_2,12,4
+225,Equipe_2,4,3
+225,Equipe_2,17,9
+225,Equipe_2,4,3
+225,Equipe_1,11,7
+225,Equipe_2,7,5
+225,Equipe_2,5,4
+225,Match Nul,12,7
+225,Equipe_2,4,4
+225,Equipe_2,20,11
+225,Equipe_1,11,6
+225,Match Nul,22,12
+225,Equipe_2,7,3
+225,Equipe_1,22,12
+225,Equipe_2,13,8
+225,Equipe_1,11,8
+225,Equipe_1,7,3
+225,Equipe_1,15,7
+225,Equipe_1,6,3
+225,Equipe_2,29,12
+225,Equipe_1,9,4
+225,Equipe_2,22,13
+225,Equipe_2,9,6
+225,Equipe_2,18,10
+225,Equipe_2,6,5
+225,Equipe_2,4,3
+225,Match Nul,37,11
+225,Equipe_1,11,5
+225,Match Nul,12,7
+225,Equipe_2,21,9
+225,Equipe_2,16,8
+225,Equipe_1,7,4
+225,Match Nul,24,13
+225,Equipe_2,6,4
+225,Equipe_1,6,4
+225,Equipe_2,4,3
+225,Equipe_1,5,4
+225,Equipe_1,18,6
+225,Equipe_2,5,4
+225,Equipe_1,3,3
+225,Equipe_1,5,4
+225,Equipe_1,4,3
+225,Equipe_1,8,5
+225,Equipe_2,5,4
+225,Equipe_2,4,3
+225,Equipe_2,6,4
+225,Equipe_2,17,8
+225,Equipe_1,5,4
+225,Equipe_1,17,9
+225,Equipe_2,4,3
+225,Equipe_2,11,7
+225,Equipe_1,18,11
+225,Equipe_2,6,5
+225,Match Nul,18,13
+225,Equipe_1,11,4
+225,Equipe_2,8,3
+225,Equipe_1,8,5
+225,Equipe_1,4,3
+225,Equipe_1,22,10
+225,Match Nul,38,12
+225,Equipe_2,7,5
+225,Equipe_2,12,4
+225,Equipe_1,6,4
+225,Equipe_2,6,5
+225,Equipe_1,6,4
+225,Equipe_2,7,4
+225,Match Nul,22,13
+225,Equipe_2,6,4
+225,Equipe_1,5,4
+225,Match Nul,18,10
+225,Equipe_1,7,3
+225,Equipe_1,23,12
+225,Equipe_1,1,2
+225,Equipe_1,16,8
+225,Equipe_2,18,8
+225,Equipe_1,12,5
+225,Equipe_2,6,3
+225,Match Nul,5,4
+225,Equipe_1,8,3
+225,Equipe_2,3,4
+225,Equipe_2,9,7
+225,Equipe_2,7,3
+225,Equipe_1,4,3
+225,Equipe_2,6,4
+225,Equipe_1,12,8
+225,Equipe_2,14,14
+225,Equipe_2,12,10
+225,Equipe_1,7,4
+225,Equipe_2,4,4
+225,Equipe_1,11,9
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Match Nul,73,2
+225,Match Nul,76,2
+225,Match Nul,79,2
+225,Match Nul,73,2
+225,Match Nul,72,2
+225,Match Nul,71,2
+225,Match Nul,79,2
+225,Match Nul,69,2
+225,Match Nul,20,2
+225,Match Nul,14,2
+225,Match Nul,13,2
+225,Match Nul,20,2
+225,Match Nul,17,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,23,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,19,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,24,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,12,2
+225,Match Nul,15,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,16,2
+225,Match Nul,21,2
+225,Match Nul,17,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,17,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,4,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,22,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,19,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,22,2
+225,Match Nul,12,2
+225,Match Nul,14,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,11,2
+225,Match Nul,13,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,19,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,19,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,17,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,18,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,20,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,19,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,12,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,13,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,17,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,15,2
+225,Match Nul,5,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,13,2
+225,Match Nul,12,2
+225,Match Nul,14,2
+225,Match Nul,26,2
+225,Match Nul,18,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,27,2
+225,Match Nul,12,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,17,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,21,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,24,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,16,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,17,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,28,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,13,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,18,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,23,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,23,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Match Nul,60,2
+225,Match Nul,65,2
+225,Match Nul,56,2
+225,Match Nul,78,2
+225,Match Nul,72,2
+225,Match Nul,71,2
+225,Match Nul,46,2
+225,Match Nul,55,2
+225,Match Nul,28,2
+225,Match Nul,40,2
+225,Equipe_2,33,2
+225,Equipe_1,20,1
+225,Match Nul,44,2
+225,Match Nul,54,2
+225,Match Nul,40,2
+225,Match Nul,29,2
+225,Match Nul,51,2
+225,Match Nul,39,2
+225,Match Nul,37,2
+225,Match Nul,31,2
+225,Match Nul,24,2
+225,Match Nul,20,2
+225,Match Nul,19,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Equipe_1,3,1
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,11,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,2,2
+225,Match Nul,15,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,2,2
+225,Match Nul,19,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,18,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,3,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Equipe_2,3,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Equipe_1,1,2
+225,Match Nul,5,2
+225,Match Nul,16,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Equipe_1,8,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,17,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Equipe_2,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Equipe_1,1,1
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,2,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,20,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,13,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Equipe_2,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,2,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Equipe_1,3,1
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Equipe_2,8,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Equipe_1,2,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,15,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Equipe_1,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,19,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Equipe_1,3,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Equipe_2,3,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Equipe_2,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Equipe_2,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,10,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Equipe_1,3,2
+225,Match Nul,6,2
+225,Equipe_1,2,1
+225,Match Nul,2,2
+225,Match Nul,12,2
+225,Match Nul,3,2
+225,Match Nul,11,2
+225,Match Nul,12,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Equipe_1,3,1
+225,Match Nul,8,2
+225,Equipe_2,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Equipe_1,4,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,2,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Equipe_1,4,2
+225,Match Nul,5,2
+225,Equipe_2,4,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,11,2
+225,Equipe_2,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Equipe_2,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,13,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Equipe_2,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Equipe_1,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Equipe_1,3,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Equipe_1,3,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Equipe_2,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,16,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,16,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Equipe_2,3,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,2,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Equipe_1,4,2
+225,Match Nul,6,2
+225,Equipe_1,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Equipe_2,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Equipe_2,12,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,3,2
+225,Equipe_2,5,2
+225,Match Nul,14,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,13,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Equipe_2,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Equipe_1,7,1
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,15,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Equipe_2,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Equipe_2,5,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Equipe_2,55,3
+225,Match Nul,55,3
+225,Equipe_2,59,3
+225,Match Nul,73,4
+225,Match Nul,25,3
+225,Equipe_1,65,3
+225,Equipe_2,26,2
+225,Equipe_2,47,3
+225,Match Nul,40,3
+225,Match Nul,50,5
+225,Equipe_1,19,2
+225,Equipe_2,14,2
+225,Equipe_1,22,3
+225,Equipe_2,14,2
+225,Equipe_2,10,3
+225,Match Nul,9,3
+225,Equipe_1,13,3
+225,Equipe_1,4,2
+225,Match Nul,6,3
+225,Equipe_2,3,2
+225,Match Nul,2,2
+225,Equipe_1,7,2
+225,Equipe_2,7,3
+225,Match Nul,6,4
+225,Match Nul,6,3
+225,Equipe_2,5,3
+225,Equipe_2,6,2
+225,Equipe_1,5,3
+225,Equipe_1,4,3
+225,Equipe_2,4,4
+225,Match Nul,3,3
+225,Match Nul,7,3
+225,Equipe_1,1,2
+225,Match Nul,3,3
+225,Equipe_1,3,2
+225,Equipe_2,8,4
+225,Equipe_1,3,3
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Equipe_2,6,4
+225,Equipe_1,2,3
+225,Equipe_1,2,2
+225,Match Nul,2,2
+225,Equipe_1,4,2
+225,Equipe_1,2,2
+225,Equipe_2,2,2
+225,Equipe_2,4,3
+225,Equipe_1,5,2
+225,Equipe_1,2,2
+225,Equipe_2,3,2
+225,Equipe_1,10,3
+225,Match Nul,2,2
+225,Equipe_2,13,4
+225,Equipe_1,4,2
+225,Equipe_1,3,2
+225,Equipe_2,6,3
+225,Equipe_2,3,2
+225,Equipe_1,3,2
+225,Equipe_2,7,2
+225,Equipe_1,2,3
+225,Equipe_1,2,3
+225,Equipe_1,6,3
+225,Equipe_2,3,3
+225,Equipe_1,5,3
+225,Equipe_1,4,5
+225,Equipe_1,1,2
+225,Equipe_1,4,4
+225,Match Nul,5,2
+225,Equipe_2,6,2
+225,Match Nul,3,4
+225,Match Nul,11,4
+225,Equipe_2,5,2
+225,Equipe_1,1,2
+225,Equipe_2,4,2
+225,Equipe_1,3,3
+225,Equipe_2,5,4
+225,Match Nul,3,3
+225,Match Nul,2,2
+225,Equipe_2,4,2
+225,Equipe_1,6,4
+225,Equipe_1,3,2
+225,Match Nul,10,4
+225,Equipe_1,8,2
+225,Equipe_2,2,2
+225,Equipe_1,1,2
+225,Match Nul,7,4
+225,Equipe_1,4,3
+225,Match Nul,5,4
+225,Equipe_1,2,2
+225,Match Nul,2,2
+225,Match Nul,3,3
+225,Equipe_1,3,3
+225,Equipe_1,1,2
+225,Equipe_1,2,2
+225,Equipe_1,5,2
+225,Equipe_2,5,3
+225,Equipe_1,1,2
+225,Equipe_2,2,2
+225,Equipe_2,9,3
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_1,3,3
+225,Match Nul,9,3
+225,Equipe_1,1,2
+225,Equipe_2,3,3
+225,Equipe_1,2,2
+225,Equipe_2,9,3
+225,Equipe_2,1,2
+225,Equipe_1,13,3
+225,Equipe_1,6,3
+225,Match Nul,6,3
+225,Equipe_2,3,2
+225,Equipe_2,9,4
+225,Match Nul,4,3
+225,Equipe_2,7,2
+225,Equipe_1,2,2
+225,Match Nul,4,3
+225,Equipe_1,5,2
+225,Equipe_2,8,4
+225,Equipe_1,2,2
+225,Match Nul,5,3
+225,Match Nul,2,2
+225,Equipe_2,3,2
+225,Equipe_2,5,3
+225,Equipe_1,11,4
+225,Match Nul,8,3
+225,Equipe_1,3,2
+225,Equipe_2,4,3
+225,Equipe_1,7,2
+225,Equipe_1,3,2
+225,Match Nul,2,2
+225,Equipe_2,4,3
+225,Equipe_1,7,3
+225,Match Nul,2,2
+225,Equipe_1,1,2
+225,Equipe_1,2,2
+225,Match Nul,3,3
+225,Match Nul,4,4
+225,Equipe_1,3,3
+225,Equipe_1,4,2
+225,Equipe_1,4,3
+225,Equipe_2,8,4
+225,Equipe_1,2,2
+225,Match Nul,8,4
+225,Equipe_1,1,2
+225,Equipe_2,1,2
+225,Equipe_2,2,3
+225,Equipe_1,3,3
+225,Equipe_1,10,4
+225,Equipe_1,1,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Equipe_1,4,2
+225,Equipe_2,5,5
+225,Match Nul,8,3
+225,Equipe_2,1,2
+225,Equipe_2,2,3
+225,Equipe_1,2,2
+225,Equipe_2,2,3
+225,Equipe_1,2,2
+225,Equipe_1,5,5
+225,Equipe_1,5,2
+225,Equipe_1,4,3
+225,Match Nul,11,4
+225,Equipe_2,2,2
+225,Equipe_2,5,4
+225,Equipe_1,1,2
+225,Equipe_1,6,3
+225,Match Nul,6,3
+225,Equipe_2,2,3
+225,Equipe_2,1,2
+225,Equipe_1,6,3
+225,Match Nul,3,3
+225,Equipe_2,1,2
+225,Equipe_2,3,3
+225,Equipe_2,5,3
+225,Match Nul,1,2
+225,Equipe_1,2,2
+225,Equipe_2,2,3
+225,Equipe_2,1,2
+225,Match Nul,14,6
+225,Equipe_1,11,4
+225,Equipe_2,2,2
+225,Equipe_2,12,3
+225,Equipe_2,11,3
+225,Equipe_1,2,3
+225,Equipe_2,14,6
+225,Equipe_2,10,3
+225,Equipe_1,9,4
+225,Equipe_1,1,2
+225,Equipe_2,9,4
+225,Equipe_2,2,2
+225,Equipe_2,6,3
+225,Match Nul,7,3
+225,Equipe_1,7,2
+225,Equipe_1,2,2
+225,Equipe_2,1,2
+225,Match Nul,5,4
+225,Equipe_1,1,2
+225,Match Nul,3,3
+225,Equipe_2,1,2
+225,Equipe_2,3,3
+225,Equipe_2,4,2
+225,Equipe_2,9,3
+225,Match Nul,2,2
+225,Equipe_2,2,2
+225,Equipe_2,1,2
+225,Equipe_2,4,4
+225,Equipe_1,2,3
+225,Equipe_2,4,2
+225,Equipe_1,3,3
+225,Equipe_1,3,2
+225,Match Nul,7,4
+225,Equipe_1,2,2
+225,Equipe_1,4,4
+225,Equipe_2,3,3
+225,Match Nul,2,2
+225,Equipe_1,5,2
+225,Equipe_2,6,3
+225,Equipe_1,1,2
+225,Equipe_2,2,2
+225,Match Nul,1,2
+225,Match Nul,3,3
+225,Equipe_1,3,3
+225,Equipe_1,3,2
+225,Match Nul,6,4
+225,Match Nul,2,2
+225,Equipe_1,4,3
+225,Equipe_2,9,4
+225,Equipe_1,13,4
+225,Equipe_2,5,4
+225,Equipe_1,11,5
+225,Equipe_1,3,2
+225,Equipe_2,10,5
+225,Equipe_1,3,3
+225,Equipe_1,2,2
+225,Equipe_1,1,2
+225,Equipe_1,2,3
+225,Equipe_1,1,2
+225,Equipe_2,3,3
+225,Match Nul,3,3
+225,Match Nul,2,2
+225,Equipe_2,1,2
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_2,3,3
+225,Equipe_1,2,2
+225,Equipe_1,2,2
+225,Equipe_2,5,3
+225,Equipe_1,1,2
+225,Equipe_2,5,3
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_1,4,2
+225,Match Nul,4,4
+225,Match Nul,1,2
+225,Equipe_1,7,2
+225,Equipe_2,1,2
+225,Equipe_2,1,2
+225,Match Nul,3,3
+225,Equipe_1,5,4
+225,Equipe_2,2,2
+225,Equipe_2,17,4
+225,Equipe_2,4,3
+225,Equipe_2,5,4
+225,Equipe_2,3,3
+225,Match Nul,2,3
+225,Equipe_2,19,5
+225,Equipe_1,7,3
+225,Equipe_2,2,2
+225,Equipe_1,1,2
+225,Equipe_2,5,2
+225,Equipe_2,6,2
+225,Equipe_2,6,3
+225,Equipe_1,11,2
+225,Equipe_1,6,2
+225,Equipe_1,5,3
+225,Match Nul,3,2
+225,Equipe_2,3,2
+225,Equipe_2,9,3
+225,Equipe_2,2,2
+225,Match Nul,3,2
+225,Equipe_1,6,4
+225,Equipe_2,2,2
+225,Match Nul,7,3
+225,Equipe_1,6,4
+225,Equipe_1,5,3
+225,Match Nul,4,2
+225,Match Nul,6,3
+225,Equipe_1,6,3
+225,Equipe_2,4,3
+225,Equipe_1,5,3
+225,Equipe_1,5,3
+225,Equipe_1,3,2
+225,Equipe_1,8,4
+225,Match Nul,4,2
+225,Equipe_1,6,3
+225,Equipe_2,2,2
+225,Match Nul,3,2
+225,Equipe_1,4,2
+225,Equipe_2,9,6
+225,Equipe_2,5,3
+225,Match Nul,7,4
+225,Equipe_1,4,3
+225,Equipe_2,5,3
+225,Equipe_1,5,3
+225,Equipe_2,3,2
+225,Equipe_2,2,2
+225,Equipe_1,4,2
+225,Equipe_2,3,2
+225,Equipe_2,2,2
+225,Match Nul,5,3
+225,Equipe_1,5,3
+225,Match Nul,6,4
+225,Equipe_2,5,2
+225,Equipe_2,4,3
+225,Equipe_2,3,3
+225,Equipe_2,5,3
+225,Match Nul,2,2
+225,Match Nul,3,2
+225,Equipe_1,10,4
+225,Match Nul,4,2
+225,Equipe_1,5,3
+225,Equipe_2,3,2
+225,Equipe_1,2,2
+225,Equipe_1,7,3
+225,Equipe_1,7,6
+225,Equipe_2,4,3
+225,Match Nul,4,4
+225,Equipe_1,2,2
+225,Match Nul,2,2
+225,Equipe_2,2,2
+225,Equipe_2,4,3
+225,Equipe_2,4,3
+225,Equipe_2,3,2
+225,Equipe_1,2,2
+225,Equipe_1,4,2
+225,Equipe_2,2,3
+225,Match Nul,11,4
+225,Equipe_1,4,3
+225,Match Nul,2,2
+225,Equipe_2,1,2
+225,Equipe_2,8,4
+225,Equipe_1,1,2
+225,Match Nul,4,3
+225,Equipe_2,3,2
+225,Equipe_2,4,3
+225,Equipe_2,7,3
+225,Match Nul,5,3
+225,Equipe_1,2,2
+225,Match Nul,7,4
+225,Equipe_1,3,3
+225,Equipe_2,2,3
+225,Equipe_1,2,3
+225,Equipe_1,5,4
+225,Equipe_2,2,2
+225,Equipe_2,4,4
+225,Match Nul,3,3
+225,Equipe_1,6,2
+225,Equipe_1,1,2
+225,Match Nul,10,4
+225,Equipe_1,2,2
+225,Equipe_1,6,5
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_1,1,2
+225,Match Nul,4,4
+225,Equipe_1,5,4
+225,Equipe_2,3,3
+225,Equipe_1,9,5
+225,Equipe_2,3,2
+225,Equipe_2,1,2
+225,Equipe_2,4,4
+225,Equipe_2,1,2
+225,Match Nul,4,3
+225,Equipe_2,3,3
+225,Equipe_1,2,2
+225,Equipe_2,1,2
+225,Equipe_1,2,2
+225,Equipe_2,2,3
+225,Match Nul,1,2
+225,Equipe_1,2,2
+225,Equipe_1,8,2
+225,Match Nul,2,2
+225,Equipe_1,3,3
+225,Equipe_1,2,2
+225,Equipe_1,4,3
+225,Equipe_1,2,2
+225,Equipe_2,3,3
+225,Equipe_2,9,3
+225,Equipe_1,4,3
+225,Equipe_2,3,3
+225,Equipe_1,2,3
+225,Equipe_2,1,2
+225,Match Nul,4,3
+225,Equipe_1,1,2
+225,Match Nul,4,3
+225,Equipe_2,2,2
+225,Match Nul,3,3
+225,Match Nul,5,4
+225,Equipe_1,4,4
+225,Equipe_2,13,5
+225,Match Nul,5,4
+225,Equipe_1,4,3
+225,Match Nul,6,4
+225,Equipe_2,3,3
+225,Equipe_1,3,3
+225,Equipe_1,3,2
+225,Equipe_1,1,2
+225,Equipe_2,3,3
+225,Equipe_2,1,2
+225,Equipe_2,3,3
+225,Match Nul,13,4
+225,Equipe_2,2,2
+225,Equipe_1,5,3
+225,Equipe_1,4,3
+225,Equipe_1,5,3
+225,Equipe_1,3,2
+225,Equipe_1,9,5
+225,Equipe_1,7,3
+225,Equipe_1,3,3
+225,Equipe_1,3,3
+225,Equipe_1,1,2
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Equipe_1,1,2
+225,Match Nul,3,3
+225,Equipe_2,2,2
+225,Equipe_1,3,3
+225,Equipe_1,4,3
+225,Equipe_2,2,2
+225,Equipe_1,4,3
+225,Equipe_1,5,4
+225,Equipe_1,3,3
+225,Equipe_2,2,2
+225,Equipe_2,4,4
+225,Equipe_1,2,2
+225,Equipe_2,1,2
+225,Equipe_2,7,3
+225,Equipe_1,3,3
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Match Nul,2,2
+225,Equipe_1,2,2
+225,Equipe_1,8,4
+225,Equipe_2,2,2
+225,Equipe_1,4,4
+225,Match Nul,2,2
+225,Equipe_1,4,3
+225,Equipe_2,1,2
+225,Equipe_1,2,2
+225,Equipe_2,2,2
+225,Match Nul,2,2
+225,Match Nul,5,3
+225,Match Nul,5,4
+225,Equipe_2,1,2
+225,Equipe_1,5,2
+225,Equipe_1,2,2
+225,Equipe_1,2,2
+225,Equipe_2,3,3
+225,Match Nul,3,3
+225,Equipe_1,3,3
+225,Equipe_2,4,3
+225,Equipe_1,5,2
+225,Equipe_2,3,3
+225,Equipe_2,4,3
+225,Equipe_1,2,2
+225,Match Nul,4,3
+225,Equipe_1,3,3
+225,Equipe_1,5,2
+225,Match Nul,1,2
+225,Equipe_2,4,3
+225,Match Nul,3,3
+225,Equipe_2,1,2
+225,Equipe_1,2,2
+225,Equipe_2,3,3
+225,Match Nul,5,2
+225,Match Nul,4,3
+225,Equipe_2,3,2
+225,Match Nul,3,2
+225,Equipe_2,2,2
+225,Match Nul,6,4
+225,Match Nul,1,2
+225,Match Nul,2,2
+225,Equipe_1,5,4
+225,Match Nul,7,5
+225,Equipe_1,8,2
+225,Equipe_1,4,4
+225,Equipe_1,3,3
+225,Equipe_2,1,2
+225,Equipe_1,2,2
+225,Equipe_2,7,3
+225,Match Nul,4,3
+225,Match Nul,6,3
+225,Match Nul,6,4
+225,Equipe_2,5,3
+225,Match Nul,5,4
+225,Equipe_1,3,3
+225,Equipe_1,3,3
+225,Match Nul,3,3
+225,Equipe_1,8,4
+225,Equipe_1,4,3
+225,Equipe_2,2,2
+225,Equipe_2,5,4
+225,Equipe_2,5,3
+225,Equipe_1,2,2
+225,Equipe_1,2,2
+225,Equipe_1,5,3
+225,Match Nul,2,2
+225,Match Nul,2,2
+225,Equipe_2,2,2
+225,Equipe_2,1,2
+225,Equipe_2,6,4
+225,Equipe_2,1,2
+225,Match Nul,2,2
+225,Equipe_1,3,2
+225,Equipe_2,2,2
+225,Equipe_1,3,3
+225,Match Nul,3,3
+225,Equipe_2,1,2
+225,Equipe_2,2,3
+225,Equipe_2,1,2
+225,Equipe_2,5,4
+225,Equipe_1,5,5
+225,Match Nul,4,3
+225,Equipe_1,4,3
+225,Match Nul,3,3
+225,Match Nul,4,3
+225,Equipe_1,7,3
+225,Equipe_1,2,2
+225,Equipe_2,1,2
+225,Equipe_1,3,2
+225,Match Nul,5,3
+225,Equipe_2,4,4
+225,Equipe_2,3,3
+225,Equipe_2,2,2
+225,Equipe_2,3,3
+225,Equipe_2,2,3
+225,Equipe_1,1,2
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Equipe_1,2,2
+225,Match Nul,4,3
+225,Equipe_2,7,5
+225,Equipe_2,5,4
+225,Equipe_1,7,3
+225,Equipe_2,5,4
+225,Equipe_2,6,3
+225,Equipe_2,2,2
+225,Equipe_1,3,3
+225,Equipe_1,3,3
+225,Match Nul,2,2
+225,Equipe_1,1,2
+225,Equipe_2,3,2
+225,Match Nul,3,3
+225,Equipe_2,2,2
+225,Equipe_2,3,2
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Match Nul,13,4
+225,Equipe_1,4,4
+225,Equipe_1,10,3
+225,Equipe_1,2,2
+225,Match Nul,1,2
+225,Equipe_1,2,2
+225,Equipe_1,1,2
+225,Equipe_1,2,2
+225,Match Nul,6,2
+225,Equipe_1,2,2
+225,Equipe_1,9,5
+225,Equipe_2,5,2
+225,Equipe_2,6,2
+225,Equipe_1,6,2
+225,Equipe_2,5,2
+225,Equipe_1,4,3
+225,Equipe_2,3,2
+225,Equipe_1,5,3
+225,Match Nul,3,2
+225,Equipe_2,3,2
+225,Equipe_1,3,2
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Equipe_1,8,4
+225,Equipe_2,4,3
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_1,4,3
+225,Equipe_1,10,6
+225,Match Nul,2,2
+225,Equipe_2,3,2
+225,Equipe_1,7,4
+225,Equipe_2,5,3
+225,Match Nul,8,5
+225,Equipe_2,3,2
+225,Match Nul,5,3
+225,Equipe_2,10,5
+225,Equipe_2,2,2
+225,Equipe_2,3,2
+225,Equipe_2,5,3
+225,Equipe_1,5,3
+225,Equipe_2,2,2
+225,Equipe_1,5,3
+225,Match Nul,6,4
+225,Equipe_2,3,2
+225,Equipe_2,3,2
+225,Equipe_1,3,2
+225,Equipe_1,5,3
+225,Equipe_1,7,4
+225,Equipe_1,3,2
+225,Equipe_2,3,3
+225,Equipe_1,4,3
+225,Equipe_2,4,2
+225,Equipe_1,3,2
+225,Match Nul,4,2
+225,Match Nul,13,9
+225,Equipe_2,3,3
+225,Equipe_2,3,2
+225,Equipe_2,4,3
+225,Equipe_2,6,2
+225,Match Nul,7,5
+225,Match Nul,2,2
+225,Equipe_1,3,3
+225,Equipe_1,3,3
+225,Equipe_2,3,2
+225,Equipe_1,4,3
+225,Equipe_1,3,2
+225,Equipe_1,3,3
+225,Equipe_1,4,3
+225,Equipe_2,2,2
+225,Equipe_1,7,3
+225,Match Nul,4,3
+225,Equipe_1,5,5
+225,Equipe_1,2,2
+225,Equipe_1,2,2
+225,Equipe_1,4,3
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_1,3,2
+225,Match Nul,2,2
+225,Equipe_1,5,2
+225,Match Nul,8,5
+225,Equipe_2,1,2
+225,Equipe_2,2,2
+225,Equipe_1,3,3
+225,Equipe_2,3,3
+225,Match Nul,2,2
+225,Match Nul,6,3
+225,Match Nul,3,3
+225,Equipe_1,2,2
+225,Equipe_1,3,3
+225,Equipe_2,4,3
+225,Match Nul,2,2
+225,Equipe_1,2,3
+225,Match Nul,6,3
+225,Equipe_2,1,2
+225,Equipe_1,3,3
+225,Match Nul,3,3
+225,Equipe_1,2,2
+225,Match Nul,2,2
+225,Equipe_1,7,3
+225,Match Nul,5,4
+225,Equipe_1,6,5
+225,Equipe_1,2,2
+225,Match Nul,5,4
+225,Match Nul,4,3
+225,Equipe_2,3,3
+225,Equipe_1,4,3
+225,Equipe_2,6,2
+225,Equipe_2,7,5
+225,Equipe_2,2,2
+225,Equipe_1,9,4
+225,Equipe_2,4,2
+225,Equipe_2,4,2
+225,Match Nul,8,3
+225,Equipe_1,4,2
+225,Match Nul,4,3
+225,Equipe_2,3,3
+225,Equipe_1,2,2
+225,Equipe_1,2,3
+225,Equipe_1,1,2
+225,Equipe_2,5,3
+225,Match Nul,6,5
+225,Equipe_2,11,4
+225,Equipe_2,5,4
+225,Match Nul,2,2
+225,Equipe_2,1,2
+225,Equipe_1,3,3
+225,Equipe_1,2,2
+225,Equipe_2,1,2
+225,Match Nul,3,2
+225,Equipe_1,5,2
+225,Equipe_2,1,2
+225,Equipe_2,5,4
+225,Match Nul,4,4
+225,Equipe_1,3,3
+225,Equipe_1,3,3
+225,Equipe_1,9,2
+225,Equipe_1,2,2
+225,Equipe_1,2,2
+225,Equipe_1,5,3
+225,Equipe_2,3,3
+225,Equipe_2,2,3
+225,Equipe_2,7,4
+225,Equipe_1,4,3
+225,Equipe_2,2,2
+225,Equipe_1,1,2
+225,Equipe_1,2,2
+225,Equipe_1,4,4
+225,Equipe_2,1,2
+225,Equipe_1,8,3
+225,Match Nul,4,2
+225,Equipe_1,4,4
+225,Equipe_2,5,4
+225,Equipe_2,1,2
+225,Equipe_1,1,2
+225,Equipe_2,6,3
+225,Equipe_2,4,4
+225,Match Nul,1,2
+225,Equipe_1,6,3
+225,Match Nul,1,2
+225,Equipe_1,8,4
+225,Equipe_1,3,3
+225,Equipe_2,1,2
+225,Equipe_2,1,2
+225,Equipe_1,3,3
+225,Equipe_2,2,2
+225,Match Nul,4,4
+225,Match Nul,1,2
+225,Equipe_2,2,2
+225,Equipe_1,3,3
+225,Equipe_1,6,3
+225,Equipe_1,6,2
+225,Equipe_1,1,2
+225,Equipe_2,2,3
+225,Equipe_1,1,2
+225,Equipe_1,5,2
+225,Equipe_1,1,2
+225,Equipe_2,2,2
+225,Match Nul,3,3
+225,Equipe_2,1,2
+225,Equipe_2,2,2
+225,Equipe_1,12,5
+225,Equipe_2,6,4
+225,Equipe_1,6,5
+225,Equipe_2,1,2
+225,Equipe_2,3,3
+225,Equipe_1,3,3
+225,Match Nul,1,2
+225,Match Nul,5,2
+225,Equipe_2,5,2
+225,Match Nul,2,3
+225,Equipe_1,2,2
+225,Match Nul,3,3
+225,Equipe_2,3,2
+225,Match Nul,3,3
+225,Equipe_1,2,2
+225,Match Nul,2,2
+225,Equipe_1,1,2
+225,Equipe_1,5,2
+225,Match Nul,3,3
+225,Equipe_2,5,5
+225,Equipe_1,2,2
+225,Equipe_1,5,3
+225,Equipe_2,6,3
+225,Match Nul,3,3
+225,Equipe_2,1,2
+225,Equipe_2,2,2
+225,Equipe_1,5,2
+225,Equipe_2,2,2
+225,Equipe_2,1,2
+225,Equipe_1,3,3
+225,Equipe_1,2,2
+225,Equipe_2,10,5
+225,Equipe_1,4,3
+225,Match Nul,1,2
+225,Equipe_2,9,5
+225,Match Nul,6,2
+225,Equipe_1,7,4
+225,Match Nul,2,2
+225,Equipe_2,6,4
+225,Match Nul,8,3
+225,Match Nul,6,4
+225,Equipe_1,5,3
+225,Equipe_2,2,2
+225,Equipe_2,7,5
+225,Match Nul,2,2
+225,Equipe_1,3,3
+225,Equipe_2,6,2
+225,Equipe_1,4,4
+225,Match Nul,7,4
+225,Equipe_1,2,2
+225,Equipe_2,5,4
+225,Equipe_2,2,2
+225,Equipe_2,5,4
+225,Match Nul,8,6
+225,Equipe_2,5,2
+225,Equipe_1,1,2
+225,Equipe_1,2,2
+225,Equipe_1,2,2
+225,Equipe_1,3,3
+225,Match Nul,3,3
+225,Equipe_2,3,3
+225,Equipe_2,4,3
+225,Equipe_2,5,2
+225,Equipe_2,7,3
+225,Equipe_1,7,3
+225,Match Nul,4,3
+225,Equipe_1,2,2
+225,Equipe_1,2,2
+225,Equipe_2,4,3
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Equipe_2,5,2
+225,Equipe_1,3,3
+225,Match Nul,5,4
+225,Equipe_2,4,4
+225,Match Nul,5,4
+225,Equipe_2,1,2
+225,Equipe_2,1,2
+225,Match Nul,5,2
+225,Equipe_2,5,5
+225,Match Nul,5,3
+225,Equipe_1,2,2
+225,Equipe_2,6,3
+225,Equipe_1,5,4
+225,Match Nul,4,2
+225,Equipe_1,2,2
+225,Match Nul,4,3
+225,Equipe_1,6,5
+225,Equipe_2,3,3
+225,Equipe_1,6,3
+225,Equipe_2,3,2
+225,Match Nul,2,2
+225,Equipe_1,4,3
+225,Equipe_1,2,2
+225,Match Nul,1,2
+225,Match Nul,8,3
+225,Equipe_2,2,2
+225,Equipe_2,7,4
+225,Equipe_2,1,2
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_1,3,3
+225,Equipe_1,3,3
+225,Equipe_1,4,4
+225,Match Nul,12,5
+225,Equipe_2,3,3
+225,Match Nul,8,6
+225,Equipe_2,4,3
+225,Equipe_2,1,2
+225,Match Nul,1,2
+225,Match Nul,5,2
+225,Equipe_1,1,2
+225,Match Nul,4,3
+225,Equipe_2,2,2
+225,Match Nul,1,2
+225,Match Nul,4,3
+225,Match Nul,3,3
+225,Equipe_1,2,2
+225,Equipe_1,17,6
+225,Equipe_1,4,3
+225,Equipe_2,2,3
+225,Equipe_2,3,3
+225,Equipe_1,2,2
+225,Match Nul,1,2
+225,Equipe_1,2,2
+225,Equipe_2,3,3
+225,Equipe_2,4,3
+225,Equipe_2,3,3
+225,Equipe_2,5,2
+225,Equipe_1,1,2
+225,Equipe_2,10,4
+225,Equipe_2,12,4
+225,Equipe_2,2,2
+225,Match Nul,3,3
+225,Equipe_2,1,2
+225,Match Nul,3,3
+225,Equipe_1,5,3
+225,Match Nul,7,5
+225,Equipe_1,8,3
+225,Equipe_1,4,2
+225,Equipe_1,1,2
+225,Match Nul,2,3
+225,Equipe_1,6,3
+225,Equipe_2,5,6
+225,Equipe_1,3,2
+225,Equipe_2,3,5
+225,Equipe_2,4,4
+225,Equipe_1,6,3
+225,Equipe_2,1,2
+225,Equipe_1,3,3
+225,Equipe_1,4,3
+225,Equipe_2,6,4
+225,Equipe_2,1,2
+225,Match Nul,4,2
+225,Match Nul,1,2
+225,Equipe_1,2,2
+225,Equipe_1,3,3
+225,Match Nul,4,4
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_1,10,4
+225,Match Nul,4,3
+225,Equipe_2,3,3
+225,Equipe_1,6,2
+225,Equipe_2,7,5
+225,Match Nul,4,3
+225,Equipe_2,3,4
+225,Equipe_1,5,4
+225,Match Nul,2,2
+225,Equipe_2,4,3
+225,Equipe_1,1,2
+225,Match Nul,3,3
+225,Match Nul,3,3
+225,Equipe_2,1,2
+225,Equipe_1,7,6
+225,Match Nul,3,3
+225,Equipe_1,1,2
+225,Equipe_2,7,4
+225,Equipe_1,4,4
+225,Equipe_1,6,4
+225,Equipe_2,4,3
+225,Equipe_1,2,2
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Equipe_1,4,4
+225,Equipe_2,3,3
+225,Equipe_2,3,3
+225,Equipe_2,4,3
+225,Equipe_1,2,2
+225,Equipe_2,4,4
+225,Equipe_2,4,3
+225,Equipe_2,3,3
+225,Equipe_2,8,6
+225,Equipe_2,4,3
+225,Equipe_2,4,3
+225,Match Nul,2,2
+225,Match Nul,4,3
+225,Equipe_2,4,2
+225,Match Nul,2,2
+225,Match Nul,4,3
+225,Equipe_2,4,3
+225,Match Nul,1,2
+225,Equipe_2,2,2
+225,Match Nul,7,5
+225,Equipe_1,2,2
+225,Equipe_1,1,2
+225,Equipe_1,3,3
+225,Match Nul,6,5
+225,Equipe_2,2,2
+225,Equipe_2,3,2
+225,Equipe_1,6,3
+225,Equipe_1,2,2
+225,Match Nul,3,2
+225,Equipe_2,3,2
+225,Equipe_2,4,4
+225,Equipe_1,2,2
+225,Equipe_1,1,2
+225,Equipe_1,5,4
+225,Equipe_1,3,3
+225,Equipe_1,7,4
+225,Match Nul,4,4
+225,Equipe_2,5,4
+225,Equipe_1,2,2
+225,Equipe_2,3,2
+225,Equipe_1,3,2
+225,Equipe_2,10,2
+225,Equipe_1,3,2
+225,Equipe_1,2,2
+225,Match Nul,4,3
+225,Equipe_1,1,2
+225,Equipe_2,5,3
+225,Equipe_2,2,2
+225,Equipe_2,5,3
+225,Equipe_1,5,3
+225,Equipe_2,6,3
+225,Equipe_1,3,2
+225,Equipe_2,4,2
+225,Equipe_1,4,3
+225,Equipe_2,2,2
+225,Equipe_2,2,2
+225,Equipe_1,2,2
+225,Equipe_2,4,4
+225,Equipe_1,6,3
+225,Equipe_1,1,2
+225,Equipe_1,4,4
+225,Equipe_2,2,2
+225,Match Nul,2,2
+225,Match Nul,2,2
+225,Equipe_1,5,3
+225,Equipe_2,3,2
+225,Equipe_1,2,2
+225,Equipe_1,1,2
+225,Match Nul,3,2
+225,Equipe_1,4,3
+225,Equipe_2,3,3
+225,Match Nul,2,2
+225,Equipe_1,4,6
+225,Equipe_2,2,2
+225,Equipe_2,2,3
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Match Nul,82,2
+225,Match Nul,79,2
+225,Match Nul,66,2
+225,Match Nul,78,2
+225,Match Nul,70,2
+225,Match Nul,73,2
+225,Match Nul,79,2
+225,Match Nul,78,2
+225,Match Nul,23,2
+225,Match Nul,20,2
+225,Match Nul,17,2
+225,Match Nul,16,2
+225,Match Nul,20,2
+225,Match Nul,12,2
+225,Match Nul,16,2
+225,Match Nul,25,2
+225,Match Nul,19,2
+225,Match Nul,14,2
+225,Match Nul,12,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,3,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,3,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Equipe_1,15,2
+225,Match Nul,3,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Equipe_2,3,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,2,2
+225,Equipe_1,5,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,12,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,16,2
+225,Match Nul,16,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,14,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,11,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,2,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,3,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,2,2
+225,Match Nul,3,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Equipe_1,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Equipe_2,8,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,22,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Equipe_1,5,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,21,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Equipe_1,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Equipe_1,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,14,2
+225,Match Nul,6,2
+225,Equipe_2,3,2
+225,Equipe_1,5,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Equipe_1,2,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Equipe_1,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Equipe_1,2,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Equipe_1,3,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,3,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Equipe_1,2,2
+225,Match Nul,2,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,13,2
+225,Match Nul,1,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,12,2
+225,Match Nul,12,2
+225,Match Nul,8,2
+225,Match Nul,9,2
+225,Match Nul,11,2
+225,Match Nul,10,2
+225,Match Nul,9,2
+225,Equipe_2,4,2
+225,Match Nul,14,2
+225,Match Nul,7,2
+225,Match Nul,18,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,13,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Match Nul,12,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Equipe_1,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,7,2
+225,Equipe_1,2,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Equipe_2,3,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Equipe_2,2,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Equipe_2,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,13,2
+225,Match Nul,11,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,9,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,10,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,2,2
+225,Match Nul,3,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,13,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,15,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Equipe_2,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,9,2
+225,Match Nul,3,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Equipe_1,4,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Equipe_1,5,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Equipe_1,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Equipe_2,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Equipe_2,3,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Equipe_1,2,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Equipe_1,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Equipe_2,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Equipe_1,2,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Equipe_2,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Equipe_2,3,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Equipe_1,3,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Equipe_1,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,12,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,12,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,2,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Equipe_2,5,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Equipe_2,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,6,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,8,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,7,2
+225,Match Nul,10,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Equipe_2,9,2
+225,Equipe_1,1,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Equipe_1,3,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,9,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,8,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,11,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,8,2
+225,Match Nul,3,2
+225,Match Nul,3,2
+225,Match Nul,7,2
+225,Match Nul,4,2
+225,Equipe_1,3,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Equipe_1,3,2
+225,Match Nul,6,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Equipe_2,9,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,7,2
+225,Match Nul,6,2
+225,Match Nul,2,2
+225,Match Nul,8,2
+225,Match Nul,6,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,9,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Equipe_2,3,2
+225,Match Nul,11,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,4,2
+225,Match Nul,5,2
+225,Match Nul,12,2
+225,Match Nul,5,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+225,Match Nul,3,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Equipe_1,4,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,10,2
+225,Match Nul,5,2
+225,Match Nul,7,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,5,2
+225,Match Nul,5,2
+225,Match Nul,6,2
+225,Match Nul,4,2
+225,Match Nul,4,2
+225,Match Nul,3,2
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Match Nul,210,2
+225,Match Nul,211,2
+225,Match Nul,216,2
+225,Match Nul,201,2
+225,Match Nul,217,2
+225,Match Nul,205,2
+225,Match Nul,195,2
+225,Match Nul,209,2
+225,Match Nul,52,2
+225,Match Nul,56,2
+225,Match Nul,85,2
+225,Match Nul,45,2
+225,Match Nul,71,2
+225,Match Nul,62,2
+225,Match Nul,35,2
+225,Match Nul,77,2
+225,Match Nul,43,2
+225,Match Nul,53,2
+225,Match Nul,60,2
+225,Match Nul,84,2
+225,Match Nul,48,2
+225,Match Nul,47,2
+225,Match Nul,76,2
+225,Match Nul,61,2
+225,Match Nul,37,2
+225,Match Nul,57,2
+225,Match Nul,57,2
+225,Match Nul,86,2
+225,Match Nul,48,2
+225,Match Nul,50,2
+225,Match Nul,65,2
+225,Match Nul,44,2
+225,Match Nul,29,2
+225,Match Nul,55,2
+225,Match Nul,43,2
+225,Match Nul,44,2
+225,Match Nul,64,2
+225,Match Nul,55,2
+225,Match Nul,29,2
+225,Match Nul,65,2
+225,Match Nul,47,2
+225,Match Nul,63,2
+225,Equipe_1,22,1
+225,Match Nul,54,2
+225,Match Nul,44,2
+225,Match Nul,80,2
+225,Match Nul,55,2
+225,Match Nul,63,2
+225,Match Nul,72,2
+225,Match Nul,72,2
+225,Match Nul,46,2
+225,Match Nul,43,2
+225,Match Nul,81,2
+225,Match Nul,49,2
+225,Match Nul,43,2
+225,Match Nul,33,2
+225,Match Nul,82,2
+225,Match Nul,38,2
+225,Match Nul,36,2
+225,Match Nul,38,2
+225,Match Nul,71,2
+225,Match Nul,62,2
+225,Match Nul,55,2
+225,Match Nul,53,2
+225,Match Nul,65,2
+225,Match Nul,69,2
+225,Match Nul,35,2
+225,Match Nul,33,2
+225,Match Nul,44,2
+225,Match Nul,54,2
+225,Match Nul,25,2
+225,Match Nul,41,2
+225,Match Nul,60,2
+225,Match Nul,47,2
+225,Match Nul,45,2
+225,Match Nul,51,2
+225,Match Nul,25,2
+225,Match Nul,39,2
+225,Match Nul,64,2
+225,Match Nul,59,2
+225,Match Nul,57,2
+225,Match Nul,27,2
+225,Match Nul,70,2
+225,Match Nul,93,2
+225,Match Nul,65,2
+225,Match Nul,47,2
+225,Match Nul,45,2
+225,Match Nul,47,2
+225,Match Nul,47,2
+225,Match Nul,52,2
+225,Match Nul,34,2
+225,Match Nul,34,2
+225,Match Nul,75,2
+225,Match Nul,58,2
+225,Match Nul,60,2
+225,Match Nul,50,2
+225,Match Nul,78,2
+225,Match Nul,45,2
+225,Match Nul,52,2
+225,Match Nul,91,2
+225,Match Nul,62,2
+225,Match Nul,55,2
+225,Match Nul,64,2
+225,Match Nul,68,2
+225,Match Nul,46,2
+225,Match Nul,101,2
+225,Match Nul,46,2
+225,Match Nul,101,2
+225,Match Nul,61,2
+225,Match Nul,98,2
+225,Match Nul,61,2
+225,Match Nul,63,2
+225,Match Nul,70,2
+225,Match Nul,54,2
+225,Match Nul,105,2
+225,Match Nul,42,2
+225,Match Nul,81,2
+225,Match Nul,52,2
+225,Match Nul,53,2
+225,Match Nul,35,2
+225,Match Nul,51,2
+225,Match Nul,36,2
+225,Match Nul,30,2
+225,Match Nul,48,2
+225,Match Nul,40,2
+225,Match Nul,42,2
+225,Match Nul,41,2
+225,Match Nul,28,2
+225,Match Nul,56,2
+225,Match Nul,38,2
+225,Match Nul,20,2
+225,Match Nul,38,2
+225,Match Nul,30,2
+225,Match Nul,43,2
+225,Match Nul,42,2
+225,Match Nul,44,2
+225,Match Nul,34,2
+225,Equipe_1,14,1
+225,Match Nul,43,2
+225,Match Nul,35,2
+225,Match Nul,56,2
+225,Match Nul,50,2
+225,Match Nul,65,2
+225,Match Nul,33,2
+225,Match Nul,28,2
+225,Match Nul,34,2
+225,Match Nul,38,2
+225,Match Nul,54,2
+225,Match Nul,43,2
+225,Match Nul,51,2
+225,Match Nul,33,2
+225,Match Nul,36,2
+225,Match Nul,38,2
+225,Match Nul,32,2
+225,Match Nul,43,2
+225,Match Nul,44,2
+225,Match Nul,63,2
+225,Match Nul,38,2
+225,Match Nul,42,2
+225,Match Nul,50,2
+225,Match Nul,36,2
+225,Match Nul,46,2
+225,Match Nul,52,2
+225,Match Nul,33,2
+225,Match Nul,32,2
+225,Match Nul,44,2
+225,Match Nul,32,2
+225,Match Nul,49,2
+225,Match Nul,44,2
+225,Match Nul,56,2
+225,Match Nul,38,2
+225,Match Nul,39,2
+225,Match Nul,53,2
+225,Match Nul,47,2
+225,Match Nul,50,2
+225,Match Nul,34,2
+225,Match Nul,50,2
+225,Match Nul,41,2
+225,Match Nul,31,2
+225,Match Nul,37,2
+225,Match Nul,41,2
+225,Match Nul,50,2
+225,Match Nul,28,2
+225,Match Nul,47,2
+225,Match Nul,51,2
+225,Match Nul,42,2
+225,Match Nul,21,2
+225,Match Nul,46,2
+225,Match Nul,45,2
+225,Match Nul,50,2
+225,Match Nul,54,2
+225,Match Nul,65,2
+225,Match Nul,48,2
+225,Match Nul,48,2
+225,Match Nul,52,2
+225,Match Nul,41,2
+225,Match Nul,56,2
+225,Match Nul,60,2
+225,Match Nul,48,2
+225,Match Nul,52,2
+225,Match Nul,42,2
+225,Equipe_1,28,1
+225,Match Nul,31,2
+225,Match Nul,59,2
+225,Match Nul,46,2
+225,Match Nul,35,2
+225,Match Nul,34,2
+225,Match Nul,43,2
+225,Match Nul,50,2
+225,Match Nul,36,2
+225,Match Nul,44,2
+225,Match Nul,39,2
+225,Match Nul,43,2
+225,Match Nul,30,2
+225,Match Nul,45,2
+225,Match Nul,50,2
+225,Match Nul,39,2
+225,Match Nul,36,2
+225,Match Nul,37,2
+225,Match Nul,42,2
+225,Match Nul,37,2
+225,Match Nul,38,2
+225,Match Nul,43,2
+225,Match Nul,41,2
+225,Match Nul,48,2
+225,Match Nul,48,2
+225,Match Nul,35,2
+225,Match Nul,35,2
+225,Match Nul,26,2
+225,Match Nul,38,2
+225,Match Nul,42,2
+225,Match Nul,58,2
+225,Match Nul,44,2
+225,Match Nul,26,2
+225,Match Nul,45,2
+225,Match Nul,46,2
+225,Match Nul,26,2
+225,Match Nul,37,2
+225,Match Nul,40,2
+225,Match Nul,37,2
+225,Match Nul,38,2
+225,Match Nul,34,2
+225,Match Nul,64,2
+225,Match Nul,51,2
+225,Match Nul,29,2
+225,Match Nul,37,2
+225,Match Nul,45,2
+225,Match Nul,32,2
+225,Match Nul,34,2
+225,Match Nul,38,2
+225,Match Nul,21,2
+225,Match Nul,70,2
+225,Match Nul,46,2
+225,Match Nul,72,2
+225,Match Nul,63,2
+225,Match Nul,72,2
+225,Match Nul,49,2
+225,Match Nul,53,2
+225,Match Nul,67,2
+225,Match Nul,29,2
+225,Match Nul,59,2
+225,Match Nul,42,2
+225,Match Nul,100,2
+225,Match Nul,56,2
+225,Match Nul,59,2
+225,Match Nul,70,2
+225,Match Nul,36,2
+225,Match Nul,62,2
+225,Match Nul,55,2
+225,Match Nul,56,2
+225,Match Nul,49,2
+225,Match Nul,48,2
+225,Match Nul,57,2
+225,Match Nul,61,2
+225,Match Nul,66,2
+225,Match Nul,48,2
+225,Match Nul,48,2
+225,Match Nul,45,2
+225,Match Nul,45,2
+225,Match Nul,24,2
+225,Match Nul,47,2
+225,Match Nul,35,2
+225,Match Nul,44,2
+225,Match Nul,38,2
+225,Match Nul,43,2
+225,Match Nul,40,2
+225,Match Nul,42,2
+225,Match Nul,35,2
+225,Match Nul,38,2
+225,Match Nul,35,2
+225,Match Nul,41,2
+225,Match Nul,42,2
+225,Match Nul,51,2
+225,Match Nul,51,2
+225,Match Nul,49,2
+225,Match Nul,40,2
+225,Match Nul,46,2
+225,Match Nul,33,2
+225,Match Nul,39,2
+225,Match Nul,48,2
+225,Match Nul,44,2
+225,Match Nul,42,2
+225,Match Nul,34,2
+225,Match Nul,40,2
+225,Match Nul,33,2
+225,Match Nul,44,2
+225,Match Nul,45,2
+225,Match Nul,46,2
+225,Match Nul,33,2
+225,Match Nul,49,2
+225,Match Nul,25,2
+225,Match Nul,55,2
+225,Match Nul,41,2
+225,Match Nul,74,2
+225,Match Nul,35,2
+225,Match Nul,33,2
+225,Match Nul,46,2
+225,Match Nul,45,2
+225,Match Nul,44,2
+225,Match Nul,47,2
+225,Match Nul,37,2
+225,Match Nul,39,2
+225,Match Nul,54,2
+225,Match Nul,40,2
+225,Match Nul,39,2
+225,Match Nul,55,2
+225,Match Nul,46,2
+225,Match Nul,40,2
+225,Match Nul,56,2
+225,Match Nul,57,2
+225,Match Nul,35,2
+225,Match Nul,27,2
+225,Match Nul,33,2
+225,Match Nul,37,2
+225,Match Nul,45,2
+225,Match Nul,31,2
+225,Match Nul,24,2
+225,Match Nul,38,2
+225,Match Nul,53,2
+225,Match Nul,35,2
+225,Match Nul,50,2
+225,Match Nul,42,2
+225,Match Nul,33,2
+225,Match Nul,38,2
+225,Match Nul,78,2
+225,Match Nul,42,2
+225,Match Nul,48,2
+225,Match Nul,41,2
+225,Match Nul,40,2
+225,Match Nul,48,2
+225,Match Nul,44,2
+225,Match Nul,38,2
+225,Match Nul,40,2
+225,Match Nul,44,2
+225,Match Nul,52,2
+225,Match Nul,82,2
+225,Match Nul,53,2
+225,Match Nul,29,2
+225,Match Nul,51,2
+225,Match Nul,49,2
+225,Match Nul,56,2
+225,Match Nul,60,2
+225,Match Nul,36,2
+225,Match Nul,64,2
+225,Match Nul,32,2
+225,Match Nul,49,2
+225,Match Nul,45,2
+225,Match Nul,43,2
+225,Match Nul,72,2
+225,Match Nul,44,2
+225,Match Nul,61,2
+225,Match Nul,52,2
+225,Match Nul,48,2
+225,Match Nul,60,2
+225,Match Nul,52,2
+225,Match Nul,42,2
+225,Match Nul,44,2
+225,Match Nul,58,2
+225,Match Nul,59,2
+225,Match Nul,56,2
+225,Match Nul,32,2
+225,Match Nul,31,2
+225,Match Nul,50,2
+225,Match Nul,49,2
+225,Match Nul,50,2
+225,Match Nul,37,2
+225,Match Nul,49,2
+225,Match Nul,44,2
+225,Match Nul,35,2
+225,Match Nul,47,2
+225,Match Nul,50,2
+225,Match Nul,39,2
+225,Match Nul,51,2
+225,Match Nul,54,2
+225,Match Nul,52,2
+225,Match Nul,54,2
+225,Match Nul,39,2
+225,Match Nul,38,2
+225,Match Nul,41,2
+225,Match Nul,35,2
+225,Match Nul,43,2
+225,Match Nul,39,2
+225,Match Nul,29,2
+225,Match Nul,35,2
+225,Match Nul,31,2
+225,Equipe_2,41,2
+225,Match Nul,46,2
+225,Match Nul,30,2
+225,Match Nul,47,2
+225,Match Nul,43,2
+225,Match Nul,30,2
+225,Match Nul,40,2
+225,Match Nul,35,2
+225,Match Nul,41,2
+225,Match Nul,35,2
+225,Match Nul,55,2
+225,Match Nul,52,2
+225,Match Nul,54,2
+225,Match Nul,53,2
+225,Match Nul,44,2
+225,Match Nul,39,2
+225,Match Nul,42,2
+225,Match Nul,39,2
+225,Match Nul,43,2
+225,Match Nul,42,2
+225,Match Nul,52,2
+225,Match Nul,61,2
+225,Match Nul,38,2
+225,Match Nul,41,2
+225,Match Nul,46,2
+225,Match Nul,39,2
+225,Match Nul,31,2
+225,Match Nul,33,2
+225,Match Nul,47,2
+225,Match Nul,39,2
+225,Match Nul,44,2
+225,Match Nul,49,2
+225,Match Nul,32,2
+225,Match Nul,46,2
+225,Match Nul,47,2
+225,Match Nul,59,2
+225,Match Nul,49,2
+225,Match Nul,53,2
+225,Match Nul,62,2
+225,Match Nul,38,2
+225,Match Nul,40,2
+225,Match Nul,69,2
+225,Match Nul,51,2
+225,Match Nul,45,2
+225,Match Nul,43,2
+225,Match Nul,49,2
+225,Match Nul,73,2
+225,Match Nul,39,2
+225,Match Nul,60,2
+225,Match Nul,40,2
+225,Match Nul,69,2
+225,Match Nul,38,2
+225,Match Nul,51,2
+225,Match Nul,67,2
+225,Match Nul,52,2
+225,Match Nul,44,2
+225,Match Nul,55,2
+225,Match Nul,47,2
+225,Match Nul,49,2
+225,Match Nul,57,2
+225,Match Nul,45,2
+225,Match Nul,25,2
+225,Match Nul,54,2
+225,Match Nul,59,2
+225,Match Nul,42,2
+225,Match Nul,48,2
+225,Match Nul,56,2
+225,Match Nul,55,2
+225,Match Nul,47,2
+225,Match Nul,49,2
+225,Match Nul,30,2
+225,Match Nul,54,2
+225,Match Nul,55,2
+225,Match Nul,50,2
+225,Match Nul,54,2
+225,Match Nul,65,2
+225,Match Nul,60,2
+225,Match Nul,40,2
+225,Match Nul,62,2
+225,Match Nul,57,2
+225,Match Nul,57,2
+225,Match Nul,45,2
+225,Match Nul,56,2
+225,Match Nul,41,2
+225,Match Nul,74,2
+225,Match Nul,35,2
+225,Match Nul,41,2
+225,Match Nul,38,2
+225,Match Nul,44,2
+225,Match Nul,45,2
+225,Match Nul,47,2
+225,Match Nul,61,2
+225,Match Nul,72,2
+225,Match Nul,51,2
+225,Match Nul,42,2
+225,Match Nul,53,2
+225,Match Nul,58,2
+225,Match Nul,57,2
+225,Match Nul,49,2
+225,Match Nul,63,2
+225,Match Nul,42,2
+225,Match Nul,40,2
+225,Match Nul,50,2
+225,Match Nul,50,2
+225,Match Nul,46,2
+225,Match Nul,43,2
+225,Match Nul,47,2
+225,Match Nul,57,2
+225,Match Nul,48,2
+225,Match Nul,28,2
+225,Match Nul,32,2
+225,Match Nul,35,2
+225,Match Nul,39,2
+225,Match Nul,54,2
+225,Match Nul,36,2
+225,Match Nul,29,2
+225,Match Nul,44,2
+225,Match Nul,38,2
+225,Match Nul,53,2
+225,Match Nul,39,2
+225,Match Nul,43,2
+225,Match Nul,35,2
+225,Match Nul,32,2
+225,Match Nul,38,2
+225,Match Nul,36,2
+225,Match Nul,41,2
+225,Match Nul,43,2
+225,Match Nul,36,2
+225,Match Nul,42,2
+225,Match Nul,27,2
+225,Match Nul,47,2
+225,Match Nul,50,2
+225,Match Nul,53,2
+225,Equipe_2,44,2
+225,Match Nul,37,2
+225,Match Nul,42,2
+225,Match Nul,25,2
+225,Match Nul,26,2
+225,Match Nul,52,2
+225,Match Nul,37,2
+225,Match Nul,44,2
+225,Match Nul,57,2
+225,Match Nul,44,2
+225,Match Nul,53,2
+225,Match Nul,26,2
+225,Match Nul,51,2
+225,Match Nul,40,2
+225,Match Nul,47,2
+225,Match Nul,40,2
+225,Match Nul,33,2
+225,Match Nul,49,2
+225,Match Nul,34,2
+225,Match Nul,50,2
+225,Match Nul,30,2
+225,Match Nul,41,2
+225,Equipe_1,24,1
+225,Match Nul,35,2
+225,Match Nul,47,2
+225,Match Nul,41,2
+225,Match Nul,35,2
+225,Match Nul,27,2
+225,Match Nul,27,2
+225,Match Nul,21,2
+225,Match Nul,33,2
+225,Match Nul,41,2
+225,Match Nul,49,2
+225,Match Nul,38,2
+225,Match Nul,49,2
+225,Match Nul,39,2
+225,Match Nul,40,2
+225,Match Nul,49,2
+225,Match Nul,43,2
+225,Match Nul,49,2
+225,Match Nul,42,2
+225,Match Nul,40,2
+225,Match Nul,43,2
+225,Match Nul,57,2
+225,Match Nul,45,2
+225,Match Nul,50,2
+225,Match Nul,51,2
+225,Match Nul,47,2
+225,Match Nul,34,2
+225,Match Nul,39,2
+225,Match Nul,48,2
+225,Match Nul,39,2
+225,Match Nul,53,2
+225,Match Nul,29,2
+225,Match Nul,37,2
+225,Match Nul,36,2
+225,Match Nul,43,2
+225,Match Nul,64,2
+225,Match Nul,34,2
+225,Match Nul,48,2
+225,Match Nul,61,2
+225,Match Nul,71,2
+225,Match Nul,42,2
+225,Match Nul,57,2
+225,Match Nul,48,2
+225,Match Nul,51,2
+225,Match Nul,26,2
+225,Match Nul,61,2
+225,Match Nul,35,2
+225,Match Nul,76,2
+225,Match Nul,50,2
+225,Match Nul,68,2
+225,Match Nul,59,2
+225,Match Nul,62,2
+225,Match Nul,51,2
+225,Match Nul,51,2
+225,Match Nul,44,2
+225,Match Nul,49,2
+225,Match Nul,41,2
+225,Match Nul,46,2
+225,Match Nul,41,2
+225,Match Nul,35,2
+225,Match Nul,62,2
+225,Match Nul,40,2
+225,Match Nul,42,2
+225,Match Nul,35,2
+225,Match Nul,38,2
+225,Match Nul,31,2
+225,Match Nul,42,2
+225,Match Nul,49,2
+225,Match Nul,44,2
+225,Match Nul,31,2
+225,Match Nul,34,2
+225,Match Nul,39,2
+225,Match Nul,39,2
+225,Match Nul,38,2
+225,Match Nul,51,2
+225,Match Nul,46,2
+225,Match Nul,36,2
+225,Match Nul,53,2
+225,Match Nul,54,2
+225,Match Nul,38,2
+225,Match Nul,33,2
+225,Match Nul,39,2
+225,Match Nul,41,2
+225,Match Nul,52,2
+225,Match Nul,42,2
+225,Match Nul,43,2
+225,Match Nul,47,2
+225,Match Nul,47,2
+225,Match Nul,46,2
+225,Match Nul,36,2
+225,Match Nul,31,2
+225,Match Nul,57,2
+225,Match Nul,40,2
+225,Match Nul,53,2
+225,Match Nul,50,2
+225,Match Nul,48,2
+225,Match Nul,50,2
+225,Match Nul,44,2
+225,Match Nul,45,2
+225,Match Nul,50,2
+225,Match Nul,35,2
+225,Match Nul,41,2
+225,Match Nul,46,2
+225,Match Nul,42,2
+225,Match Nul,28,2
+225,Match Nul,42,2
+225,Match Nul,55,2
+225,Match Nul,42,2
+225,Match Nul,36,2
+225,Match Nul,50,2
+225,Match Nul,64,2
+225,Match Nul,43,2
+225,Match Nul,48,2
+225,Match Nul,47,2
+225,Match Nul,38,2
+225,Match Nul,45,2
+225,Match Nul,43,2
+225,Match Nul,36,2
+225,Match Nul,62,2
+225,Match Nul,49,2
+225,Match Nul,46,2
+225,Match Nul,81,2
+225,Match Nul,60,2
+225,Match Nul,78,2
+225,Equipe_1,24,1
+225,Match Nul,74,2
+225,Match Nul,42,2
+225,Match Nul,68,2
+225,Match Nul,53,2
+225,Match Nul,57,2
+225,Match Nul,95,2
+225,Match Nul,62,2
+225,Match Nul,100,2
+225,Match Nul,55,2
+225,Match Nul,69,2
+225,Match Nul,71,2
+225,Match Nul,60,2
+225,Match Nul,69,2
+225,Match Nul,56,2
+225,Match Nul,47,2
+225,Match Nul,65,2
+225,Match Nul,78,2
+225,Match Nul,84,2
+225,Match Nul,79,2
+225,Match Nul,57,2
+225,Match Nul,61,2
+225,Match Nul,56,2
+225,Match Nul,36,2
+225,Match Nul,251,2
+225,Match Nul,275,2
+225,Match Nul,129,2
+225,Match Nul,300,2
+225,Match Nul,338,2
+225,Match Nul,340,2
+225,Match Nul,345,2
+225,Match Nul,343,2
+225,Match Nul,232,2
+225,Match Nul,146,2
+225,Match Nul,106,2
+225,Match Nul,81,2
+225,Match Nul,43,2
+225,Match Nul,72,2
+225,Match Nul,44,2
+225,Match Nul,66,2
+225,Match Nul,73,2
+225,Match Nul,65,2
+225,Match Nul,62,2
+225,Match Nul,47,2
+225,Match Nul,49,2
+225,Match Nul,47,2
+225,Match Nul,63,2
+225,Match Nul,53,2
+225,Match Nul,50,2
+225,Match Nul,73,2
+225,Match Nul,65,2
+225,Match Nul,43,2
+225,Match Nul,53,2
+225,Match Nul,53,2
+225,Match Nul,36,2
+225,Match Nul,74,2
+225,Match Nul,59,2
+225,Match Nul,71,2
+225,Match Nul,38,2
+225,Match Nul,79,2
+225,Match Nul,55,2
+225,Match Nul,72,2
+225,Match Nul,47,2
+225,Match Nul,53,2
+225,Match Nul,70,2
+225,Match Nul,51,2
+225,Match Nul,70,2
+225,Match Nul,74,2
+225,Match Nul,54,2
+225,Match Nul,42,2
+225,Match Nul,69,2
+225,Match Nul,62,2
+225,Match Nul,80,2
+225,Match Nul,63,2
+225,Match Nul,64,2
+225,Match Nul,39,2
+225,Match Nul,69,2
+225,Match Nul,84,2
+225,Match Nul,61,2
+225,Match Nul,85,2
+225,Match Nul,78,2
+225,Match Nul,68,2
+225,Match Nul,87,2
+225,Match Nul,75,2
+225,Match Nul,50,2
+225,Match Nul,75,2
+225,Match Nul,49,2
+225,Match Nul,92,2
+225,Match Nul,93,2
+225,Match Nul,66,2
+225,Match Nul,69,2
+225,Match Nul,36,2
+225,Match Nul,84,2
+225,Match Nul,77,2
+225,Match Nul,61,2
+225,Match Nul,35,2
+225,Match Nul,51,2
+225,Match Nul,54,2
+225,Match Nul,51,2
+225,Match Nul,57,2
+225,Match Nul,49,2
+225,Match Nul,65,2
+225,Match Nul,68,2
+225,Match Nul,39,2
+225,Match Nul,60,2
+225,Match Nul,58,2
+225,Match Nul,45,2
+225,Match Nul,49,2
+225,Match Nul,65,2
+225,Match Nul,42,2
+225,Match Nul,63,2
+225,Match Nul,47,2
+225,Match Nul,53,2
+225,Match Nul,40,2
+225,Match Nul,39,2
+225,Match Nul,46,2
+225,Match Nul,35,2
+225,Match Nul,48,2
+225,Match Nul,52,2
+225,Match Nul,44,2
+225,Match Nul,56,2
+225,Match Nul,72,2
+225,Match Nul,59,2
+225,Match Nul,50,2
+225,Match Nul,46,2
+225,Match Nul,51,2
+225,Match Nul,48,2
+225,Match Nul,51,2
+225,Match Nul,34,2
+225,Match Nul,49,2
+225,Match Nul,40,2
+225,Match Nul,35,2
+225,Match Nul,33,2
+225,Match Nul,57,2
+225,Match Nul,28,2
+225,Match Nul,53,2
+225,Match Nul,40,2
+225,Match Nul,47,2
+225,Match Nul,45,2
+225,Match Nul,30,2
+225,Match Nul,43,2
+225,Match Nul,39,2
+225,Match Nul,43,2
+225,Match Nul,42,2
+225,Match Nul,47,2
+225,Match Nul,44,2
+225,Match Nul,37,2
+225,Match Nul,43,2
+225,Match Nul,41,2
+225,Match Nul,42,2
+225,Match Nul,47,2
+225,Match Nul,38,2
+225,Match Nul,34,2
+225,Match Nul,43,2
+225,Match Nul,36,2
+225,Match Nul,30,2
+225,Match Nul,33,2
+225,Match Nul,40,2
+225,Match Nul,40,2
+225,Match Nul,22,2
+225,Match Nul,43,2
+225,Match Nul,33,2
+225,Match Nul,38,2
+225,Match Nul,43,2
+225,Match Nul,46,2
+225,Match Nul,33,2
+225,Match Nul,27,2
+225,Match Nul,36,2
+225,Match Nul,41,2
+225,Match Nul,30,2
+225,Match Nul,45,2
+225,Match Nul,22,2
+225,Match Nul,39,2
+225,Match Nul,30,2
+225,Match Nul,33,2
+225,Match Nul,44,2
+225,Match Nul,44,2
+225,Match Nul,31,2
+225,Match Nul,35,2
+225,Match Nul,41,2
+225,Match Nul,36,2
+225,Match Nul,28,2
+225,Match Nul,44,2
+225,Match Nul,37,2
+225,Match Nul,43,2
+225,Match Nul,26,2
+225,Match Nul,50,2
+225,Match Nul,52,2
+225,Match Nul,43,2
+225,Match Nul,41,2
+225,Match Nul,45,2
+225,Match Nul,43,2
+225,Match Nul,33,2
+225,Match Nul,28,2
+225,Match Nul,48,2
+225,Match Nul,38,2
+225,Match Nul,43,2
+225,Match Nul,51,2
+225,Match Nul,41,2
+225,Match Nul,40,2
+225,Match Nul,47,2
+225,Match Nul,46,2
+225,Match Nul,39,2
+225,Match Nul,41,2
+225,Match Nul,37,2
+225,Match Nul,42,2
+225,Match Nul,40,2
+225,Match Nul,31,2
+225,Match Nul,37,2
+225,Match Nul,46,2
+225,Match Nul,38,2
+225,Equipe_2,37,2
+225,Match Nul,51,2
+225,Match Nul,66,2
+225,Match Nul,39,2
+225,Match Nul,31,2
+225,Match Nul,46,2
+225,Match Nul,40,2
+225,Match Nul,43,2
+225,Match Nul,22,2
+225,Match Nul,31,2
+225,Match Nul,56,2
+225,Match Nul,53,2
+225,Match Nul,44,2
+225,Match Nul,49,2
+225,Match Nul,42,2
+225,Match Nul,60,2
+225,Match Nul,39,2
+225,Match Nul,53,2
+225,Match Nul,60,2
+225,Match Nul,49,2
+225,Match Nul,39,2
+225,Match Nul,51,2
+225,Match Nul,28,2
+225,Match Nul,64,2
+225,Match Nul,43,2
+225,Match Nul,61,2
+225,Match Nul,90,2
+225,Match Nul,58,2
+225,Match Nul,65,2
+225,Match Nul,80,2
+225,Match Nul,68,2
+225,Match Nul,84,2
+225,Match Nul,97,2
+225,Match Nul,47,2
+225,Match Nul,87,2
+225,Match Nul,55,2
+225,Match Nul,61,2
+225,Match Nul,49,2
+225,Match Nul,67,2
+225,Match Nul,42,2
+225,Match Nul,75,2
+225,Match Nul,69,2
+225,Match Nul,70,2
+225,Match Nul,51,2
+225,Match Nul,64,2
+225,Match Nul,57,2
+225,Match Nul,67,2
+225,Match Nul,40,2
+225,Match Nul,50,2
+225,Match Nul,44,2
+225,Match Nul,54,2
+225,Match Nul,55,2
+225,Match Nul,48,2
+225,Match Nul,64,2
+225,Match Nul,57,2
+225,Match Nul,45,2
+225,Match Nul,50,2
+225,Match Nul,34,2
+225,Match Nul,42,2
+225,Match Nul,59,2
+225,Match Nul,42,2
+225,Match Nul,27,2
+225,Match Nul,43,2
+225,Match Nul,39,2
+225,Match Nul,34,2
+225,Match Nul,40,2
+225,Match Nul,27,2
+225,Match Nul,59,2
+225,Match Nul,44,2
+225,Match Nul,44,2
+225,Match Nul,27,2
+225,Match Nul,37,2
+225,Match Nul,47,2
+225,Match Nul,55,2
+225,Match Nul,45,2
+225,Match Nul,49,2
+225,Match Nul,34,2
+225,Match Nul,28,2
+225,Match Nul,30,2
+225,Match Nul,35,2
+225,Match Nul,59,2
+225,Match Nul,45,2
+225,Match Nul,56,2
+225,Match Nul,34,2
+225,Match Nul,54,2
+225,Match Nul,38,2
+225,Match Nul,43,2
+225,Match Nul,43,2
+225,Match Nul,45,2
+225,Match Nul,40,2
+225,Match Nul,44,2
+225,Match Nul,41,2
+225,Match Nul,40,2
+225,Match Nul,33,2
+225,Match Nul,44,2
+225,Match Nul,48,2
+225,Match Nul,28,2
+225,Match Nul,42,2
+225,Match Nul,40,2
+225,Match Nul,44,2
+225,Match Nul,41,2
+225,Match Nul,36,2
+225,Match Nul,32,2
+225,Match Nul,25,2
+225,Match Nul,25,2
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+225,Equipe_2,124,4
+225,Equipe_1,75,2
+225,Equipe_1,86,2
+225,Match Nul,85,2
+225,Equipe_2,100,3
+225,Equipe_1,86,2
+225,Equipe_2,105,3
+225,Match Nul,117,4
+225,Equipe_2,18,2
+225,Equipe_1,24,2
+225,Equipe_1,16,2
+225,Equipe_2,26,2
+225,Match Nul,51,3
+225,Match Nul,51,3
+225,Match Nul,87,6
+225,Equipe_1,28,2
+225,Equipe_2,16,2
+225,Equipe_1,41,3
+225,Equipe_2,28,3
+225,Equipe_1,43,3
+225,Equipe_2,55,4
+225,Equipe_2,36,3
+225,Match Nul,13,2
+225,Equipe_1,21,2
+225,Equipe_2,25,2
+225,Match Nul,29,3
+225,Equipe_2,34,3
+225,Equipe_2,82,5
+225,Equipe_2,50,4
+225,Match Nul,35,3
+225,Match Nul,49,3
+225,Equipe_2,54,3
+225,Equipe_1,71,5
+225,Match Nul,42,3
+225,Match Nul,31,3
+225,Match Nul,19,2
+225,Equipe_2,26,3
+225,Equipe_1,46,4
+225,Equipe_1,16,2
+225,Match Nul,31,3
+225,Equipe_1,37,3
+225,Equipe_1,40,3
+225,Equipe_1,14,2
+225,Equipe_1,59,4
+225,Equipe_2,30,2
+225,Equipe_1,28,3
+225,Equipe_2,44,4
+225,Equipe_1,16,2
+225,Match Nul,29,3
+225,Match Nul,34,3
+225,Match Nul,31,3
+225,Match Nul,33,3
+225,Equipe_2,19,2
+225,Equipe_1,31,3
+225,Equipe_1,29,3
+225,Match Nul,33,3
+225,Equipe_2,25,2
+225,Match Nul,36,4
+225,Equipe_2,34,3
+225,Match Nul,44,5
+225,Equipe_2,32,2
+225,Equipe_1,45,3
+225,Equipe_2,26,2
+225,Equipe_2,48,4
+225,Equipe_2,9,2
+225,Equipe_1,24,2
+225,Equipe_2,19,2
+225,Equipe_1,30,3
+225,Equipe_1,28,3
+225,Equipe_1,30,3
+225,Equipe_1,23,3
+225,Equipe_2,19,2
+225,Match Nul,26,3
+225,Match Nul,11,2
+225,Equipe_1,23,3
+225,Equipe_2,17,2
+225,Match Nul,20,3
+225,Equipe_2,21,3
+225,Match Nul,38,4
+225,Equipe_2,18,2
+225,Equipe_2,35,4
+225,Equipe_1,12,2
+225,Equipe_1,14,2
+225,Match Nul,55,7
+225,Match Nul,12,2
+225,Equipe_1,22,3
+225,Equipe_1,12,2
+225,Equipe_1,22,3
+225,Equipe_1,11,2
+225,Equipe_2,29,4
+225,Equipe_1,16,2
+225,Equipe_1,12,2
+225,Equipe_1,10,2
+225,Equipe_2,15,2
+225,Match Nul,14,2
+225,Equipe_2,22,3
+225,Match Nul,18,3
+225,Equipe_1,21,3
+225,Equipe_1,4,1
+225,Equipe_1,17,3
+225,Equipe_2,29,3
+225,Equipe_2,10,2
+225,Equipe_2,25,3
+225,Match Nul,22,3
+225,Equipe_1,16,2
+225,Equipe_1,10,2
+225,Equipe_1,14,2
+225,Equipe_2,20,3
+225,Equipe_2,18,3
+225,Equipe_2,8,2
+225,Equipe_2,27,3
+225,Equipe_1,13,2
+225,Equipe_1,14,2
+225,Equipe_2,26,3
+225,Equipe_1,24,3
+225,Match Nul,29,4
+225,Equipe_2,11,2
+225,Match Nul,8,2
+225,Equipe_1,18,2
+225,Equipe_2,38,4
+225,Equipe_1,69,7
+225,Equipe_1,40,4
+225,Match Nul,23,3
+225,Equipe_1,23,3
+225,Equipe_2,13,2
+225,Equipe_2,14,2
+225,Equipe_2,15,2
+225,Match Nul,14,2
+225,Equipe_1,16,2
+225,Equipe_2,24,3
+225,Match Nul,21,2
+225,Equipe_1,30,4
+225,Match Nul,24,3
+225,Equipe_1,17,3
+225,Equipe_1,23,3
+225,Equipe_2,12,2
+225,Match Nul,18,2
+225,Equipe_2,50,5
+225,Equipe_2,15,2
+225,Equipe_2,22,3
+225,Equipe_1,17,2
+225,Equipe_2,25,3
+225,Equipe_2,19,3
+225,Equipe_1,17,3
+225,Equipe_1,30,4
+225,Equipe_1,9,1
+225,Equipe_1,11,2
+225,Equipe_2,20,3
+225,Equipe_1,26,3
+225,Equipe_1,18,3
+225,Equipe_2,16,2
+225,Equipe_1,24,3
+225,Equipe_1,32,4
+225,Equipe_1,15,2
+225,Equipe_1,19,3
+225,Equipe_1,30,4
+225,Match Nul,22,3
+225,Match Nul,11,2
+225,Equipe_2,35,4
+225,Equipe_2,45,6
+225,Equipe_2,15,2
+225,Equipe_2,31,3
+225,Equipe_1,29,4
+225,Equipe_2,24,2
+225,Equipe_1,17,2
+225,Match Nul,33,3
+225,Equipe_2,26,3
+225,Equipe_1,20,3
+225,Equipe_2,17,2
+225,Equipe_1,23,3
+225,Equipe_1,15,2
+225,Equipe_1,13,2
+225,Equipe_2,14,2
+225,Equipe_2,16,2
+225,Equipe_2,42,5
+225,Equipe_1,19,2
+225,Equipe_2,16,2
+225,Equipe_1,36,5
+225,Equipe_2,14,2
+225,Equipe_2,55,5
+225,Equipe_1,16,2
+225,Equipe_2,22,2
+225,Equipe_2,20,2
+225,Equipe_1,22,3
+225,Equipe_1,38,4
+225,Equipe_2,35,4
+225,Equipe_2,35,4
+225,Match Nul,12,2
+225,Equipe_1,9,2
+225,Match Nul,18,2
+225,Match Nul,12,2
+225,Match Nul,25,3
+225,Equipe_2,13,2
+225,Equipe_2,15,2
+225,Match Nul,13,2
+225,Equipe_2,19,3
+225,Equipe_2,24,3
+225,Match Nul,17,2
+225,Equipe_2,17,2
+225,Equipe_2,36,3
+225,Equipe_2,24,3
+225,Equipe_2,16,2
+225,Match Nul,55,6
+225,Equipe_2,34,4
+225,Match Nul,27,3
+225,Equipe_1,50,4
+225,Equipe_1,15,2
+225,Match Nul,42,4
+225,Equipe_2,29,3
+225,Match Nul,34,4
+225,Equipe_2,77,7
+225,Match Nul,34,3
+225,Equipe_1,30,3
+225,Equipe_2,15,2
+225,Equipe_2,17,2
+225,Equipe_2,31,3
+225,Equipe_2,21,2
+225,Match Nul,33,3
+225,Equipe_2,43,4
+225,Equipe_1,21,2
+225,Equipe_2,75,6
+225,Equipe_2,35,4
+225,Match Nul,38,4
+225,Equipe_1,21,3
+225,Equipe_2,21,2
+225,Equipe_1,19,2
+225,Equipe_1,14,2
+225,Equipe_1,17,2
+225,Equipe_2,19,2
+225,Equipe_2,61,6
+225,Equipe_2,29,3
+225,Equipe_1,23,3
+225,Equipe_1,33,3
+225,Match Nul,23,3
+225,Match Nul,12,2
+225,Equipe_2,20,2
+225,Equipe_1,25,3
+225,Equipe_2,31,3
+225,Equipe_1,22,2
+225,Equipe_2,27,3
+225,Equipe_1,17,2
+225,Match Nul,16,2
+225,Equipe_1,31,3
+225,Equipe_2,17,2
+225,Equipe_1,16,2
+225,Equipe_1,11,2
+225,Equipe_1,16,2
+225,Equipe_1,42,4
+225,Equipe_1,18,2
+225,Equipe_2,17,2
+225,Equipe_2,43,4
+225,Match Nul,51,5
+225,Equipe_1,42,4
+225,Match Nul,26,2
+225,Equipe_2,56,5
+225,Equipe_2,43,4
+225,Equipe_2,16,2
+225,Equipe_1,33,4
+225,Equipe_2,21,3
+225,Match Nul,12,2
+225,Match Nul,22,3
+225,Match Nul,25,3
+225,Equipe_2,26,3
+225,Equipe_2,12,2
+225,Equipe_2,13,2
+225,Equipe_2,11,2
+225,Match Nul,17,2
+225,Match Nul,30,4
+225,Equipe_2,12,2
+225,Equipe_2,27,3
+225,Match Nul,31,4
+225,Match Nul,11,2
+225,Equipe_2,15,2
+225,Equipe_2,13,2
+225,Equipe_2,11,2
+225,Equipe_2,13,2
+225,Equipe_1,11,2
+225,Equipe_1,29,3
+225,Equipe_1,27,3
+225,Match Nul,33,3
+225,Equipe_1,11,2
+225,Equipe_2,24,3
+225,Equipe_1,24,3
+225,Match Nul,24,3
+225,Equipe_1,18,2
+225,Match Nul,13,2
+225,Equipe_2,25,3
+225,Match Nul,26,3
+225,Equipe_1,31,4
+225,Equipe_2,29,3
+225,Equipe_2,24,2
+225,Equipe_2,37,4
+225,Equipe_1,33,3
+225,Equipe_1,11,2
+225,Match Nul,19,2
+225,Equipe_2,18,2
+225,Equipe_2,20,2
+225,Match Nul,15,2
+225,Match Nul,25,3
+225,Equipe_1,20,2
+225,Equipe_2,46,5
+225,Equipe_1,35,4
+225,Equipe_2,29,3
+225,Equipe_1,27,4
+225,Equipe_2,27,3
+225,Equipe_2,17,2
+225,Equipe_1,22,2
+225,Equipe_2,30,3
+225,Equipe_2,21,2
+225,Match Nul,23,2
+225,Equipe_1,23,2
+225,Equipe_1,24,2
+225,Equipe_2,35,3
+225,Equipe_2,30,3
+225,Equipe_1,20,2
+225,Equipe_1,29,3
+225,Match Nul,28,3
+225,Equipe_1,22,3
+225,Equipe_1,14,2
+225,Equipe_2,31,3
+225,Equipe_1,39,4
+225,Equipe_2,24,3
+225,Equipe_1,51,5
+225,Equipe_2,11,2
+225,Equipe_1,26,3
+225,Equipe_2,16,2
+225,Equipe_2,13,2
+225,Equipe_1,25,3
+225,Equipe_2,21,2
+225,Equipe_2,16,2
+225,Equipe_2,20,2
+225,Equipe_2,23,2
+225,Equipe_2,19,2
+225,Match Nul,72,7
+225,Equipe_2,44,4
+225,Match Nul,31,4
+225,Equipe_2,36,3
+225,Equipe_2,32,3
+225,Equipe_2,16,2
+225,Equipe_2,12,2
+225,Equipe_2,20,2
+225,Equipe_1,14,2
+225,Equipe_2,36,4
+225,Equipe_2,22,2
+225,Match Nul,13,2
+225,Match Nul,16,2
+225,Match Nul,24,2
+225,Match Nul,31,3
+225,Equipe_1,31,3
+225,Equipe_1,17,2
+225,Equipe_2,28,3
+225,Equipe_2,36,4
+225,Equipe_1,14,2
+225,Equipe_1,24,3
+225,Equipe_1,21,2
+225,Equipe_1,16,2
+225,Equipe_1,29,3
+225,Match Nul,23,3
+225,Equipe_1,11,2
+225,Equipe_2,28,4
+225,Equipe_2,23,3
+225,Equipe_1,17,3
+225,Equipe_2,11,2
+225,Equipe_1,16,2
+225,Equipe_2,24,4
+225,Equipe_2,51,7
+225,Equipe_1,23,3
+225,Match Nul,22,3
+225,Equipe_2,13,2
+225,Equipe_2,11,2
+225,Equipe_1,19,3
+225,Match Nul,24,3
+225,Match Nul,19,3
+225,Equipe_2,14,2
+225,Match Nul,22,3
+225,Match Nul,13,3
+225,Equipe_1,9,2
+225,Equipe_1,13,2
+225,Equipe_2,10,2
+225,Equipe_1,42,6
+225,Equipe_1,25,3
+225,Equipe_1,11,2
+225,Equipe_1,39,5
+225,Equipe_2,27,4
+225,Equipe_1,32,4
+225,Match Nul,23,3
+225,Equipe_1,14,2
+225,Match Nul,12,2
+225,Equipe_2,13,2
+225,Equipe_1,19,3
+225,Equipe_2,27,4
+225,Match Nul,12,2
+225,Equipe_1,11,2
+225,Equipe_1,13,2
+225,Match Nul,13,3
+225,Equipe_2,13,2
+225,Equipe_1,8,2
+225,Match Nul,18,3
+225,Equipe_2,10,2
+225,Equipe_1,13,2
+225,Match Nul,31,4
+225,Equipe_1,26,3
+225,Match Nul,11,2
+225,Match Nul,20,3
+225,Equipe_1,13,2
+225,Equipe_2,15,2
+225,Equipe_2,9,2
+225,Equipe_1,15,2
+225,Equipe_1,23,3
+225,Equipe_2,9,2
+225,Equipe_1,17,2
+225,Match Nul,13,2
+225,Equipe_1,14,2
+225,Equipe_1,10,2
+225,Equipe_2,23,3
+225,Equipe_2,17,2
+225,Equipe_1,17,3
+225,Match Nul,25,3
+225,Equipe_1,26,3
+225,Equipe_1,12,2
+225,Equipe_1,21,2
+225,Equipe_2,17,2
+225,Match Nul,24,3
+225,Match Nul,21,3
+225,Equipe_1,20,3
+225,Equipe_1,30,4
+225,Equipe_2,37,4
+225,Equipe_2,13,2
+225,Equipe_1,39,5
+225,Match Nul,27,3
+225,Equipe_1,23,3
+225,Equipe_1,23,3
+225,Equipe_1,14,2
+225,Equipe_2,30,3
+225,Equipe_2,11,2
+225,Equipe_2,14,2
+225,Equipe_2,18,2
+225,Equipe_2,12,2
+225,Equipe_1,19,2
+225,Equipe_1,12,2
+225,Equipe_2,35,4
+225,Match Nul,15,2
+225,Equipe_2,15,2
+225,Equipe_2,26,3
+225,Equipe_1,26,3
+225,Equipe_2,25,3
+225,Equipe_1,35,4
+225,Equipe_1,14,2
+225,Equipe_2,26,3
+225,Match Nul,48,5
+225,Equipe_1,12,2
+225,Match Nul,12,2
+225,Match Nul,25,3
+225,Match Nul,8,2
+225,Equipe_2,36,4
+225,Equipe_2,36,4
+225,Equipe_2,15,2
+225,Equipe_1,17,2
+225,Equipe_1,14,2
+225,Equipe_1,40,5
+225,Equipe_1,23,3
+225,Equipe_2,16,2
+225,Equipe_1,37,4
+225,Equipe_2,10,2
+225,Equipe_2,14,2
+225,Equipe_1,30,3
+225,Match Nul,21,3
+225,Match Nul,36,4
+225,Equipe_2,25,3
+225,Equipe_2,15,2
+225,Match Nul,19,3
+225,Equipe_1,12,2
+225,Equipe_1,18,2
+225,Equipe_1,13,2
+225,Equipe_2,22,3
+225,Equipe_2,23,3
+225,Equipe_1,12,2
+225,Equipe_2,13,2
+225,Equipe_1,15,2
+225,Equipe_2,15,2
+225,Equipe_2,18,3
+225,Equipe_2,20,3
+225,Match Nul,16,2
+225,Match Nul,46,5
+225,Equipe_1,35,4
+225,Equipe_2,12,2
+225,Equipe_2,16,2
+225,Equipe_1,17,2
+225,Equipe_2,41,5
+225,Equipe_1,31,4
+225,Equipe_1,11,2
+225,Equipe_2,16,2
+225,Equipe_2,32,4
+225,Equipe_1,17,2
+225,Match Nul,34,4
+225,Equipe_2,23,3
+225,Match Nul,13,2
+225,Match Nul,10,2
+225,Match Nul,13,2
+225,Equipe_1,11,2
+225,Equipe_2,13,2
+225,Equipe_1,15,2
+225,Equipe_2,12,2
+225,Equipe_1,18,2
+225,Match Nul,24,3
+225,Equipe_2,15,2
+225,Equipe_2,11,2
+225,Match Nul,26,3
+225,Equipe_2,16,2
+225,Equipe_2,13,2
+225,Equipe_2,25,3
+225,Equipe_1,7,1
+225,Equipe_1,20,2
+225,Equipe_1,9,1
+225,Equipe_1,11,2
+225,Equipe_1,28,4
+225,Equipe_2,27,3
+225,Equipe_1,28,4
+225,Match Nul,32,3
+225,Match Nul,27,3
+225,Equipe_1,19,2
+225,Equipe_1,19,3
+225,Match Nul,13,2
+225,Match Nul,39,4
+225,Equipe_2,16,2
+225,Match Nul,14,2
+225,Equipe_1,16,2
+225,Equipe_2,27,3
+225,Match Nul,17,2
+225,Equipe_1,47,5
+225,Match Nul,17,2
+225,Equipe_2,25,3
+225,Equipe_1,20,3
+225,Equipe_2,29,3
+225,Match Nul,33,4
+225,Equipe_1,35,4
+225,Equipe_2,14,2
+225,Match Nul,13,2
+225,Equipe_2,16,2
+225,Equipe_2,18,2
+225,Equipe_1,60,6
+225,Equipe_2,28,3
+225,Equipe_2,14,2
+225,Equipe_2,14,2
+225,Equipe_2,32,3
+225,Equipe_1,17,2
+225,Equipe_1,15,2
+225,Equipe_2,24,3
+225,Match Nul,37,4
+225,Match Nul,29,4
+225,Equipe_2,22,3
+225,Equipe_2,9,2
+225,Equipe_1,19,3
+225,Match Nul,32,4
+225,Match Nul,13,2
+225,Match Nul,28,3
+225,Match Nul,13,2
+225,Equipe_1,9,2
+225,Equipe_1,32,4
+225,Equipe_2,18,3
+225,Equipe_1,25,3
+225,Match Nul,25,3
+225,Equipe_2,18,2
+225,Equipe_1,17,2
+225,Equipe_1,16,2
+225,Equipe_1,14,2
+225,Equipe_1,14,2
+225,Equipe_1,11,2
+225,Equipe_2,12,2
+225,Equipe_2,12,2
+225,Equipe_2,16,2
+225,Match Nul,34,4
+225,Equipe_1,20,3
+225,Match Nul,10,2
+225,Equipe_2,18,3
+225,Equipe_1,15,2
+225,Equipe_2,12,2
+225,Match Nul,42,5
+225,Equipe_2,17,2
+225,Equipe_1,13,2
+225,Match Nul,19,2
+225,Equipe_2,12,2
+225,Equipe_2,18,3
+225,Equipe_2,14,2
+225,Match Nul,16,2
+225,Equipe_1,25,3
+225,Equipe_1,18,2
+225,Match Nul,13,2
+225,Equipe_2,29,4
+225,Equipe_1,12,2
+225,Equipe_2,28,3
+225,Equipe_1,9,2
+225,Equipe_2,21,3
+225,Match Nul,29,4
+225,Match Nul,14,2
+225,Equipe_2,24,3
+225,Equipe_1,27,3
+225,Equipe_2,20,3
+225,Equipe_2,32,4
+225,Match Nul,12,2
+225,Match Nul,44,5
+225,Equipe_1,9,2
+225,Equipe_1,40,5
+225,Equipe_1,16,2
+225,Equipe_2,12,2
+225,Match Nul,25,3
+225,Match Nul,22,3
+225,Match Nul,19,3
+225,Match Nul,15,2
+225,Equipe_1,13,2
+225,Equipe_1,22,3
+225,Equipe_2,24,3
+225,Equipe_2,13,2
+225,Equipe_1,20,3
+225,Equipe_2,16,2
+225,Equipe_1,10,2
+225,Match Nul,37,4
+225,Equipe_1,13,2
+225,Equipe_1,16,2
+225,Equipe_2,22,3
+225,Equipe_1,23,3
+225,Equipe_2,15,2
+225,Equipe_2,24,3
+225,Equipe_1,17,2
+225,Equipe_1,13,2
+225,Equipe_1,23,3
+225,Equipe_2,52,5
+225,Equipe_2,16,3
+225,Equipe_1,13,2
+225,Equipe_2,24,3
+225,Equipe_1,18,2
+225,Match Nul,11,2
+225,Match Nul,9,2
+225,Equipe_1,19,3
+225,Equipe_1,57,6
+225,Equipe_2,27,3
+225,Match Nul,13,2
+225,Equipe_1,18,2
+225,Equipe_1,18,3
+225,Equipe_1,18,2
+225,Equipe_2,15,2
+225,Match Nul,15,2
+225,Equipe_1,19,2
+225,Equipe_2,14,2
+225,Match Nul,12,2
+225,Equipe_1,28,3
+225,Equipe_1,25,3
+225,Equipe_2,18,2
+225,Equipe_2,13,2
+225,Match Nul,12,2
+225,Equipe_1,29,4
+225,Match Nul,22,3
+225,Match Nul,12,2
+225,Match Nul,10,2
+225,Equipe_1,31,4
+225,Equipe_2,39,6
+225,Equipe_1,13,2
+225,Equipe_2,12,2
+225,Equipe_2,11,2
+225,Equipe_1,20,3
+225,Equipe_2,8,2
+225,Equipe_2,30,4
+225,Equipe_2,23,3
+225,Match Nul,16,3
+225,Match Nul,28,4
+225,Match Nul,20,3
+225,Equipe_1,18,3
+225,Equipe_1,14,2
+225,Equipe_1,13,2
+225,Equipe_1,20,3
+225,Match Nul,16,3
+225,Match Nul,14,2
+225,Equipe_2,10,2
+225,Equipe_1,24,3
+225,Equipe_2,25,4
+225,Equipe_2,13,2
+225,Equipe_2,18,3
+225,Equipe_1,24,3
+225,Equipe_2,20,3
+225,Equipe_2,29,4
+225,Equipe_1,14,2
+225,Match Nul,25,3
+225,Equipe_1,22,3
+225,Equipe_1,11,2
+225,Equipe_2,13,2
+225,Match Nul,26,3
+225,Equipe_1,31,4
+225,Equipe_2,13,2
+225,Equipe_2,16,2
+225,Equipe_2,15,2
+225,Equipe_1,12,2
+225,Equipe_1,20,3
+225,Equipe_1,12,2
+225,Equipe_1,14,2
+225,Equipe_1,35,4
+225,Equipe_2,11,2
+225,Equipe_2,26,3
+225,Equipe_2,14,2
+225,Equipe_1,13,2
+225,Equipe_2,26,3
+225,Equipe_1,25,3
+225,Equipe_2,17,2
+225,Match Nul,14,2
+225,Equipe_2,21,3
+225,Equipe_1,29,4
+225,Equipe_2,27,4
+225,Equipe_1,57,6
+225,Match Nul,27,4
+225,Equipe_2,13,2
+225,Match Nul,32,4
+225,Equipe_2,12,2
+225,Match Nul,22,3
+225,Equipe_1,16,2
+225,Equipe_2,43,5
+225,Equipe_1,19,3
+225,Match Nul,53,6
+225,Match Nul,11,2
+225,Equipe_1,22,3
+225,Match Nul,14,2
+225,Equipe_2,27,3
+225,Equipe_2,26,3
+225,Equipe_2,16,2
+225,Equipe_2,16,2
+225,Equipe_2,26,3
+225,Equipe_2,12,2
+225,Equipe_1,20,3
+225,Equipe_1,22,3
+225,Equipe_1,11,2
+225,Equipe_2,27,4
+225,Equipe_1,19,3
+225,Equipe_1,12,2
+225,Equipe_2,20,3
+225,Equipe_1,16,3
+225,Equipe_1,12,2
+225,Match Nul,23,3
+225,Equipe_1,9,2
+225,Equipe_1,10,2
+225,Equipe_2,11,2
+225,Equipe_2,13,2
+225,Equipe_1,22,3
+225,Equipe_1,16,3
+225,Equipe_1,22,4
+225,Equipe_2,13,2
+225,Equipe_2,19,3
+225,Equipe_1,21,4
+225,Match Nul,30,5
+225,Equipe_2,10,2
+225,Equipe_1,11,2
+225,Equipe_1,19,3
+225,Equipe_2,18,3
+225,Equipe_1,10,2
+225,Equipe_2,7,2
+225,Equipe_1,11,2
+225,Equipe_1,22,3
+225,Equipe_2,21,3
+225,Equipe_1,13,2
+225,Equipe_2,11,2
+225,Equipe_1,10,2
+225,Equipe_2,13,2
+225,Equipe_1,13,2
+225,Equipe_2,14,2
+225,Match Nul,35,5
+225,Equipe_2,22,3
+225,Equipe_1,22,3
+225,Match Nul,14,2
+225,Match Nul,20,3
+225,Equipe_2,25,4
+225,Equipe_2,10,2
+225,Equipe_1,6,1
+225,Equipe_2,13,2
+225,Equipe_2,13,2
+225,Match Nul,18,3
+225,Match Nul,16,3
+225,Equipe_1,15,2
+225,Equipe_1,23,4
+225,Match Nul,16,3
+225,Equipe_1,13,2
+225,Match Nul,24,3
+225,Match Nul,29,4
+225,Equipe_2,19,3
+225,Match Nul,11,2
+225,Match Nul,19,3
+225,Equipe_2,13,2
+225,Match Nul,31,5
+225,Equipe_1,11,2
+225,Equipe_1,20,3
+225,Equipe_1,11,2
+225,Match Nul,8,2
+225,Equipe_2,11,2
+225,Match Nul,20,3
+225,Equipe_1,12,2
+225,Equipe_2,13,2
+225,Equipe_2,19,3
+225,Equipe_1,20,3
+225,Equipe_1,11,2
+225,Equipe_1,11,2
+225,Equipe_1,11,2
+225,Equipe_1,22,3
+225,Equipe_1,24,3
+225,Equipe_1,19,3
+225,Match Nul,13,2
+225,Equipe_2,22,3
+225,Equipe_2,14,2
+225,Equipe_2,9,2
+225,Equipe_1,8,2
+225,Equipe_1,17,3
+225,Equipe_2,14,2
+225,Equipe_2,10,2
+225,Match Nul,17,3
+225,Equipe_2,35,5
+225,Match Nul,22,4
+225,Equipe_1,16,3
+225,Equipe_2,9,2
+225,Match Nul,12,2
+225,Equipe_2,16,3
+225,Equipe_2,18,3
+225,Equipe_2,13,2
+225,Equipe_1,34,6
+225,Match Nul,9,2
+225,Equipe_1,28,4
+225,Equipe_1,21,3
+225,Equipe_2,26,4
+225,Equipe_2,13,2
+225,Equipe_1,15,2
+225,Match Nul,25,4
+225,Equipe_2,10,2
+225,Equipe_2,13,2
+225,Equipe_1,16,2
+225,Equipe_1,20,3
+225,Match Nul,9,2
+225,Equipe_1,18,3
+225,Match Nul,26,4
+225,Equipe_2,10,2
+225,Equipe_2,17,3
+225,Equipe_1,23,4
+225,Equipe_2,15,3
+225,Equipe_1,11,2
+225,Equipe_1,12,2
+225,Equipe_2,20,3
+225,Equipe_1,13,2
+225,Equipe_1,32,5
+225,Equipe_2,14,2
+225,Match Nul,28,4
+225,Match Nul,25,4
+225,Equipe_2,27,4
+225,Equipe_2,27,4
+225,Equipe_1,7,2
+225,Match Nul,18,3
+225,Equipe_2,11,2
+225,Equipe_1,21,4
+225,Match Nul,16,3
+225,Match Nul,28,4
+225,Equipe_2,18,3
+225,Match Nul,18,3
+225,Match Nul,9,2
+225,Equipe_2,11,2
+225,Equipe_2,11,2
+225,Equipe_1,13,2
+225,Equipe_2,11,2
+225,Equipe_1,16,3
+225,Equipe_2,21,3
+225,Equipe_2,23,3
+225,Equipe_1,11,2
+225,Equipe_2,9,2
+225,Match Nul,20,3
+225,Equipe_1,9,2
+225,Match Nul,13,2
+225,Equipe_2,9,2
+225,Equipe_1,18,2
+225,Equipe_2,17,3
+225,Equipe_1,13,2
+225,Match Nul,24,3
+225,Equipe_1,12,2
+225,Equipe_2,14,2
+225,Equipe_2,14,2
+225,Equipe_1,10,2
+225,Equipe_2,20,3
+225,Equipe_1,25,3
+225,Match Nul,32,4
+225,Match Nul,16,2
+225,Equipe_1,31,4
+225,Equipe_2,14,2
+225,Match Nul,20,3
+225,Equipe_1,12,2
+225,Equipe_2,21,3
+225,Equipe_1,12,2
+225,Equipe_2,25,4
+225,Equipe_1,14,2
+225,Match Nul,17,3
+225,Equipe_1,11,2
+225,Match Nul,13,2
+225,Equipe_1,12,2
+225,Equipe_1,19,3
+225,Equipe_2,21,3
+225,Match Nul,12,2
+225,Match Nul,39,5
+225,Equipe_2,12,2
+225,Equipe_1,42,6
+225,Equipe_2,23,3
+225,Equipe_1,12,3
+225,Equipe_1,17,3
+225,Equipe_2,28,4
+225,Equipe_1,20,3
+225,Equipe_1,13,2
+225,Equipe_1,10,2
+225,Equipe_1,11,2
+225,Equipe_2,47,6
+225,Equipe_2,22,3
+225,Equipe_2,17,3
+225,Equipe_1,29,4
+225,Equipe_2,22,3
+225,Equipe_2,12,2
+225,Equipe_1,25,4
+225,Match Nul,26,4
+225,Equipe_2,30,4
+225,Equipe_1,11,2
+225,Match Nul,13,2
+225,Match Nul,20,3
+225,Equipe_2,11,2
+225,Equipe_1,18,3
+225,Match Nul,12,2
+225,Equipe_1,11,2
+225,Equipe_1,16,3
+225,Equipe_2,11,2
+225,Match Nul,19,3
+225,Equipe_2,23,4
+225,Match Nul,11,2
+225,Equipe_1,14,2
+225,Equipe_1,22,4
+225,Equipe_1,13,2
+225,Equipe_2,13,2
+225,Match Nul,22,4
+225,Match Nul,14,3
+225,Equipe_1,14,2
+225,Equipe_2,16,3
+225,Match Nul,18,3
+225,Equipe_2,14,2
+225,Equipe_2,11,2
+225,Equipe_2,19,3
+225,Equipe_2,22,3
+225,Equipe_1,12,2
+225,Equipe_1,11,2
+225,Equipe_1,24,3
+225,Match Nul,19,3
+225,Equipe_2,14,3
+225,Equipe_2,29,4
+225,Match Nul,19,3
+225,Match Nul,13,2
+225,Equipe_1,28,4
+225,Equipe_1,18,3
+225,Equipe_2,21,3
+225,Equipe_2,53,6
+225,Equipe_1,9,2
+225,Equipe_1,6,2
+225,Match Nul,21,3
+225,Match Nul,11,2
+225,Equipe_1,10,2
+225,Match Nul,16,3
+225,Equipe_2,22,3
+225,Match Nul,23,3
+225,Equipe_2,14,2
+225,Match Nul,28,4
+225,Equipe_1,23,3
+225,Equipe_2,31,5
+225,Equipe_1,27,4
+225,Equipe_2,18,3
+225,Equipe_1,10,2
+225,Equipe_1,23,3
+225,Equipe_2,22,3
+225,Match Nul,12,2
+225,Match Nul,14,2
+225,Equipe_1,15,2
+225,Equipe_2,24,3
+225,Equipe_1,12,2
+225,Equipe_2,35,5
+225,Match Nul,32,4
+225,Equipe_2,13,2
+225,Match Nul,26,4
+225,Equipe_1,19,3
+225,Equipe_2,18,3
+225,Equipe_1,13,2
+225,Equipe_1,17,3
+225,Equipe_1,11,2
+225,Match Nul,35,5
+225,Equipe_1,17,4
+225,Equipe_1,27,4
+225,Equipe_1,18,3
+225,Match Nul,31,5
+225,Equipe_2,30,4
+225,Match Nul,28,4
+225,Match Nul,19,3
+225,Equipe_2,14,2
+225,Equipe_2,16,3
+225,Equipe_2,11,2
+225,Match Nul,7,2
+225,Equipe_2,13,3
+225,Equipe_2,7,2
+225,Equipe_2,8,2
+225,Equipe_1,8,3
+225,Equipe_2,5,2

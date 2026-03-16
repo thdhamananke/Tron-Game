@@ -3,16 +3,22 @@ package experiment;
 import java.util.*;
 import java.io.*;
 import model.*;
+
 public class ExperimentMain {
 
     public static void main(String[] args) {
-
+        
+        // MODE BATCH 
+        if (args.length >= 8) {
+            runBatchMode(args);
+            return;
+        }
+        
         Scanner sc = new Scanner(System.in);
 
         System.out.println("╔═══════════════════════════════════════════════════════════╗");
         System.out.println("║         ALLEZ C'EST PARTIE POUR L'EXPERIMENTATION !!      ║");
         System.out.println("╚═══════════════════════════════════════════════════════════╝\n");
-
 
         GameRunner runner = new GameRunner();
         ExperimentRunner experiment = new ExperimentRunner(runner);
@@ -25,8 +31,6 @@ public class ExperimentMain {
 
         List<Strategie> strategies = new ArrayList<>();
         Random random = new Random();
-        // int totalPlayers = nbEquipes * nbJoueurs;
-
 
         System.out.println("Configuration des stratégies :");
         int modeConfig;
@@ -37,14 +41,12 @@ public class ExperimentMain {
             if (modeConfig < 1 || modeConfig > 2) System.out.println("Choix invalide ! Recommencez.");
         } while (modeConfig < 1 || modeConfig > 2);
 
-        // 
         for (int i = 0; i < nbEquipes; i++) {
             int choixStrat, choixHeur;
 
-            // Mode Random
             if (modeConfig == 2) {
-                choixStrat = random.nextInt(3) + 1; 
-                choixHeur = random.nextInt(3) + 1;  
+                choixStrat = random.nextInt(5) + 1;
+                choixHeur = random.nextInt(3) + 1;
             } else {
                 System.out.println("\nConf de l'EQUIPE " + (i + 1));
                 
@@ -69,26 +71,27 @@ public class ExperimentMain {
                     choixHeur = Main.entier(sc, "Votre choix de l'Heuristique : ");
                     if (choixHeur < 1 || choixHeur > 3) System.out.println("Choix invalide ! Recommencez.");
                 } while (choixHeur < 1 || choixHeur > 3);
-
             }
-            // l'Heuristique
+
             Heuristic heuristic = switch (choixHeur) {
                 case 2 -> new VoronoiHeuristic();
                 case 3 -> new TreeOfChambersHeuristic();
                 default -> new FreeSpaceHeuristic();
             };
 
-            // Stratégie
-            Strategie strat = switch (choixStrat) {
-                // case 1 -> new MinMaxStrategie(heuristic, profondeur);
-                case 2 -> new AlphaBetaStrategie(heuristic, profondeur);
-                case 3 -> new MaxNStrategie(heuristic, profondeur);
-                // case 4 -> new ParanoidStrategie(heuristic, profondeur);
-                // case 5 -> new SOSStrategie(heuristic, profondeur);
-                default -> new MinMaxStrategie(heuristic, profondeur);
-            };
+            Strategie strat;
+            if (choixStrat == 5) { // SOS
+                strat = new SOSStrategie( heuristic, profondeur, new ArrayList<>());
+            } else {
+                strat = switch (choixStrat) {
+                    case 1 -> new MinMaxStrategie(heuristic, profondeur);
+                    case 2 -> new AlphaBetaStrategie(heuristic, profondeur);
+                    case 3 -> new MaxNStrategie(heuristic, profondeur);
+                    case 4 -> new ParanoidStrategie(heuristic, profondeur);
+                    default -> new MinMaxStrategie(heuristic, profondeur);
+                };
+            }
 
-            // On ajoute cette même stratégie pour tous les joueurs de cette équipe
             for (int jouer = 0; jouer < nbJoueurs; jouer++) {
                 strategies.add(strat);
             }
@@ -96,7 +99,6 @@ public class ExperimentMain {
             if (modeConfig == 2) {
                 System.out.println("Equipe " + (i + 1) + " "+ strat.getClass().getSimpleName() + " avec " + heuristic.getClass().getSimpleName());
             }
-            
         }
 
         ExperimentConfig config = new ExperimentConfig(taille, taille, nbEquipes, nbJoueurs, profondeur, nbGames, strategies);
@@ -113,7 +115,6 @@ public class ExperimentMain {
             System.out.println("Expérimentation terminée !");
             System.out.println("Tours joués dans cette session : " + sessionRes.getTotalTurns());
 
-            // les gagnants de cette session
             Map<Team, Integer> winners = sessionRes.getWinsPerTeam();
             if (winners != null && !winners.isEmpty()) {
                 System.out.print("Gagnant(s) de la session : ");
@@ -125,7 +126,6 @@ public class ExperimentMain {
                 System.out.println("Match nul sur cette session");
             }
 
-            // enregistrement des stats de cette session dans le globalResult 
             Map<Team, Double> rates = new HashMap<>();
             for(Team team : sessionRes.getWinsPerTeam().keySet()) {
                 rates.put(team, sessionRes.getWinRate(team));
@@ -161,14 +161,12 @@ public class ExperimentMain {
             }
         }
 
-
         String defaultName = "Exp_" + nbEquipes + "eq_" + profondeur + "depth";
         System.out.println("\nLe nom du fichier ou taper entrer pour garder le (nom par défaut : " + defaultName + ") : ");
         String input = sc.nextLine().trim();
         String csv = input.isEmpty() ? defaultName : input;
         String pdfPath = "pdf/" + csv + ".pdf";
 
-    
         File csvDir = new File("csv");
         File pdfDir = new File("pdf");
         if (!csvDir.exists() && !pdfDir.exists()) {
@@ -179,29 +177,100 @@ public class ExperimentMain {
         if (!pdfDir.exists()) {
             pdfDir.mkdirs();
         }
-        
 
-        PDFExporter.export(config, globalResult, strategies, pdfPath);
-        System.out.println("PDF généré avec succès !");
+        try {
+            PDFExporter.export(config, globalResult, strategies, pdfPath);
+            System.out.println("PDF généré avec succès !");
+        } catch (Exception e) {
+            System.err.println("Erreur PDF : " + e.getMessage());
+        }
 
         try {
             String filePath = "csv/" + csv + ".csv";
             CSVExporter.export(config, globalResult, strategies, filePath);
-            System.out.println("Résultats exportés dans avec succès dans csv !");
+            System.out.println("Résultats exportés avec succès dans csv !");
         } catch (IOException e) {
             System.err.println("Erreur lors de l'export CSV : " + e.getMessage());
         }
+    }
 
-        //------------------------------------------------------------------
-        //ExperimentResult result = experiment.run(config);
+    // ========== MODE BATCH ==========
+    private static void runBatchMode(String[] args) {
+        try {
+            int taille = Integer.parseInt(args[0]);
+            int nbEquipes = Integer.parseInt(args[1]);
+            int nbJoueurs = Integer.parseInt(args[2]);
+            int profondeur = Integer.parseInt(args[3]);
+            String strategieStr = args[4];
+            String heuristiqueStr = args[5];
+            int nbGames = Integer.parseInt(args[6]);
+            boolean isMix = Boolean.parseBoolean(args[7]);
+            String csvFile = args.length > 8 ? args[8] : "csv/resultat.csv";
+            String pdfFile = args.length > 9 ? args[9] : "pdf/resultat.pdf";
 
-        //ExperimentAnalyzer.generateAllCharts(result);
-        ExperimentResult result1 = experiment.run(config);
+            System.out.println("Mode batch - Configuration:");
+            System.out.println("  Plateau: " + taille + "x" + taille);
+            System.out.println("  Équipes: " + nbEquipes);
+            System.out.println("  Joueurs/équipe: " + nbJoueurs);
+            System.out.println("  Profondeur: " + profondeur);
+            System.out.println("  Stratégie: " + strategieStr);
+            System.out.println("  Heuristique: " + heuristiqueStr);
+            System.out.println("  Parties: " + nbGames);
+            System.out.println("  Mixte: " + isMix);
+            System.out.println("  CSV: " + csvFile);
+            System.out.println("  PDF: " + pdfFile);
 
-        //ChartGenerator.showWinPieChart(globalResult);
+            List<Strategie> strategies = new ArrayList<>();
+            Heuristic heuristic = createHeuristic(heuristiqueStr);
+            
+            // *** MODIFICATION UNIQUE POUR BATCH ***
+            Strategie strat = createStrategie(strategieStr, heuristic, profondeur);
+            
+            for (int i = 0; i < nbEquipes * nbJoueurs; i++) {
+                strategies.add(strat);
+            }
 
-        //------------------------------------------------------------------
+            ExperimentConfig config = new ExperimentConfig(
+                taille, taille, nbEquipes, nbJoueurs, 
+                profondeur, nbGames, strategies
+            );
 
+            GameRunner runner = new GameRunner();
+            ExperimentRunner experiment = new ExperimentRunner(runner);
+            ExperimentResult result = experiment.run(config);
 
+            PDFExporter.export(config, result, strategies, pdfFile);
+            CSVExporter.export(config, result, strategies, csvFile);
+            
+            System.out.println("Expérience terminée avec succès!");
+            
+        } catch (Exception e) {
+            System.err.println(" ERREUR: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static Heuristic createHeuristic(String name) {
+        switch(name) {
+            case "FreeSpaceHeuristic": return new FreeSpaceHeuristic();
+            case "VoronoiHeuristic": return new VoronoiHeuristic();
+            case "TreeOfChambersHeuristic": return new TreeOfChambersHeuristic();
+            default: 
+                System.out.println("Heuristique inconnue: " + name + ", utilisation FreeSpace");
+                return new FreeSpaceHeuristic();
+        }
+    }
+
+    private static Strategie createStrategie(String name, Heuristic h, int depth) {
+        switch(name) {
+            case "MinMaxStrategie": return new MinMaxStrategie(h, depth);
+            case "AlphaBetaStrategie": return new AlphaBetaStrategie(h, depth);
+            case "MaxNStrategie": return new MaxNStrategie(h, depth);
+            case "ParanoidStrategie": return new ParanoidStrategie(h, depth);
+            case "SOSStrategie": return new SOSStrategie( h, depth ,new ArrayList<>());
+            default:
+                System.out.println("Stratégie inconnue: " + name + ", utilisation MinMax");
+                return new MinMaxStrategie(h, depth);
+        }
     }
 }

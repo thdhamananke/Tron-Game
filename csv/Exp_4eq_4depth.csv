@@ -1,0 +1,14 @@
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 1
+Profondeur IA = 4
+Nombre Parties = 3
+
+Parties,T1,T2,T3,T4,Conf %
+NbParties,SOS|VoH,MnS|FSH,MnS|VoH,PaS|FSH,
+3,100.0%,0.0%,0.0%,0.0%,±0.00%
+Total,100.0%,0.0%,0.0%,0.0%,±0.00%
+
+TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+484,Equipe_1,159,8
+484,Equipe_1,142,3
+484,Equipe_1,149,3
