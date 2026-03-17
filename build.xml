@@ -116,7 +116,7 @@
 
     <!-- ==================== Run ==================== -->
     <target name="run" depends="dist" description="Run application">
-        <java classname="model.Main" fork="true"> 
+        <java classname="experiment.ExperimentMain" fork="true"> 
             <classpath>
                 <pathelement location="${dist.home}/${app.fullname}.jar"/>
                 <path refid="compile.classpath"/>

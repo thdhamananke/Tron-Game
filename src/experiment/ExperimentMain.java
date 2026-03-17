@@ -1,6 +1,9 @@
 package experiment;
 
 import java.util.*;
+
+import org.jfree.chart.JFreeChart;
+
 import java.io.*;
 import model.*;
 
@@ -174,17 +177,15 @@ public class ExperimentMain {
             pdfDir.mkdirs();
         }
 
-        if (!pdfDir.exists()) {
-            pdfDir.mkdirs();
-        }
-
         try {
             PDFExporter.export(config, globalResult, strategies, pdfPath);
             System.out.println("PDF généré avec succès !");
         } catch (Exception e) {
             System.err.println("Erreur PDF : " + e.getMessage());
         }
-         String filePath = "";
+
+        String filePath = "";
+
         try {
             filePath = "csv/" + csv + ".csv";
             CSVExporter.export(config, globalResult, strategies, filePath);
@@ -202,6 +203,11 @@ public class ExperimentMain {
         // ExperimentResult result1 = experiment.run(config);
 
         // ChartGenerator.showWinPieChart(globalResult);
+        // showWinPieChart(globalResult);
+        // ChartGenerator.createTimeChart(filePath);
+        // ChartGenerator.createTurnsChart(filePath);
+        ChartGenerator.createWinPieChart(filePath);
+
 
     }
 

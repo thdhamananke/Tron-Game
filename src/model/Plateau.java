@@ -195,7 +195,6 @@ public Set<Position> getObstacles() {
      * Cette méthode est essentielle pour les algorithmes
      * de recherche (Minimax, MAXN, SOS).
      *
-     * @param original plateau à copier
      * @return copie indépendante du plateau
     */
     public Plateau copierPlateau() {

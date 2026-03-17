@@ -115,10 +115,11 @@ public class Main {
 
     /**
      * Permet de joueur une partie.
-     * @param modele    le modele du jeu
-     * @param joueurs   list des joueurs
-     * @param strategies    list des strategies
-     * @param maxTours  le nombre de tour maximale
+     * 
+     * @param modeleThread      le modele du jeu
+     * @param joueurs           list des joueurs
+     * @param strategies        list des strategies
+     * @param maxTours          le nombre de tour maximale
     */
     public static void jouerPartieGenerique(ModeleJeuThread modeleThread, List<Player> joueurs, int maxTours) {
         int tour = 0;
