@@ -184,11 +184,13 @@ public class ExperimentMain {
         } catch (Exception e) {
             System.err.println("Erreur PDF : " + e.getMessage());
         }
-
+         String filePath = "";
         try {
-            String filePath = "csv/" + csv + ".csv";
+            filePath = "csv/" + csv + ".csv";
             CSVExporter.export(config, globalResult, strategies, filePath);
             System.out.println("Résultats exportés avec succès dans csv !");
+            ExperimentAnalyzer.generateAllCharts(filePath); 
+            System.out.println("succès!");
         } catch (IOException e) {
             System.err.println("Erreur lors de l'export CSV : " + e.getMessage());
         }
@@ -243,6 +245,8 @@ public class ExperimentMain {
             CSVExporter.export(config, result, strategies, csvFile);
             
             System.out.println("Expérience terminée avec succès!");
+            
+            
             
         } catch (Exception e) {
             System.err.println(" ERREUR: " + e.getMessage());

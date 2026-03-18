@@ -248,7 +248,7 @@ public class ExperimentAnalyzer {
 
             JOptionPane.showMessageDialog(mainFrame, "Expérience terminée ! CSV et PDF générés.");
 
-            generateAllCharts(filePath);
+          
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(mainFrame, "Erreur : " + ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);

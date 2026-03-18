@@ -104,9 +104,9 @@ public class ChartGenerator {
                         if (line.startsWith("TailleGrille") || line.startsWith("Parties") || line.isEmpty()) continue;
 
                         String[] values = line.split(",");
-                        if (values.length > 4) {
+                        if (values.length >2) {
                             String team = values[1].trim();
-                            double time = Double.parseDouble(values[4].trim());
+                            double time = Double.parseDouble(values[2].trim());
 
                             if (team.startsWith("Equipe_")) {
                                 totalWinTimePerTeam.put(team, totalWinTimePerTeam.getOrDefault(team, 0.0) + time);
@@ -155,9 +155,9 @@ public class ChartGenerator {
                         if (line.startsWith("TailleGrille") || line.startsWith("Parties") || line.isEmpty()) continue;
 
                         String[] values = line.split(",");
-                        if (values.length > 5) {
+                        if (values.length >3) {
                             String team = values[1].trim();
-                            double turn = Double.parseDouble(values[5].trim());
+                            double turn = Double.parseDouble(values[3].trim());
 
                             if (team.startsWith("Equipe_")) {
                                 totalWinTurnPerTeam.put(team, totalWinTurnPerTeam.getOrDefault(team, 0.0) + turn);
