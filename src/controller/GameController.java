@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.util.List;
 
 /**
- * Contrôleur principal - VERSION COMPLÈTE AVEC LOGS
+ * Contrôleur principal - 
  */
 public class GameController {
 

@@ -78,7 +78,12 @@ public class GameRunner {
 
         long time = System.currentTimeMillis() - start;
 
-        return new GameResult(modele.getEquipeGagnante(), time, modele.getTour(), joueurs);
+        // ici j'ai modifié
+        Team winner = modele.getEquipeGagnante();
+        if (winner == null && !equipes.isEmpty()) {
+            winner = equipes.stream().filter(t -> t.getMembers().stream().anyMatch(Player::isAlive)).findFirst().orElse(null);
+        }
+        return new GameResult(winner, time, tour, joueurs);
     }
 
     private int calculerMaxTours(int ligne, int colonne, int joueurs) {

@@ -1,146 +1,229 @@
 #!/bin/bash
 
-
 BASE_DIR="$(pwd)"
 RESULTS_DIR="$BASE_DIR/csv"
 PDF_DIR="$BASE_DIR/pdf"
 LIB_DIR="$BASE_DIR/lib"
 JAVA_CP="$BASE_DIR/build/classes:$LIB_DIR/*"
 
+mkdir -p "$RESULTS_DIR" "$PDF_DIR" "$BASE_DIR/build/classes"
 
-
-
-# COMPILATION
-
+#compilation
 echo "Compilation en cours..."
 find "$BASE_DIR/src" -name "*.java" > sources.txt
+
 javac -cp "$LIB_DIR/*" -d "$BASE_DIR/build/classes" @sources.txt
 if [ $? -ne 0 ]; then
     echo "Erreur compilation"
     rm sources.txt
     exit 1
 fi
+
 rm sources.txt
-echo " Compilation réussie"
-
-
-
-# PARAMÈTRES COMPLETS
-
-plateau_sizes=(15 20 25 30)
-team_sizes=(2 3 4 5)
-players_per_team=(1 2 3)
-depths=(3 4 5 6)
-strategies=("MinMaxStrategie" "AlphaBetaStrategie" "MaxNStrategie" "ParanoidStrategie")
-heuristics=("FreeSpaceHeuristic" "VoronoiHeuristic" "TreeOfChambersHeuristic")
-PARTIES_PAR_CONFIG=4 
-
-# ====================================================
-# CALCUL DU NOMBRE DE CONFIGURATIONS
-# ====================================================
-total_configs=$(( ${#plateau_sizes[@]} * ${#team_sizes[@]} * ${#players_per_team[@]} * 
-                  ${#depths[@]} * ${#strategies[@]} * ${#heuristics[@]} ))
-
-
-echo "        EXPÉRIENCES MASSIVES         "
-
-echo "Configurations: $total_configs"
-echo "Parties totales: $((total_configs * PARTIES_PAR_CONFIG))"
+echo "Compilation réussie"
 echo ""
 
-# Demander confirmation
-echo "1) Lancer toutes les expériences"
-echo "2) Quitter"
-read -p "Choix: " choice
+#config
+plateau_sizes=(12 15)
+depths=(3 4)
 
-case $choice in
-    1)
-        PARTIES_PAR_CONFIG=1000
-        ;;
-    2)
-        exit 0
-        ;;
-esac
+# DUEL FIXE
+equipes=2
+joueurs=1
+total_players=2
 
+strategies=("MinMaxStrategie" "AlphaBetaStrategie" "MaxNStrategie" "ParanoidStrategie")
+heuristics=("FreeSpaceHeuristic" "VoronoiHeuristic")
 
-# FICHIER RÉSUMÉ
+PARTIES_PAR_CONFIG=50
 
-SUMMARY_FILE="$RESULTS_DIR/summary_$(date +%Y%m%d_%H%M%S).csv"
-echo "Date,Plateau,Equipes,Joueurs,Profondeur,Strategie,Heuristique,Victoires_Equipe1,Victoires_Equipe2,Victoires_Equipe3,Victoires_Equipe4,MatchsNuls,TempsMoyen,ToursMoyens" > "$SUMMARY_FILE"
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+MASTER_CSV="$RESULTS_DIR/duel_$TIMESTAMP.csv"
+MASTER_PDF="$PDF_DIR/duel_$TIMESTAMP.pdf"
 
+TMP_CSV="/tmp/temp_$TIMESTAMP.csv"
+TMP_PDF="/tmp/temp_$TIMESTAMP.pdf"
+TMP_PDF_LIST=()
 
-# BOUCLE PRINCIPALE
+# Créer en-tete du CSV
+echo "# EXPÉRIENCES DUEL - $(date)" > "$MASTER_CSV"
+echo "# Plateau: ${plateau_sizes[*]}, Profondeurs: ${depths[*]}" >> "$MASTER_CSV"
+echo "# Stratégies: ${strategies[*]}" >> "$MASTER_CSV"
+echo "# Heuristiques: ${heuristics[*]}" >> "$MASTER_CSV"
+echo "# Parties par config: $PARTIES_PAR_CONFIG" >> "$MASTER_CSV"
+echo "" >> "$MASTER_CSV"
 
 current=0
 start_time=$(date +%s)
 
+# calcul de nbr total de comibaisons
+total=$(( ${#plateau_sizes[@]} * ${#depths[@]} * ${#strategies[@]} * ${#strategies[@]} * ${#heuristics[@]} * ${#heuristics[@]} ))
+
+# EXPÉRIMENTATIONS
 for plateau in "${plateau_sizes[@]}"; do
-    for equipes in "${team_sizes[@]}"; do
-        for joueurs in "${players_per_team[@]}"; do
-            # Éviter trop de joueurs
-            total_players=$((equipes * joueurs))
-            if [ $total_players -gt 16 ]; then
-                echo "  Ignoré: ${equipes}eq x ${joueurs}j = $total_players joueurs"
-                continue
-            fi
-            
-            for profondeur in "${depths[@]}"; do
-                for strategie in "${strategies[@]}"; do
-                    for heuristique in "${heuristics[@]}"; do
-                        current=$((current + 1))
-                        
-                        config_name="P${plateau}_E${equipes}_J${joueurs}_D${profondeur}_${strategie}_${heuristique}"
-                        csv_file="$RESULTS_DIR/${config_name}.csv"
-                        pdf_file="$PDF_DIR/${config_name}.pdf"
+for profondeur in "${depths[@]}"; do
 
-                        
-                        echo "[$current/$total_configs] $config_name"
-                        
-                        # Lancer l'expérience
-                        java -cp "$JAVA_CP" experiment.ExperimentMain \
-                            "$plateau" "$equipes" "$joueurs" "$profondeur" \
-                            "$strategie" "$heuristique" "$PARTIES_PAR_CONFIG" "false" \
+for strat1 in "${strategies[@]}"; do
+for strat2 in "${strategies[@]}"; do
 
-                        
-                        if [ $? -eq 0 ] && [ -f "$csv_file" ]; then
-                            echo "  Terminé"
-                            
-                            # Compter les victoires (approximation - à adapter)
-                            eq1=$(grep -c "Equipe_1" "$csv_file" 2>/dev/null || echo 0)
-                            eq2=$(grep -c "Equipe_2" "$csv_file" 2>/dev/null || echo 0)
-                            eq3=$(grep -c "Equipe_3" "$csv_file" 2>/dev/null || echo 0)
-                            eq4=$(grep -c "Equipe_4" "$csv_file" 2>/dev/null || echo 0)
-                            nuls=$(grep -c "Match Nul" "$csv_file" 2>/dev/null || echo 0)
-                            
-                            # Ajouter au résumé
-                            echo "$(date +%Y-%m-%d),$plateau,$equipes,$joueurs,$profondeur,$strategie,$heuristique,$eq1,$eq2,$eq3,$eq4,$nuls,0,0" >> "$SUMMARY_FILE"
+# Évite meme conf inutile (A vs A)
+[ "$strat1" == "$strat2" ] && continue
 
+for heur1 in "${heuristics[@]}"; do
+for heur2 in "${heuristics[@]}"; do
 
-                        fi
-                        
-                        # Petite pause
-                        sleep 2
-                    done
-                done
-            done
-        done
-    done
+current=$((current + 1))
+echo -n "[$current/$total] P${plateau} D${profondeur} ${strat1}/${heur1} vs ${strat2}/${heur2} ... "
+
+# Config string
+config="P${plateau}_D${profondeur}_${strat1}_${heur1}_VS_${strat2}_${heur2}"
+
+# Listes pour le batch
+strategies_list="$strat1,$strat2"
+heuristics_list="$heur1,$heur2"
+
+# Exécution
+java -cp "$JAVA_CP" experiment.ExperimentMain \
+    "$plateau" "$equipes" "$joueurs" "$profondeur" \
+    "$strategies_list" "$heuristics_list" "$PARTIES_PAR_CONFIG" "false" \
+    "$TMP_CSV" "$TMP_PDF" > /dev/null 2>&1
+
+# TRAITEMENT CSV
+
+if [ -f "$TMP_CSV" ]; then
+    echo "" >> "$MASTER_CSV"
+    echo "# CONFIG: $config" >> "$MASTER_CSV"
+    echo "# Plateau: ${plateau}x${plateau}, Profondeur: $profondeur" >> "$MASTER_CSV"
+    echo "# Stratégies: $strat1 ($heur1) vs $strat2 ($heur2)" >> "$MASTER_CSV"
+    echo "# Parties: $PARTIES_PAR_CONFIG" >> "$MASTER_CSV"
+    
+    cat "$TMP_CSV" >> "$MASTER_CSV"
+    rm -f "$TMP_CSV"
+    echo -n "CSV "
+else
+    echo -n " CSV "
+fi
+
+# TRAITEMENT PDF
+
+if [ -f "$TMP_PDF" ]; then
+    NAMED_PDF="/tmp/pdf_${current}_$TIMESTAMP.pdf"
+    mv "$TMP_PDF" "$NAMED_PDF"
+    TMP_PDF_LIST+=("$NAMED_PDF")
+    echo " PDF"
+else
+    echo " PDF"
+fi
+
+done
+done
+done
 done
 
+done
+done
 
-# RAPPORT FINAL
+echo ""
 
+
+# FUSION PDF 
+
+if [ ${#TMP_PDF_LIST[@]} -gt 0 ]; then
+    echo "Fusion de ${#TMP_PDF_LIST[@]} PDFs..."
+    
+    # Vérifier si pdfunite est disponible
+    if command -v pdfunite &> /dev/null; then
+        echo "Utilisation de pdfunite..."
+        pdfunite "${TMP_PDF_LIST[@]}" "$MASTER_PDF"
+            # Fallback: garder le premier
+            cp "${TMP_PDF_LIST[0]}" "$MASTER_PDF"
+        fi
+    
+    # Sinon, vérifier Ghostscript
+    elif command -v gs &> /dev/null; then
+        echo "Utilisation de Ghostscript..."
+        gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$MASTER_PDF" "${TMP_PDF_LIST[@]}"
+        if [ $? -eq 0 ]; then
+            echo " PDF fusionné: $MASTER_PDF"
+        else
+            echo " Erreur fusion avec Ghostscript"
+            cp "${TMP_PDF_LIST[0]}" "$MASTER_PDF"
+        fi
+    
+    # Dernier recours: utiliser Java PdfMerger
+    elif [ -f "$BASE_DIR/build/classes/experiment/PdfMerger.class" ]; then
+        echo "Utilisation de PdfMerger Java..."
+        java -cp "$JAVA_CP" experiment.PdfMerger "$MASTER_PDF" "${TMP_PDF_LIST[@]}"
+        if [ $? -eq 0 ]; then
+            echo " PDF fusionné: $MASTER_PDF"
+        else
+            echo " Erreur fusion PDF"
+            cp "${TMP_PDF_LIST[0]}" "$MASTER_PDF"
+        fi
+    else
+        echo " Aucun outil de fusion disponible"
+        echo "   Installez pdfunite (poppler-utils) ou Ghostscript"
+        cp "${TMP_PDF_LIST[0]}" "$MASTER_PDF"
+        echo "  Premier PDF conservé"
+    fi
+    
+    # Nettoyage
+    for f in "${TMP_PDF_LIST[@]}"; do
+        rm -f "$f"
+    done
+else
+    echo " Aucun PDF à fusionner"
+fi
+
+
+# STATISTIQUES FINALES
 end_time=$(date +%s)
 duration=$((end_time - start_time))
 
+# Compter les lignes de résultats
+total_lines=$(grep -c "^[0-9]" "$MASTER_CSV" 2>/dev/null || echo 0)
 
-
-echo "EXPÉRIENCES TERMINÉES"
-
-echo "Temps: $((duration / 3600))h $(((duration % 3600) / 60))m $((duration % 60))s"
-echo "Résumé: $SUMMARY_FILE"
-
-# Afficher le top 10
 echo ""
-echo "TOP 10 MEILLEURES CONFIGURATIONS:"
-tail -n +2 "$SUMMARY_FILE" | sort -t',' -k8 -nr | head -10 | column -t -s','
+echo "══════════════════════════════════════════"
+echo "EXPÉRIENCES TERMINÉES"
+echo "══════════════════════════════════════════"
+echo "Temps      : $((duration / 3600))h $(((duration % 3600) / 60))m $((duration % 60))s"
+echo "Configs    : $current / $total"
+echo "Parties    : $total_lines"
+echo "CSV        : $MASTER_CSV"
+echo "PDF        : $MASTER_PDF"
+echo "══════════════════════════════════════════"
+
+# Aperçu rapide des résultats
+if [ $total_lines -gt 0 ]; then
+    echo ""
+    echo "Aperçu des résultats (premières lignes):"
+    head -5 "$MASTER_CSV"
+fi
+
+# LANCEMENT DE L'ANALYSEUR DE GRAPHIQUES
+echo ""
+echo "══════════════════════════════════════════"
+echo "Lancement de l'analyseur de graphiques..."
+echo "══════════════════════════════════════════"
+
+# Vérifier que le fichier CSV existe
+if [ -f "$MASTER_CSV" ]; then
+    echo "Fichier CSV: $MASTER_CSV"
+    
+    # Lancer l'analyseur en arrière-plan
+    java -cp "$JAVA_CP" experiment.ExperimentConfigwithChartsmain "$MASTER_CSV" &
+    CHART_PID=$!
+    
+    echo "Analyseur lancé (PID: $CHART_PID)"
+
+
+else
+    echo " Fichier CSV non trouvé: $MASTER_CSV"
+    echo "   Impossible de lancer l'analyseur"
+fi
+
+echo ""
+echo "══════════════════════════════════════════"
+echo "Script terminé"
+echo "══════════════════════════════════════════"
