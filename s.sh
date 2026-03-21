@@ -135,11 +135,15 @@ if [ ${#TMP_PDF_LIST[@]} -gt 0 ]; then
     if command -v pdfunite &> /dev/null; then
         echo "Utilisation de pdfunite..."
         pdfunite "${TMP_PDF_LIST[@]}" "$MASTER_PDF"
+        if [ $? -eq 0 ]; then
+            echo " PDF fusionné: $MASTER_PDF"
+        else
+            echo " Erreur fusion avec pdfunite"
             # Fallback: garder le premier
             cp "${TMP_PDF_LIST[0]}" "$MASTER_PDF"
         fi
     
-    # Sinon, vérifier Ghostscript
+    # Sinon
     elif command -v gs &> /dev/null; then
         echo "Utilisation de Ghostscript..."
         gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$MASTER_PDF" "${TMP_PDF_LIST[@]}"
@@ -149,8 +153,7 @@ if [ ${#TMP_PDF_LIST[@]} -gt 0 ]; then
             echo " Erreur fusion avec Ghostscript"
             cp "${TMP_PDF_LIST[0]}" "$MASTER_PDF"
         fi
-    
-    # Dernier recours: utiliser Java PdfMerger
+  
     elif [ -f "$BASE_DIR/build/classes/experiment/PdfMerger.class" ]; then
         echo "Utilisation de PdfMerger Java..."
         java -cp "$JAVA_CP" experiment.PdfMerger "$MASTER_PDF" "${TMP_PDF_LIST[@]}"
