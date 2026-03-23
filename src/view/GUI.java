@@ -93,7 +93,7 @@ public class GUI extends JFrame implements EcouteurModele {
         // 🔥 FIX: Conversion correcte avec les têtes des joueurs
         CellState[][] cellStates = convertToCellStates(game);
         gameBoard.updateFromModel(cellStates);
-        
+       // gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
         bottomPanel.updateLegend(game.getJoueurs());
 
         // Message de victoire
@@ -116,13 +116,13 @@ public class GUI extends JFrame implements EcouteurModele {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 Position pos = new Position(i, j);
-                Cellule cell = plateau.getCellule(pos);
-                
+                Cellule cell = game.getPlateau().getCellule(pos); 
                 if (cell.isEmpty()) {
                     states[i][j] = CellState.EMPTY;
                 } else {
                     states[i][j] = CellState.WALL;
                 }
+
             }
         }
         
@@ -132,7 +132,10 @@ public class GUI extends JFrame implements EcouteurModele {
             if (p.isAlive() && p.getPosition() != null) {
                 Position pos = p.getPosition();
                 if (plateau.estDansPlateau(pos)) {
+                     // if (states[pos.getRow()][pos.getCol()] != CellState.WALL) {
+                    
                     states[pos.getRow()][pos.getCol()] = CellState.PLAYER;
+                     // }
                 }
             }
         }
@@ -179,7 +182,6 @@ public class GUI extends JFrame implements EcouteurModele {
             
             sb.append("\n🎉 GAGNANT : ").append(gagnant.getName()).append(" 🎉\n\n");
             sb.append("═══════════════════════════════");
-            
             message = sb.toString();
         }
 

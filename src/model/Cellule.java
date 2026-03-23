@@ -1,4 +1,7 @@
 package model;
+
+
+
 public class Cellule {
     private Position position;
     private CellState state;
@@ -27,9 +30,17 @@ public class Cellule {
     }
     
     public boolean isEmpty() {
-        return owner == null;
+          if(owner == null && this.state != CellState.WALL ){
+            return true;
+        }else{
+             return false;
+        }
+        //return owner == null;
     }
 
+    public void setState(CellState newState ){
+        this.state = newState ;
+    }
     
     public void occupy(Player player) {
         this.owner = player;
@@ -42,7 +53,8 @@ public class Cellule {
     
     /** l'etat de la cellule */
     public CellState getState() {
-        return owner == null ? CellState.EMPTY : CellState.WALL;
+        return state;
+        
     }
 
     @Override

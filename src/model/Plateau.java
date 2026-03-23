@@ -84,11 +84,22 @@ public class Plateau {
 
 public void ajouterObstacle(Position p) {
     obstacles.add(p);
+    // Mettre à jour l'état de la cellule
+    if (estDansPlateau(p)) {
+       // grille[p.getRow()][p.getCol()].setState(CellState.WALL);
+        getCellule(p).setState(CellState.WALL);
+        System.out.println(getCellule(p).getState());
+    }
 }
 
 public void retirerObstacle(Position p) {
     obstacles.remove(p);
+    // Mettre à jour l'état de la cellule
+    if (estDansPlateau(p)) {
+        grille[p.getRow()][p.getCol()].setState(CellState.EMPTY);
+    }
 }
+
 
 public void clearObstacles() {
     obstacles.clear();
@@ -223,14 +234,7 @@ public Set<Position> getObstacles() {
 
         for (int l = 0; l < nbLignes; l++) {
             for (int c = 0; c < nbColonnes; c++) {
-                Cellule cell = grille[l][c];
-                if (cell.isEmpty()) {
-                    etat[l][c] = CellState.EMPTY;
-                } else if (cell.getState()==CellState.WALL) {
-                    etat[l][c] = CellState.WALL;
-                } else {
-                    etat[l][c] = CellState.PLAYER; // ou PLAYER_ROUGE / PLAYER_BLEU
-                }
+                etat[l][c] = grille[l][c].getState();
             }
         }
         return etat;

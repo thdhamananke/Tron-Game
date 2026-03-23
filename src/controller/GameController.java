@@ -142,9 +142,7 @@ public class GameController {
             p.setAlive(true);
         }
         
-        game = new ModeleJeu(game.getPlateau().getNbLignes(),
-                             game.getPlateau().getNbColonnes(),
-                             joueurs);
+        game.restart();
         modeleThread = new ModeleJeuThread(game, delay);
         
         if (vue != null) {
@@ -259,7 +257,7 @@ public class GameController {
 
     /* ================= GETTERS ================= */
 
-    public ModeleJeu getGame() { return game; }
+    public ModeleJeu getGame() { return this.game; }
     public GameHistory getHistory() { return history; }
     public boolean isRunning() { return running; }
     public boolean isPaused() { return paused; }

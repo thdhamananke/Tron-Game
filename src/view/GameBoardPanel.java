@@ -23,7 +23,7 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
 
     public GameBoardPanel(ModeleJeu game) {
         this.game = game;
-
+        System.out.println("in constructer");
         cellStates = new CellState[rows][columns];
         setBackground(java.awt.Color.WHITE);
         setPreferredSize(new Dimension(600, 600));
@@ -36,9 +36,17 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
                 toggleObstacle(e.getX(), e.getY());
             }
         });
+        addMouseMotionListener(new MouseAdapter() {
+        @Override
+        public void mouseDragged(MouseEvent e) {
+            if (game == null) return;
+            toggleObstacle(e.getX(), e.getY());
+        }
+    });
     }
 
     private void initializeCellStates() {
+        System.out.println("initialqin");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 cellStates[i][j] = CellState.EMPTY;
@@ -56,36 +64,62 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
 
     /* ================= OBSTACLES ================= */
 
-    private void toggleObstacle(int mouseX, int mouseY) {
-        int cellSize = calculateCellSize();
-        int offsetX = (getWidth() - columns * cellSize) / 2;
-        int offsetY = (getHeight() - rows * cellSize) / 2;
+   private void toggleObstacle(int mouseX, int mouseY) {
+    System.out.println("toggleObstacle called at: " + mouseX + ", " + mouseY); // DEBUG
+    int cellSize = calculateCellSize();
+    int offsetX = (getWidth() - columns * cellSize) / 2;
+    int offsetY = (getHeight() - rows * cellSize) / 2;
 
-        int col = (mouseX - offsetX) / cellSize;
-        int row = (mouseY - offsetY) / cellSize;
+    int col = (mouseX - offsetX) / cellSize;
+    int row = (mouseY - offsetY) / cellSize;
 
-        if (row < 0 || row >= rows || col < 0 || col >= columns) return;
+    System.out.println("Calculated row: " + row + ", col: " + col); // DEBUG
 
-        Position pos = new Position(row, col);
-
-        // Interdire position de départ (si vous voulez conserver cette règle)
-        // Ici on peut laisser ou adapter selon la configuration réelle
-        if ((row == 2 && col == 2) || (row == rows - 3 && col == columns - 3)) {
-            JOptionPane.showMessageDialog(this,
-                    "Impossible de placer un obstacle sur une position de départ!",
-                    "Avertissement",
-                    JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        if (game.getPlateau().getObstacles().contains(pos)) {
-            game.retirerObstacle(pos);
-        } else {
-            game.ajouterObstacle(pos);
-        }
-
-        repaint();
+    if (row < 0 || row >= rows || col < 0 || col >= columns) {
+        System.out.println("Out of bounds"); // DEBUG
+        return;
     }
+
+    Position pos = new Position(row, col);
+
+    if ((row == 2 && col == 2) || (row == rows - 3 && col == columns - 3)) {
+        JOptionPane.showMessageDialog(this,
+                "Impossible de placer un obstacle sur une position de départ!",
+                "Avertissement",
+                JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    System.out.println("Before toggle, cell at (" + row + ", " + col + "): " + cellStates[row][col]);
+    
+    if (game.getPlateau().getObstacles().contains(pos)) {
+        System.out.println("Removing obstacle at: " + pos);
+      //     this.game.getPlateau().getCellule(pos).setState(CellState.EMPTY);// DEBUG 
+      //  this.cellStates[row][col] = CellState.EMPTY;
+        this.game.retirerObstacle(pos);
+                 System.out.println("game pos at : "+ pos +"is : "+this.game.getPlateau().getCellule(pos).getState() );
+        
+    } else {
+        System.out.println("Adding obstacle at: " + pos);
+       //this.cellStates[row][col] = CellState.WALL; 
+       // this.game.getPlateau().getCellule(pos).setState(CellState.WALL);// DEBUG// DEBUG
+        this.game.ajouterObstacle(pos);
+         System.out.println("game pos at : "+ pos +"is : "+this.game.getPlateau().getCellule(pos).getState() );
+
+
+        
+    }
+     System.out.println("After toggle, cell at (" + row + ", " + col + "): " + cellStates[row][col]);
+    
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+             System.out.println("Cin model vue ell at (" + i + ", " + j + "): " + game.getPlateau().getEtatPourVue()[i][j]);
+        }
+         }
+     updateFromModel(game.getPlateau().getEtatPourVue());
+    revalidate();
+    repaint();
+}
+
 
     public void clearObstacles() {
         if (game != null) {
@@ -104,12 +138,18 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
     }
 
     public void updateFromModel(CellState[][] modelGrid) {
-        if (modelGrid == null || modelGrid.length == 0) return;
+        if (modelGrid == null ) return;
 
         this.rows = modelGrid.length;
         this.columns = modelGrid[0].length;
-        this.cellStates = modelGrid;
-
+        //this.cellStates = modelGrid;
+         for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            if(modelGrid[i][j] == CellState.WALL){
+            }
+            this.cellStates[i][j] = modelGrid[i][j];
+        }
+         }
         repaint();
     }
 
@@ -152,13 +192,13 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
         int offsetY = (getHeight() - totalHeight) / 2;
 
         // Dessiner les cellules
+
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns; col++) {
                 int x = offsetX + col * cellSize;
                 int y = offsetY + row * cellSize;
-
                 java.awt.Color fillColor = getCellColor(row, col);
-
+                //System.out.println("in"+row +" "+ col +"color is"+fillColor );
                 g2d.setColor(fillColor);
                 g2d.fillRect(x, y, cellSize, cellSize);
 
@@ -199,13 +239,15 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
         g2d.fill(head);
     }
 
-    private java.awt.Color getCellColor(int row, int col) {
+    private java.awt.Color getCellColor (int row, int col) {
         if (cellStates == null) return java.awt.Color.WHITE;
-
+      //   System.out.println("Cell at (" + row + ", " + col + "): " + cellStates[row][col]);
         switch (cellStates[row][col]) {
             case EMPTY:
+               // System.out.println("in cell color empty");
                 return java.awt.Color.WHITE;
             case WALL:
+                System.out.println("in cell color wall");
                 return java.awt.Color.DARK_GRAY;
             case PLAYER:
                 // On retourne la couleur du joueur plus claire pour le fond
@@ -225,6 +267,7 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
     public void setGame(ModeleJeu game) {
         this.game = game;
         if (game != null && game.getPlateau() != null) {
+            System.out.println("in set game ");
             updateFromModel(game.getPlateau().getEtatPourVue());
         }
     }

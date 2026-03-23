@@ -32,15 +32,25 @@ public class ModeleJeu extends AbstractModeleEcoutable {
         this.jeuEnCours = false;
     }
 
+    public void restart(){
+        this.plateau = new Plateau(plateau.getNbLignes(), plateau.getNbColonnes());
+        obstacles = new HashSet<>();
+        this.tour = 0;
+        this.jeuEnCours = false;
+    }
+
     /* ================= OBSTACLES ================= */
 
     public void ajouterObstacle(Position p) {
         obstacles.add(p);
+        this.plateau.ajouterObstacle(p);
         notifier();
     }
 
     public void retirerObstacle(Position p) {
         obstacles.remove(p);
+
+        this.plateau.retirerObstacle(p);
         notifier();
     }
 
@@ -84,6 +94,9 @@ public class ModeleJeu extends AbstractModeleEcoutable {
 
             plateau.placerJoueur(j.getPosition(), j);
         }
+        for(Position obs : obstacles){
+            plateau.ajouterObstacle(obs);
+        }
 
         notifier();
     }
@@ -121,8 +134,7 @@ public class ModeleJeu extends AbstractModeleEcoutable {
 
     /* ================= DEPLACEMENT ================= */
 
-    private void appliquerDeplacement(Player joueur,
-                                      Direction direction) {
+    private void appliquerDeplacement(Player joueur,Direction direction) {
 
         Position actuelle = joueur.getPosition();
         Position suivante = actuelle.move(direction);
