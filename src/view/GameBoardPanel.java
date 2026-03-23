@@ -21,6 +21,11 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
     private CellState[][] cellStates;
     private ModeleJeu game;
 
+    private int obstacleButton = 0;
+    
+    private int lastToggledRow = -1;
+private int lastToggledCol = -1;
+
     public GameBoardPanel(ModeleJeu game) {
         this.game = game;
         System.out.println("in constructer");
@@ -39,9 +44,18 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
         addMouseMotionListener(new MouseAdapter() {
         @Override
         public void mouseDragged(MouseEvent e) {
-            if (game == null) return;
+            int cellWidth = getPreferredSize().width / columns;
+            int cellHeight = getPreferredSize().height / rows;
+             if (game == null) return;
+                 int row = e.getY() / cellHeight; 
+                int col = e.getX() / cellWidth;  
+       
+        if (row != lastToggledRow || col != lastToggledCol) {
             toggleObstacle(e.getX(), e.getY());
+            lastToggledRow = row;
+            lastToggledCol = col;
         }
+    }
     });
     }
 
@@ -92,30 +106,18 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
     System.out.println("Before toggle, cell at (" + row + ", " + col + "): " + cellStates[row][col]);
     
     if (game.getPlateau().getObstacles().contains(pos)) {
+      
         System.out.println("Removing obstacle at: " + pos);
-      //     this.game.getPlateau().getCellule(pos).setState(CellState.EMPTY);// DEBUG 
-      //  this.cellStates[row][col] = CellState.EMPTY;
         this.game.retirerObstacle(pos);
-                 System.out.println("game pos at : "+ pos +"is : "+this.game.getPlateau().getCellule(pos).getState() );
-        
+                 
     } else {
+
         System.out.println("Adding obstacle at: " + pos);
-       //this.cellStates[row][col] = CellState.WALL; 
-       // this.game.getPlateau().getCellule(pos).setState(CellState.WALL);// DEBUG// DEBUG
         this.game.ajouterObstacle(pos);
-         System.out.println("game pos at : "+ pos +"is : "+this.game.getPlateau().getCellule(pos).getState() );
-
-
         
     }
-     System.out.println("After toggle, cell at (" + row + ", " + col + "): " + cellStates[row][col]);
-    
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
-             System.out.println("Cin model vue ell at (" + i + ", " + j + "): " + game.getPlateau().getEtatPourVue()[i][j]);
-        }
-         }
-     updateFromModel(game.getPlateau().getEtatPourVue());
+   
+    updateFromModel(game.getPlateau().getEtatPourVue());
     revalidate();
     repaint();
 }
@@ -198,7 +200,7 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
                 int x = offsetX + col * cellSize;
                 int y = offsetY + row * cellSize;
                 java.awt.Color fillColor = getCellColor(row, col);
-                //System.out.println("in"+row +" "+ col +"color is"+fillColor );
+               
                 g2d.setColor(fillColor);
                 g2d.fillRect(x, y, cellSize, cellSize);
 
@@ -241,13 +243,12 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
 
     private java.awt.Color getCellColor (int row, int col) {
         if (cellStates == null) return java.awt.Color.WHITE;
-      //   System.out.println("Cell at (" + row + ", " + col + "): " + cellStates[row][col]);
+      
         switch (cellStates[row][col]) {
             case EMPTY:
-               // System.out.println("in cell color empty");
+             
                 return java.awt.Color.WHITE;
             case WALL:
-                System.out.println("in cell color wall");
                 return java.awt.Color.DARK_GRAY;
             case PLAYER:
                 // On retourne la couleur du joueur plus claire pour le fond
@@ -263,6 +264,8 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
 
     public int getColumns() { return columns; }
     public int getRows() { return rows; }
+    public void setObstacleButton(int Int) { this.obstacleButton = Int ;  }
+    public int getObstacleButton() { return obstacleButton; }
 
     public void setGame(ModeleJeu game) {
         this.game = game;

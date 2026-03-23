@@ -1,4 +1,4 @@
-package view;
+/****package view;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,4 +44,12 @@ public class ObstacleSection extends JPanel {
         add(clearButton);
         add(Box.createVerticalStrut(10));
     }
+
+ 
+
+
+    public boolean getobstacleMode(){
+        return this.obstacleMode;
+    }
 }
+**/

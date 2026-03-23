@@ -36,8 +36,8 @@ public class SidePanel extends JPanel {
         add(new ConfigSection(controller, gameBoard));
         add(Box.createVerticalStrut(10));
 
-        add(new ObstacleSection(gameBoard));
-        add(Box.createVerticalStrut(10));
+       // add(new ObstacleSection(gameBoard));
+        //add(Box.createVerticalStrut(10));
 
         add(new SpeedSection(controller));
         add(Box.createVerticalStrut(10));
