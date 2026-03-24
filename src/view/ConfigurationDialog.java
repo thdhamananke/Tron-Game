@@ -25,7 +25,7 @@ public class ConfigurationDialog extends JDialog {
     public ConfigurationDialog(JFrame parent) {
         super(parent, "Configuration de la partie", true);
         setLayout(new BorderLayout(10, 10));
-        setSize(650, 500); // un peu plus large
+        setSize(800, 500); // un peu plus large
         setLocationRelativeTo(parent);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
@@ -59,6 +59,8 @@ public class ConfigurationDialog extends JDialog {
         configPanel = new JPanel();
         configPanel.setLayout(new BoxLayout(configPanel, BoxLayout.Y_AXIS));
         JScrollPane scrollPane = new JScrollPane(configPanel);
+        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER); // Interdire le scroll horizontal
+        configPanel.setMaximumSize(new Dimension(scrollPane.getWidth(), Integer.MAX_VALUE));
         scrollPane.setPreferredSize(new Dimension(600, 250));
         mainPanel.add(scrollPane, BorderLayout.CENTER);
 
@@ -108,24 +110,35 @@ public class ConfigurationDialog extends JDialog {
             ));
             equipePanel.setBackground(new java.awt.Color(245, 245, 245));
 
-            JPanel joueursPanel = new JPanel(new GridLayout(nbParEquipe, 4, 10, 5)); // 4 colonnes
+            JPanel joueursPanel = new JPanel(new GridLayout(nbParEquipe, 4, 8, 5)); // 4 colonnes
             joueursPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
             for (int j = 0; j < nbParEquipe; j++) {
                 joueursPanel.add(new JLabel("Joueur " + (j + 1) + " :", SwingConstants.RIGHT));
 
+                // strategie
                 JComboBox<String> stratBox = new JComboBox<>(strategies);
                 stratBox.setSelectedItem("AlphaBeta");
+                stratBox.setPreferredSize(new Dimension(120, 20));
                 joueursPanel.add(stratBox);
                 strategieBoxes.add(stratBox);
 
+                // 2. Heuristique
                 JComboBox<String> heurBox = new JComboBox<>(heuristiques);
                 heurBox.setSelectedItem("FreeSpace");
+                heurBox.setPreferredSize(new Dimension(120, 20));
                 joueursPanel.add(heurBox);
                 heuristiqueBoxes.add(heurBox);
 
-                JSpinner depthSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 50, 1));
-                joueursPanel.add(depthSpinner);
+                // 3. Profondeur
+                JSpinner depthSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 10, 1));
+                JPanel depthWrapper = new JPanel(new BorderLayout());
+                
+                depthWrapper.setOpaque(false);
+                depthWrapper.setPreferredSize(new Dimension(40, 20));
+                depthWrapper.add(depthSpinner, BorderLayout.CENTER);
+
+                joueursPanel.add(depthWrapper); 
                 depthSpinners.add(depthSpinner);
             }
 

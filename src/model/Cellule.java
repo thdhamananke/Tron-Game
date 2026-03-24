@@ -30,16 +30,12 @@ public class Cellule {
     }
     
     public boolean isEmpty() {
-        if(owner == null && this.state != CellState.WALL ){
-            return true;
-        }else{
-             return false;
-        }
-        //return owner == null;
+        return owner == null && state == CellState.EMPTY;
     }
     
     public void occupy(Player player) {
         this.owner = player;
+        this.state = CellState.WALL;
     }
     
     /** le joueur */
@@ -49,8 +45,8 @@ public class Cellule {
     
     /** l'etat de la cellule */
     public CellState getState() {
+        if (owner != null) return CellState.WALL;
         return state;
-        
     }
     
     public void setState(CellState state) {

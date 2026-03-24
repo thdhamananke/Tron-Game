@@ -41,7 +41,7 @@ public class VoronoiHeuristic implements Heuristic {
                 // On cherche uniquement les têtes des joueurs (pas les murs)
                 // Note : adapter selon comment tu stockes la position actuelle
                 Player occupant = plateau.getJoueurAt(p); 
-                if (occupant != null && occupant.isAlive()) {
+                if (occupant != null) {
                     int index = r * cols + c;
                     distance[index] = 0;
                     ownerTeam[index] = occupant.getTeam();
@@ -49,29 +49,37 @@ public class VoronoiHeuristic implements Heuristic {
                 }
             }
         }
-
-        // Propagation multi-source donc voronoi
+        
+        
+        // Propagation multi-source
         while (!queue.isEmpty()) {
             int currentIndex = queue.poll();
-            int r = currentIndex / cols;
-            int c = currentIndex % cols;
+            int row = currentIndex / cols;
+            int col = currentIndex % cols;
             int curDist = distance[currentIndex];
             Team curTeam = ownerTeam[currentIndex];
 
+            // Si curTeam est null, c'est une case contestée, on ne propage plus à partir d'ici
+            if (curTeam == null) continue; 
+
             for (Direction dir : Direction.values()) {
-                int nr = r + (dir == Direction.BAS ? 1 : (dir == Direction.HAUT ? -1 : 0));
-                int nc = c + (dir == Direction.DROITE ? 1 : (dir == Direction.GAUCHE ? -1 : 0));
+                Position nextPos = new Position(
+                    row + (dir == Direction.BAS ? 1 : (dir == Direction.HAUT ? -1 : 0)),
+                    col + (dir == Direction.DROITE ? 1 : (dir == Direction.GAUCHE ? -1 : 0))
+                );
 
-                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && plateau.estLibre(new Position(nr, nc))) {
-                    int nextIndex = nr * cols + nc;
-
-                    if (distance[nextIndex] == Integer.MAX_VALUE) {
-                        distance[nextIndex] = curDist + 1;
-                        ownerTeam[nextIndex] = curTeam;
-                        queue.add(nextIndex);
-                    } else if (distance[nextIndex] == curDist + 1 && ownerTeam[nextIndex] != curTeam) {
-                        // La case est à égale distance de deux équipes différentes
-                        ownerTeam[nextIndex] = null; 
+                if (plateau.estDansPlateau(nextPos)) {
+                    int nextIndex = nextPos.getRow() * cols + nextPos.getCol();
+                    
+                    if (plateau.estLibre(nextPos)) {
+                        if (distance[nextIndex] == Integer.MAX_VALUE) {
+                            distance[nextIndex] = curDist + 1;
+                            ownerTeam[nextIndex] = curTeam;
+                            queue.add(nextIndex);
+                        } else if (distance[nextIndex] == curDist + 1 && ownerTeam[nextIndex] != curTeam) {
+                            // Case contestée
+                            ownerTeam[nextIndex] = null; 
+                        }
                     }
                 }
             }

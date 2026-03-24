@@ -7,7 +7,6 @@ import model.*;
 import java.util.ArrayList;
 
 public class FreeSpaceHeuristicTest {
-
     private Plateau plateau;
     private Player joueur;
     private FreeSpaceHeuristic heuristique;
@@ -15,7 +14,7 @@ public class FreeSpaceHeuristicTest {
     @Before
     public void setUp() {
         plateau = new Plateau(5, 5);
-        Team equipe = new Team("Alpha", new ArrayList<>(), null);
+        Team equipe = new Team("T", new ArrayList<>(), null);
         joueur = new Player("Testeur", equipe, new Position(2, 2));
         heuristique = new FreeSpaceHeuristic();
         
@@ -30,13 +29,20 @@ public class FreeSpaceHeuristicTest {
 
     @Test
     public void testJoueurBloque() {
-        plateau.placerMur(new Position(1, 2), null); // Haut
-        plateau.placerMur(new Position(3, 2), null); // Bas
-        plateau.placerMur(new Position(2, 1), null); // Gauche
-        plateau.placerMur(new Position(2, 3), null); // Droite
+        System.out.println("DEBUG : Debut du test");
+        
+        plateau.placerMur(new Position(1, 2), null); 
+        System.out.println("DEBUG : Mur 1 placé");
+        
+        plateau.placerMur(new Position(3, 2), null);
+        plateau.placerMur(new Position(2, 1), null);
+        plateau.placerMur(new Position(2, 3), null);
+        System.out.println("DEBUG : Tous les murs placés");
 
         double score = heuristique.evaluate(plateau, joueur);
-        assertEquals("Un joueur enfermé devrait avoir un score de 1", 1.0, score, 0.0);
+        System.out.println("Score calculé : " + score);
+        
+        assertEquals(1.0, score, 0.0);
     }
 
     @Test

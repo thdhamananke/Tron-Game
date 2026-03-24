@@ -26,7 +26,6 @@ public class VoronoiHeuristicTest {
         assertEquals("Score nul attendu pour partage équitable", 0.0, scoreP1, 5.0);
     }
 
-   
 
     @Test
     public void testJoueurMort() {
@@ -61,7 +60,8 @@ public class VoronoiHeuristicTest {
 
         assertNotNull("Évaluation doit réussir avec des cases contestées", score);
     }
-     @Test
+
+    @Test
     public void testAvantageTerritorial() {
         VoronoiHeuristic heuristic = new VoronoiHeuristic();
         Plateau plateau = new Plateau(5, 5);
@@ -75,7 +75,8 @@ public class VoronoiHeuristicTest {
         plateau.placerJoueur(p2.getPosition(), p2);
 
         double scoreP1 = heuristic.evaluate(plateau, p1);
-
+        System.out.println("DEBUG VORONOI : Score de P1 = " + scoreP1);
+        
         assertTrue("Le joueur central doit avoir un score positif", scoreP1 > 0);
     }
 }

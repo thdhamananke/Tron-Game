@@ -25,8 +25,9 @@ public class SidePanel extends JPanel {
 
         add(createTitle());
         add(Box.createVerticalStrut(10));
-
-        add(new ControlSection(controller));
+        ControlSection newcControlSection = new ControlSection(controller);
+        add(newcControlSection);
+        newcControlSection.setLocation(0,0);
         add(Box.createVerticalStrut(10));
 
         // Nouvelle StrategySection simplifiée

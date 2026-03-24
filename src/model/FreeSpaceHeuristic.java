@@ -23,13 +23,14 @@ public class FreeSpaceHeuristic implements Heuristic {
 
     private int countAccessibleCells(Plateau grid, Position posi) {
         if (!grid.estDansPlateau(posi)) return 0;
-        int count = 1; 
-
+        
+        int count = 0; 
         boolean[][] visited = new boolean[grid.getNbLignes()][grid.getNbColonnes()];
-
         Queue<Position> queue = new LinkedList<>();
+
         queue.add(posi);
         visited[posi.getRow()][posi.getCol()] = true;
+        count++;
 
         while (!queue.isEmpty()) {
             Position current = queue.poll();
@@ -38,13 +39,13 @@ public class FreeSpaceHeuristic implements Heuristic {
             for (Direction dir : Direction.values()) {
                 Position next = current.move(dir);
 
-                if (grid.estDansPlateau(next)
-                        && !visited[next.getRow()][next.getCol()]
-                        && grid.estLibre(next)) {
+                if (grid.estDansPlateau(next) && !visited[next.getRow()][next.getCol()]){
 
-                    visited[next.getRow()][next.getCol()] = true;
-                    queue.add(next);
-                    count++;
+                    if(grid.estLibre(next)) {
+                        visited[next.getRow()][next.getCol()] = true;
+                        queue.add(next);
+                        count++;
+                    }
                 }
             }
         }

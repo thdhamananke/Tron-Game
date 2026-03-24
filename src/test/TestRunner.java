@@ -11,7 +11,6 @@ public class TestRunner {
         // Ajoute toutes les classes de test ici
         Class[] tests = {
             SOSStrategieTest.class
-            // tu peux ajouter d'autres classes de test ici
         };
 
         int totalTests = 0;

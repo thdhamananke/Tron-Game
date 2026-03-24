@@ -99,12 +99,14 @@
 
     <!-- ==================== Tests ==================== -->
     <target name="test" depends="compile" description="Run JUnit tests">
-        <junit fork="true" printsummary="on" haltonfailure="false">
+        <junit fork="true" printsummary="on" haltonfailure="false" showoutput="no">
             <classpath>
                 <pathelement location="${build.home}"/>
                 <pathelement location="${build.test.home}"/>
                 <path refid="compile.classpath"/>
             </classpath>
+
+            <!-- <formatter type="plain" usefile="false"/> -->
 
             <batchtest todir="${test.report.home}">
                 <fileset dir="${build.test.home}">
@@ -116,7 +118,7 @@
 
     <!-- ==================== Run ==================== -->
     <target name="run" depends="dist" description="Run application">
-        <java classname="experiment.ExperimentMain" fork="true"> 
+        <java classname="model.Main" fork="true"> 
             <classpath>
                 <pathelement location="${dist.home}/${app.fullname}.jar"/>
                 <path refid="compile.classpath"/>

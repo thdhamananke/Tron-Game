@@ -82,32 +82,33 @@ public class Plateau {
 
     private Set<Position> obstacles = new HashSet<>();
 
-public void ajouterObstacle(Position p) {
-    obstacles.add(p);
-    // Mettre à jour l'état de la cellule
-    if (estDansPlateau(p)) {
-       // grille[p.getRow()][p.getCol()].setState(CellState.WALL);
-        getCellule(p).setState(CellState.WALL);
-        System.out.println(getCellule(p).getState());
+    public void ajouterObstacle(Position p) {
+        obstacles.add(p);
+        // Mettre à jour l'état de la cellule
+        if (estDansPlateau(p)) {
+        // grille[p.getRow()][p.getCol()].setState(CellState.WALL);
+            getCellule(p).setState(CellState.WALL);
+            System.out.println(getCellule(p).getState());
+        }
     }
-}
 
-public void retirerObstacle(Position p) {
-    obstacles.remove(p);
-    // Mettre à jour l'état de la cellule
-    if (estDansPlateau(p)) {
-        grille[p.getRow()][p.getCol()].setState(CellState.EMPTY);
+    public void retirerObstacle(Position p) {
+        obstacles.remove(p);
+        // Mettre à jour l'état de la cellule
+        if (estDansPlateau(p)) {
+            grille[p.getRow()][p.getCol()].setState(CellState.EMPTY);
+        }
     }
-}
 
 
-public void clearObstacles() {
-    obstacles.clear();
-}
+    public void clearObstacles() {
+        obstacles.clear();
+    }
+    
 
-public Set<Position> getObstacles() {
-    return obstacles;
-}
+    public Set<Position> getObstacles() {
+        return obstacles;
+    }   
 
     /**
      * Indique si une cellule est vide.
@@ -220,12 +221,8 @@ public Set<Position> getObstacles() {
     */
     public Player getJoueurAt(Position pos) {
         if (!estDansPlateau(pos)) return null;
-        
         Cellule cell = getCellule(pos);
-        if (!cell.isEmpty() && cell.getState() == CellState.PLAYER) {
-            return cell.getOwner();
-        }
-        return null;
+        return cell.getOwner();
     }
 
     public CellState[][] getEtatPourVue() {
