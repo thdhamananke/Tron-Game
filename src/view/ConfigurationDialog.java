@@ -25,13 +25,13 @@ public class ConfigurationDialog extends JDialog {
     public ConfigurationDialog(JFrame parent) {
         super(parent, "Configuration de la partie", true);
         setLayout(new BorderLayout(10, 10));
-        setSize(800, 500); // un peu plus large
+        setSize(800, 600); // Augmenté légèrement pour accueillir le message d'aide
         setLocationRelativeTo(parent);
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // Paramètres généraux
+        // --- 1. PARAMÈTRES GÉNÉRAUX (NORTH) ---
         JPanel topPanel = new JPanel(new GridLayout(4, 2, 5, 5));
         topPanel.setBorder(BorderFactory.createTitledBorder("Paramètres généraux"));
 
@@ -55,17 +55,27 @@ public class ConfigurationDialog extends JDialog {
 
         mainPanel.add(topPanel, BorderLayout.NORTH);
 
-        // Panneau de configuration des joueurs (dynamique)
+        // --- 2. CONFIGURATION DES JOUEURS (CENTER) ---
         configPanel = new JPanel();
         configPanel.setLayout(new BoxLayout(configPanel, BoxLayout.Y_AXIS));
         JScrollPane scrollPane = new JScrollPane(configPanel);
-        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER); // Interdire le scroll horizontal
-        configPanel.setMaximumSize(new Dimension(scrollPane.getWidth(), Integer.MAX_VALUE));
+        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setPreferredSize(new Dimension(600, 250));
         mainPanel.add(scrollPane, BorderLayout.CENTER);
 
-        // Boutons
-        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        // --- 3. ZONE BASSE (SOUTH) : MESSAGE D'AIDE + BOUTONS ---
+        JPanel southPanel = new JPanel();
+        southPanel.setLayout(new BoxLayout(southPanel, BoxLayout.Y_AXIS));
+
+        // Bloc du message d'aide
+        JLabel helpMsg = new JLabel("<html><div style='text-align: center; color: #555555;'>" +
+                "<b>💡 Astuce :</b> Une fois la partie configurée, utilisez le <b>Mode Dessin</b><br>" +
+                "dans le menu de droite pour placer des obstacles gris sur le plateau !</div></html>", SwingConstants.CENTER);
+        helpMsg.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+        helpMsg.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
+        // Panel des boutons
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JButton okButton = new JButton("Lancer la partie");
         JButton cancelButton = new JButton("Annuler");
 
@@ -78,12 +88,17 @@ public class ConfigurationDialog extends JDialog {
         });
         cancelButton.addActionListener(e -> dispose());
 
-        bottomPanel.add(okButton);
-        bottomPanel.add(cancelButton);
-        mainPanel.add(bottomPanel, BorderLayout.SOUTH);
+        buttonPanel.add(okButton);
+        buttonPanel.add(cancelButton);
+
+        // On assemble le message et les boutons dans le panel Sud
+        southPanel.add(helpMsg);
+        southPanel.add(buttonPanel);
+        
+        mainPanel.add(southPanel, BorderLayout.SOUTH);
 
         add(mainPanel);
-        regenererConfig(); // initialisation
+        regenererConfig(); 
     }
 
     private void regenererConfig() {
@@ -110,34 +125,29 @@ public class ConfigurationDialog extends JDialog {
             ));
             equipePanel.setBackground(new java.awt.Color(245, 245, 245));
 
-            JPanel joueursPanel = new JPanel(new GridLayout(nbParEquipe, 4, 8, 5)); // 4 colonnes
+            JPanel joueursPanel = new JPanel(new GridLayout(nbParEquipe, 4, 8, 5));
             joueursPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
             for (int j = 0; j < nbParEquipe; j++) {
                 joueursPanel.add(new JLabel("Joueur " + (j + 1) + " :", SwingConstants.RIGHT));
 
-                // strategie
                 JComboBox<String> stratBox = new JComboBox<>(strategies);
                 stratBox.setSelectedItem("AlphaBeta");
                 stratBox.setPreferredSize(new Dimension(120, 20));
                 joueursPanel.add(stratBox);
                 strategieBoxes.add(stratBox);
 
-                // 2. Heuristique
                 JComboBox<String> heurBox = new JComboBox<>(heuristiques);
                 heurBox.setSelectedItem("FreeSpace");
                 heurBox.setPreferredSize(new Dimension(120, 20));
                 joueursPanel.add(heurBox);
                 heuristiqueBoxes.add(heurBox);
 
-                // 3. Profondeur
                 JSpinner depthSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 10, 1));
                 JPanel depthWrapper = new JPanel(new BorderLayout());
-                
                 depthWrapper.setOpaque(false);
                 depthWrapper.setPreferredSize(new Dimension(40, 20));
                 depthWrapper.add(depthSpinner, BorderLayout.CENTER);
-
                 joueursPanel.add(depthWrapper); 
                 depthSpinners.add(depthSpinner);
             }
@@ -160,9 +170,7 @@ public class ConfigurationDialog extends JDialog {
         return getColorForTeam(index).toAWT();
     }
 
-    private boolean validerConfiguration() {
-        return true;
-    }
+    private boolean validerConfiguration() { return true; }
 
     private void construireJoueurs() {
         nbLignes = (int) rowsSpinner.getValue();
@@ -192,14 +200,10 @@ public class ConfigurationDialog extends JDialog {
                     int col = rand.nextInt(nbColonnes);
                     pos = new Position(row, col);
                     tries++;
-                    if (tries > 1000) {
-                        pos = new Position(rand.nextInt(nbLignes), rand.nextInt(nbColonnes));
-                        break;
-                    }
+                    if (tries > 1000) break;
                 } while (prises.contains(pos) || tropProche(pos, prises, 3));
 
                 prises.add(pos);
-
                 String name = team.getName() + " - J" + (j + 1);
                 Player player = new Player(name, team, pos);
 
@@ -213,7 +217,6 @@ public class ConfigurationDialog extends JDialog {
 
                 player.setStrategie(strategie);
                 player.setHeuristic(heuristic);
-
                 joueurs.add(player);
                 team.getMembers().add(player);
             }
@@ -222,7 +225,6 @@ public class ConfigurationDialog extends JDialog {
 
     private Heuristic creerHeuristique(String nom) {
         return switch (nom) {
-            case "FreeSpace" -> new FreeSpaceHeuristic();
             case "Voronoi" -> new VoronoiHeuristic();
             case "TreeOfChambers" -> new TreeOfChambersHeuristic();
             default -> new FreeSpaceHeuristic();
@@ -248,19 +250,8 @@ public class ConfigurationDialog extends JDialog {
         return false;
     }
 
-    public boolean isConfirmed() {
-        return confirmed;
-    }
-
-    public List<Player> getJoueurs() {
-        return joueurs;
-    }
-
-    public int getNbLignes() {
-        return nbLignes;
-    }
-
-    public int getNbColonnes() {
-        return nbColonnes;
-    }
+    public boolean isConfirmed() { return confirmed; }
+    public List<Player> getJoueurs() { return joueurs; }
+    public int getNbLignes() { return nbLignes; }
+    public int getNbColonnes() { return nbColonnes; }
 }

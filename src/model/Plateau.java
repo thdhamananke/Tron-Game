@@ -82,28 +82,39 @@ public class Plateau {
 
     private Set<Position> obstacles = new HashSet<>();
 
-    public void ajouterObstacle(Position p) {
-        obstacles.add(p);
-        // Mettre à jour l'état de la cellule
+    public void ajouterObstacle(Position p) 
+    {
         if (estDansPlateau(p)) {
-        // grille[p.getRow()][p.getCol()].setState(CellState.WALL);
-            getCellule(p).setState(CellState.WALL);
-            System.out.println(getCellule(p).getState());
+            Cellule cell = getCellule(p);
+            cell.setObstacle(true); // <-- On marque la cellule comme obstacle
+            cell.setState(CellState.WALL);
+            obstacles.add(p);
         }
     }
 
-    public void retirerObstacle(Position p) {
-        obstacles.remove(p);
-        // Mettre à jour l'état de la cellule
+    public void retirerObstacle(Position p) 
+    {
         if (estDansPlateau(p)) {
-            grille[p.getRow()][p.getCol()].setState(CellState.EMPTY);
+            Cellule cell = getCellule(p);
+            cell.setObstacle(false); //  On retire le flag
+            cell.setState(CellState.EMPTY);
+            obstacles.remove(p);
         }
     }
 
-
-    public void clearObstacles() {
-        obstacles.clear();
-    }
+            public void clearObstacles() 
+            {
+                // Parcourir toutes les positions d'obstacles actuelles
+                for (Position p : obstacles) 
+                {
+                    if (estDansPlateau(p)) {
+                        // Remettre l'état de la cellule à vide
+                        grille[p.getRow()][p.getCol()].setState(CellState.EMPTY);
+                    }
+                }
+                // vider l'ensemble des positions
+            obstacles.clear();
+        }
     
 
     public Set<Position> getObstacles() {

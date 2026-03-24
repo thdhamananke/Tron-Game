@@ -4,7 +4,7 @@ Profondeur IA = 3
 Nombre Parties = 1000
 
 
-TailleGrille,EquipeGagnante,Note,TempsMoyen,NbMoyenTours
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
 225,Match Nul,79,2
 225,Match Nul,87,2
 225,Match Nul,88,2

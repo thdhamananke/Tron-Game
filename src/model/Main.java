@@ -126,7 +126,7 @@ public class Main {
 
         while (!modeleThread.estTermine() && tour < maxTours) {
             tour++;
-            clearScreen();
+            //clearScreen();
 
             System.out.println("\n╔════════════════════════════════════════════╗");
             System.out.println("║               TOUR " + String.format("%3d", tour) + "                     ║");
@@ -265,7 +265,7 @@ public class Main {
      * @param tour  le tour.
     */
     private static void afficherResultatsFinaux(ModeleJeu modele, int tour) {
-        clearScreen();
+        //clearScreen();
         System.out.println("\n" + "═".repeat(60));
         System.out.println("🏆          PARTIE TERMINÉE          🏆");
         System.out.println("═".repeat(60) + "\n");

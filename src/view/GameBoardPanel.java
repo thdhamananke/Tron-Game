@@ -241,22 +241,34 @@ private int lastToggledCol = -1;
         g2d.fill(head);
     }
 
-    private java.awt.Color getCellColor (int row, int col) {
+    private java.awt.Color getCellColor(int row, int col) 
+    {
         if (cellStates == null) return java.awt.Color.WHITE;
-      
+        Position pos = new Position(row, col);
+
+        // 1. On récupère la cellule du modèle
+        Cellule cell = game.getPlateau().getCellule(pos);
+
+        // 2. Priorité : Si c'est un obstacle dessiné à la main -> GRIS
+        if (cell != null && cell.isObstacle()) {
+            return java.awt.Color.BLUE;
+        }
+
+        // 3. Sinon, on regarde l'état pour les traces de joueurs
         switch (cellStates[row][col]) {
-            case EMPTY:
-             
-                return java.awt.Color.WHITE;
             case WALL:
-                return java.awt.Color.DARK_GRAY;
+                // C'est une trace laissée par une moto
+                Player p = game.getJoueurAt(pos);
+                // Retourne la couleur du joueur, ou bleu par défaut
+                return (p != null) ? p.getAwtColor() : java.awt.Color.DARK_GRAY;
+                
             case PLAYER:
-                // On retourne la couleur du joueur plus claire pour le fond
-                Player p = game.getJoueurAt(new Position(row, col));
-                if (p != null) {
-                    return p.getAwtColor().brighter();
-                }
-                return java.awt.Color.WHITE;
+                // Pour la tête du joueur (souvent géré dans drawPlayer, 
+                // mais on peut mettre une couleur ici par sécurité)
+                Player head = game.getJoueurAt(pos);
+                return (head != null) ? head.getAwtColor().brighter() : java.awt.Color.WHITE;
+
+            case EMPTY:
             default:
                 return java.awt.Color.WHITE;
         }
