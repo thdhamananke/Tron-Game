@@ -1,0 +1,17 @@
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 2
+Profondeur IA = 0
+Nombre Parties = 10
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+900,Equipe_2,865,2
+900,Equipe_2,885,2
+900,Equipe_2,811,2
+900,Equipe_2,888,2
+900,Equipe_2,824,2
+900,Equipe_2,829,2
+900,Equipe_2,790,2
+900,Equipe_2,865,2
+900,Equipe_2,203,2
+900,Equipe_2,218,2

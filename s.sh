@@ -25,17 +25,20 @@ echo ""
 
 #config
 plateau_sizes=(12 15)
-depths=(3 4)
+depths=(3 1)
 
 # DUEL FIXE
-equipes=2
+equipes=4
 joueurs=1
 total_players=2
 
-strategies=("MinMaxStrategie" "AlphaBetaStrategie" "MaxNStrategie" "ParanoidStrategie")
+#strategies=("MinMaxStrategie" "AlphaBetaStrategie" "MaxNStrategie" "ParanoidStrategie")
+#heuristics=("FreeSpaceHeuristic" "VoronoiHeuristic")
+
+strategies=("MinMaxStrategie" "AlphaBetaStrategie")
 heuristics=("FreeSpaceHeuristic" "VoronoiHeuristic")
 
-PARTIES_PAR_CONFIG=50
+PARTIES_PAR_CONFIG=5
 
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 MASTER_CSV="$RESULTS_DIR/duel_$TIMESTAMP.csv"

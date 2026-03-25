@@ -139,19 +139,23 @@ private int lastToggledCol = -1;
         }
     }
 
-    public void updateFromModel(CellState[][] modelGrid) {
-        if (modelGrid == null ) return;
+    public void updateFromModel(CellState[][] modelGrid) 
+    {
+        if (modelGrid == null) return;
 
         this.rows = modelGrid.length;
         this.columns = modelGrid[0].length;
-        //this.cellStates = modelGrid;
-         for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
-            if(modelGrid[i][j] == CellState.WALL){
+
+
+        this.cellStates = new CellState[rows][columns];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                this.cellStates[i][j] = modelGrid[i][j];
             }
-            this.cellStates[i][j] = modelGrid[i][j];
         }
-         }
+
+        revalidate();
         repaint();
     }
 
@@ -242,37 +246,35 @@ private int lastToggledCol = -1;
     }
 
     private java.awt.Color getCellColor(int row, int col) 
-    {
-        if (cellStates == null) return java.awt.Color.WHITE;
-        Position pos = new Position(row, col);
+{
+    if (cellStates == null) return java.awt.Color.WHITE;
 
-        // 1. On récupère la cellule du modèle
-        Cellule cell = game.getPlateau().getCellule(pos);
+    Position pos = new Position(row, col);
 
-        // 2. Priorité : Si c'est un obstacle dessiné à la main -> GRIS
-        if (cell != null && cell.isObstacle()) {
-            return java.awt.Color.BLUE;
-        }
-
-        // 3. Sinon, on regarde l'état pour les traces de joueurs
-        switch (cellStates[row][col]) {
-            case WALL:
-                // C'est une trace laissée par une moto
-                Player p = game.getJoueurAt(pos);
-                // Retourne la couleur du joueur, ou bleu par défaut
-                return (p != null) ? p.getAwtColor() : java.awt.Color.DARK_GRAY;
-                
-            case PLAYER:
-                // Pour la tête du joueur (souvent géré dans drawPlayer, 
-                // mais on peut mettre une couleur ici par sécurité)
-                Player head = game.getJoueurAt(pos);
-                return (head != null) ? head.getAwtColor().brighter() : java.awt.Color.WHITE;
-
-            case EMPTY:
-            default:
-                return java.awt.Color.WHITE;
-        }
+    if (!game.getPlateau().estDansPlateau(pos)) {
+        return java.awt.Color.WHITE;
     }
+
+    Cellule cell = game.getPlateau().getCellule(pos);
+
+    if (cell != null && cell.isObstacle()) {
+        return java.awt.Color.BLUE;
+    }
+
+    switch (cellStates[row][col]) {
+        case WALL:
+            Player p = game.getJoueurAt(pos);
+            return (p != null) ? p.getAwtColor() : java.awt.Color.DARK_GRAY;
+
+        case PLAYER:
+            Player head = game.getJoueurAt(pos);
+            return (head != null) ? head.getAwtColor().brighter() : java.awt.Color.WHITE;
+
+        case EMPTY:
+        default:
+            return java.awt.Color.WHITE;
+    }
+} 
 
     public int getColumns() { return columns; }
     public int getRows() { return rows; }

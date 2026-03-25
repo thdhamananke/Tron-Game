@@ -59,7 +59,7 @@ public class GameController {
                     if (!paused) {
                         tourActuel++;
                         
-                        // 🔥 LOG: Directions
+                        // Directions
                         System.out.println("\nTour " + tourActuel + ":");
                         logDirections();
                         
@@ -80,7 +80,7 @@ public class GameController {
     }
     
     /**
-     * 🔥 Affiche la config des joueurs au démarrage
+     * Affiche la config des joueurs au démarrage
      */
     private void afficherConfigJoueurs() {
         System.out.println("📋 Configuration des joueurs :");
@@ -98,7 +98,7 @@ public class GameController {
     }
     
     /**
-     * 🔥 Affiche les directions choisies par chaque joueur
+     * Affiche les directions choisies par chaque joueur
      */
     private void logDirections() {
         for (Player p : game.getJoueurs()) {
@@ -121,7 +121,6 @@ public class GameController {
     }
 
     /* ================= CONTROLES ================= */
-
     public void togglePause() {
         paused = !paused;
         System.out.println(paused ? "⏸ Pause" : "▶️ Reprise");
@@ -169,14 +168,20 @@ public class GameController {
         if (vue != null) {
             game.ajoutEcouteur(vue);
         }
-        
+
+        if (vue != null) 
+        {
+            vue.setGridSize(rows, cols);
+            vue.getGameBoard().setGame(game);
+        }
+                
         System.out.println("✓ Taille du plateau changée: " + rows + "x" + cols);
     }
 
     /* ================= CONFIGURATION STRATEGIES ================= */
 
     /**
-     * 🔥 NOUVELLE MÉTHODE: Permet de changer la stratégie d'un joueur
+     * NOUVELLE MÉTHODE: Permet de changer la stratégie d'un joueur
      */
     public void setPlayerStrategy(int playerIndex, String stratName, String heurName, int depth) {
         List<Player> joueurs = game.getJoueurs();

@@ -33,7 +33,7 @@ public class GUI extends JFrame implements EcouteurModele {
 
         initComponents();
         
-        // 🔥 FIX: Taille fixe pour éviter le scroll
+        // FIX: Taille fixe pour éviter le scroll
         setSize(1400, 900);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -49,7 +49,7 @@ public class GUI extends JFrame implements EcouteurModele {
         topPanel = new TopPanel();
         add(topPanel, BorderLayout.NORTH);
 
-        // 🔥 GameBoard avec taille appropriée
+        // GameBoard avec taille appropriée
         gameBoard = new GameBoardPanel(controller.getGame());
         gameBoard.setPreferredSize(new Dimension(750, 750));
         
@@ -61,7 +61,7 @@ public class GUI extends JFrame implements EcouteurModele {
         // SidePanel avec scroll interne
         sidePanel = new SidePanel(controller, this, gameBoard);
         
-        // 🔥 FIX: SidePanel avec son propre scroll
+        // FIX: SidePanel avec son propre scroll
         JScrollPane sidePanelScroll = new JScrollPane(sidePanel);
         sidePanelScroll.setPreferredSize(new Dimension(320, 750));
         sidePanelScroll.setBorder(BorderFactory.createEmptyBorder());
@@ -75,7 +75,7 @@ public class GUI extends JFrame implements EcouteurModele {
     }
 
     /**
-     * 🔥 Mise à jour complète de l'affichage
+     * Mise à jour complète de l'affichage
      */
     public void mettreAjourAffichage() {
         
@@ -90,7 +90,7 @@ public class GUI extends JFrame implements EcouteurModele {
         // Mettre à jour tous les panels
         topPanel.update(tour, statut, gagnant, controller);
         
-        // 🔥 FIX: Conversion correcte avec les têtes des joueurs
+        // FIX: Conversion correcte avec les têtes des joueurs
         CellState[][] cellStates = convertToCellStates(game);
         gameBoard.updateFromModel(cellStates);
        // gameBoard.updateFromModel(this.controller.getGame().getPlateau().getEtatPourVue());
@@ -103,7 +103,7 @@ public class GUI extends JFrame implements EcouteurModele {
     }
 
     /**
-     * 🔥 CORRECTION MAJEURE: Afficher les têtes des joueurs correctement
+     *  Afficher les têtes des joueurs correctement
      */
     private CellState[][] convertToCellStates(ModeleJeu game) {
         Plateau plateau = game.getPlateau();
@@ -126,7 +126,7 @@ public class GUI extends JFrame implements EcouteurModele {
             }
         }
         
-        // 🔥 FIX: Ensuite marquer les TÊTES des joueurs vivants
+        //  FIX: Ensuite marquer les TÊTES des joueurs vivants
         // (ça écrase les murs aux positions actuelles des joueurs)
         for (Player p : game.getJoueurs()) {
             if (p.isAlive() && p.getPosition() != null) {
@@ -215,5 +215,6 @@ public class GUI extends JFrame implements EcouteurModele {
         this.rows = r;
         this.columns = c;
         gameBoard.setGridSize(r, c);
+        gameBoard.setGame(controller.getGame());
     }
 }

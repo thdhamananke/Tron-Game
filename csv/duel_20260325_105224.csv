@@ -1,0 +1,550 @@
+# EXPÉRIENCES DUEL - mer. 25 mars 2026 10:52:24 CET
+# Plateau: 12 15, Profondeurs: 3 1
+# Stratégies: MinMaxStrategie AlphaBetaStrategie
+# Heuristiques: FreeSpaceHeuristic VoronoiHeuristic
+# Parties par config: 5
+
+
+# CONFIG: P12_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,61,2
+144,Match Nul,63,2
+144,Match Nul,62,2
+144,Match Nul,61,2
+144,Match Nul,61,2
+
+# CONFIG: P12_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,79,2
+144,Equipe_2,100,2
+144,Equipe_2,94,2
+144,Equipe_2,100,2
+144,Equipe_2,66,2
+
+# CONFIG: P12_D3_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,61,2
+144,Equipe_1,90,2
+144,Equipe_1,91,2
+144,Equipe_1,62,2
+144,Equipe_1,89,2
+
+# CONFIG: P12_D3_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,282,12
+144,Match Nul,265,6
+144,Equipe_1,264,4
+144,Equipe_1,267,7
+144,Equipe_1,272,8
+
+# CONFIG: P12_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,39,2
+144,Match Nul,33,2
+144,Match Nul,32,2
+144,Match Nul,41,2
+144,Match Nul,30,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,38,2
+144,Equipe_2,49,2
+144,Equipe_2,37,2
+144,Equipe_2,44,2
+144,Match Nul,50,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,52,2
+144,Equipe_1,63,2
+144,Equipe_1,56,2
+144,Equipe_1,43,2
+144,Equipe_1,54,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,177,3
+144,Equipe_1,178,3
+144,Match Nul,194,7
+144,Equipe_2,203,9
+144,Match Nul,193,6
+
+# CONFIG: P12_D1_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 1
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,11,2
+144,Match Nul,13,2
+144,Match Nul,11,2
+144,Match Nul,12,2
+144,Match Nul,11,2
+
+# CONFIG: P12_D1_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 1
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,12,2
+144,Equipe_2,12,2
+144,Equipe_2,12,2
+144,Equipe_2,12,2
+144,Equipe_2,12,2
+
+# CONFIG: P12_D1_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 1
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,16,2
+144,Equipe_1,17,2
+144,Equipe_1,20,2
+144,Equipe_1,17,2
+144,Equipe_1,16,2
+
+# CONFIG: P12_D1_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 1
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,16,2
+144,Equipe_1,13,2
+144,Equipe_1,16,2
+144,Equipe_1,23,4
+144,Match Nul,24,6
+
+# CONFIG: P12_D1_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 1
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,13,2
+144,Match Nul,12,2
+144,Match Nul,13,2
+144,Match Nul,12,2
+144,Match Nul,13,2
+
+# CONFIG: P12_D1_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 1
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,17,2
+144,Equipe_2,17,2
+144,Equipe_2,16,2
+144,Equipe_2,16,2
+144,Equipe_2,16,2
+
+# CONFIG: P12_D1_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 1
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,14,2
+144,Equipe_1,14,2
+144,Equipe_1,15,2
+144,Equipe_1,14,2
+144,Equipe_1,14,2
+
+# CONFIG: P12_D1_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 1
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,28,3
+144,Equipe_1,56,9
+144,Match Nul,28,3
+144,Match Nul,52,7
+144,Equipe_1,44,5
+
+# CONFIG: P15_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 15x15, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Match Nul,95,2
+225,Match Nul,90,2
+225,Match Nul,102,2
+225,Match Nul,96,2
+225,Match Nul,99,2
+
+# CONFIG: P15_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 15x15, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_2,90,2
+225,Equipe_2,118,2
+225,Equipe_2,92,2
+225,Equipe_2,119,2
+225,Equipe_2,115,2
+
+# CONFIG: P15_D3_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 15x15, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_1,103,2
+225,Equipe_1,110,2
+225,Equipe_1,83,2
+225,Equipe_1,117,2
+225,Equipe_1,86,2
+
+# CONFIG: P15_D3_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 15x15, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Match Nul,189,2
+225,Equipe_1,164,2
+225,Equipe_1,232,13
+225,Equipe_2,217,9
+225,Match Nul,233,13
+
+# CONFIG: P15_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 15x15, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Match Nul,98,2
+225,Match Nul,102,2
+225,Match Nul,103,2
+225,Match Nul,68,2
+225,Match Nul,97,2
+
+# CONFIG: P15_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 15x15, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_2,68,2
+225,Equipe_2,80,2
+225,Equipe_2,104,2
+225,Equipe_2,79,2
+225,Equipe_2,105,2
+
+# CONFIG: P15_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 15x15, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_1,127,2
+225,Equipe_1,132,2
+225,Equipe_1,112,2
+225,Equipe_1,101,2
+225,Equipe_1,75,2
+
+# CONFIG: P15_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 15x15, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_2,283,8
+225,Equipe_1,273,5
+225,Equipe_1,266,3
+225,Equipe_1,271,4
+225,Equipe_2,303,18
+
+# CONFIG: P15_D1_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 15x15, Profondeur: 1
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Match Nul,20,2
+225,Match Nul,20,2
+225,Match Nul,21,2
+225,Match Nul,20,2
+225,Match Nul,20,2
+
+# CONFIG: P15_D1_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 15x15, Profondeur: 1
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_2,18,2
+225,Equipe_2,19,2
+225,Equipe_2,20,2
+225,Equipe_2,21,2
+225,Equipe_2,19,2
+
+# CONFIG: P15_D1_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 15x15, Profondeur: 1
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_1,23,2
+225,Equipe_1,22,2
+225,Equipe_1,23,2
+225,Equipe_1,22,2
+225,Equipe_1,23,2
+
+# CONFIG: P15_D1_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 15x15, Profondeur: 1
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Match Nul,39,3
+225,Equipe_1,111,10
+225,Equipe_1,77,6
+225,Equipe_1,79,6
+225,Match Nul,112,12
+
+# CONFIG: P15_D1_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 15x15, Profondeur: 1
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Match Nul,18,2
+225,Match Nul,21,2
+225,Match Nul,20,2
+225,Match Nul,17,2
+225,Match Nul,21,2
+
+# CONFIG: P15_D1_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 15x15, Profondeur: 1
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_2,17,2
+225,Equipe_2,17,2
+225,Equipe_2,18,2
+225,Equipe_2,16,2
+225,Equipe_2,17,2
+
+# CONFIG: P15_D1_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 15x15, Profondeur: 1
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_1,21,2
+225,Equipe_1,24,2
+225,Equipe_1,21,2
+225,Equipe_1,19,2
+225,Equipe_1,25,2
+
+# CONFIG: P15_D1_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 15x15, Profondeur: 1
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 1
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+225,Equipe_1,62,5
+225,Equipe_1,81,7
+225,Equipe_1,15,1
+225,Equipe_2,146,16
+225,Match Nul,134,14
