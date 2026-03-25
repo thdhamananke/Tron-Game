@@ -33,45 +33,6 @@ public class ExperimentAnalyzer {
     private static java.util.List<JSpinner> depthSpinners = new ArrayList<>();
 
 
-    public static void generateAllCharts(String filePath) {
-        mainFrame = new JFrame("Experiment Charts");
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.setSize(900, 700);
-        mainFrame.setLocationRelativeTo(null);
-
-        JTabbedPane tabbedPane = new JTabbedPane();
-
-       
-        JFreeChart pieChart = ChartGenerator.createWinPieChart(filePath);
-        tabbedPane.addTab("Win Pie Chart", new ChartPanel(pieChart));
-
-        JFreeChart timeChart = ChartGenerator.createTimeChart(filePath);
-        tabbedPane.addTab("Average Time Chart", new ChartPanel(timeChart));
-
-        JFreeChart turnsChart = ChartGenerator.createTurnsChart(filePath);
-        tabbedPane.addTab("Turns Chart", new ChartPanel(turnsChart));
-
-        chartPanel = new JPanel(new BorderLayout());
-        chartPanel.add(tabbedPane, BorderLayout.CENTER);
-
-        configPanel = createConfigPanel();
-
-        mainPanel = new JPanel(new BorderLayout());
-        mainPanel.add(chartPanel, BorderLayout.CENTER);
-
-        JButton switchButton = new JButton("Switch to Config");
-        switchButton.addActionListener(e -> switchWindow());
-
-        JPanel topPanel = new JPanel();
-        topPanel.add(switchButton);
-
-        mainFrame.add(topPanel, BorderLayout.NORTH);
-        mainFrame.add(mainPanel, BorderLayout.CENTER);
-
-        mainFrame.setVisible(true);
-    }
-
-
     private static JPanel createConfigPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
@@ -183,60 +144,60 @@ public class ExperimentAnalyzer {
 
         return panel;
     }
-   public static void generateAllCharts2(String filePath) {
-    // Create the main frame
+   public static void generateAllCharts(String filePath) {
+    
     mainFrame = new JFrame("Global Experiment Charts");
     mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     mainFrame.setSize(1200, 800);
     mainFrame.setLocationRelativeTo(null);
 
-    // Create a tabbed pane
+   
     JTabbedPane tabbedPane = new JTabbedPane();
 
-    // Add pie charts for heuristics and strategies
-    JFreeChart heuristicPieChart = ChartGenerator2.createGlobalWinPieChartByHeuristic(filePath);
+    
+    JFreeChart heuristicPieChart = ChartGenerator.createGlobalWinPieChartByHeuristic(filePath);
     tabbedPane.addTab("Global Win Pie Chart by Heuristic", new ChartPanel(heuristicPieChart));
 
-    JFreeChart strategyPieChart = ChartGenerator2.createGlobalWinPieChartByStrategyOnly(filePath);
+    JFreeChart strategyPieChart = ChartGenerator.createGlobalWinPieChartByStrategyOnly(filePath);
     tabbedPane.addTab("Global Win Pie Chart by Strategy", new ChartPanel(strategyPieChart));
 
-    // Add time charts for strategies and heuristics
-    JFreeChart timeChartByStrategy = ChartGenerator2.createGlobalTimeChartByStrategy(filePath);
+    
+    JFreeChart timeChartByStrategy = ChartGenerator.createGlobalTimeChartByStrategy(filePath);
     tabbedPane.addTab("Global Average Time by Strategy", new ChartPanel(timeChartByStrategy));
 
-    JFreeChart timeChartByHeuristic = ChartGenerator2.createGlobalTimeChartByHeuristic(filePath);
+    JFreeChart timeChartByHeuristic = ChartGenerator.createGlobalTimeChartByHeuristic(filePath);
     tabbedPane.addTab("Global Average Time by Heuristic", new ChartPanel(timeChartByHeuristic));
 
-    // Add turns charts for strategies and heuristics
-    JFreeChart turnsChartByStrategy = ChartGenerator2.createGlobalTurnsChartByStrategy(filePath);
+   
+    JFreeChart turnsChartByStrategy = ChartGenerator.createGlobalTurnsChartByStrategy(filePath);
     tabbedPane.addTab("Global Average Turns by Strategy", new ChartPanel(turnsChartByStrategy));
 
-    JFreeChart turnsChartByHeuristic = ChartGenerator2.createGlobalTurnsChartByHeuristic(filePath);
+    JFreeChart turnsChartByHeuristic = ChartGenerator.createGlobalTurnsChartByHeuristic(filePath);
     tabbedPane.addTab("Global Average Turns by Heuristic", new ChartPanel(turnsChartByHeuristic));
 
-    // Create and add the chart panel
+    
     chartPanel = new JPanel(new BorderLayout());
     chartPanel.add(tabbedPane, BorderLayout.CENTER);
 
-    // Create and add the config panel
+    
     configPanel = createConfigPanel();
 
-    // Create and add the main panel
+   
     mainPanel = new JPanel(new BorderLayout());
     mainPanel.add(chartPanel, BorderLayout.CENTER);
 
-    // Create and add the switch button
+    
     JButton switchButton = new JButton("Switch to Config");
     switchButton.addActionListener(e -> switchWindow());
 
     JPanel topPanel = new JPanel();
     topPanel.add(switchButton);
 
-    // Add panels to the main frame
+    
     mainFrame.add(topPanel, BorderLayout.NORTH);
     mainFrame.add(mainPanel, BorderLayout.CENTER);
 
-    // Display the frame
+   
     mainFrame.setVisible(true);
 }
     private static void runExperiment() {

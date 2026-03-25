@@ -206,7 +206,7 @@ public class ExperimentMain {
         // showWinPieChart(globalResult);
         // ChartGenerator.createTimeChart(filePath);
         // ChartGenerator.createTurnsChart(filePath);
-        ChartGenerator.createWinPieChart(filePath);
+       // ChartGenerator.createWinPieChart(filePath);
 
 
     }

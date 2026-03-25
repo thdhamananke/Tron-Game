@@ -12,6 +12,6 @@ public class RunAnalyzer {
       
         String csvFile = args[0];
         System.out.println("THe name of the csv file is : "+csvFile);
-        ExperimentAnalyzer.generateAllCharts2(csvFile);
+        ExperimentAnalyzer.generateAllCharts(csvFile);
     }
 }
