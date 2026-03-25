@@ -217,6 +217,7 @@ if [ -f "$MASTER_CSV" ]; then
      # Lancer l'analyseur en arrière-plan
     #java -cp "$JAVA_CP" experiment.ExperimentConfigwithChartsmain "$MASTER_CSV" &
     #CHART_PID=$!
+    echo "$JAVA_CP" experiment.RunAnalyzer "$MASTER_CSV"
     java -cp "$JAVA_CP" experiment.RunAnalyzer "$MASTER_CSV" &
     CHART_PID=$!
     

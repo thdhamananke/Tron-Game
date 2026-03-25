@@ -1,11 +1,13 @@
-/** */
 package experiment;
 
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 import model.*; 
 
@@ -182,6 +184,42 @@ public class ExperimentAnalyzer {
         return panel;
     }
 
+  public static void generateAllCharts2(String filePath) {
+    mainFrame = new JFrame("Global Experiment Charts");
+    mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    mainFrame.setSize(900, 700);
+    mainFrame.setLocationRelativeTo(null);
+
+    JTabbedPane tabbedPane = new JTabbedPane();
+
+    JFreeChart pieChart = ChartGenerator2.createGlobalWinPieChart(filePath);
+    tabbedPane.addTab("Global Win Pie Chart", new ChartPanel(pieChart));
+
+    JFreeChart timeChart = ChartGenerator2.createGlobalTimeChart(filePath);
+    tabbedPane.addTab("Global Average Time Chart", new ChartPanel(timeChart));
+
+    JFreeChart turnsChart = ChartGenerator2.createGlobalTurnsChart(filePath);
+    tabbedPane.addTab("Global Turns Chart", new ChartPanel(turnsChart));
+
+    chartPanel = new JPanel(new BorderLayout());
+    chartPanel.add(tabbedPane, BorderLayout.CENTER);
+
+    configPanel = createConfigPanel();
+
+    mainPanel = new JPanel(new BorderLayout());
+    mainPanel.add(chartPanel, BorderLayout.CENTER);
+
+    JButton switchButton = new JButton("Switch to Config");
+    switchButton.addActionListener(e -> switchWindow());
+
+    JPanel topPanel = new JPanel();
+    topPanel.add(switchButton);
+
+    mainFrame.add(topPanel, BorderLayout.NORTH);
+    mainFrame.add(mainPanel, BorderLayout.CENTER);
+
+    mainFrame.setVisible(true);
+}
 
     private static void runExperiment() {
         try {
@@ -236,7 +274,7 @@ public class ExperimentAnalyzer {
             if (!csvDir.exists()) csvDir.mkdirs();
             if (!pdfDir.exists()) pdfDir.mkdirs();
 
-            // Nom unique pour CSV et PDF
+            
             String uniqueId = System.currentTimeMillis() + "_" + (int)(Math.random()*1000);
             String filePath = "csv/Exp_" + uniqueId + ".csv";
             String pdfPath = "pdf/Exp_" + uniqueId + ".pdf";
