@@ -23,10 +23,6 @@ public class GameRunner {
                 Position pos = randomEmptyPosition(plateau);
                 Player player = new Player(team.getName() + "_" + (j + 1), team, pos);
 
-                // Strategie strat = strategies.get(i); 
-                // player.setStrategie(strat);
-                // player.setHeuristic(strat.getHeuristic()); 
-                
                 team.getMembers().add(player);
                 joueurs.add(player);
                 plateau.placerJoueur(pos, player);

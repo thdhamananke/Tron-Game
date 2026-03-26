@@ -136,7 +136,7 @@ public class ExperimentMain {
 
             double maxConfSession = 0.0;
             for (Team team : sessionRes.getWinsPerTeam().keySet()) {
-                double conf = sessionRes.getConfidence(team, 1.96);
+                double conf = sessionRes.getConfidence(team);
                 if (conf > maxConfSession) maxConfSession = conf;
             }
             globalResult.recordSession(partiesPourCetteSession, rates, maxConfSession);
@@ -211,70 +211,70 @@ public class ExperimentMain {
 
     }
 
-    // ========== MODE BATCH ==========
    // ========== MODE BATCH ==========
-private static void runBatchMode(String[] args) {
-    try {
-        int taille = Integer.parseInt(args[0]);
-        int nbEquipes = Integer.parseInt(args[1]);
-        int nbJoueurs = Integer.parseInt(args[2]);
-        int profondeur = Integer.parseInt(args[3]);
-        
-        // ICI : séparer les stratégies et heuristiques si elles contiennent une virgule
-        String[] strategiesList = args[4].contains(",") ? args[4].split(",") : new String[]{args[4]};
-        String[] heuristicsList = args[5].contains(",") ? args[5].split(",") : new String[]{args[5]};
-        
-        int nbGames = Integer.parseInt(args[6]);
-        boolean isMix = Boolean.parseBoolean(args[7]);
-        String csvFile = args.length > 8 ? args[8] : "csv/resultat.csv";
-        String pdfFile = args.length > 9 ? args[9] : "pdf/resultat.pdf";
-
-        System.out.println("Mode batch - Configuration:");
-        System.out.println("  Plateau: " + taille + "x" + taille);
-        System.out.println("  Équipes: " + nbEquipes);
-        System.out.println("  Joueurs/équipe: " + nbJoueurs);
-        System.out.println("  Profondeur: " + profondeur);
-        System.out.println("  Stratégies: " + args[4]);
-        System.out.println("  Heuristiques: " + args[5]);
-        System.out.println("  Parties: " + nbGames);
-        System.out.println("  CSV: " + csvFile);
-        System.out.println("  PDF: " + pdfFile);
-
-        List<Strategie> strategies = new ArrayList<>();
-        
-        // Pour chaque équipe, utiliser la stratégie et heuristique correspondante
-        for (int i = 0; i < nbEquipes; i++) {
-            String stratName = strategiesList[i % strategiesList.length];
-            String heurName = heuristicsList[i % heuristicsList.length];
+    private static void runBatchMode(String[] args) {
+        try {
+            int taille = Integer.parseInt(args[0]);
+            int nbEquipes = Integer.parseInt(args[1]);
+            int nbJoueurs = Integer.parseInt(args[2]);
+            int profondeur = Integer.parseInt(args[3]);
             
-            Heuristic heuristic = createHeuristic(heurName);
-            Strategie strat = createStrategie(stratName, heuristic, profondeur);
+            // ICI : séparer les stratégies et heuristiques si elles contiennent une virgule
+            String[] strategiesList = args[4].contains(",") ? args[4].split(",") : new String[]{args[4]};
+            String[] heuristicsList = args[5].contains(",") ? args[5].split(",") : new String[]{args[5]};
             
-            // Ajouter les joueurs de cette équipe
-            for (int j = 0; j < nbJoueurs; j++) {
-                strategies.add(strat);
+            int nbGames = Integer.parseInt(args[6]);
+            boolean isMix = Boolean.parseBoolean(args[7]);
+            String csvFile = args.length > 8 ? args[8] : "csv/resultat.csv";
+            String pdfFile = args.length > 9 ? args[9] : "pdf/resultat.pdf";
+
+            System.out.println("Mode batch - Configuration:");
+            System.out.println("  Plateau: " + taille + "x" + taille);
+            System.out.println("  Équipes: " + nbEquipes);
+            System.out.println("  Joueurs/équipe: " + nbJoueurs);
+            System.out.println("  Profondeur: " + profondeur);
+            System.out.println("  Stratégies: " + args[4]);
+            System.out.println("  Heuristiques: " + args[5]);
+            System.out.println("  Parties: " + nbGames);
+            System.out.println("  CSV: " + csvFile);
+            System.out.println("  PDF: " + pdfFile);
+
+            List<Strategie> strategies = new ArrayList<>();
+            
+            // Pour chaque équipe, utiliser la stratégie et heuristique correspondante
+            for (int i = 0; i < nbEquipes; i++) {
+                String stratName = strategiesList[i % strategiesList.length];
+                String heurName = heuristicsList[i % heuristicsList.length];
+                
+                Heuristic heuristic = createHeuristic(heurName);
+                Strategie strat = createStrategie(stratName, heuristic, profondeur);
+                
+                // Ajouter les joueurs de cette équipe
+                for (int j = 0; j < nbJoueurs; j++) {
+                    strategies.add(strat);
+                }
             }
+
+            ExperimentConfig config = new ExperimentConfig(
+                taille, taille, nbEquipes, nbJoueurs, 
+                profondeur, nbGames, strategies
+            );
+
+            GameRunner runner = new GameRunner();
+            ExperimentRunner experiment = new ExperimentRunner(runner);
+            ExperimentResult result = experiment.run(config);
+
+            PDFExporter.export(config, result, strategies, pdfFile);
+            CSVExporter.export(config, result, strategies, csvFile);
+            
+            System.out.println("Expérience terminée avec succès!");
+            
+        } catch (Exception e) {
+            System.err.println(" ERREUR: " + e.getMessage());
+            e.printStackTrace();
         }
-
-        ExperimentConfig config = new ExperimentConfig(
-            taille, taille, nbEquipes, nbJoueurs, 
-            profondeur, nbGames, strategies
-        );
-
-        GameRunner runner = new GameRunner();
-        ExperimentRunner experiment = new ExperimentRunner(runner);
-        ExperimentResult result = experiment.run(config);
-
-        PDFExporter.export(config, result, strategies, pdfFile);
-        CSVExporter.export(config, result, strategies, csvFile);
-        
-        System.out.println("Expérience terminée avec succès!");
-        
-    } catch (Exception e) {
-        System.err.println(" ERREUR: " + e.getMessage());
-        e.printStackTrace();
     }
-}
+
     private static Heuristic createHeuristic(String name) {
         switch(name) {
             case "FreeSpaceHeuristic": return new FreeSpaceHeuristic();

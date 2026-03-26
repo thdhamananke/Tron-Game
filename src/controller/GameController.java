@@ -270,7 +270,6 @@ public class GameController {
     }
 
 
-
     /* ================= GETTERS ================= */
 
     public ModeleJeu getGame() { return this.game; }

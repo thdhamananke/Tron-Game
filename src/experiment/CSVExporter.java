@@ -68,7 +68,7 @@ public class CSVExporter {
             }
             pw.println();
 
-            pw.println("TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours");
+            pw.println("TailleGrille,EquipeGagnante,TempsMs,NbTours");
             
             for (GameResult gr : result.getHistory()) {
                 String winnerName = (gr.getWinner() != null) ? gr.getWinner().getName() : "Match Nul";

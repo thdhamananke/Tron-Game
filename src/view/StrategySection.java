@@ -35,8 +35,6 @@ public class StrategySection extends JPanel {
 
         JButton applyButton = new JButton("✓ Appliquer la configuration");
         applyButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        // applyButton.setBackground(new Color(34, 139, 34));
-        // applyButton.setForeground(Color.WHITE);
         applyButton.setFocusPainted(false);
         applyButton.setFont(new Font("Arial", Font.BOLD, 14));
         applyButton.addActionListener(e -> appliquer());
