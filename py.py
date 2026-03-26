@@ -1,7 +1,7 @@
 import re
 import pandas as pd
 from pathlib import Path
-INPUT_CSV = "csv/duel_20260326_101031.csv"  
+INPUT_CSV = "csv/duel_20260326_193013.csv"  
 OUTPUT_XLSX = "analyse_experiences.xlsx"
 
 def parse_duel_file(file_path: str) -> pd.DataFrame:
@@ -34,15 +34,14 @@ def parse_duel_file(file_path: str) -> pd.DataFrame:
 
             config_name = line.replace("# CONFIG:", "").strip()
 
-            # Avance jusqu'à l'en-tête de données
+            # Avance jusqu'a entete
             while i < len(lines) and "TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours" not in lines[i]:
                 i += 1
 
-            # Si on ne trouve pas l'en-tête, on passe
+            # pas de entete, on passe
             if i >= len(lines):
                 break
 
-            # Sauter la ligne d'en-tête
             i += 1
 
             partie_num = 1
@@ -60,7 +59,7 @@ def parse_duel_file(file_path: str) -> pd.DataFrame:
                     i += 1
                     continue
 
-                # On attend : TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+                # sortie: TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
                 parts = [p.strip() for p in current.split(",")]
                 if len(parts) == 4:
                     try:
@@ -103,9 +102,8 @@ def parse_duel_file(file_path: str) -> pd.DataFrame:
     return df
 
 
-# =========================================================
 # TABLEAUX DE SYNTHÈSE
-# =========================================================
+
 def build_summary(df: pd.DataFrame, group_cols):
     summary = (
         df.groupby(group_cols, dropna=False)
@@ -127,9 +125,7 @@ def build_summary(df: pd.DataFrame, group_cols):
     return summary.sort_values(group_cols).reset_index(drop=True)
 
 
-# =========================================================
 # EXPORT EXCEL
-# =========================================================
 def export_to_excel(df: pd.DataFrame, output_path: str):
     resume_config = build_summary(
         df,
@@ -141,7 +137,7 @@ def export_to_excel(df: pd.DataFrame, output_path: str):
     resume_profondeur = build_summary(df, ["profondeur"])
     resume_plateau = build_summary(df, ["plateau"])
 
-    # Tableau croisé très utile
+    # Tableau croisé 
     pivot_strat_heur = pd.pivot_table(
         df,
         index=["strategie1"],
@@ -161,19 +157,13 @@ def export_to_excel(df: pd.DataFrame, output_path: str):
         resume_plateau.to_excel(writer, sheet_name="resume_plateau", index=False)
         pivot_strat_heur.to_excel(writer, sheet_name="pivot_strat_heuristique")
 
-    print(f"Fichier Excel généré : {output_path}")
 
 
-# =========================================================
+#
 # MAIN
-# =========================================================
 if __name__ == "__main__":
     df = parse_duel_file(INPUT_CSV)
 
-    if df.empty:
-        print("Aucune donnée exploitable trouvée dans le fichier.")
-    else:
         print("Nombre de parties trouvées :", len(df))
         print(df.head())
-
         export_to_excel(df, OUTPUT_XLSX)
