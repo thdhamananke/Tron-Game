@@ -1,0 +1,316 @@
+# EXPÉRIENCES DUEL - jeu. 26 mars 2026 12:32:11 CET
+# Plateau: 20 30 50, Profondeurs: 3 6 9
+# Stratégies: AlphaBetaStrategie MaxNStrategie ParanoidStrategie SOSStrategie
+# Heuristiques: FreeSpaceHeuristic VoronoiHeuristic TreeOfChambersHeuristic
+# Parties par config: 50
+
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Match Nul,809,3
+400,Match Nul,581,2
+400,Match Nul,778,3
+400,Match Nul,733,2
+400,Match Nul,648,2
+400,Match Nul,620,2
+400,Match Nul,627,2
+400,Match Nul,677,2
+400,Match Nul,357,2
+400,Match Nul,345,2
+400,Equipe_4,413,3
+400,Match Nul,298,2
+400,Match Nul,516,2
+400,Match Nul,307,2
+400,Equipe_3,267,2
+400,Equipe_4,296,2
+400,Equipe_2,293,2
+400,Match Nul,366,2
+400,Equipe_4,375,2
+400,Equipe_4,376,2
+400,Match Nul,452,2
+400,Equipe_2,380,2
+400,Match Nul,364,2
+400,Equipe_4,354,2
+400,Match Nul,415,2
+400,Match Nul,376,2
+400,Match Nul,417,3
+400,Match Nul,338,2
+400,Match Nul,363,2
+400,Match Nul,332,2
+400,Match Nul,371,2
+400,Equipe_2,388,2
+400,Match Nul,370,2
+400,Equipe_2,309,2
+400,Match Nul,395,3
+400,Equipe_4,337,2
+400,Match Nul,418,3
+400,Match Nul,342,2
+400,Equipe_4,297,2
+400,Match Nul,284,2
+400,Equipe_2,283,2
+400,Match Nul,312,2
+400,Equipe_2,259,2
+400,Equipe_2,263,2
+400,Equipe_4,290,2
+400,Equipe_4,285,2
+400,Match Nul,252,2
+400,Equipe_2,246,2
+400,Match Nul,203,2
+400,Match Nul,152,2
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_4,1551,4
+400,Equipe_2,1854,3
+400,Equipe_4,1440,2
+400,Equipe_4,1568,3
+400,Match Nul,2165,5
+400,Equipe_2,1495,2
+400,Equipe_2,1512,3
+400,Equipe_4,2200,8
+400,Equipe_2,639,3
+400,Match Nul,1127,6
+400,Equipe_2,814,5
+400,Equipe_2,593,2
+400,Equipe_2,964,5
+400,Equipe_2,396,3
+400,Equipe_2,525,4
+400,Equipe_2,406,3
+400,Match Nul,582,5
+400,Equipe_4,438,3
+400,Equipe_2,1223,8
+400,Equipe_2,621,3
+400,Equipe_4,319,3
+400,Equipe_4,702,5
+400,Equipe_4,229,2
+400,Equipe_4,426,3
+400,Equipe_2,776,6
+400,Equipe_2,748,5
+400,Match Nul,519,4
+400,Equipe_4,399,4
+400,Equipe_4,401,3
+400,Equipe_2,428,4
+400,Match Nul,899,8
+400,Equipe_2,460,4
+400,Equipe_4,492,4
+400,Equipe_2,611,6
+400,Match Nul,848,7
+400,Equipe_4,435,3
+400,Equipe_2,593,4
+400,Equipe_2,401,3
+400,Equipe_4,402,3
+400,Equipe_4,692,5
+400,Match Nul,573,4
+400,Equipe_4,493,4
+400,Equipe_4,498,4
+400,Equipe_2,681,7
+400,Match Nul,550,4
+400,Match Nul,497,3
+400,Equipe_4,536,6
+400,Equipe_4,414,11
+400,Equipe_2,359,8
+400,Equipe_4,295,4
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_TreeOfChambersHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MaxNStrategie (TreeOfChambersHeuristic)
+# Parties: 50
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_2,7525,4
+400,Match Nul,5916,3
+400,Equipe_4,4965,2
+400,Equipe_4,6282,3
+400,Equipe_2,5815,3
+400,Equipe_4,5688,3
+400,Equipe_4,5391,2
+400,Match Nul,5413,3
+400,Equipe_2,7291,3
+400,Equipe_4,9168,4
+400,Equipe_4,6820,3
+400,Equipe_4,13679,6
+400,Equipe_2,7106,3
+400,Equipe_4,6490,2
+400,Match Nul,10425,5
+400,Match Nul,9383,5
+400,Equipe_2,8933,4
+400,Equipe_2,10640,5
+400,Match Nul,10293,5
+400,Match Nul,7232,3
+400,Match Nul,7240,3
+400,Equipe_4,8438,3
+400,Equipe_4,10586,4
+400,Match Nul,9065,4
+400,Equipe_2,7532,3
+400,Equipe_2,9356,4
+400,Match Nul,18083,7
+400,Equipe_4,11936,5
+400,Equipe_2,7282,3
+400,Match Nul,6933,3
+400,Equipe_2,6809,2
+400,Match Nul,8056,3
+400,Match Nul,11096,5
+400,Equipe_4,8080,3
+400,Equipe_4,8722,3
+400,Match Nul,7166,3
+400,Match Nul,6621,2
+400,Equipe_2,7568,3
+400,Equipe_2,17200,7
+400,Equipe_2,12379,5
+400,Equipe_4,6983,3
+400,Equipe_2,8909,3
+400,Equipe_2,7363,3
+400,Equipe_4,9763,4
+400,Match Nul,11621,5
+400,Equipe_4,7005,3
+400,Equipe_4,7380,3
+400,Equipe_2,12052,7
+400,Equipe_2,11097,4
+400,Equipe_2,10672,4
+
+# CONFIG: P20_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Match Nul,1332,13
+400,Equipe_1,1130,9
+400,Equipe_3,1152,9
+400,Equipe_1,966,4
+400,Match Nul,1154,12
+400,Equipe_1,1256,11
+400,Equipe_3,954,5
+400,Equipe_1,1197,12
+400,Equipe_3,533,6
+400,Equipe_3,677,11
+400,Equipe_3,617,11
+400,Equipe_1,632,11
+400,Equipe_1,567,7
+400,Equipe_1,609,11
+400,Equipe_3,596,9
+400,Equipe_1,507,14
+400,Equipe_3,423,11
+400,Equipe_1,357,7
+400,Equipe_3,479,12
+400,Equipe_1,472,11
+400,Equipe_1,462,6
+400,Match Nul,725,13
+400,Equipe_1,524,7
+400,Equipe_3,525,10
+400,Equipe_1,659,10
+400,Equipe_1,502,12
+400,Match Nul,541,11
+400,Equipe_3,514,10
+400,Equipe_1,638,14
+400,Equipe_1,544,9
+400,Match Nul,610,11
+400,Equipe_3,656,13
+400,Equipe_3,570,9
+400,Equipe_3,563,11
+400,Equipe_1,524,11
+400,Equipe_3,495,12
+400,Equipe_1,413,4
+400,Equipe_1,403,6
+400,Equipe_1,536,7
+400,Equipe_1,490,5
+400,Equipe_1,629,14
+400,Equipe_1,471,4
+400,Equipe_1,616,12
+400,Equipe_3,502,5
+400,Equipe_1,353,6
+400,Equipe_3,472,5
+400,Equipe_3,390,8
+400,Equipe_1,333,7
+400,Equipe_3,342,16
+400,Equipe_1,301,9
+
+# CONFIG: P20_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_1,1692,9
+400,Equipe_3,1710,10
+400,Equipe_1,1632,7
+400,Equipe_1,1557,10
+400,Equipe_1,1914,13
+400,Equipe_1,2436,15
+400,Equipe_3,2020,15
+400,Equipe_1,1854,11
+400,Equipe_1,1055,10
+400,Equipe_3,920,11
+400,Equipe_3,862,9
+400,Equipe_1,881,9
+400,Equipe_3,805,10
+400,Equipe_3,864,7
+400,Equipe_3,1178,13
+400,Equipe_3,1008,18
+400,Equipe_1,695,8
+400,Equipe_1,733,13
+400,Match Nul,1432,10
+400,Match Nul,1206,12
+400,Equipe_4,990,10
+400,Equipe_1,1001,17
+400,Equipe_1,720,4
+400,Equipe_1,740,8
+400,Equipe_1,717,9
+400,Equipe_3,1263,8
+400,Equipe_1,1487,17
+400,Equipe_3,786,9
+400,Equipe_1,897,6
+400,Equipe_1,850,6
+400,Equipe_3,1243,12
+400,Equipe_1,1322,11
+400,Equipe_3,1494,14
+400,Equipe_3,1389,9
+400,Equipe_4,1538,10
+400,Equipe_3,874,8
+400,Equipe_1,875,8
+400,Equipe_1,1243,9
+400,Equipe_1,1118,8
+400,Equipe_1,1416,12
+400,Equipe_3,908,10
+400,Match Nul,1662,14
+400,Equipe_3,807,6
+400,Equipe_1,988,8
+400,Match Nul,1046,15
+400,Equipe_3,838,9
+400,Equipe_3,770,7
+400,Equipe_1,787,10
+400,Equipe_1,859,10
+400,Match Nul,639,10

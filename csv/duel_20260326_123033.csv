@@ -1,0 +1,244 @@
+# EXPÉRIENCES DUEL - jeu. 26 mars 2026 12:30:33 CET
+# Plateau: 20 30 50, Profondeurs: 3 6 9
+# Stratégies: AlphaBetaStrategie MaxNStrategie ParanoidStrategie SOSStrategie
+# Heuristiques: FreeSpaceHeuristic VoronoiHeuristic TreeOfChambersHeuristic
+# Parties par config: 5
+
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_4,403,2
+400,Equipe_2,357,2
+400,Equipe_2,403,2
+400,Match Nul,388,2
+400,Match Nul,366,2
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_4,1221,3
+400,Equipe_4,1189,3
+400,Equipe_2,1336,6
+400,Equipe_4,1425,10
+400,Equipe_4,1413,10
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_TreeOfChambersHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MaxNStrategie (TreeOfChambersHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_2,5344,3
+400,Equipe_2,4267,2
+400,Equipe_4,8206,6
+400,Equipe_4,6249,3
+400,Equipe_4,5994,3
+
+# CONFIG: P20_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_1,603,18
+400,Match Nul,576,7
+400,Equipe_1,598,11
+400,Equipe_3,608,9
+400,Equipe_3,559,8
+
+# CONFIG: P20_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_3,849,8
+400,Equipe_1,818,9
+400,Equipe_1,916,9
+400,Equipe_4,895,9
+400,Equipe_2,1078,12
+
+# CONFIG: P20_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MaxNStrategie_TreeOfChambersHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MaxNStrategie (TreeOfChambersHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_3,13669,14
+400,Equipe_3,11529,8
+400,Equipe_1,6982,4
+400,Equipe_1,8558,12
+400,Equipe_1,7391,4
+
+# CONFIG: P20_D3_AlphaBetaStrategie_TreeOfChambersHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (TreeOfChambersHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_1,3003,4
+400,Equipe_3,4312,6
+400,Equipe_1,3496,6
+400,Equipe_3,3112,4
+400,Equipe_3,4219,9
+
+# CONFIG: P20_D3_AlphaBetaStrategie_TreeOfChambersHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (TreeOfChambersHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_4,4160,5
+400,Equipe_2,5002,8
+400,Equipe_2,5907,20
+400,Match Nul,4400,11
+400,Match Nul,3072,13
+
+# CONFIG: P20_D3_AlphaBetaStrategie_TreeOfChambersHeuristic_VS_MaxNStrategie_TreeOfChambersHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (TreeOfChambersHeuristic) vs MaxNStrategie (TreeOfChambersHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Match Nul,15992,7
+400,Equipe_3,16297,4
+400,Equipe_1,18545,5
+400,Match Nul,19707,5
+400,Equipe_3,14609,5
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_FreeSpaceHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Match Nul,193,2
+400,Match Nul,195,3
+400,Match Nul,171,2
+400,Match Nul,187,2
+400,Equipe_4,184,2
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_VoronoiHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_4,397,7
+400,Equipe_4,337,3
+400,Equipe_2,380,5
+400,Equipe_4,395,7
+400,Equipe_4,377,10
+
+# CONFIG: P20_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_TreeOfChambersHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (TreeOfChambersHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_4,8410,2
+400,Equipe_4,10003,3
+400,Equipe_4,9856,2
+400,Equipe_2,9765,3
+400,Equipe_4,9914,3
+
+# CONFIG: P20_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_ParanoidStrategie_FreeSpaceHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs ParanoidStrategie (FreeSpaceHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_3,428,6
+400,Equipe_3,374,4
+400,Equipe_1,460,13
+400,Equipe_1,439,7
+400,Match Nul,552,16
+
+# CONFIG: P20_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_ParanoidStrategie_VoronoiHeuristic
+# Plateau: 20x20, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs ParanoidStrategie (VoronoiHeuristic)
+# Parties: 5
+Nombre d'Equipes = 4
+Joueurs Par Equipe = 2
+Profondeur IA = 3
+Nombre Parties = 5
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+400,Equipe_3,527,11
+400,Equipe_2,663,18
+400,Equipe_3,593,12
+400,Equipe_2,563,10
+400,Equipe_4,639,12
