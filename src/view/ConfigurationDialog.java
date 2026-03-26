@@ -60,7 +60,7 @@ public class ConfigurationDialog extends JDialog {
         configPanel.setLayout(new BoxLayout(configPanel, BoxLayout.Y_AXIS));
         JScrollPane scrollPane = new JScrollPane(configPanel);
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setPreferredSize(new Dimension(600, 250));
+        scrollPane.setPreferredSize(new Dimension(600, 450));
         mainPanel.add(scrollPane, BorderLayout.CENTER);
 
         // --- 3. ZONE BASSE (SOUTH) : MESSAGE D'AIDE + BOUTONS ---
@@ -125,30 +125,45 @@ public class ConfigurationDialog extends JDialog {
             ));
             equipePanel.setBackground(new java.awt.Color(245, 245, 245));
 
-            JPanel joueursPanel = new JPanel(new GridLayout(nbParEquipe, 4, 8, 5));
-            joueursPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+            
+            JPanel joueursPanel = new JPanel(new GridBagLayout());
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.insets = new Insets(2, 5, 2, 5); // Espacement entre les éléments
+            gbc.fill = GridBagConstraints.HORIZONTAL;
 
             for (int j = 0; j < nbParEquipe; j++) {
-                joueursPanel.add(new JLabel("Joueur " + (j + 1) + " :", SwingConstants.RIGHT));
+                gbc.gridy = j; // Ligne actuelle du joueur
+                
+                // Colonne 0 : Label
+                gbc.gridx = 0; gbc.weightx = 0.1;
+                joueursPanel.add(new JLabel("Joueur " + (j + 1) + " :"), gbc);
 
+                // Colonne 1 : Stratégie
+                gbc.gridx = 1; gbc.weightx = 0.4;
                 JComboBox<String> stratBox = new JComboBox<>(strategies);
                 stratBox.setSelectedItem("AlphaBeta");
-                stratBox.setPreferredSize(new Dimension(120, 20));
-                joueursPanel.add(stratBox);
+                // Supprimez setPreferredSize ou réduisez-le
+                stratBox.setMinimumSize(new Dimension(100, 20)); 
+                joueursPanel.add(stratBox, gbc);
                 strategieBoxes.add(stratBox);
 
+                // Colonne 2 : Heuristique
+                gbc.gridx = 2; gbc.weightx = 0.4;
                 JComboBox<String> heurBox = new JComboBox<>(heuristiques);
                 heurBox.setSelectedItem("FreeSpace");
-                heurBox.setPreferredSize(new Dimension(120, 20));
-                joueursPanel.add(heurBox);
+                heurBox.setMinimumSize(new Dimension(100, 20));
+                joueursPanel.add(heurBox, gbc);
                 heuristiqueBoxes.add(heurBox);
 
-                JSpinner depthSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 10, 1));
-                JPanel depthWrapper = new JPanel(new BorderLayout());
-                depthWrapper.setOpaque(false);
-                depthWrapper.setPreferredSize(new Dimension(40, 20));
-                depthWrapper.add(depthSpinner, BorderLayout.CENTER);
-                joueursPanel.add(depthWrapper); 
+                // Colonne 3 : Profondeur
+                gbc.gridx = 3; gbc.weightx = 0.2;
+                JSpinner depthSpinner = new JSpinner(new SpinnerNumberModel(5, 1, 15, 1));
+                JPanel spinnerWrapper = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
+                spinnerWrapper.setOpaque(false);
+                depthSpinner.setPreferredSize(new Dimension(70, 40));
+                spinnerWrapper.add(depthSpinner);
+
+                joueursPanel.add(spinnerWrapper, gbc);
                 depthSpinners.add(depthSpinner);
             }
 

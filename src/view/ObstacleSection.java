@@ -48,7 +48,6 @@ public class ObstacleSection extends JPanel {
             }
         });
 
-        
 
         // Ajout des composants avec des espaces
         add(Box.createVerticalStrut(10));

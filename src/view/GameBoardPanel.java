@@ -24,7 +24,7 @@ public class GameBoardPanel extends JPanel implements EcouteurModele {
     private int obstacleButton = 0;
     
     private int lastToggledRow = -1;
-private int lastToggledCol = -1;
+    private int lastToggledCol = -1;
 
     public GameBoardPanel(ModeleJeu game) {
         this.game = game;

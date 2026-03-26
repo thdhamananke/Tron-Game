@@ -25,26 +25,30 @@ public class SidePanel extends JPanel {
 
         add(createTitle());
         add(Box.createVerticalStrut(10));
-        ControlSection newcControlSection = new ControlSection(controller);
-        add(newcControlSection);
-        newcControlSection.setLocation(0,0);
+        
+        // ControlSection newcControlSection = ;
+        add(new ControlSection(controller));
         add(Box.createVerticalStrut(10));
+        // newcControlSection.setLocation(0,0);
 
-        // Nouvelle StrategySection simplifiée
+        // StrategySection
         add(new StrategySection(controller, gui));
         add(Box.createVerticalStrut(10));
 
+        // ConfigurationSection
         add(new ConfigSection(controller, gameBoard));
         add(Box.createVerticalStrut(10));
 
+        // ObstacleSection
         add(new ObstacleSection(gameBoard));
         add(Box.createVerticalStrut(10));
 
+        // SpeedSection
         add(new SpeedSection(controller));
         add(Box.createVerticalStrut(10));
 
+        // HistorySection
         add(new HistorySection(controller));
-
         add(Box.createVerticalGlue());
     }
 

@@ -158,6 +158,16 @@ public class GameController {
         System.out.println("⏹ Jeu arrêté");
     }
 
+    public void fermerApplication() {
+        stopGame();
+        
+        if (vue != null) {
+            vue.dispose(); 
+        }
+        System.out.println("🚪 Application fermée.");
+    }
+
+
     public void changeGridSize(int rows, int cols) {
         if (running) stopGame();
         
@@ -179,7 +189,6 @@ public class GameController {
     }
 
     /* ================= CONFIGURATION STRATEGIES ================= */
-
     /**
      * NOUVELLE MÉTHODE: Permet de changer la stratégie d'un joueur
      */
@@ -259,6 +268,8 @@ public class GameController {
             System.out.println("💾 Partie enregistrée dans l'historique");
         }
     }
+
+
 
     /* ================= GETTERS ================= */
 

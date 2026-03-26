@@ -33,12 +33,12 @@ public class StrategySection extends JPanel {
         add(Box.createVerticalStrut(15));
         add(createPlayerPanel(false));
 
-        JButton applyButton = new JButton("✓ Appliquer");
+        JButton applyButton = new JButton("✓ Appliquer la configuration");
         applyButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        applyButton.setBackground(new Color(34, 139, 34));
-        applyButton.setForeground(Color.WHITE);
+        // applyButton.setBackground(new Color(34, 139, 34));
+        // applyButton.setForeground(Color.WHITE);
         applyButton.setFocusPainted(false);
-        applyButton.setFont(new Font("Arial", Font.BOLD, 12));
+        applyButton.setFont(new Font("Arial", Font.BOLD, 14));
         applyButton.addActionListener(e -> appliquer());
         add(Box.createVerticalStrut(10));
         add(applyButton);
@@ -115,7 +115,6 @@ public class StrategySection extends JPanel {
 
         JOptionPane.showMessageDialog(this,
                 "Stratégies mises à jour.\nRedémarrez la partie si elle est en cours.",
-                "Configuration",
-                JOptionPane.INFORMATION_MESSAGE);
+                "Configuration", JOptionPane.INFORMATION_MESSAGE);
     }
 }

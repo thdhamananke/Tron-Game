@@ -12,13 +12,8 @@ public class ConfigSection extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBorder(BorderFactory.createTitledBorder("Configuration"));
 
-        JSpinner rowsSpinner = new JSpinner(
-                new SpinnerNumberModel(30,15,100,1)
-        );
-
-        JSpinner colsSpinner = new JSpinner(
-                new SpinnerNumberModel(30,15,100,1)
-        );
+        JSpinner rowsSpinner = new JSpinner(new SpinnerNumberModel(30,15,100,1));
+        JSpinner colsSpinner = new JSpinner(new SpinnerNumberModel(30,15,100,1));
 
         JButton applyButton = new JButton("Appliquer taille");
 

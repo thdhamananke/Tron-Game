@@ -63,7 +63,7 @@ public class GUI extends JFrame implements EcouteurModele {
         
         // FIX: SidePanel avec son propre scroll
         JScrollPane sidePanelScroll = new JScrollPane(sidePanel);
-        sidePanelScroll.setPreferredSize(new Dimension(320, 750));
+        sidePanelScroll.setPreferredSize(new Dimension(360, 750));
         sidePanelScroll.setBorder(BorderFactory.createEmptyBorder());
         sidePanelScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         sidePanelScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
