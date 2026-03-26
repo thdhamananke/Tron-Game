@@ -13,7 +13,7 @@ public class ExperimentConfigwithChartsmain {
     
         SwingUtilities.invokeLater(() -> {
            
-            ExperimentAnalyzer.generateAllCharts(""); 
+            ExperimentAnalyzerforTeams.generateAllCharts(""); 
            //ExperimentAnalyzer.launchGUI();
         });
 
