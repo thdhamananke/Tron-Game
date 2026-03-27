@@ -53,7 +53,7 @@ public class ChartGenerator {
             }
 
             
-            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours")) {
+            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMs,NbTours")) {
                 inDataSection = true;
                 continue;
             }
@@ -147,7 +147,7 @@ public static JFreeChart createGlobalWinPieChartByStrategyOnly(String csvFilePat
             }
 
             
-            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours")) {
+            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMs,NbTours")) {
                 inDataSection = true;
                 continue;
             }
@@ -248,7 +248,7 @@ public static JFreeChart createGlobalWinPieChartByStrategyOnly(String csvFilePat
             }
 
             
-            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours")) {
+            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMs,NbTours")) {
                 inDataSection = true;
                 continue;
             }
@@ -349,7 +349,7 @@ public static JFreeChart createGlobalWinPieChartByStrategyOnly(String csvFilePat
             }
 
          
-            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours")) {
+            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMs,NbTours")) {
                 inDataSection = true;
                 continue;
             }
@@ -429,7 +429,7 @@ public static JFreeChart createGlobalTimeChartByHeuristic(String csvFilePath) {
             }
 
             
-            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours")) {
+            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMs,NbTours")) {
                 inDataSection = true;
                 continue;
             }
@@ -512,7 +512,7 @@ public static JFreeChart createGlobalTurnsChartByStrategy(String csvFilePath) {
             }
 
            
-            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours")) {
+            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMs,NbTours")) {
                 inDataSection = true;
                 continue;
             }
@@ -595,7 +595,7 @@ public static JFreeChart createGlobalTurnsChartByHeuristic(String csvFilePath) {
             }
 
             
-            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours")) {
+            if (line.startsWith("TailleGrille,EquipeGagnante,TempsMs,NbTours")) {
                 inDataSection = true;
                 continue;
             }

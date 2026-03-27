@@ -13,7 +13,7 @@ public class ExperimentConfigwithChartsmain {
            
             ExperimentAnalyzerforTeams.generateAllCharts(""); 
            //ExperimentAnalyzer.launchGUI();
-            ExperimentAnalyzer.generateAllCharts(""); 
+         //   ExperimentAnalyzer.generateAllCharts(""); 
         });
 
     }

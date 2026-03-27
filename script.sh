@@ -23,6 +23,7 @@ rm sources.txt
 echo "Compilation réussie"
 echo ""
 
+
 #config
 plateau_sizes=(10 15 20 )
 depths=(3 6 9)
@@ -215,8 +216,11 @@ if [ -f "$MASTER_CSV" ]; then
     echo "Fichier CSV: $MASTER_CSV"
     
     # Lancer l'analyseur en arrière-plan
-    java -cp "$JAVA_CP" experiment.ExperimentConfigwithChartsmain "$MASTER_CSV" &
+    #java -cp "$JAVA_CP" experiment.ExperimentConfigwithChartsmain "$MASTER_CSV" &
+#CHART_PI
+    java -cp "$JAVA_CP" experiment.RunAnalyzer "$MASTER_CSV" &
     CHART_PID=$!
+
     
     echo "Analyseur lancé (PID: $CHART_PID)"
 
