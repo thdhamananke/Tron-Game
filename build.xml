@@ -118,11 +118,7 @@
 
     <!-- ==================== Run ==================== -->
     <target name="run" depends="dist" description="Run application">
-<<<<<<< HEAD
         <java classname="LauncherMain" fork="true"> 
-=======
-        <java classname="experiment.ExperimentMain" fork="true"> 
->>>>>>> 8578e17 (Modification des certains paties)
             <classpath>
                 <pathelement location="${dist.home}/${app.fullname}.jar"/>
                 <path refid="compile.classpath"/>

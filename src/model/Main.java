@@ -12,9 +12,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         //  configuration unique
-        System.out.println("╔════════════════════════════════════════════╗");
-        System.out.println("║         BIENVENUE AU JEU DE TRON           ║");
-        System.out.println("╚════════════════════════════════════════════╝\n");
+        System.out.println("╔═══════════════════════════════════════════════════════╗");
+        System.out.println("║       BIENVENUE AU JEU DE TRON EN MODE CONSOLE        ║");
+        System.out.println("╚═══════════════════════════════════════════════════════╝\n");
 
         int nbLignes  = entier(sc, "Nombre de lignes du plateau : ");
         int nbColonnes  = entier(sc, "Nombre de colonnes du plateau : ");

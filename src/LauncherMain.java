@@ -6,12 +6,15 @@ public class LauncherMain {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("      LANCEUR DU PROJET TRON      ");
+
+            System.out.println("╔════════════════════════════════════════════╗");
+            System.out.println("║         BIENVENUE AU JEU DE TRON           ║");
+            System.out.println("╚════════════════════════════════════════════╝\n");
             System.out.println("1. Lancer le mode graphique");
             System.out.println("2. Lancer le mode console");
             System.out.println("3. Lancer l'expérimentation manuelle");
             System.out.println("0. Quitter");
-            System.out.print("Choix : ");
+            System.out.println("Votre choix : ");
 
             String choix = scanner.nextLine().trim();
 
