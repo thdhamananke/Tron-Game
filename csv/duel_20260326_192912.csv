@@ -1,0 +1,3230 @@
+# EXPÉRIENCES DUEL - jeu. 26 mars 2026 19:29:12 CET
+# Plateau: 12 15, Profondeurs: 3 4
+# Stratégies: MinMaxStrategie AlphaBetaStrategie MaxNStrategie ParanoidStrategie
+# Heuristiques: FreeSpaceHeuristic VoronoiHeuristic
+# Parties par config: 50
+
+
+# CONFIG: P12_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,74,2
+144,Match Nul,77,2
+144,Match Nul,64,2
+144,Match Nul,75,2
+144,Equipe_2,65,2
+144,Match Nul,61,2
+144,Match Nul,51,2
+144,Match Nul,53,2
+144,Match Nul,56,2
+144,Match Nul,48,2
+144,Match Nul,44,2
+144,Match Nul,52,2
+144,Equipe_2,60,2
+144,Match Nul,49,2
+144,Match Nul,43,2
+144,Match Nul,42,2
+144,Match Nul,36,2
+144,Match Nul,29,2
+144,Match Nul,17,2
+144,Match Nul,44,2
+144,Match Nul,25,2
+144,Match Nul,22,2
+144,Match Nul,19,2
+144,Match Nul,25,2
+144,Match Nul,20,2
+144,Match Nul,21,2
+144,Match Nul,15,2
+144,Match Nul,15,2
+144,Match Nul,32,2
+144,Match Nul,14,2
+144,Match Nul,12,2
+144,Match Nul,11,2
+144,Match Nul,7,2
+144,Match Nul,9,2
+144,Match Nul,10,2
+144,Match Nul,19,2
+144,Match Nul,16,2
+144,Match Nul,10,2
+144,Match Nul,12,2
+144,Match Nul,19,2
+144,Match Nul,14,2
+144,Match Nul,12,2
+144,Match Nul,9,2
+144,Match Nul,6,2
+144,Match Nul,11,2
+144,Match Nul,4,2
+144,Match Nul,3,2
+144,Match Nul,3,2
+144,Equipe_2,2,2
+144,Equipe_2,2,2
+
+# CONFIG: P12_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,211,2
+144,Equipe_2,155,2
+144,Equipe_2,171,2
+144,Equipe_2,145,2
+144,Equipe_2,225,2
+144,Equipe_2,133,2
+144,Equipe_2,133,2
+144,Equipe_2,141,2
+144,Equipe_2,91,2
+144,Equipe_2,73,2
+144,Equipe_2,73,2
+144,Equipe_2,90,2
+144,Equipe_2,40,2
+144,Equipe_2,63,2
+144,Equipe_2,76,2
+144,Equipe_2,60,2
+144,Equipe_2,91,2
+144,Equipe_2,52,2
+144,Equipe_2,48,2
+144,Equipe_2,45,2
+144,Equipe_2,66,2
+144,Equipe_2,70,2
+144,Equipe_2,48,2
+144,Equipe_2,48,2
+144,Equipe_2,41,2
+144,Equipe_2,25,2
+144,Equipe_2,45,2
+144,Equipe_2,48,2
+144,Equipe_2,48,2
+144,Equipe_2,58,2
+144,Equipe_2,58,2
+144,Equipe_2,40,2
+144,Equipe_2,56,2
+144,Equipe_2,11,2
+144,Equipe_2,38,2
+144,Equipe_2,44,2
+144,Equipe_2,82,2
+144,Equipe_2,48,2
+144,Equipe_2,39,2
+144,Equipe_2,63,2
+144,Equipe_2,41,2
+144,Equipe_2,79,2
+144,Equipe_2,45,2
+144,Equipe_2,44,2
+144,Equipe_2,40,2
+144,Equipe_2,38,2
+144,Equipe_2,40,2
+144,Equipe_2,26,2
+144,Equipe_2,26,2
+144,Equipe_2,25,2
+
+# CONFIG: P12_D3_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,63,2
+144,Equipe_1,35,2
+144,Equipe_1,82,2
+144,Equipe_1,75,2
+144,Equipe_1,80,2
+144,Equipe_1,55,2
+144,Match Nul,78,2
+144,Equipe_1,71,2
+144,Equipe_1,43,2
+144,Equipe_1,38,2
+144,Equipe_1,63,2
+144,Equipe_1,71,2
+144,Equipe_1,102,2
+144,Equipe_1,80,2
+144,Equipe_1,34,2
+144,Match Nul,47,2
+144,Equipe_1,82,2
+144,Equipe_1,44,2
+144,Equipe_1,40,2
+144,Equipe_1,62,2
+144,Match Nul,66,2
+144,Equipe_1,72,2
+144,Equipe_1,69,2
+144,Equipe_1,54,2
+144,Equipe_1,74,2
+144,Equipe_1,49,2
+144,Equipe_1,35,2
+144,Equipe_1,44,2
+144,Equipe_1,53,2
+144,Equipe_1,24,2
+144,Equipe_1,24,2
+144,Equipe_1,27,2
+144,Equipe_1,28,2
+144,Equipe_1,21,2
+144,Equipe_1,39,2
+144,Equipe_1,16,2
+144,Equipe_1,21,2
+144,Equipe_1,25,2
+144,Equipe_1,13,2
+144,Equipe_1,16,2
+144,Equipe_1,20,2
+144,Equipe_1,21,2
+144,Equipe_1,22,2
+144,Equipe_1,21,2
+144,Equipe_1,14,2
+144,Equipe_1,22,2
+144,Equipe_1,17,2
+144,Equipe_1,17,2
+144,Equipe_1,13,2
+144,Equipe_1,10,2
+
+# CONFIG: P12_D3_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,255,8
+144,Equipe_1,95,1
+144,Equipe_2,179,3
+144,Equipe_1,118,2
+144,Equipe_1,244,8
+144,Equipe_1,86,2
+144,Match Nul,250,6
+144,Equipe_2,247,5
+144,Match Nul,177,10
+144,Match Nul,170,12
+144,Equipe_1,125,4
+144,Equipe_1,21,1
+144,Match Nul,68,10
+144,Equipe_2,22,5
+144,Equipe_2,14,5
+144,Equipe_1,23,8
+144,Match Nul,34,9
+144,Equipe_1,23,8
+144,Match Nul,18,7
+144,Equipe_1,40,10
+144,Equipe_1,22,10
+144,Equipe_2,13,3
+144,Match Nul,26,6
+144,Equipe_1,17,4
+144,Match Nul,8,3
+144,Match Nul,32,12
+144,Equipe_1,10,5
+144,Equipe_2,2,2
+144,Equipe_1,11,5
+144,Equipe_1,13,4
+144,Equipe_1,13,5
+144,Match Nul,13,6
+144,Equipe_1,11,5
+144,Equipe_2,10,4
+144,Equipe_2,32,11
+144,Match Nul,21,6
+144,Equipe_2,10,5
+144,Equipe_2,3,2
+144,Equipe_1,11,3
+144,Match Nul,7,3
+144,Match Nul,22,9
+144,Equipe_2,29,7
+144,Equipe_2,3,2
+144,Equipe_1,20,10
+144,Equipe_2,5,3
+144,Equipe_1,10,5
+144,Equipe_1,8,3
+144,Equipe_1,15,8
+144,Equipe_2,21,11
+144,Equipe_1,8,4
+
+# CONFIG: P12_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,141,2
+144,Match Nul,121,2
+144,Match Nul,140,2
+144,Match Nul,150,2
+144,Match Nul,144,2
+144,Match Nul,153,2
+144,Match Nul,135,2
+144,Match Nul,146,2
+144,Match Nul,40,2
+144,Match Nul,36,2
+144,Match Nul,18,2
+144,Match Nul,35,2
+144,Match Nul,36,2
+144,Match Nul,29,2
+144,Match Nul,41,2
+144,Match Nul,46,2
+144,Match Nul,28,2
+144,Match Nul,26,2
+144,Match Nul,28,2
+144,Match Nul,19,2
+144,Match Nul,9,2
+144,Match Nul,34,2
+144,Match Nul,25,2
+144,Match Nul,15,2
+144,Match Nul,42,2
+144,Match Nul,38,2
+144,Match Nul,27,2
+144,Match Nul,23,2
+144,Match Nul,30,2
+144,Match Nul,46,2
+144,Match Nul,15,2
+144,Match Nul,31,2
+144,Match Nul,31,2
+144,Match Nul,21,2
+144,Match Nul,15,2
+144,Match Nul,24,2
+144,Match Nul,22,2
+144,Match Nul,41,2
+144,Match Nul,19,2
+144,Match Nul,25,2
+144,Match Nul,27,2
+144,Match Nul,15,2
+144,Match Nul,31,2
+144,Match Nul,22,2
+144,Match Nul,22,2
+144,Match Nul,17,2
+144,Match Nul,22,2
+144,Match Nul,20,2
+144,Match Nul,15,2
+144,Match Nul,17,2
+
+# CONFIG: P12_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,230,2
+144,Equipe_2,432,2
+144,Equipe_2,217,2
+144,Equipe_2,375,2
+144,Equipe_2,249,2
+144,Equipe_2,318,2
+144,Match Nul,415,2
+144,Equipe_2,378,2
+144,Equipe_2,205,2
+144,Equipe_2,298,2
+144,Equipe_2,267,2
+144,Equipe_2,244,2
+144,Equipe_2,222,2
+144,Equipe_2,184,2
+144,Equipe_2,184,2
+144,Equipe_2,169,2
+144,Equipe_2,173,2
+144,Match Nul,97,2
+144,Match Nul,92,2
+144,Equipe_2,54,2
+144,Equipe_2,57,2
+144,Equipe_2,34,2
+144,Match Nul,31,2
+144,Equipe_2,39,2
+144,Equipe_2,34,2
+144,Equipe_2,26,2
+144,Equipe_2,17,2
+144,Equipe_2,27,2
+144,Equipe_2,21,2
+144,Match Nul,14,2
+144,Equipe_2,18,2
+144,Equipe_1,7,1
+144,Equipe_2,8,2
+144,Match Nul,20,2
+144,Equipe_2,23,2
+144,Equipe_2,12,2
+144,Equipe_2,19,2
+144,Equipe_2,25,2
+144,Equipe_2,6,2
+144,Equipe_2,17,2
+144,Match Nul,10,2
+144,Equipe_2,19,2
+144,Match Nul,18,2
+144,Equipe_2,22,2
+144,Match Nul,20,2
+144,Equipe_2,19,2
+144,Equipe_2,22,2
+144,Equipe_2,13,2
+144,Equipe_2,16,2
+144,Match Nul,12,2
+
+# CONFIG: P12_D3_MinMaxStrategie_VoronoiHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,179,2
+144,Match Nul,188,2
+144,Equipe_1,308,2
+144,Equipe_1,298,2
+144,Equipe_1,253,2
+144,Equipe_1,292,2
+144,Equipe_1,300,2
+144,Equipe_1,247,2
+144,Equipe_1,187,2
+144,Equipe_1,171,2
+144,Equipe_1,116,2
+144,Equipe_1,100,2
+144,Equipe_1,94,2
+144,Equipe_1,50,2
+144,Equipe_1,74,2
+144,Equipe_1,87,2
+144,Match Nul,72,2
+144,Equipe_1,95,2
+144,Equipe_1,49,2
+144,Equipe_1,95,2
+144,Equipe_1,80,2
+144,Equipe_1,81,2
+144,Equipe_1,84,2
+144,Equipe_1,83,2
+144,Equipe_1,68,2
+144,Equipe_1,92,2
+144,Equipe_1,56,2
+144,Equipe_1,72,2
+144,Equipe_1,63,2
+144,Equipe_1,33,2
+144,Equipe_1,89,2
+144,Equipe_1,90,2
+144,Equipe_1,74,2
+144,Match Nul,51,2
+144,Equipe_1,49,2
+144,Equipe_1,50,2
+144,Equipe_1,52,2
+144,Equipe_1,117,2
+144,Equipe_1,53,2
+144,Equipe_1,18,2
+144,Equipe_1,72,2
+144,Equipe_1,115,3
+144,Equipe_1,112,2
+144,Equipe_1,55,2
+144,Equipe_1,104,2
+144,Equipe_1,78,1
+144,Equipe_1,75,2
+144,Equipe_1,51,2
+144,Equipe_1,51,2
+144,Equipe_1,38,2
+
+# CONFIG: P12_D3_MinMaxStrategie_VoronoiHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,195,2
+144,Equipe_1,412,3
+144,Equipe_1,339,2
+144,Equipe_1,312,2
+144,Equipe_1,464,5
+144,Equipe_1,432,3
+144,Equipe_1,320,3
+144,Equipe_1,448,4
+144,Equipe_1,243,3
+144,Equipe_1,169,4
+144,Equipe_2,104,2
+144,Equipe_1,122,4
+144,Equipe_1,37,2
+144,Equipe_1,30,2
+144,Equipe_1,21,2
+144,Equipe_1,37,3
+144,Equipe_1,15,2
+144,Equipe_1,36,4
+144,Equipe_1,16,2
+144,Equipe_1,56,4
+144,Equipe_1,22,3
+144,Match Nul,36,4
+144,Equipe_1,23,3
+144,Equipe_1,53,4
+144,Equipe_1,61,4
+144,Equipe_1,19,2
+144,Equipe_1,74,5
+144,Equipe_1,33,3
+144,Equipe_1,38,3
+144,Equipe_1,52,5
+144,Equipe_1,44,3
+144,Equipe_1,35,3
+144,Equipe_1,17,2
+144,Equipe_1,31,3
+144,Equipe_1,42,4
+144,Equipe_1,72,5
+144,Equipe_1,25,2
+144,Equipe_1,66,4
+144,Equipe_1,69,5
+144,Equipe_1,39,3
+144,Equipe_1,25,3
+144,Equipe_1,36,3
+144,Equipe_1,31,2
+144,Equipe_1,22,2
+144,Equipe_1,46,4
+144,Equipe_1,28,4
+144,Match Nul,33,5
+144,Equipe_1,20,2
+144,Equipe_1,26,3
+144,Equipe_1,11,2
+
+# CONFIG: P12_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,87,2
+144,Match Nul,108,2
+144,Match Nul,101,2
+144,Equipe_1,28,1
+144,Match Nul,108,2
+144,Match Nul,88,2
+144,Match Nul,78,2
+144,Match Nul,103,2
+144,Match Nul,77,2
+144,Match Nul,62,2
+144,Match Nul,104,2
+144,Match Nul,102,2
+144,Match Nul,76,2
+144,Match Nul,78,2
+144,Match Nul,87,2
+144,Match Nul,85,2
+144,Equipe_2,42,2
+144,Match Nul,49,2
+144,Match Nul,43,2
+144,Match Nul,23,2
+144,Match Nul,26,2
+144,Match Nul,21,2
+144,Match Nul,21,2
+144,Match Nul,18,2
+144,Match Nul,16,2
+144,Match Nul,18,2
+144,Match Nul,14,2
+144,Match Nul,13,2
+144,Match Nul,16,2
+144,Equipe_2,12,2
+144,Match Nul,8,2
+144,Match Nul,11,2
+144,Match Nul,12,2
+144,Match Nul,14,2
+144,Match Nul,13,2
+144,Match Nul,16,2
+144,Match Nul,9,2
+144,Match Nul,17,2
+144,Match Nul,18,2
+144,Match Nul,18,2
+144,Match Nul,13,2
+144,Match Nul,7,2
+144,Match Nul,11,2
+144,Match Nul,11,2
+144,Match Nul,6,2
+144,Match Nul,2,2
+144,Match Nul,2,2
+144,Match Nul,3,2
+144,Match Nul,3,2
+144,Match Nul,3,2
+
+# CONFIG: P12_D3_MinMaxStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,230,2
+144,Equipe_2,158,2
+144,Equipe_2,166,2
+144,Equipe_2,171,2
+144,Equipe_2,144,2
+144,Equipe_2,215,2
+144,Equipe_2,184,2
+144,Equipe_2,197,2
+144,Equipe_2,95,2
+144,Equipe_2,70,2
+144,Equipe_2,80,2
+144,Equipe_2,68,2
+144,Match Nul,93,2
+144,Equipe_2,45,2
+144,Equipe_2,59,2
+144,Equipe_2,105,2
+144,Equipe_2,60,2
+144,Equipe_2,63,2
+144,Equipe_2,38,2
+144,Equipe_2,56,2
+144,Equipe_2,38,2
+144,Equipe_2,41,2
+144,Equipe_2,49,2
+144,Equipe_2,27,2
+144,Equipe_2,37,2
+144,Equipe_2,34,2
+144,Equipe_2,60,2
+144,Equipe_2,48,2
+144,Equipe_2,38,2
+144,Equipe_2,67,2
+144,Equipe_2,32,2
+144,Equipe_2,48,2
+144,Equipe_2,112,2
+144,Equipe_2,51,2
+144,Equipe_2,74,2
+144,Equipe_2,41,2
+144,Equipe_2,61,2
+144,Equipe_2,30,2
+144,Match Nul,67,2
+144,Equipe_2,37,2
+144,Equipe_2,66,2
+144,Equipe_2,43,2
+144,Equipe_2,54,2
+144,Equipe_2,35,2
+144,Equipe_2,45,2
+144,Equipe_2,44,2
+144,Equipe_2,37,2
+144,Equipe_2,30,2
+144,Equipe_2,33,2
+144,Equipe_2,30,2
+
+# CONFIG: P12_D3_MinMaxStrategie_VoronoiHeuristic_VS_ParanoidStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs ParanoidStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,47,2
+144,Equipe_1,45,2
+144,Match Nul,58,2
+144,Equipe_1,77,2
+144,Equipe_1,94,2
+144,Equipe_1,84,2
+144,Equipe_1,124,2
+144,Equipe_1,93,2
+144,Equipe_1,54,2
+144,Equipe_1,85,2
+144,Equipe_1,49,2
+144,Equipe_1,74,2
+144,Equipe_1,80,2
+144,Equipe_1,113,2
+144,Equipe_1,92,2
+144,Equipe_1,99,2
+144,Equipe_1,91,2
+144,Equipe_1,116,2
+144,Equipe_1,61,2
+144,Equipe_1,59,2
+144,Match Nul,68,2
+144,Equipe_1,88,2
+144,Equipe_1,51,2
+144,Equipe_1,80,2
+144,Equipe_1,87,2
+144,Equipe_1,165,3
+144,Equipe_1,117,2
+144,Equipe_1,61,2
+144,Equipe_1,55,2
+144,Equipe_1,51,2
+144,Equipe_1,62,2
+144,Equipe_1,69,2
+144,Equipe_1,49,2
+144,Match Nul,35,2
+144,Equipe_1,28,2
+144,Equipe_1,110,3
+144,Equipe_1,79,2
+144,Equipe_1,97,2
+144,Equipe_1,32,2
+144,Equipe_1,73,2
+144,Match Nul,49,2
+144,Equipe_1,58,2
+144,Equipe_1,67,2
+144,Equipe_1,76,2
+144,Equipe_1,61,2
+144,Equipe_1,41,2
+144,Equipe_1,48,2
+144,Equipe_1,46,2
+144,Equipe_1,38,2
+144,Equipe_1,27,2
+
+# CONFIG: P12_D3_MinMaxStrategie_VoronoiHeuristic_VS_ParanoidStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs ParanoidStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,95,3
+144,Equipe_1,229,5
+144,Equipe_1,157,2
+144,Equipe_1,253,5
+144,Equipe_1,258,5
+144,Equipe_2,236,5
+144,Equipe_2,229,5
+144,Equipe_1,225,4
+144,Equipe_1,135,4
+144,Equipe_1,100,3
+144,Equipe_1,54,8
+144,Equipe_1,39,6
+144,Equipe_1,46,7
+144,Equipe_1,32,3
+144,Equipe_1,32,7
+144,Equipe_1,9,3
+144,Equipe_1,5,3
+144,Equipe_1,39,6
+144,Equipe_2,6,3
+144,Equipe_2,6,3
+144,Match Nul,17,6
+144,Equipe_1,13,4
+144,Equipe_1,6,3
+144,Equipe_1,3,2
+144,Equipe_1,10,3
+144,Equipe_2,12,4
+144,Equipe_1,27,6
+144,Equipe_1,7,3
+144,Equipe_1,11,5
+144,Equipe_1,19,4
+144,Equipe_1,13,5
+144,Equipe_2,3,2
+144,Equipe_2,2,2
+144,Match Nul,4,2
+144,Equipe_1,7,3
+144,Equipe_2,4,2
+144,Match Nul,12,5
+144,Equipe_1,9,4
+144,Equipe_1,9,4
+144,Equipe_1,8,3
+144,Equipe_1,5,2
+144,Equipe_1,15,7
+144,Equipe_1,19,7
+144,Equipe_1,7,2
+144,Equipe_1,13,7
+144,Equipe_2,2,2
+144,Equipe_2,2,2
+144,Equipe_1,11,7
+144,Equipe_1,8,4
+144,Equipe_2,6,3
+
+# CONFIG: P12_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,49,2
+144,Match Nul,70,2
+144,Match Nul,60,2
+144,Match Nul,94,2
+144,Match Nul,60,2
+144,Match Nul,56,2
+144,Match Nul,65,2
+144,Match Nul,76,2
+144,Match Nul,35,2
+144,Equipe_1,24,1
+144,Match Nul,38,2
+144,Match Nul,92,2
+144,Match Nul,59,2
+144,Match Nul,46,2
+144,Match Nul,43,2
+144,Match Nul,33,2
+144,Match Nul,44,2
+144,Match Nul,90,2
+144,Match Nul,47,2
+144,Match Nul,45,2
+144,Match Nul,48,2
+144,Match Nul,45,2
+144,Match Nul,47,2
+144,Match Nul,54,2
+144,Match Nul,53,2
+144,Match Nul,32,2
+144,Match Nul,33,2
+144,Match Nul,38,2
+144,Match Nul,54,2
+144,Match Nul,37,2
+144,Match Nul,33,2
+144,Match Nul,31,2
+144,Match Nul,27,2
+144,Match Nul,22,2
+144,Match Nul,21,2
+144,Match Nul,15,2
+144,Match Nul,8,2
+144,Match Nul,3,2
+144,Match Nul,3,2
+144,Match Nul,6,2
+144,Match Nul,1,2
+144,Match Nul,5,2
+144,Match Nul,5,2
+144,Match Nul,7,2
+144,Equipe_1,2,2
+144,Match Nul,4,2
+144,Match Nul,6,2
+144,Match Nul,6,2
+144,Match Nul,5,2
+144,Match Nul,6,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,81,2
+144,Equipe_2,56,2
+144,Equipe_2,85,2
+144,Equipe_2,99,2
+144,Equipe_2,46,2
+144,Equipe_2,78,2
+144,Equipe_2,105,2
+144,Equipe_2,46,2
+144,Equipe_2,85,2
+144,Equipe_2,87,2
+144,Equipe_2,73,2
+144,Equipe_2,35,2
+144,Equipe_2,46,2
+144,Equipe_2,115,2
+144,Equipe_2,111,2
+144,Equipe_2,83,2
+144,Equipe_2,48,2
+144,Equipe_2,77,2
+144,Equipe_2,81,2
+144,Equipe_2,53,2
+144,Equipe_2,78,2
+144,Equipe_2,129,2
+144,Match Nul,58,2
+144,Equipe_2,54,2
+144,Equipe_2,43,2
+144,Equipe_2,77,2
+144,Equipe_2,54,2
+144,Equipe_2,55,2
+144,Equipe_2,66,2
+144,Equipe_2,35,2
+144,Equipe_2,70,2
+144,Equipe_2,66,2
+144,Equipe_2,33,2
+144,Equipe_2,59,2
+144,Equipe_2,48,2
+144,Equipe_2,44,2
+144,Equipe_2,42,2
+144,Equipe_2,41,2
+144,Equipe_2,28,2
+144,Equipe_2,16,2
+144,Equipe_2,7,2
+144,Equipe_2,7,2
+144,Equipe_2,10,4
+144,Equipe_2,7,2
+144,Equipe_2,9,2
+144,Equipe_2,7,2
+144,Equipe_2,5,2
+144,Equipe_2,2,2
+144,Equipe_2,4,2
+144,Match Nul,2,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,70,2
+144,Equipe_1,118,2
+144,Equipe_1,76,2
+144,Equipe_1,130,2
+144,Equipe_1,157,2
+144,Equipe_1,93,2
+144,Equipe_1,90,2
+144,Equipe_1,79,2
+144,Equipe_1,55,2
+144,Equipe_1,82,2
+144,Equipe_1,75,2
+144,Equipe_1,60,2
+144,Equipe_1,60,2
+144,Equipe_1,50,2
+144,Equipe_1,72,2
+144,Equipe_1,107,2
+144,Equipe_1,62,2
+144,Equipe_1,62,2
+144,Equipe_1,50,2
+144,Equipe_1,119,2
+144,Equipe_1,81,2
+144,Equipe_1,74,2
+144,Equipe_1,54,2
+144,Equipe_1,65,2
+144,Equipe_1,44,2
+144,Equipe_1,24,1
+144,Equipe_1,37,2
+144,Equipe_1,81,2
+144,Equipe_1,45,2
+144,Equipe_1,55,2
+144,Equipe_1,26,2
+144,Equipe_1,59,2
+144,Equipe_1,45,2
+144,Equipe_1,44,2
+144,Equipe_1,48,2
+144,Equipe_1,37,2
+144,Equipe_1,33,2
+144,Equipe_1,23,2
+144,Equipe_1,4,2
+144,Equipe_1,4,2
+144,Equipe_1,8,2
+144,Equipe_1,5,2
+144,Equipe_1,7,2
+144,Equipe_1,6,2
+144,Equipe_1,7,2
+144,Equipe_1,7,2
+144,Equipe_1,5,2
+144,Equipe_1,6,2
+144,Equipe_1,6,2
+144,Equipe_1,4,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,408,10
+144,Equipe_2,419,12
+144,Match Nul,301,4
+144,Equipe_2,357,5
+144,Equipe_2,373,7
+144,Equipe_1,402,10
+144,Equipe_1,123,2
+144,Equipe_1,365,5
+144,Equipe_1,53,2
+144,Match Nul,258,12
+144,Equipe_1,94,6
+144,Equipe_1,44,3
+144,Equipe_1,51,6
+144,Equipe_1,10,1
+144,Equipe_2,36,6
+144,Equipe_1,18,5
+144,Equipe_1,27,10
+144,Equipe_2,67,13
+144,Equipe_1,19,8
+144,Equipe_2,5,3
+144,Equipe_1,7,3
+144,Equipe_1,2,2
+144,Equipe_1,12,4
+144,Equipe_1,1,1
+144,Equipe_1,6,3
+144,Equipe_2,23,7
+144,Equipe_1,13,5
+144,Equipe_1,13,5
+144,Equipe_1,14,5
+144,Match Nul,5,3
+144,Equipe_2,26,9
+144,Match Nul,27,9
+144,Match Nul,16,6
+144,Equipe_2,23,6
+144,Equipe_2,4,3
+144,Equipe_1,10,4
+144,Match Nul,23,8
+144,Equipe_2,8,5
+144,Equipe_2,21,7
+144,Equipe_1,13,5
+144,Equipe_1,26,9
+144,Equipe_1,18,8
+144,Equipe_2,9,3
+144,Match Nul,3,2
+144,Equipe_1,1,1
+144,Match Nul,8,4
+144,Equipe_1,16,5
+144,Match Nul,12,3
+144,Match Nul,29,11
+144,Equipe_2,11,4
+
+# CONFIG: P12_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,173,2
+144,Match Nul,148,2
+144,Match Nul,170,2
+144,Match Nul,185,2
+144,Match Nul,176,2
+144,Match Nul,121,2
+144,Match Nul,175,2
+144,Match Nul,181,2
+144,Match Nul,56,2
+144,Match Nul,61,2
+144,Match Nul,22,2
+144,Match Nul,46,2
+144,Match Nul,41,2
+144,Match Nul,38,2
+144,Match Nul,37,2
+144,Match Nul,26,2
+144,Match Nul,33,2
+144,Match Nul,44,2
+144,Match Nul,29,2
+144,Equipe_1,34,2
+144,Match Nul,30,2
+144,Match Nul,25,2
+144,Equipe_2,39,2
+144,Match Nul,12,2
+144,Match Nul,21,2
+144,Match Nul,29,2
+144,Match Nul,17,2
+144,Match Nul,13,2
+144,Match Nul,22,2
+144,Match Nul,22,2
+144,Match Nul,21,2
+144,Match Nul,37,2
+144,Match Nul,31,2
+144,Match Nul,26,2
+144,Match Nul,33,2
+144,Match Nul,17,2
+144,Match Nul,12,2
+144,Match Nul,12,2
+144,Equipe_2,18,2
+144,Match Nul,21,2
+144,Match Nul,23,2
+144,Match Nul,26,2
+144,Match Nul,13,2
+144,Match Nul,23,2
+144,Match Nul,22,2
+144,Match Nul,9,2
+144,Match Nul,20,2
+144,Match Nul,14,2
+144,Match Nul,18,2
+144,Match Nul,12,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,303,2
+144,Equipe_2,325,2
+144,Equipe_2,243,2
+144,Equipe_2,188,2
+144,Equipe_2,289,2
+144,Equipe_2,325,2
+144,Equipe_2,171,2
+144,Match Nul,279,2
+144,Equipe_2,204,2
+144,Match Nul,239,2
+144,Equipe_2,127,2
+144,Equipe_2,137,2
+144,Equipe_2,166,2
+144,Equipe_2,147,2
+144,Equipe_1,100,1
+144,Match Nul,121,2
+144,Equipe_2,99,2
+144,Match Nul,85,2
+144,Equipe_2,59,2
+144,Match Nul,44,2
+144,Equipe_2,47,2
+144,Equipe_2,39,2
+144,Match Nul,47,2
+144,Equipe_2,43,2
+144,Equipe_2,33,2
+144,Match Nul,62,2
+144,Equipe_2,46,2
+144,Equipe_2,47,2
+144,Equipe_2,60,2
+144,Equipe_2,45,2
+144,Equipe_2,36,2
+144,Equipe_2,66,2
+144,Equipe_2,52,2
+144,Equipe_2,43,2
+144,Equipe_2,41,2
+144,Equipe_2,34,2
+144,Match Nul,39,2
+144,Match Nul,36,2
+144,Equipe_2,43,2
+144,Equipe_2,25,2
+144,Match Nul,17,2
+144,Equipe_2,19,2
+144,Match Nul,20,2
+144,Equipe_2,23,2
+144,Equipe_2,19,2
+144,Equipe_2,20,2
+144,Equipe_2,10,2
+144,Equipe_2,11,2
+144,Equipe_2,14,2
+144,Equipe_2,10,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,248,2
+144,Equipe_1,268,2
+144,Equipe_1,234,2
+144,Equipe_1,253,2
+144,Equipe_1,229,2
+144,Equipe_1,267,2
+144,Equipe_1,215,2
+144,Equipe_1,203,2
+144,Equipe_1,129,2
+144,Equipe_1,114,2
+144,Equipe_1,106,2
+144,Equipe_1,103,2
+144,Equipe_1,109,2
+144,Equipe_1,87,2
+144,Equipe_1,112,2
+144,Equipe_1,95,2
+144,Equipe_1,104,2
+144,Equipe_1,76,2
+144,Equipe_1,56,2
+144,Equipe_1,95,2
+144,Equipe_1,79,2
+144,Equipe_1,44,2
+144,Equipe_1,74,2
+144,Equipe_1,82,2
+144,Equipe_1,78,2
+144,Equipe_1,57,2
+144,Equipe_1,88,2
+144,Equipe_1,52,2
+144,Equipe_1,51,2
+144,Equipe_1,47,2
+144,Equipe_1,76,2
+144,Equipe_1,64,2
+144,Equipe_1,80,2
+144,Equipe_1,69,2
+144,Equipe_1,63,2
+144,Equipe_1,76,2
+144,Equipe_1,70,2
+144,Equipe_1,57,2
+144,Equipe_1,38,2
+144,Equipe_1,41,2
+144,Equipe_1,27,2
+144,Match Nul,39,2
+144,Equipe_1,29,2
+144,Equipe_1,15,2
+144,Equipe_1,24,2
+144,Equipe_1,16,2
+144,Equipe_1,15,2
+144,Equipe_1,16,1
+144,Equipe_1,18,2
+144,Equipe_1,14,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,476,4
+144,Equipe_1,526,6
+144,Equipe_1,463,3
+144,Equipe_1,406,3
+144,Equipe_1,374,2
+144,Equipe_2,220,2
+144,Equipe_1,479,3
+144,Equipe_1,490,4
+144,Equipe_1,250,3
+144,Equipe_1,138,4
+144,Equipe_1,84,2
+144,Equipe_1,58,3
+144,Equipe_1,33,2
+144,Equipe_2,77,4
+144,Equipe_1,46,3
+144,Equipe_1,26,2
+144,Equipe_1,19,2
+144,Equipe_1,37,3
+144,Equipe_1,45,4
+144,Equipe_1,36,2
+144,Equipe_1,36,3
+144,Equipe_1,47,3
+144,Equipe_1,20,2
+144,Equipe_1,29,3
+144,Equipe_1,30,3
+144,Equipe_1,30,2
+144,Equipe_1,26,2
+144,Match Nul,10,2
+144,Equipe_1,24,2
+144,Equipe_1,56,5
+144,Match Nul,44,4
+144,Equipe_1,29,2
+144,Equipe_1,42,5
+144,Equipe_1,27,3
+144,Equipe_1,35,4
+144,Equipe_1,41,3
+144,Equipe_1,26,2
+144,Equipe_1,55,4
+144,Equipe_1,45,4
+144,Equipe_1,58,5
+144,Match Nul,55,5
+144,Equipe_1,45,5
+144,Equipe_1,17,2
+144,Equipe_2,22,2
+144,Equipe_1,21,2
+144,Equipe_1,25,3
+144,Equipe_1,22,3
+144,Equipe_1,22,3
+144,Match Nul,14,3
+144,Equipe_1,22,9
+
+# CONFIG: P12_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,142,2
+144,Match Nul,143,2
+144,Match Nul,176,2
+144,Match Nul,146,2
+144,Equipe_1,70,2
+144,Match Nul,173,2
+144,Match Nul,126,2
+144,Equipe_2,84,2
+144,Match Nul,78,2
+144,Match Nul,109,2
+144,Match Nul,150,2
+144,Match Nul,67,2
+144,Match Nul,86,2
+144,Match Nul,130,2
+144,Match Nul,125,2
+144,Equipe_2,55,2
+144,Match Nul,74,2
+144,Match Nul,55,2
+144,Match Nul,31,2
+144,Match Nul,35,2
+144,Match Nul,42,2
+144,Match Nul,33,2
+144,Match Nul,30,2
+144,Match Nul,46,2
+144,Match Nul,43,2
+144,Match Nul,39,2
+144,Equipe_1,25,2
+144,Equipe_2,43,2
+144,Match Nul,41,2
+144,Match Nul,31,2
+144,Match Nul,32,2
+144,Match Nul,26,2
+144,Match Nul,25,2
+144,Match Nul,25,2
+144,Match Nul,17,2
+144,Match Nul,12,2
+144,Match Nul,5,2
+144,Match Nul,7,2
+144,Match Nul,2,2
+144,Match Nul,2,2
+144,Equipe_1,3,2
+144,Match Nul,3,2
+144,Match Nul,2,2
+144,Match Nul,3,2
+144,Match Nul,3,2
+144,Match Nul,4,2
+144,Match Nul,2,2
+144,Match Nul,4,2
+144,Match Nul,4,2
+144,Match Nul,2,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,54,3
+144,Equipe_2,51,2
+144,Equipe_2,47,2
+144,Equipe_2,52,2
+144,Equipe_2,55,2
+144,Equipe_2,59,2
+144,Equipe_2,51,2
+144,Match Nul,67,2
+144,Equipe_2,34,2
+144,Equipe_2,21,2
+144,Equipe_2,49,2
+144,Equipe_2,101,2
+144,Equipe_2,24,2
+144,Equipe_2,39,2
+144,Equipe_2,48,2
+144,Equipe_2,21,2
+144,Equipe_2,106,2
+144,Equipe_2,31,2
+144,Match Nul,52,2
+144,Equipe_2,49,2
+144,Equipe_2,41,2
+144,Match Nul,67,2
+144,Equipe_2,50,2
+144,Equipe_2,34,2
+144,Equipe_1,115,3
+144,Equipe_2,26,2
+144,Equipe_2,52,2
+144,Equipe_2,48,2
+144,Equipe_2,42,2
+144,Equipe_2,70,2
+144,Equipe_2,83,2
+144,Equipe_1,95,3
+144,Equipe_2,75,2
+144,Equipe_2,43,2
+144,Equipe_2,38,2
+144,Equipe_2,37,2
+144,Equipe_2,58,2
+144,Match Nul,74,2
+144,Equipe_2,51,2
+144,Equipe_2,29,2
+144,Equipe_2,41,2
+144,Match Nul,74,2
+144,Equipe_2,66,2
+144,Equipe_2,32,2
+144,Equipe_2,34,2
+144,Equipe_2,39,2
+144,Equipe_2,29,2
+144,Equipe_2,41,2
+144,Equipe_2,32,2
+144,Equipe_2,25,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_ParanoidStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs ParanoidStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,69,2
+144,Equipe_1,45,2
+144,Equipe_1,71,2
+144,Equipe_1,66,2
+144,Equipe_1,75,2
+144,Equipe_1,25,2
+144,Equipe_1,74,2
+144,Equipe_1,60,2
+144,Equipe_1,74,2
+144,Equipe_1,51,2
+144,Equipe_1,73,2
+144,Equipe_1,154,2
+144,Equipe_1,95,2
+144,Equipe_1,63,2
+144,Equipe_1,176,2
+144,Equipe_1,39,2
+144,Equipe_1,56,2
+144,Equipe_1,93,2
+144,Equipe_1,84,2
+144,Equipe_1,70,2
+144,Equipe_1,58,2
+144,Equipe_1,41,2
+144,Equipe_1,42,2
+144,Equipe_1,61,2
+144,Equipe_1,58,2
+144,Equipe_1,50,2
+144,Equipe_1,64,2
+144,Equipe_1,86,2
+144,Equipe_1,55,2
+144,Equipe_1,37,2
+144,Equipe_1,23,2
+144,Match Nul,19,2
+144,Equipe_1,20,2
+144,Equipe_1,56,2
+144,Equipe_1,19,2
+144,Equipe_1,15,2
+144,Equipe_1,29,2
+144,Equipe_1,16,2
+144,Equipe_1,19,2
+144,Equipe_1,24,2
+144,Equipe_1,29,2
+144,Equipe_1,20,2
+144,Equipe_1,15,2
+144,Equipe_1,32,2
+144,Equipe_1,32,2
+144,Equipe_1,14,2
+144,Equipe_1,18,2
+144,Equipe_1,23,2
+144,Equipe_1,19,2
+144,Equipe_1,18,2
+
+# CONFIG: P12_D3_AlphaBetaStrategie_VoronoiHeuristic_VS_ParanoidStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: AlphaBetaStrategie (VoronoiHeuristic) vs ParanoidStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,325,6
+144,Equipe_1,299,5
+144,Equipe_2,237,4
+144,Equipe_2,324,7
+144,Equipe_1,307,5
+144,Equipe_1,148,3
+144,Equipe_2,300,4
+144,Equipe_1,78,1
+144,Equipe_1,207,4
+144,Equipe_1,175,7
+144,Equipe_1,80,4
+144,Equipe_1,40,3
+144,Equipe_2,8,2
+144,Equipe_1,18,3
+144,Equipe_2,30,6
+144,Equipe_1,17,3
+144,Equipe_1,9,3
+144,Equipe_1,10,3
+144,Equipe_1,6,3
+144,Equipe_2,20,7
+144,Match Nul,30,5
+144,Equipe_1,26,7
+144,Equipe_2,6,3
+144,Equipe_1,11,3
+144,Equipe_1,2,2
+144,Equipe_2,12,4
+144,Match Nul,7,3
+144,Equipe_1,8,1
+144,Equipe_1,7,4
+144,Equipe_1,5,3
+144,Equipe_1,1,1
+144,Equipe_2,5,3
+144,Equipe_1,29,8
+144,Equipe_1,6,3
+144,Equipe_1,17,6
+144,Equipe_1,6,3
+144,Equipe_1,9,5
+144,Equipe_1,8,4
+144,Equipe_1,12,4
+144,Equipe_1,3,2
+144,Equipe_2,10,3
+144,Equipe_2,12,5
+144,Equipe_1,12,4
+144,Equipe_2,15,5
+144,Equipe_2,7,2
+144,Equipe_1,7,4
+144,Equipe_1,8,3
+144,Equipe_1,12,6
+144,Equipe_1,9,4
+144,Equipe_1,5,3
+
+# CONFIG: P12_D3_MaxNStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,146,2
+144,Match Nul,164,2
+144,Match Nul,174,2
+144,Match Nul,177,2
+144,Match Nul,161,2
+144,Match Nul,173,2
+144,Match Nul,169,2
+144,Match Nul,164,2
+144,Match Nul,45,2
+144,Match Nul,45,2
+144,Match Nul,26,2
+144,Match Nul,45,2
+144,Match Nul,33,2
+144,Match Nul,42,2
+144,Match Nul,27,2
+144,Match Nul,38,2
+144,Match Nul,29,2
+144,Match Nul,19,2
+144,Match Nul,35,2
+144,Match Nul,25,2
+144,Match Nul,18,2
+144,Match Nul,16,2
+144,Match Nul,27,2
+144,Match Nul,31,2
+144,Match Nul,28,2
+144,Match Nul,29,2
+144,Match Nul,21,2
+144,Match Nul,31,2
+144,Match Nul,19,2
+144,Match Nul,30,2
+144,Match Nul,23,2
+144,Match Nul,23,2
+144,Match Nul,21,2
+144,Match Nul,12,2
+144,Match Nul,32,2
+144,Match Nul,23,2
+144,Match Nul,40,2
+144,Match Nul,26,2
+144,Match Nul,20,2
+144,Match Nul,13,2
+144,Match Nul,24,2
+144,Match Nul,7,2
+144,Match Nul,19,2
+144,Match Nul,24,2
+144,Match Nul,17,2
+144,Match Nul,16,2
+144,Match Nul,18,2
+144,Match Nul,22,2
+144,Match Nul,16,2
+144,Match Nul,13,2
+
+# CONFIG: P12_D3_MaxNStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,247,2
+144,Match Nul,184,2
+144,Equipe_2,319,2
+144,Equipe_2,287,2
+144,Equipe_2,329,2
+144,Equipe_2,318,2
+144,Equipe_2,225,2
+144,Equipe_2,310,2
+144,Equipe_2,147,2
+144,Equipe_2,134,2
+144,Equipe_2,109,2
+144,Equipe_1,41,1
+144,Equipe_2,80,2
+144,Equipe_2,63,2
+144,Equipe_2,87,2
+144,Equipe_2,79,2
+144,Equipe_2,60,2
+144,Equipe_2,49,2
+144,Equipe_2,63,2
+144,Equipe_2,49,2
+144,Equipe_2,40,2
+144,Equipe_2,44,2
+144,Equipe_2,36,2
+144,Equipe_2,26,2
+144,Equipe_2,21,2
+144,Equipe_2,20,2
+144,Equipe_2,17,2
+144,Equipe_2,10,2
+144,Equipe_2,18,2
+144,Equipe_2,26,2
+144,Equipe_2,22,2
+144,Equipe_2,38,2
+144,Equipe_2,25,2
+144,Equipe_2,14,2
+144,Equipe_2,20,2
+144,Equipe_2,48,2
+144,Equipe_2,36,2
+144,Equipe_2,42,2
+144,Equipe_2,41,2
+144,Equipe_2,36,2
+144,Equipe_2,31,2
+144,Equipe_2,24,2
+144,Equipe_2,44,2
+144,Equipe_2,41,2
+144,Equipe_2,34,2
+144,Equipe_2,32,2
+144,Equipe_2,26,2
+144,Match Nul,33,2
+144,Equipe_2,17,2
+144,Equipe_2,27,2
+
+# CONFIG: P12_D3_MaxNStrategie_VoronoiHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (VoronoiHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,220,2
+144,Match Nul,274,2
+144,Match Nul,411,2
+144,Equipe_1,294,2
+144,Equipe_1,317,2
+144,Equipe_1,246,2
+144,Equipe_1,412,2
+144,Match Nul,261,2
+144,Equipe_1,243,2
+144,Equipe_1,258,2
+144,Equipe_1,280,2
+144,Equipe_1,362,2
+144,Equipe_1,218,1
+144,Equipe_1,191,2
+144,Equipe_1,223,2
+144,Equipe_1,120,2
+144,Equipe_1,175,2
+144,Equipe_1,156,2
+144,Equipe_1,167,2
+144,Equipe_1,127,2
+144,Equipe_1,144,2
+144,Match Nul,114,2
+144,Equipe_1,43,2
+144,Equipe_1,52,2
+144,Equipe_1,55,2
+144,Equipe_1,44,2
+144,Match Nul,35,2
+144,Match Nul,32,2
+144,Match Nul,48,2
+144,Match Nul,40,2
+144,Equipe_1,21,2
+144,Equipe_1,20,2
+144,Equipe_1,25,2
+144,Equipe_1,30,2
+144,Equipe_1,32,2
+144,Equipe_1,28,2
+144,Match Nul,22,2
+144,Match Nul,33,2
+144,Equipe_1,22,2
+144,Equipe_1,25,2
+144,Match Nul,17,2
+144,Equipe_1,23,2
+144,Equipe_1,27,2
+144,Equipe_1,16,2
+144,Match Nul,13,2
+144,Match Nul,22,2
+144,Match Nul,16,2
+144,Equipe_1,13,1
+144,Equipe_1,13,2
+144,Equipe_1,15,2
+
+# CONFIG: P12_D3_MaxNStrategie_VoronoiHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (VoronoiHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,443,2
+144,Equipe_2,601,5
+144,Equipe_1,369,2
+144,Equipe_2,582,4
+144,Equipe_2,569,4
+144,Equipe_2,561,4
+144,Match Nul,575,4
+144,Equipe_1,211,2
+144,Equipe_2,354,3
+144,Equipe_2,218,3
+144,Equipe_2,127,2
+144,Equipe_2,59,3
+144,Equipe_2,41,4
+144,Equipe_2,46,3
+144,Equipe_1,87,7
+144,Equipe_2,49,4
+144,Equipe_1,27,2
+144,Equipe_1,18,1
+144,Equipe_2,23,2
+144,Equipe_2,36,3
+144,Equipe_2,42,3
+144,Equipe_2,31,3
+144,Equipe_2,66,4
+144,Equipe_2,18,3
+144,Equipe_2,56,4
+144,Equipe_2,24,3
+144,Equipe_2,25,2
+144,Equipe_2,16,2
+144,Equipe_2,41,4
+144,Equipe_2,34,3
+144,Equipe_2,22,2
+144,Equipe_1,9,1
+144,Equipe_1,20,3
+144,Equipe_2,14,2
+144,Equipe_2,55,5
+144,Match Nul,36,3
+144,Equipe_2,21,2
+144,Equipe_2,22,2
+144,Equipe_2,45,5
+144,Equipe_2,35,2
+144,Equipe_1,22,2
+144,Equipe_2,27,2
+144,Equipe_2,13,2
+144,Equipe_2,22,3
+144,Match Nul,146,8
+144,Equipe_2,25,2
+144,Equipe_2,40,3
+144,Match Nul,39,3
+144,Equipe_2,118,4
+144,Match Nul,58,3
+
+# CONFIG: P12_D3_MaxNStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,215,2
+144,Match Nul,201,2
+144,Match Nul,199,2
+144,Match Nul,132,2
+144,Match Nul,210,2
+144,Match Nul,203,2
+144,Match Nul,210,2
+144,Match Nul,200,2
+144,Match Nul,80,2
+144,Match Nul,31,2
+144,Match Nul,36,2
+144,Match Nul,45,2
+144,Match Nul,35,2
+144,Match Nul,38,2
+144,Match Nul,35,2
+144,Match Nul,37,2
+144,Match Nul,27,2
+144,Match Nul,38,2
+144,Match Nul,14,2
+144,Match Nul,21,2
+144,Match Nul,20,2
+144,Match Nul,25,2
+144,Match Nul,25,2
+144,Match Nul,38,2
+144,Match Nul,26,2
+144,Equipe_1,16,2
+144,Match Nul,21,2
+144,Match Nul,26,2
+144,Match Nul,46,2
+144,Match Nul,22,2
+144,Match Nul,24,2
+144,Match Nul,18,2
+144,Match Nul,34,2
+144,Match Nul,35,2
+144,Match Nul,31,2
+144,Match Nul,39,2
+144,Match Nul,23,2
+144,Match Nul,27,2
+144,Match Nul,27,2
+144,Match Nul,19,2
+144,Match Nul,37,2
+144,Match Nul,26,2
+144,Equipe_2,8,2
+144,Match Nul,28,2
+144,Match Nul,31,2
+144,Match Nul,26,2
+144,Match Nul,19,2
+144,Match Nul,23,2
+144,Equipe_1,20,2
+144,Match Nul,9,2
+
+# CONFIG: P12_D3_MaxNStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,166,2
+144,Equipe_2,111,2
+144,Equipe_2,116,2
+144,Equipe_2,156,2
+144,Equipe_2,175,2
+144,Equipe_2,161,2
+144,Equipe_2,179,2
+144,Equipe_2,199,2
+144,Equipe_2,83,2
+144,Match Nul,80,2
+144,Equipe_1,29,1
+144,Equipe_2,56,2
+144,Equipe_2,74,2
+144,Equipe_2,40,2
+144,Equipe_2,69,2
+144,Equipe_2,132,2
+144,Equipe_2,99,2
+144,Equipe_2,85,2
+144,Equipe_2,86,2
+144,Equipe_2,94,2
+144,Equipe_2,91,2
+144,Equipe_2,88,2
+144,Equipe_2,60,2
+144,Equipe_2,64,2
+144,Match Nul,73,2
+144,Equipe_2,66,2
+144,Equipe_2,119,2
+144,Equipe_2,86,2
+144,Equipe_2,75,2
+144,Equipe_2,101,2
+144,Equipe_2,70,2
+144,Equipe_2,77,2
+144,Equipe_1,28,1
+144,Equipe_2,77,2
+144,Equipe_2,83,2
+144,Equipe_2,64,2
+144,Equipe_2,53,2
+144,Equipe_2,87,2
+144,Equipe_2,65,2
+144,Equipe_2,73,2
+144,Equipe_2,71,2
+144,Equipe_2,55,2
+144,Equipe_2,52,2
+144,Equipe_2,43,2
+144,Equipe_2,32,2
+144,Equipe_2,26,2
+144,Equipe_2,18,2
+144,Equipe_2,10,2
+144,Equipe_2,11,2
+144,Equipe_2,9,2
+
+# CONFIG: P12_D3_MaxNStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,243,2
+144,Equipe_1,282,2
+144,Equipe_1,253,2
+144,Equipe_1,464,2
+144,Equipe_1,259,2
+144,Match Nul,339,2
+144,Equipe_1,233,2
+144,Match Nul,360,2
+144,Equipe_1,257,2
+144,Equipe_1,258,2
+144,Match Nul,243,2
+144,Equipe_1,243,2
+144,Equipe_1,199,2
+144,Match Nul,226,2
+144,Equipe_1,124,2
+144,Equipe_1,211,2
+144,Equipe_1,191,2
+144,Equipe_1,262,2
+144,Match Nul,268,2
+144,Equipe_1,259,2
+144,Equipe_1,246,2
+144,Equipe_1,241,2
+144,Equipe_1,150,2
+144,Match Nul,110,2
+144,Equipe_1,103,2
+144,Match Nul,35,2
+144,Equipe_1,57,2
+144,Match Nul,40,3
+144,Match Nul,45,2
+144,Match Nul,55,2
+144,Match Nul,46,2
+144,Equipe_1,34,2
+144,Match Nul,29,2
+144,Equipe_1,19,2
+144,Equipe_1,32,2
+144,Match Nul,28,2
+144,Equipe_1,21,2
+144,Equipe_2,25,2
+144,Match Nul,21,2
+144,Match Nul,12,2
+144,Equipe_1,17,2
+144,Equipe_1,15,2
+144,Equipe_1,15,2
+144,Equipe_1,24,2
+144,Match Nul,17,2
+144,Equipe_1,12,2
+144,Equipe_1,17,2
+144,Equipe_1,16,2
+144,Equipe_1,9,2
+144,Equipe_1,15,2
+
+# CONFIG: P12_D3_MaxNStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,412,3
+144,Equipe_2,390,3
+144,Equipe_2,361,2
+144,Equipe_2,420,5
+144,Equipe_2,425,5
+144,Equipe_2,439,4
+144,Equipe_2,404,4
+144,Equipe_2,404,4
+144,Equipe_2,79,2
+144,Equipe_2,52,3
+144,Equipe_2,86,4
+144,Equipe_2,46,2
+144,Equipe_2,40,2
+144,Equipe_2,31,2
+144,Equipe_2,45,3
+144,Equipe_2,24,2
+144,Equipe_2,49,4
+144,Match Nul,70,5
+144,Equipe_2,39,3
+144,Equipe_2,35,2
+144,Equipe_1,27,2
+144,Equipe_2,35,3
+144,Equipe_2,49,4
+144,Equipe_2,16,2
+144,Equipe_2,16,2
+144,Equipe_2,19,3
+144,Equipe_2,45,5
+144,Equipe_2,71,5
+144,Equipe_2,25,2
+144,Equipe_2,36,4
+144,Equipe_2,38,3
+144,Equipe_2,44,5
+144,Equipe_2,32,2
+144,Match Nul,18,2
+144,Equipe_1,26,3
+144,Equipe_2,33,4
+144,Equipe_2,39,3
+144,Equipe_2,51,4
+144,Equipe_2,76,6
+144,Equipe_2,24,2
+144,Equipe_2,54,4
+144,Equipe_2,30,4
+144,Equipe_2,27,4
+144,Equipe_2,24,4
+144,Equipe_2,29,2
+144,Equipe_2,43,4
+144,Equipe_1,21,2
+144,Equipe_2,24,2
+144,Equipe_1,21,3
+144,Equipe_1,23,3
+
+# CONFIG: P12_D3_MaxNStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,191,2
+144,Match Nul,191,2
+144,Match Nul,163,2
+144,Match Nul,189,2
+144,Match Nul,179,2
+144,Match Nul,187,2
+144,Match Nul,189,2
+144,Equipe_2,187,2
+144,Match Nul,30,2
+144,Match Nul,53,2
+144,Match Nul,45,2
+144,Match Nul,36,2
+144,Match Nul,38,2
+144,Match Nul,41,2
+144,Match Nul,48,2
+144,Match Nul,49,2
+144,Match Nul,38,2
+144,Match Nul,18,2
+144,Match Nul,20,2
+144,Match Nul,35,2
+144,Match Nul,16,2
+144,Match Nul,16,2
+144,Match Nul,18,2
+144,Match Nul,19,2
+144,Match Nul,32,2
+144,Match Nul,31,2
+144,Match Nul,15,2
+144,Match Nul,25,2
+144,Match Nul,43,2
+144,Match Nul,28,2
+144,Match Nul,30,2
+144,Match Nul,34,2
+144,Match Nul,27,2
+144,Match Nul,19,2
+144,Match Nul,22,2
+144,Match Nul,23,2
+144,Match Nul,23,2
+144,Match Nul,18,2
+144,Match Nul,25,2
+144,Match Nul,24,2
+144,Match Nul,18,2
+144,Match Nul,21,2
+144,Equipe_2,46,2
+144,Match Nul,52,2
+144,Equipe_2,13,2
+144,Match Nul,75,2
+144,Match Nul,77,2
+144,Match Nul,74,2
+144,Match Nul,73,2
+144,Equipe_2,58,2
+
+# CONFIG: P12_D3_MaxNStrategie_FreeSpaceHeuristic_VS_ParanoidStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (FreeSpaceHeuristic) vs ParanoidStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,133,2
+144,Equipe_2,173,2
+144,Equipe_2,206,2
+144,Equipe_2,149,2
+144,Equipe_2,103,2
+144,Equipe_2,154,2
+144,Equipe_2,200,2
+144,Match Nul,152,2
+144,Equipe_2,99,2
+144,Equipe_2,105,2
+144,Equipe_2,81,2
+144,Equipe_2,70,2
+144,Equipe_2,70,2
+144,Equipe_2,67,2
+144,Equipe_2,71,2
+144,Equipe_2,48,2
+144,Equipe_2,81,2
+144,Equipe_2,69,2
+144,Equipe_2,32,2
+144,Equipe_2,62,2
+144,Equipe_2,64,2
+144,Equipe_2,55,2
+144,Equipe_2,64,2
+144,Equipe_2,46,2
+144,Equipe_2,93,2
+144,Equipe_2,62,2
+144,Equipe_2,48,2
+144,Equipe_2,49,2
+144,Equipe_2,59,2
+144,Equipe_2,39,2
+144,Equipe_2,60,2
+144,Equipe_2,51,2
+144,Equipe_2,30,2
+144,Match Nul,79,2
+144,Equipe_2,74,2
+144,Equipe_2,39,2
+144,Equipe_2,44,2
+144,Equipe_2,47,2
+144,Equipe_2,47,2
+144,Equipe_2,39,2
+144,Equipe_2,54,2
+144,Equipe_2,46,2
+144,Equipe_2,41,2
+144,Equipe_2,32,2
+144,Equipe_2,24,2
+144,Equipe_2,28,2
+144,Equipe_2,23,2
+144,Equipe_2,17,2
+144,Equipe_2,16,2
+144,Equipe_2,11,2
+
+# CONFIG: P12_D3_MaxNStrategie_VoronoiHeuristic_VS_ParanoidStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (VoronoiHeuristic) vs ParanoidStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,270,2
+144,Match Nul,319,2
+144,Equipe_1,313,2
+144,Equipe_1,244,2
+144,Equipe_1,326,2
+144,Equipe_1,209,2
+144,Equipe_1,311,2
+144,Equipe_2,330,2
+144,Equipe_1,193,2
+144,Equipe_1,213,2
+144,Equipe_1,150,2
+144,Match Nul,172,2
+144,Equipe_1,181,2
+144,Equipe_1,163,2
+144,Equipe_1,153,2
+144,Match Nul,136,2
+144,Equipe_1,78,2
+144,Equipe_1,14,1
+144,Match Nul,25,2
+144,Equipe_1,41,2
+144,Match Nul,59,2
+144,Equipe_1,15,1
+144,Equipe_1,22,2
+144,Equipe_2,41,2
+144,Match Nul,35,2
+144,Match Nul,48,2
+144,Match Nul,41,2
+144,Equipe_1,34,2
+144,Equipe_1,34,2
+144,Equipe_1,24,2
+144,Equipe_1,27,2
+144,Equipe_1,17,2
+144,Match Nul,16,2
+144,Match Nul,27,2
+144,Equipe_1,8,2
+144,Equipe_1,15,2
+144,Equipe_1,21,2
+144,Match Nul,30,2
+144,Equipe_1,31,2
+144,Match Nul,23,2
+144,Equipe_1,2,1
+144,Equipe_1,17,2
+144,Equipe_1,7,2
+144,Match Nul,18,2
+144,Equipe_1,15,2
+144,Match Nul,14,2
+144,Equipe_1,9,2
+144,Equipe_1,13,3
+144,Equipe_1,9,2
+144,Equipe_1,9,2
+
+# CONFIG: P12_D3_MaxNStrategie_VoronoiHeuristic_VS_ParanoidStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: MaxNStrategie (VoronoiHeuristic) vs ParanoidStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,432,2
+144,Equipe_2,504,4
+144,Equipe_1,450,3
+144,Equipe_2,481,3
+144,Equipe_1,454,3
+144,Equipe_1,460,3
+144,Match Nul,460,3
+144,Equipe_2,473,4
+144,Equipe_2,63,3
+144,Equipe_1,80,4
+144,Equipe_2,45,2
+144,Equipe_2,85,3
+144,Equipe_2,59,3
+144,Equipe_2,103,5
+144,Equipe_2,50,3
+144,Match Nul,115,8
+144,Equipe_2,30,2
+144,Match Nul,72,4
+144,Equipe_1,48,4
+144,Equipe_2,50,5
+144,Equipe_2,18,2
+144,Equipe_2,53,4
+144,Equipe_2,48,4
+144,Equipe_2,51,4
+144,Match Nul,49,5
+144,Equipe_2,26,4
+144,Equipe_2,28,2
+144,Equipe_2,36,3
+144,Equipe_2,26,2
+144,Equipe_2,34,3
+144,Equipe_2,70,6
+144,Equipe_2,29,2
+144,Equipe_2,22,2
+144,Equipe_1,99,10
+144,Equipe_2,29,3
+144,Equipe_2,12,2
+144,Equipe_2,18,2
+144,Equipe_1,39,3
+144,Equipe_2,27,3
+144,Match Nul,34,3
+144,Equipe_2,23,3
+144,Match Nul,29,3
+144,Match Nul,39,4
+144,Equipe_2,26,3
+144,Equipe_2,28,3
+144,Equipe_2,33,3
+144,Equipe_2,35,3
+144,Equipe_2,32,3
+144,Equipe_2,26,3
+144,Equipe_2,23,3
+
+# CONFIG: P12_D3_ParanoidStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,57,2
+144,Match Nul,73,2
+144,Match Nul,67,2
+144,Match Nul,75,2
+144,Match Nul,71,2
+144,Match Nul,58,2
+144,Match Nul,49,2
+144,Match Nul,119,2
+144,Match Nul,52,2
+144,Match Nul,34,2
+144,Equipe_1,31,2
+144,Match Nul,55,2
+144,Match Nul,30,2
+144,Match Nul,50,2
+144,Match Nul,55,2
+144,Match Nul,60,2
+144,Match Nul,47,2
+144,Match Nul,59,2
+144,Match Nul,41,2
+144,Match Nul,93,2
+144,Match Nul,81,2
+144,Match Nul,55,2
+144,Match Nul,50,2
+144,Match Nul,42,2
+144,Match Nul,60,2
+144,Match Nul,43,2
+144,Match Nul,64,2
+144,Match Nul,53,2
+144,Match Nul,29,2
+144,Match Nul,49,2
+144,Match Nul,54,2
+144,Match Nul,56,2
+144,Match Nul,55,2
+144,Match Nul,40,2
+144,Match Nul,67,2
+144,Match Nul,46,2
+144,Match Nul,33,2
+144,Match Nul,39,2
+144,Match Nul,23,2
+144,Match Nul,23,2
+144,Match Nul,21,2
+144,Match Nul,16,2
+144,Match Nul,16,2
+144,Match Nul,10,2
+144,Match Nul,7,2
+144,Match Nul,9,2
+144,Match Nul,6,2
+144,Equipe_1,2,2
+144,Match Nul,4,2
+144,Match Nul,4,2
+
+# CONFIG: P12_D3_ParanoidStrategie_FreeSpaceHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (FreeSpaceHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,124,2
+144,Equipe_2,119,2
+144,Equipe_2,103,2
+144,Equipe_2,132,2
+144,Equipe_2,92,2
+144,Equipe_1,50,1
+144,Equipe_2,82,2
+144,Equipe_2,72,2
+144,Equipe_2,103,2
+144,Equipe_2,100,2
+144,Equipe_2,71,2
+144,Equipe_2,86,2
+144,Equipe_2,90,2
+144,Equipe_2,86,2
+144,Equipe_2,97,2
+144,Equipe_2,50,2
+144,Equipe_2,86,2
+144,Equipe_2,81,2
+144,Equipe_2,50,2
+144,Equipe_2,90,2
+144,Equipe_1,42,1
+144,Equipe_2,141,2
+144,Equipe_2,74,2
+144,Equipe_2,83,2
+144,Equipe_2,86,2
+144,Equipe_2,49,2
+144,Equipe_2,77,2
+144,Equipe_2,95,2
+144,Equipe_2,49,2
+144,Equipe_2,86,2
+144,Equipe_2,74,2
+144,Equipe_2,87,2
+144,Equipe_2,64,2
+144,Equipe_2,65,2
+144,Equipe_2,74,2
+144,Equipe_2,58,2
+144,Equipe_2,37,2
+144,Equipe_2,38,2
+144,Equipe_2,40,2
+144,Equipe_2,25,2
+144,Equipe_2,22,2
+144,Equipe_2,16,2
+144,Equipe_2,8,2
+144,Equipe_2,9,2
+144,Equipe_2,9,2
+144,Equipe_2,7,2
+144,Match Nul,5,2
+144,Equipe_2,6,2
+144,Equipe_2,4,2
+144,Equipe_2,4,2
+
+# CONFIG: P12_D3_ParanoidStrategie_VoronoiHeuristic_VS_MinMaxStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (VoronoiHeuristic) vs MinMaxStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,59,2
+144,Equipe_1,107,2
+144,Equipe_1,83,2
+144,Equipe_1,65,2
+144,Equipe_1,77,2
+144,Equipe_1,139,2
+144,Equipe_1,153,2
+144,Equipe_1,60,2
+144,Equipe_1,74,2
+144,Equipe_1,59,2
+144,Equipe_1,47,2
+144,Equipe_1,73,2
+144,Equipe_1,79,2
+144,Equipe_1,75,2
+144,Equipe_1,49,2
+144,Equipe_1,57,2
+144,Equipe_1,93,2
+144,Equipe_1,89,2
+144,Equipe_1,48,2
+144,Equipe_1,65,2
+144,Equipe_1,83,2
+144,Equipe_1,70,2
+144,Equipe_1,58,2
+144,Equipe_1,56,2
+144,Equipe_1,36,2
+144,Equipe_1,28,2
+144,Equipe_1,18,2
+144,Equipe_1,21,2
+144,Equipe_1,16,2
+144,Equipe_1,21,2
+144,Equipe_1,19,2
+144,Equipe_1,20,2
+144,Equipe_1,46,2
+144,Equipe_1,26,2
+144,Equipe_1,23,2
+144,Equipe_1,13,2
+144,Equipe_1,22,2
+144,Equipe_1,23,2
+144,Equipe_1,27,2
+144,Match Nul,23,2
+144,Equipe_1,12,2
+144,Equipe_1,18,2
+144,Equipe_1,26,2
+144,Equipe_1,23,2
+144,Equipe_1,11,2
+144,Equipe_1,20,2
+144,Equipe_1,19,2
+144,Equipe_1,16,2
+144,Equipe_1,14,2
+144,Equipe_1,7,2
+
+# CONFIG: P12_D3_ParanoidStrategie_VoronoiHeuristic_VS_MinMaxStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (VoronoiHeuristic) vs MinMaxStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,346,3
+144,Equipe_2,219,3
+144,Equipe_2,139,3
+144,Equipe_2,370,6
+144,Equipe_2,198,3
+144,Match Nul,201,3
+144,Equipe_2,204,3
+144,Equipe_1,221,3
+144,Match Nul,135,2
+144,Match Nul,117,2
+144,Equipe_2,102,3
+144,Equipe_1,173,5
+144,Equipe_2,167,6
+144,Equipe_2,121,4
+144,Match Nul,95,4
+144,Equipe_2,67,4
+144,Equipe_2,61,6
+144,Equipe_2,28,3
+144,Equipe_1,23,3
+144,Match Nul,14,5
+144,Equipe_1,1,1
+144,Equipe_2,17,6
+144,Equipe_1,4,2
+144,Equipe_2,9,3
+144,Equipe_2,15,5
+144,Equipe_2,10,3
+144,Equipe_2,17,6
+144,Match Nul,7,5
+144,Equipe_2,7,5
+144,Equipe_2,19,6
+144,Equipe_1,4,3
+144,Equipe_2,24,9
+144,Equipe_2,6,2
+144,Equipe_2,18,6
+144,Equipe_2,28,6
+144,Equipe_2,10,4
+144,Equipe_2,17,7
+144,Equipe_2,33,11
+144,Equipe_2,8,4
+144,Equipe_2,7,3
+144,Match Nul,3,3
+144,Equipe_2,4,4
+144,Equipe_2,13,5
+144,Equipe_2,6,3
+144,Equipe_2,3,2
+144,Equipe_2,7,3
+144,Equipe_1,2,2
+144,Equipe_1,14,5
+144,Equipe_2,3,2
+144,Equipe_2,13,8
+
+# CONFIG: P12_D3_ParanoidStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,76,2
+144,Match Nul,49,2
+144,Match Nul,58,2
+144,Match Nul,40,2
+144,Match Nul,40,2
+144,Equipe_1,32,2
+144,Match Nul,69,2
+144,Match Nul,68,2
+144,Match Nul,50,2
+144,Match Nul,76,2
+144,Match Nul,24,2
+144,Match Nul,71,2
+144,Match Nul,37,2
+144,Equipe_1,17,2
+144,Match Nul,44,2
+144,Match Nul,50,2
+144,Equipe_1,32,2
+144,Match Nul,38,2
+144,Match Nul,32,2
+144,Match Nul,37,2
+144,Match Nul,28,2
+144,Match Nul,26,2
+144,Match Nul,35,2
+144,Match Nul,18,2
+144,Match Nul,15,2
+144,Match Nul,22,2
+144,Equipe_2,14,2
+144,Match Nul,17,2
+144,Match Nul,16,2
+144,Match Nul,14,2
+144,Match Nul,8,2
+144,Match Nul,6,2
+144,Match Nul,20,2
+144,Match Nul,14,2
+144,Match Nul,13,2
+144,Match Nul,14,2
+144,Match Nul,10,2
+144,Match Nul,20,2
+144,Match Nul,10,2
+144,Match Nul,17,2
+144,Equipe_2,3,2
+144,Match Nul,7,2
+144,Match Nul,13,2
+144,Match Nul,9,2
+144,Match Nul,11,2
+144,Match Nul,8,2
+144,Match Nul,12,2
+144,Match Nul,10,2
+144,Match Nul,6,2
+144,Match Nul,5,2
+
+# CONFIG: P12_D3_ParanoidStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,82,2
+144,Equipe_2,44,2
+144,Equipe_2,82,2
+144,Equipe_2,87,2
+144,Equipe_2,56,2
+144,Equipe_2,130,2
+144,Equipe_2,58,2
+144,Equipe_2,95,2
+144,Equipe_2,55,2
+144,Equipe_2,63,2
+144,Equipe_2,53,2
+144,Equipe_2,60,2
+144,Equipe_2,61,2
+144,Equipe_2,60,2
+144,Equipe_2,56,2
+144,Equipe_2,72,2
+144,Equipe_2,50,2
+144,Equipe_2,56,2
+144,Equipe_2,135,2
+144,Equipe_2,56,2
+144,Equipe_2,64,2
+144,Equipe_2,44,2
+144,Equipe_2,56,2
+144,Equipe_2,44,2
+144,Equipe_2,74,2
+144,Equipe_2,118,2
+144,Equipe_2,57,2
+144,Equipe_2,68,2
+144,Equipe_2,42,2
+144,Equipe_2,47,2
+144,Equipe_2,36,2
+144,Equipe_2,21,2
+144,Equipe_2,48,2
+144,Equipe_2,44,2
+144,Equipe_2,56,2
+144,Equipe_2,33,3
+144,Equipe_2,77,2
+144,Equipe_2,48,2
+144,Equipe_2,38,2
+144,Equipe_2,29,2
+144,Equipe_2,65,2
+144,Equipe_2,38,2
+144,Match Nul,63,2
+144,Equipe_2,56,2
+144,Equipe_2,59,2
+144,Equipe_2,52,2
+144,Equipe_2,66,2
+144,Equipe_2,51,2
+144,Equipe_2,45,2
+144,Equipe_2,27,2
+
+# CONFIG: P12_D3_ParanoidStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,83,2
+144,Equipe_1,81,2
+144,Equipe_1,68,2
+144,Equipe_1,58,2
+144,Equipe_1,78,2
+144,Equipe_1,81,2
+144,Equipe_1,80,2
+144,Equipe_1,50,2
+144,Equipe_1,131,2
+144,Equipe_1,115,2
+144,Equipe_1,53,2
+144,Equipe_1,54,2
+144,Equipe_1,46,2
+144,Equipe_1,48,2
+144,Equipe_1,86,2
+144,Equipe_1,81,2
+144,Equipe_1,72,2
+144,Equipe_1,67,2
+144,Equipe_1,79,2
+144,Equipe_1,53,2
+144,Equipe_1,54,2
+144,Equipe_1,46,2
+144,Equipe_1,31,2
+144,Equipe_1,53,2
+144,Equipe_1,20,2
+144,Equipe_1,33,2
+144,Equipe_1,67,2
+144,Equipe_1,40,2
+144,Equipe_1,40,2
+144,Equipe_1,24,2
+144,Equipe_1,65,2
+144,Equipe_1,36,2
+144,Equipe_1,32,2
+144,Equipe_1,32,2
+144,Equipe_1,28,2
+144,Equipe_1,34,2
+144,Equipe_1,32,2
+144,Equipe_1,27,2
+144,Equipe_1,25,2
+144,Equipe_1,25,2
+144,Equipe_1,19,2
+144,Equipe_1,19,2
+144,Equipe_1,8,2
+144,Equipe_1,9,2
+144,Equipe_1,6,2
+144,Equipe_1,5,2
+144,Equipe_1,2,2
+144,Equipe_1,2,2
+144,Equipe_1,4,2
+144,Equipe_1,4,2
+
+# CONFIG: P12_D3_ParanoidStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,199,3
+144,Equipe_1,163,2
+144,Equipe_2,312,5
+144,Equipe_1,351,5
+144,Equipe_1,269,4
+144,Equipe_1,122,2
+144,Match Nul,324,5
+144,Equipe_2,156,2
+144,Equipe_2,195,3
+144,Equipe_2,197,5
+144,Equipe_2,188,6
+144,Equipe_2,94,2
+144,Match Nul,94,11
+144,Equipe_2,64,5
+144,Equipe_1,51,7
+144,Match Nul,36,6
+144,Equipe_2,21,3
+144,Equipe_2,23,5
+144,Equipe_2,12,5
+144,Equipe_2,7,2
+144,Equipe_2,13,5
+144,Equipe_2,9,3
+144,Match Nul,9,4
+144,Equipe_2,8,3
+144,Equipe_2,26,7
+144,Equipe_1,3,2
+144,Equipe_2,18,4
+144,Equipe_2,24,9
+144,Equipe_2,18,6
+144,Equipe_2,7,3
+144,Match Nul,17,6
+144,Equipe_2,9,3
+144,Equipe_2,13,3
+144,Equipe_1,10,7
+144,Equipe_2,8,4
+144,Equipe_2,5,3
+144,Equipe_1,2,2
+144,Equipe_2,6,3
+144,Equipe_1,1,2
+144,Match Nul,11,6
+144,Equipe_2,17,6
+144,Equipe_1,3,1
+144,Equipe_2,19,6
+144,Equipe_1,4,2
+144,Equipe_2,15,6
+144,Match Nul,17,6
+144,Equipe_2,6,3
+144,Equipe_2,11,5
+144,Equipe_2,16,7
+144,Equipe_1,10,5
+
+# CONFIG: P12_D3_ParanoidStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (FreeSpaceHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,230,2
+144,Match Nul,227,2
+144,Match Nul,236,2
+144,Match Nul,236,2
+144,Match Nul,238,2
+144,Match Nul,240,2
+144,Match Nul,241,2
+144,Match Nul,238,2
+144,Match Nul,24,2
+144,Match Nul,54,2
+144,Match Nul,37,2
+144,Match Nul,31,2
+144,Equipe_1,33,2
+144,Match Nul,43,2
+144,Match Nul,25,2
+144,Match Nul,12,2
+144,Match Nul,29,2
+144,Match Nul,25,2
+144,Match Nul,7,2
+144,Match Nul,20,2
+144,Equipe_1,28,2
+144,Match Nul,30,2
+144,Match Nul,32,2
+144,Match Nul,18,2
+144,Match Nul,17,2
+144,Match Nul,24,2
+144,Match Nul,28,2
+144,Match Nul,40,2
+144,Match Nul,28,2
+144,Match Nul,19,2
+144,Match Nul,24,2
+144,Match Nul,42,2
+144,Match Nul,40,2
+144,Match Nul,34,2
+144,Match Nul,15,2
+144,Match Nul,40,2
+144,Match Nul,22,2
+144,Match Nul,27,2
+144,Match Nul,26,2
+144,Match Nul,23,2
+144,Match Nul,27,2
+144,Match Nul,24,2
+144,Match Nul,29,2
+144,Match Nul,27,2
+144,Match Nul,20,2
+144,Match Nul,22,2
+144,Match Nul,14,2
+144,Match Nul,19,2
+144,Equipe_1,9,2
+144,Match Nul,8,2
+
+# CONFIG: P12_D3_ParanoidStrategie_FreeSpaceHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (FreeSpaceHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,287,2
+144,Equipe_2,285,2
+144,Equipe_2,366,3
+144,Match Nul,319,2
+144,Match Nul,276,2
+144,Equipe_2,282,2
+144,Equipe_2,274,2
+144,Equipe_2,252,2
+144,Equipe_2,123,2
+144,Match Nul,116,2
+144,Match Nul,121,2
+144,Equipe_2,126,2
+144,Equipe_2,98,2
+144,Equipe_2,104,2
+144,Equipe_2,73,2
+144,Match Nul,27,2
+144,Match Nul,57,2
+144,Equipe_2,40,2
+144,Equipe_2,57,2
+144,Match Nul,38,2
+144,Equipe_2,32,2
+144,Match Nul,46,2
+144,Equipe_2,61,2
+144,Equipe_2,44,2
+144,Equipe_2,41,2
+144,Match Nul,64,2
+144,Match Nul,95,2
+144,Match Nul,46,2
+144,Equipe_2,37,2
+144,Equipe_2,161,2
+144,Equipe_2,64,2
+144,Match Nul,157,2
+144,Equipe_2,306,2
+144,Equipe_2,255,2
+144,Match Nul,293,2
+144,Equipe_2,205,2
+144,Equipe_2,254,2
+144,Equipe_2,174,2
+144,Equipe_2,166,2
+144,Equipe_2,161,2
+144,Equipe_1,88,2
+144,Match Nul,81,2
+144,Match Nul,50,2
+144,Equipe_2,22,2
+144,Equipe_2,17,2
+144,Equipe_2,21,2
+144,Equipe_2,15,2
+144,Equipe_2,15,2
+144,Equipe_2,13,2
+144,Equipe_2,11,2
+
+# CONFIG: P12_D3_ParanoidStrategie_VoronoiHeuristic_VS_MaxNStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (VoronoiHeuristic) vs MaxNStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,190,2
+144,Equipe_1,255,2
+144,Equipe_1,144,1
+144,Equipe_1,269,2
+144,Equipe_1,280,2
+144,Equipe_1,293,2
+144,Equipe_1,269,2
+144,Match Nul,317,3
+144,Equipe_1,151,2
+144,Equipe_1,108,2
+144,Equipe_1,59,2
+144,Equipe_1,83,2
+144,Equipe_1,68,2
+144,Equipe_1,96,2
+144,Equipe_1,69,2
+144,Equipe_1,39,2
+144,Equipe_1,39,2
+144,Equipe_1,74,2
+144,Equipe_1,57,2
+144,Equipe_1,82,2
+144,Equipe_1,59,2
+144,Equipe_1,67,2
+144,Equipe_1,45,2
+144,Match Nul,51,2
+144,Equipe_1,79,2
+144,Equipe_1,46,2
+144,Equipe_1,28,2
+144,Equipe_1,51,2
+144,Equipe_1,51,2
+144,Equipe_1,47,2
+144,Equipe_1,16,1
+144,Equipe_1,63,2
+144,Equipe_1,42,2
+144,Equipe_1,47,2
+144,Equipe_1,34,2
+144,Equipe_1,46,2
+144,Equipe_1,59,2
+144,Equipe_1,45,2
+144,Equipe_1,29,2
+144,Equipe_1,49,2
+144,Equipe_1,44,1
+144,Equipe_1,34,2
+144,Equipe_1,51,2
+144,Equipe_1,38,2
+144,Equipe_1,34,2
+144,Equipe_1,30,2
+144,Equipe_1,22,2
+144,Equipe_1,22,2
+144,Equipe_1,20,2
+144,Equipe_1,14,2
+
+# CONFIG: P12_D3_ParanoidStrategie_VoronoiHeuristic_VS_MaxNStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 3
+# Stratégies: ParanoidStrategie (VoronoiHeuristic) vs MaxNStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 3
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,401,3
+144,Match Nul,395,3
+144,Equipe_1,298,2
+144,Equipe_1,397,3
+144,Equipe_1,325,2
+144,Equipe_1,391,4
+144,Equipe_1,373,3
+144,Equipe_2,387,3
+144,Equipe_1,93,2
+144,Equipe_1,93,3
+144,Equipe_1,66,3
+144,Equipe_2,65,3
+144,Equipe_2,69,3
+144,Equipe_2,51,2
+144,Equipe_1,52,3
+144,Equipe_1,27,2
+144,Equipe_1,57,3
+144,Equipe_1,40,2
+144,Equipe_2,91,5
+144,Equipe_1,52,2
+144,Equipe_1,73,4
+144,Equipe_1,84,6
+144,Equipe_1,47,2
+144,Equipe_2,83,4
+144,Equipe_2,59,3
+144,Equipe_1,33,2
+144,Equipe_2,50,4
+144,Equipe_1,50,4
+144,Equipe_1,27,3
+144,Equipe_1,23,3
+144,Equipe_1,16,2
+144,Equipe_1,15,2
+144,Equipe_2,42,3
+144,Equipe_1,57,5
+144,Match Nul,26,3
+144,Match Nul,32,3
+144,Equipe_1,15,2
+144,Equipe_1,31,3
+144,Equipe_1,24,2
+144,Equipe_1,13,2
+144,Equipe_1,26,3
+144,Equipe_1,37,3
+144,Equipe_1,35,3
+144,Match Nul,38,3
+144,Equipe_1,39,4
+144,Equipe_2,75,5
+144,Equipe_1,18,3
+144,Match Nul,31,3
+144,Equipe_1,65,3
+144,Match Nul,17,3
+
+# CONFIG: P12_D4_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 4
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 4
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Match Nul,157,2
+144,Match Nul,98,2
+144,Match Nul,198,2
+144,Match Nul,68,2
+144,Match Nul,197,2
+144,Match Nul,189,2
+144,Match Nul,167,2
+144,Match Nul,183,2
+144,Match Nul,105,2
+144,Match Nul,100,2
+144,Match Nul,47,2
+144,Match Nul,35,2
+144,Match Nul,30,2
+144,Match Nul,26,2
+144,Match Nul,8,2
+144,Match Nul,26,2
+144,Match Nul,7,2
+144,Match Nul,13,2
+144,Match Nul,18,2
+144,Match Nul,16,2
+144,Match Nul,15,2
+144,Match Nul,24,2
+144,Match Nul,18,2
+144,Match Nul,3,2
+144,Match Nul,11,2
+144,Match Nul,19,2
+144,Match Nul,9,2
+144,Match Nul,10,2
+144,Match Nul,16,2
+144,Match Nul,10,2
+144,Match Nul,23,2
+144,Match Nul,9,2
+144,Equipe_2,18,2
+144,Match Nul,11,2
+144,Match Nul,13,2
+144,Match Nul,11,2
+144,Match Nul,20,2
+144,Match Nul,11,2
+144,Match Nul,10,2
+144,Match Nul,13,2
+144,Match Nul,16,2
+144,Equipe_2,5,2
+144,Match Nul,18,2
+144,Match Nul,10,2
+144,Match Nul,13,2
+144,Match Nul,6,2
+144,Match Nul,12,2
+144,Match Nul,9,2
+144,Match Nul,9,2
+144,Match Nul,9,2
+
+# CONFIG: P12_D4_MinMaxStrategie_FreeSpaceHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 4
+# Stratégies: MinMaxStrategie (FreeSpaceHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 4
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,373,2
+144,Equipe_2,215,2
+144,Equipe_2,143,2
+144,Equipe_2,199,2
+144,Equipe_2,202,2
+144,Equipe_2,109,2
+144,Equipe_2,180,2
+144,Equipe_2,115,2
+144,Equipe_2,123,2
+144,Equipe_2,143,2
+144,Equipe_2,175,2
+144,Equipe_2,21,2
+144,Equipe_2,109,2
+144,Equipe_2,86,2
+144,Equipe_2,148,2
+144,Equipe_2,113,2
+144,Equipe_2,108,2
+144,Equipe_2,126,2
+144,Equipe_2,111,2
+144,Equipe_2,76,2
+144,Equipe_2,68,2
+144,Equipe_2,55,2
+144,Equipe_2,49,2
+144,Equipe_2,51,2
+144,Equipe_2,18,2
+144,Equipe_2,16,2
+144,Equipe_2,7,2
+144,Equipe_2,18,2
+144,Equipe_2,12,2
+144,Equipe_2,7,2
+144,Equipe_2,11,2
+144,Equipe_2,26,2
+144,Equipe_2,6,2
+144,Equipe_2,15,2
+144,Equipe_2,19,2
+144,Equipe_2,8,2
+144,Equipe_2,13,2
+144,Equipe_2,15,2
+144,Equipe_2,19,2
+144,Equipe_2,6,2
+144,Equipe_2,9,2
+144,Equipe_2,10,2
+144,Equipe_2,12,2
+144,Equipe_2,10,2
+144,Equipe_2,9,2
+144,Equipe_2,16,2
+144,Equipe_2,8,2
+144,Match Nul,16,2
+144,Equipe_2,12,2
+144,Equipe_2,14,2
+
+# CONFIG: P12_D4_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_FreeSpaceHeuristic
+# Plateau: 12x12, Profondeur: 4
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (FreeSpaceHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 4
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_1,226,2
+144,Equipe_1,227,2
+144,Equipe_1,312,2
+144,Equipe_1,273,2
+144,Equipe_1,196,2
+144,Equipe_1,162,1
+144,Equipe_1,285,2
+144,Equipe_1,287,2
+144,Equipe_1,207,3
+144,Equipe_1,118,2
+144,Equipe_1,197,2
+144,Equipe_1,204,2
+144,Equipe_1,138,2
+144,Equipe_1,249,2
+144,Equipe_1,296,2
+144,Equipe_1,178,2
+144,Equipe_1,172,2
+144,Equipe_1,146,2
+144,Equipe_1,180,2
+144,Equipe_1,168,2
+144,Equipe_1,96,2
+144,Equipe_1,119,2
+144,Equipe_1,102,2
+144,Equipe_1,90,2
+144,Equipe_1,71,2
+144,Equipe_1,67,2
+144,Equipe_1,26,2
+144,Equipe_1,8,2
+144,Equipe_1,13,2
+144,Equipe_1,17,2
+144,Equipe_1,25,2
+144,Equipe_1,12,2
+144,Equipe_1,13,2
+144,Match Nul,9,2
+144,Equipe_1,10,2
+144,Equipe_1,11,2
+144,Equipe_1,16,2
+144,Equipe_1,15,2
+144,Equipe_1,14,2
+144,Equipe_1,12,2
+144,Equipe_1,19,2
+144,Equipe_1,17,2
+144,Equipe_1,11,2
+144,Equipe_1,18,2
+144,Equipe_1,14,2
+144,Equipe_1,11,2
+144,Equipe_1,15,2
+144,Equipe_1,9,2
+144,Equipe_1,11,2
+144,Equipe_1,7,2
+
+# CONFIG: P12_D4_MinMaxStrategie_VoronoiHeuristic_VS_AlphaBetaStrategie_VoronoiHeuristic
+# Plateau: 12x12, Profondeur: 4
+# Stratégies: MinMaxStrategie (VoronoiHeuristic) vs AlphaBetaStrategie (VoronoiHeuristic)
+# Parties: 50
+Nombre d'Equipes = 2
+Joueurs Par Equipe = 1
+Profondeur IA = 4
+Nombre Parties = 50
+
+
+TailleGrille,EquipeGagnante,TempsMoyen,NbMoyenTours
+144,Equipe_2,237,3
+144,Equipe_2,306,11
+144,Equipe_1,305,7
+144,Equipe_1,330,7
+144,Equipe_1,252,3
+144,Equipe_2,269,4
+144,Equipe_2,236,3
+144,Equipe_2,246,3
+144,Match Nul,74,7
+144,Equipe_2,112,10
+144,Equipe_2,20,3
+144,Equipe_2,16,3
+144,Equipe_2,50,5
+144,Equipe_2,72,11
+144,Match Nul,50,6
+144,Equipe_1,62,7
+144,Equipe_1,105,8
+144,Equipe_1,57,5
+144,Equipe_2,5,2
+144,Equipe_1,86,10
+144,Equipe_2,20,3
+144,Equipe_2,60,7
+144,Equipe_2,56,5
+144,Equipe_2,30,3
+144,Equipe_2,49,4
+144,Equipe_2,46,5
+144,Equipe_1,58,5
+144,Equipe_2,18,3
+144,Match Nul,67,9
+144,Match Nul,31,8
+144,Match Nul,122,13
+144,Match Nul,94,11
+144,Equipe_1,70,8
+144,Equipe_1,52,8
+144,Equipe_1,93,7
+144,Equipe_1,69,9
+144,Equipe_2,11,3
+144,Equipe_1,7,2
+144,Equipe_1,98,7
+144,Equipe_1,101,8
+144,Equipe_1,4,1
+144,Equipe_2,4,2
+144,Match Nul,12,2
+144,Equipe_1,6,1
+144,Match Nul,66,7
+144,Equipe_2,28,3
+144,Equipe_2,66,9
+144,Match Nul,68,10
+144,Equipe_1,21,3
+144,Equipe_1,33,4
