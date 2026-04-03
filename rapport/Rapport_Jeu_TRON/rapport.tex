@@ -831,7 +831,8 @@ Le volet expérimental constitue une partie importante du projet, car il permet 
 Le protocole expérimental consiste à lancer un grand nombre de parties entre différentes configurations d’algorithmes. Cela permet de comparer plusieurs stratégies, comme \texttt{MinMaxStrategie}, \texttt{MaxNStrategie}, \texttt{ParanoidStrategie} ou \texttt{SOSStrategie}, ainsi que plusieurs heuristiques d’évaluation. Chaque partie produit ensuite un objet \texttt{GameResult}, qui contient les informations essentielles pour l’analyse, comme l’équipe gagnante, le nombre de tours joués et le temps moyen de calcul.
 
 Une fois les résultats récupérés, ils sont exportés dans des fichiers CSV, puis exploités pour construire des graphiques et des tableaux comparatifs. Cette étape rend possible une analyse plus globale des performances observées, notamment pour étudier l’effet de la profondeur de recherche, du choix de l’heuristique ou encore de la taille du plateau sur le comportement des intelligences artificielles.
-\section{Analyse des expérimentations}
+
+\section{Analyse des expérimentations des Algorithmes}
 \subsection{Présentation des expériences}
 
 L’analyse présentée ici repose sur les résultats obtenus après les campagnes d’expérimentations automatiques lancées dans le projet. Les données ont ensuite été regroupées et visualisées sous forme de graphiques afin de mieux comparer les stratégies, les heuristiques, la profondeur de recherche et la taille du plateau.
@@ -842,14 +843,43 @@ Les graphiques permettent de voir rapidement les tendances générales. Ils ne s
     \includegraphics[width=1\linewidth, height=0.75\paperheight, keepaspectratio]{images/fin.png}
 \end{figure}
 
-\subsection{Résultats globaux}
+\subsection{1ère partie d'analyse et d'expérimentation }
 
+Cette section présente les résultats des simulations effectuées pour comparer les performances des différentes stratégies d'intelligence artificielle couplées à l'heuristique de \textbf{Voronoi (VoH)}. L'objectif est d'évaluer la robustesse des algorithmes à travers des indicateurs de performance et de fiabilité statistique.
+
+\subsubsection{Méthodologie et Fiabilité Statistique}
+Pour garantir la validité scientifique de nos tests, nous avons introduit un \textbf{intervalle de confiance} (marge d'erreur) pour chaque session de test. 
+
+\begin{itemize}
+    \item \textbf{Loi des grands nombres :} Plus le nombre de parties augmente, plus la marge d'erreur diminue. Par exemple, pour 200 parties, la confiance globale est de $\pm 6,06\%$, alors qu'elle monte à $\pm 30,59\%$ pour seulement 6 parties.
+    \item \textbf{Stabilité :} La marge d'erreur globale sur l'ensemble des tests est de $\pm 5,33\%$, ce qui confère une grande fiabilité aux conclusions tirées sur l'équipe dominante.
+\end{itemize}
+
+\subsubsection{Résultats des Sessions (Confiance Détaillée)}
+
+Le tableau suivant récapitule les taux de victoire de chaque configuration d'équipe (Algorithme $|$ Heuristique) avec leur marge d'erreur respective :
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/analyse.png}
+    \caption{Visualisation des sessions et de la confiance globale}
+\end{figure}
+
+\vspace{2cm}
+\subsubsection{Interprétation et Conclusion}
+L'analyse des données permet de tirer les conclusions suivantes :
+\begin{enumerate}
+    \item \textbf{Domination de l'Alpha-Beta (T1) :} Avec un taux de victoire final de $74,6\%$, l'algorithme Alpha-Beta surclasse nettement les autres stratégies lorsqu'il utilise l'heuristique de Voronoi.
+    \item \textbf{Performance des stratégies N-joueurs :} Les algorithmes MaxN ($7,8\%$), SOS ($4,7\%$) et Paranoid ($4,3\%$) montrent des performances similaires et très en retrait par rapport à T1 dans ce contexte de duel ou de confrontation directe.
+    \item \textbf{Validation :} L'équipe dominante est statistiquement identifiée comme étant l'Équipe 1 (ABS) avec une avance significative qui dépasse largement la marge d'erreur calculée.
+\end{enumerate}
+
+\subsection{2ème partie d'analyse et d'expérimentation (par stratégie)}
 Dans l’ensemble, les résultats montrent que les performances ne dépendent pas d’un seul paramètre. Le choix de la stratégie a un effet important, mais il ne peut pas être séparé du choix de l’heuristique. On observe aussi que certaines profondeurs donnent de meilleurs résultats que d’autres, alors que la taille du plateau semble avoir un impact plus limité sur les tendances générales.
 
 Les graphiques montrent surtout que les écarts les plus visibles viennent de la stratégie utilisée et de la qualité de l’heuristique. Certaines combinaisons donnent des résultats nettement meilleurs, alors que d’autres restent plus irrégulières ou produisent davantage de matchs nuls.
 
-\subsection{Analyse par stratégie}
-
+\vspace{1cm}
 L’analyse par stratégie permet de comparer plus précisément le comportement de chaque algorithme. Le graphique suivant résume les résultats obtenus selon la stratégie utilisée.
 
 \begin{figure}[H]
